@@ -1,0 +1,4094 @@
+{
+  "Affinity - New Haven": {
+    "products": [],
+    "deals": []
+  },
+  "Higher Collective Bridgeport": {
+    "products": [],
+    "deals": []
+  },
+  "Lit New Haven Cannabis": {
+    "products": [
+      {
+        "name": "From \\Avg",
+        "brand": "247productsUpdated 28d ago",
+        "category": "Vaporizers",
+        "price": 1.5,
+        "weight": ""
+      },
+      {
+        "name": "Raw Organic Papers King Size Slim",
+        "brand": "Unknown",
+        "category": "Pre-Rolls",
+        "price": 1.5,
+        "weight": ""
+      },
+      {
+        "name": "Pineapple Paradise High Hemp Wraps 2pc",
+        "brand": "Unknown",
+        "category": "Pre-Rolls",
+        "price": 1.5,
+        "weight": ""
+      },
+      {
+        "name": "Blazy Susan Honey Lemon Tea Wrap 2pk",
+        "brand": "Unknown",
+        "category": "Pre-Rolls",
+        "price": 1.75,
+        "weight": ""
+      },
+      {
+        "name": "3pk Bob Marley Pre-Rolled Cones - King Size",
+        "brand": "Unknown",
+        "category": "Pre-Rolls",
+        "price": 2.5,
+        "weight": ""
+      },
+      {
+        "name": "420 Series Lighter Leash",
+        "brand": "Unknown",
+        "category": "Pre-Rolls",
+        "price": 3.0,
+        "weight": ""
+      },
+      {
+        "name": "3Pk. Raw Black Pre-Roll Cone King Size",
+        "brand": "Unknown",
+        "category": "Pre-Rolls",
+        "price": 3.0,
+        "weight": ""
+      },
+      {
+        "name": "LIT \\ King Sized Hemp Rolling Papers \\ Accessories",
+        "brand": "Unknown",
+        "category": "Pre-Rolls",
+        "price": 3.0,
+        "weight": ""
+      },
+      {
+        "name": "LIT \\ Bic Lighter \\ Accessories",
+        "brand": "Unknown",
+        "category": "Pre-Rolls",
+        "price": 3.0,
+        "weight": ""
+      },
+      {
+        "name": "HI5 \\ Black Cherry \\ THC Seltzer \\ Beverage",
+        "brand": "Unknown",
+        "category": "Edibles",
+        "price": 5.0,
+        "weight": ""
+      },
+      {
+        "name": "LAYUP \\ Classic \\ THC Lemonade",
+        "brand": "Unknown",
+        "category": "Edibles",
+        "price": 5.0,
+        "weight": ""
+      },
+      {
+        "name": "HI5 \\ Blueberry Lemonade \\ THC Seltzer \\ Beverage",
+        "brand": "Unknown",
+        "category": "Edibles",
+        "price": 5.0,
+        "weight": ""
+      },
+      {
+        "name": "FIVE ISLANDS \\ Classic \\ THC Iced Tea \\ Beverage",
+        "brand": "Unknown",
+        "category": "Edibles",
+        "price": 5.0,
+        "weight": ""
+      },
+      {
+        "name": "FIVE ISLANDS \\ Half & Half \\ THC Iced Tea \\ Beverage",
+        "brand": "Unknown",
+        "category": "Edibles",
+        "price": 5.0,
+        "weight": ""
+      },
+      {
+        "name": "FIVE ISLANDS \\ Peach \\ THC Iced Tea \\ Beverage",
+        "brand": "Unknown",
+        "category": "Edibles",
+        "price": 5.0,
+        "weight": ""
+      },
+      {
+        "name": "FIZZ \\ Black Cherry \\ THC Soda \\ Beverage",
+        "brand": "Unknown",
+        "category": "Edibles",
+        "price": 5.0,
+        "weight": ""
+      },
+      {
+        "name": "FIZZ \\ Lemon Lime \\ THC Soda \\ Beverage",
+        "brand": "Unknown",
+        "category": "Edibles",
+        "price": 5.0,
+        "weight": ""
+      },
+      {
+        "name": "FIZZ \\ Orange \\ THC Soda \\ Beverage",
+        "brand": "Unknown",
+        "category": "Edibles",
+        "price": 5.0,
+        "weight": ""
+      },
+      {
+        "name": "LAYUP \\ Black Cherry \\ THC Lemonade \\ Beverage",
+        "brand": "Unknown",
+        "category": "Edibles",
+        "price": 5.0,
+        "weight": ""
+      },
+      {
+        "name": "LAYUP \\ Limeade \\ THC Lemonade \\ Beverage",
+        "brand": "Unknown",
+        "category": "Edibles",
+        "price": 5.0,
+        "weight": ""
+      },
+      {
+        "name": "HI5 \\ Peach Mango \\ THC Seltzer \\ Beverage",
+        "brand": "Unknown",
+        "category": "Edibles",
+        "price": 5.0,
+        "weight": ""
+      },
+      {
+        "name": "3\" Asst Color Hand Blown Glass Pipe",
+        "brand": "Unknown",
+        "category": "Edibles",
+        "price": 6.0,
+        "weight": ""
+      },
+      {
+        "name": "1 gHybrid",
+        "brand": "Unknown",
+        "category": "Pre-Rolls",
+        "price": 8.0,
+        "weight": "1 g"
+      },
+      {
+        "name": "eachIndica",
+        "brand": "Unknown",
+        "category": "Pre-Rolls",
+        "price": 9.95,
+        "weight": ""
+      },
+      {
+        "name": "4.5\" Glass Hand Pipe",
+        "brand": "Unknown",
+        "category": "Pre-Rolls",
+        "price": 10.0,
+        "weight": ""
+      },
+      {
+        "name": "LIT \\ Coffee Mug \\ Accessories",
+        "brand": "Unknown",
+        "category": "Pre-Rolls",
+        "price": 10.0,
+        "weight": ""
+      },
+      {
+        "name": "eachSativa",
+        "brand": "Unknown",
+        "category": "Pre-Rolls",
+        "price": 10.0,
+        "weight": ""
+      },
+      {
+        "name": "1 gIndica",
+        "brand": "Unknown",
+        "category": "Pre-Rolls",
+        "price": 10.0,
+        "weight": "1 g"
+      },
+      {
+        "name": "3.5oz. Original Ozium Air Sanitizer Spray",
+        "brand": "Unknown",
+        "category": "Pre-Rolls",
+        "price": 10.0,
+        "weight": ""
+      },
+      {
+        "name": "LIT \\ Rolling Tray Small \\ Accessories",
+        "brand": "Unknown",
+        "category": "Pre-Rolls",
+        "price": 10.0,
+        "weight": ""
+      },
+      {
+        "name": "Friday Forward Journal: A 52-Week Journal to Drive You Forward in Your Goals, We",
+        "brand": "Unknown",
+        "category": "Pre-Rolls",
+        "price": 12.99,
+        "weight": ""
+      },
+      {
+        "name": "Brix Cannabis1 gHybrid",
+        "brand": "Unknown",
+        "category": "Pre-Rolls",
+        "price": 13.0,
+        "weight": "1 g"
+      },
+      {
+        "name": "Brix Cannabis1 gIndica",
+        "brand": "Unknown",
+        "category": "Pre-Rolls",
+        "price": 13.0,
+        "weight": "1 g"
+      },
+      {
+        "name": "Brix Cannabis1 gSativa",
+        "brand": "Unknown",
+        "category": "Pre-Rolls",
+        "price": 13.0,
+        "weight": "1 g"
+      },
+      {
+        "name": "Cannabis Daily Journal \\ Marijuana Notebook",
+        "brand": "Unknown",
+        "category": "Pre-Rolls",
+        "price": 13.0,
+        "weight": ""
+      },
+      {
+        "name": "1 gSativa",
+        "brand": "Unknown",
+        "category": "Pre-Rolls",
+        "price": 13.0,
+        "weight": "1 g"
+      },
+      {
+        "name": "1 gHybrid",
+        "brand": "Unknown",
+        "category": "Pre-Rolls",
+        "price": 13.0,
+        "weight": "1 g"
+      },
+      {
+        "name": "1 gSativa",
+        "brand": "Unknown",
+        "category": "Pre-Rolls",
+        "price": 14.0,
+        "weight": "1 g"
+      },
+      {
+        "name": "Find1 gHybrid",
+        "brand": "Unknown",
+        "category": "Pre-Rolls",
+        "price": 14.0,
+        "weight": "1 g"
+      },
+      {
+        "name": "LIT \\ A.O.P. Socks \\ Grey",
+        "brand": "Unknown",
+        "category": "Pre-Rolls",
+        "price": 15.0,
+        "weight": ""
+      },
+      {
+        "name": "eachIndica",
+        "brand": "Unknown",
+        "category": "Pre-Rolls",
+        "price": 15.0,
+        "weight": ""
+      },
+      {
+        "name": "2.5 gSativa",
+        "brand": "Unknown",
+        "category": "Pre-Rolls",
+        "price": 15.0,
+        "weight": "2.5 g"
+      },
+      {
+        "name": "LIT \\ 510 Threaded Battery \\ Accessories",
+        "brand": "Unknown",
+        "category": "Pre-Rolls",
+        "price": 15.0,
+        "weight": ""
+      },
+      {
+        "name": "2.5 gHybrid",
+        "brand": "Unknown",
+        "category": "Pre-Rolls",
+        "price": 15.0,
+        "weight": "2.5 g"
+      },
+      {
+        "name": "CROSSLAND x LIT \\ Cuff Beanie \\ Black",
+        "brand": "Unknown",
+        "category": "Pre-Rolls",
+        "price": 15.0,
+        "weight": ""
+      },
+      {
+        "name": "LIT \\ A.O.P. Socks \\ Heather Grey",
+        "brand": "Unknown",
+        "category": "Pre-Rolls",
+        "price": 15.0,
+        "weight": ""
+      },
+      {
+        "name": "Yoke: My Yoga of Self-Acceptance",
+        "brand": "Unknown",
+        "category": "Pre-Rolls",
+        "price": 15.95,
+        "weight": ""
+      },
+      {
+        "name": "High Art - Book",
+        "brand": "Unknown",
+        "category": "Pre-Rolls",
+        "price": 15.99,
+        "weight": ""
+      },
+      {
+        "name": "Poverty, Riches & Wealth: Moving From A Life Of Lack Into True Kingdom Abundance",
+        "brand": "Unknown",
+        "category": "Pre-Rolls",
+        "price": 15.99,
+        "weight": ""
+      },
+      {
+        "name": "3/10 gHybrid",
+        "brand": "Unknown",
+        "category": "Vaporizers",
+        "price": 16.0,
+        "weight": "10 g"
+      },
+      {
+        "name": "3/10 gSativa",
+        "brand": "Unknown",
+        "category": "Vaporizers",
+        "price": 16.0,
+        "weight": "10 g"
+      },
+      {
+        "name": "eachHybrid",
+        "brand": "Unknown",
+        "category": "Vaporizers",
+        "price": 16.0,
+        "weight": ""
+      },
+      {
+        "name": "1 gIndica",
+        "brand": "Unknown",
+        "category": "Vaporizers",
+        "price": 16.0,
+        "weight": "1 g"
+      },
+      {
+        "name": "3 gIndica",
+        "brand": "Unknown",
+        "category": "Vaporizers",
+        "price": 16.0,
+        "weight": "3 g"
+      },
+      {
+        "name": "Reflect, Write, Act: A Journal of 52 Purposeful Weeks of Allyship and Anti-racis",
+        "brand": "Unknown",
+        "category": "Vaporizers",
+        "price": 16.95,
+        "weight": ""
+      },
+      {
+        "name": "The Glow Up Journal: Everything You Need to Set Goals, Create Inspo\u2014and Make It ",
+        "brand": "Unknown",
+        "category": "Vaporizers",
+        "price": 16.99,
+        "weight": ""
+      },
+      {
+        "name": "The CBD Bible: Cannabis and the Wellness Revolution that Will Change Your Life",
+        "brand": "Unknown",
+        "category": "Vaporizers",
+        "price": 17.99,
+        "weight": ""
+      },
+      {
+        "name": "eachIndica",
+        "brand": "Unknown",
+        "category": "Edibles",
+        "price": 18.0,
+        "weight": ""
+      },
+      {
+        "name": "High Yoga: Enhance Yoga W/ Cannabis & CBD Treatments For Relaxation, Healing, & ",
+        "brand": "Unknown",
+        "category": "Edibles",
+        "price": 18.95,
+        "weight": ""
+      },
+      {
+        "name": "eachSativa",
+        "brand": "Unknown",
+        "category": "Edibles",
+        "price": 19.95,
+        "weight": ""
+      },
+      {
+        "name": "Seen, Loved & Heard: A Guided Journal For Feeding The Soul",
+        "brand": "Unknown",
+        "category": "Edibles",
+        "price": 19.99,
+        "weight": ""
+      },
+      {
+        "name": "DEATH ROW RECORDS \\ 4\" Freeze Thumbs Up Necture Pipe W/ Screw Tip",
+        "brand": "Unknown",
+        "category": "Edibles",
+        "price": 20.0,
+        "weight": ""
+      },
+      {
+        "name": "1 gIndica",
+        "brand": "Unknown",
+        "category": "Edibles",
+        "price": 20.0,
+        "weight": "1 g"
+      },
+      {
+        "name": "1.75 gHybrid",
+        "brand": "Unknown",
+        "category": "Edibles",
+        "price": 20.0,
+        "weight": "1.75 g"
+      },
+      {
+        "name": "LIT \\ Grinder \\ Accessories",
+        "brand": "Unknown",
+        "category": "Edibles",
+        "price": 20.0,
+        "weight": ""
+      },
+      {
+        "name": "LIT \\ Rolling Tray Medium \\ Accessories",
+        "brand": "Unknown",
+        "category": "Edibles",
+        "price": 20.0,
+        "weight": ""
+      },
+      {
+        "name": "Waiting To Inhale: Cannabis Legalization & The Fight For Racial Justice",
+        "brand": "Unknown",
+        "category": "Edibles",
+        "price": 22.95,
+        "weight": ""
+      },
+      {
+        "name": "Cannabis for Health: The Essential Guide to Using Cannabis for Total Wellness Ca",
+        "brand": "Unknown",
+        "category": "Edibles",
+        "price": 24.95,
+        "weight": ""
+      },
+      {
+        "name": "Homegrown Cannabis: A Beginner's Guide to Cultivating Organic Cannabis Cannabis ",
+        "brand": "Unknown",
+        "category": "Edibles",
+        "price": 24.95,
+        "weight": ""
+      },
+      {
+        "name": "Cooking with Cannabis: Delicious Recipes for Edibles and Everyday Favorites",
+        "brand": "Unknown",
+        "category": "Edibles",
+        "price": 24.99,
+        "weight": ""
+      },
+      {
+        "name": "LIT \\ Tee \\ T-Shirts \\ Tan 2XL",
+        "brand": "Unknown",
+        "category": "Edibles",
+        "price": 25.0,
+        "weight": ""
+      },
+      {
+        "name": "1/8 ozSativa",
+        "brand": "Unknown",
+        "category": "Edibles",
+        "price": 25.0,
+        "weight": "8 oz"
+      },
+      {
+        "name": "1/2 gHybrid",
+        "brand": "Unknown",
+        "category": "Vaporizers",
+        "price": 25.0,
+        "weight": "2 g"
+      },
+      {
+        "name": "1/2 gIndica",
+        "brand": "Unknown",
+        "category": "Vaporizers",
+        "price": 25.0,
+        "weight": "2 g"
+      },
+      {
+        "name": "eachHybrid",
+        "brand": "Unknown",
+        "category": "Vaporizers",
+        "price": 25.0,
+        "weight": ""
+      },
+      {
+        "name": "LIT \\ Tee \\ T-Shirts \\ Blk/Red S",
+        "brand": "Unknown",
+        "category": "Vaporizers",
+        "price": 25.0,
+        "weight": ""
+      },
+      {
+        "name": "LIT \\ Cropped Tee \\ T-Shirts \\ Blk/Yellow S",
+        "brand": "Unknown",
+        "category": "Vaporizers",
+        "price": 25.0,
+        "weight": ""
+      },
+      {
+        "name": "LIT \\ Tee \\ T-Shirts \\ Blk/Red 2XL",
+        "brand": "Unknown",
+        "category": "Vaporizers",
+        "price": 25.0,
+        "weight": ""
+      },
+      {
+        "name": "LIT \\ Tee \\ T-Shirts \\ Blk/Red 3XL",
+        "brand": "Unknown",
+        "category": "Vaporizers",
+        "price": 25.0,
+        "weight": ""
+      },
+      {
+        "name": "LIT \\ Tee \\ T-Shirts \\ Blk/White 2XL",
+        "brand": "Unknown",
+        "category": "Vaporizers",
+        "price": 25.0,
+        "weight": ""
+      },
+      {
+        "name": "LIT \\ Tee \\ T-Shirts \\ Blk/White 3XL",
+        "brand": "Unknown",
+        "category": "Vaporizers",
+        "price": 25.0,
+        "weight": ""
+      },
+      {
+        "name": "LIT \\ Tee \\ T-Shirts \\ Blk/White S",
+        "brand": "Unknown",
+        "category": "Vaporizers",
+        "price": 25.0,
+        "weight": ""
+      },
+      {
+        "name": "LIT \\ Tee \\ T-Shirts \\ Green 2XL",
+        "brand": "Unknown",
+        "category": "Vaporizers",
+        "price": 25.0,
+        "weight": ""
+      },
+      {
+        "name": "LIT \\ Tee \\ T-Shirts \\ Green 3XL",
+        "brand": "Unknown",
+        "category": "Vaporizers",
+        "price": 25.0,
+        "weight": ""
+      },
+      {
+        "name": "LIT \\ Tee \\ T-Shirts \\ Green L",
+        "brand": "Unknown",
+        "category": "Vaporizers",
+        "price": 25.0,
+        "weight": ""
+      },
+      {
+        "name": "LIT \\ Tee \\ T-Shirts \\ Green S",
+        "brand": "Unknown",
+        "category": "Vaporizers",
+        "price": 25.0,
+        "weight": ""
+      },
+      {
+        "name": "LIT \\ Tee \\ T-Shirts \\ Green XL",
+        "brand": "Unknown",
+        "category": "Vaporizers",
+        "price": 25.0,
+        "weight": ""
+      },
+      {
+        "name": "LIT \\ Tee \\ T-Shirts \\ Red 2XL",
+        "brand": "Unknown",
+        "category": "Vaporizers",
+        "price": 25.0,
+        "weight": ""
+      },
+      {
+        "name": "LIT \\ Tee \\ T-Shirts \\ Red 3XL",
+        "brand": "Unknown",
+        "category": "Vaporizers",
+        "price": 25.0,
+        "weight": ""
+      },
+      {
+        "name": "LIT \\ Tee \\ T-Shirts \\ Red S",
+        "brand": "Unknown",
+        "category": "Vaporizers",
+        "price": 25.0,
+        "weight": ""
+      },
+      {
+        "name": "LIT \\ Tee \\ T-Shirts \\ Red XL",
+        "brand": "Unknown",
+        "category": "Vaporizers",
+        "price": 25.0,
+        "weight": ""
+      },
+      {
+        "name": "LIT \\ Tee \\ T-Shirts \\ Tan 3XL",
+        "brand": "Unknown",
+        "category": "Vaporizers",
+        "price": 25.0,
+        "weight": ""
+      },
+      {
+        "name": "LIT \\ Tee \\ T-Shirts \\ Tan S",
+        "brand": "Unknown",
+        "category": "Vaporizers",
+        "price": 25.0,
+        "weight": ""
+      },
+      {
+        "name": "LIT \\ Tee \\ T-Shirts \\ White 2XL",
+        "brand": "Unknown",
+        "category": "Vaporizers",
+        "price": 25.0,
+        "weight": ""
+      },
+      {
+        "name": "LIT \\ Tee \\ T-Shirts \\ White 3XL",
+        "brand": "Unknown",
+        "category": "Vaporizers",
+        "price": 25.0,
+        "weight": ""
+      },
+      {
+        "name": "eachHybrid",
+        "brand": "Unknown",
+        "category": "Edibles",
+        "price": 28.0,
+        "weight": ""
+      },
+      {
+        "name": "2 gHybrid",
+        "brand": "Unknown",
+        "category": "Edibles",
+        "price": 28.0,
+        "weight": "2 g"
+      },
+      {
+        "name": "Runner's High: How A Movement Of Cannabis-Fueled Athletes Is Changing The Scienc",
+        "brand": "Unknown",
+        "category": "Edibles",
+        "price": 28.0,
+        "weight": ""
+      },
+      {
+        "name": "2 gIndica",
+        "brand": "Unknown",
+        "category": "Edibles",
+        "price": 28.0,
+        "weight": "2 g"
+      },
+      {
+        "name": "eachIndica",
+        "brand": "Unknown",
+        "category": "Edibles",
+        "price": 29.0,
+        "weight": ""
+      },
+      {
+        "name": "1.6 g",
+        "brand": "Unknown",
+        "category": "Edibles",
+        "price": 29.0,
+        "weight": "1.6 g"
+      },
+      {
+        "name": "KJV, The Everyday Bible",
+        "brand": "Unknown",
+        "category": "Edibles",
+        "price": 29.99,
+        "weight": ""
+      },
+      {
+        "name": "2.5 gIndica",
+        "brand": "Unknown",
+        "category": "Edibles",
+        "price": 30.0,
+        "weight": "2.5 g"
+      },
+      {
+        "name": "eachIndica",
+        "brand": "Unknown",
+        "category": "Edibles",
+        "price": 32.0,
+        "weight": ""
+      },
+      {
+        "name": "eachHybrid",
+        "brand": "Unknown",
+        "category": "Edibles",
+        "price": 32.0,
+        "weight": ""
+      },
+      {
+        "name": "1/8 ozSativa",
+        "brand": "Unknown",
+        "category": "Flower",
+        "price": 32.0,
+        "weight": "8 oz"
+      },
+      {
+        "name": "eachSativa",
+        "brand": "Unknown",
+        "category": "Edibles",
+        "price": 32.0,
+        "weight": ""
+      },
+      {
+        "name": "Brix Cannabis1/8 ozSativa",
+        "brand": "Unknown",
+        "category": "Flower",
+        "price": 32.0,
+        "weight": "8 oz"
+      },
+      {
+        "name": "JAMSeachIndica",
+        "brand": "Unknown",
+        "category": "Flower",
+        "price": 32.0,
+        "weight": ""
+      },
+      {
+        "name": "eachIndica",
+        "brand": "Unknown",
+        "category": "Edibles",
+        "price": 34.0,
+        "weight": ""
+      },
+      {
+        "name": "Camino Freshly Squeezed with CBG 5:10 Cannabis-Infused Gummies 00378",
+        "brand": "Unknown",
+        "category": "Edibles",
+        "price": 34.0,
+        "weight": ""
+      },
+      {
+        "name": "Camino Mango with CBD 5:5 Cannabis-Infused Gummies 00227",
+        "brand": "Unknown",
+        "category": "Edibles",
+        "price": 34.0,
+        "weight": ""
+      },
+      {
+        "name": "Camino Midnight Blueberry Cannabis-Infused Gummies 00364",
+        "brand": "Unknown",
+        "category": "Edibles",
+        "price": 34.0,
+        "weight": ""
+      },
+      {
+        "name": "Camino Sours-Blackberry Dream with CBN & CBD 10:10:10 Cannabis-Infused Gummies-0",
+        "brand": "Unknown",
+        "category": "Edibles",
+        "price": 34.0,
+        "weight": ""
+      },
+      {
+        "name": "Camino Sours-Orchard Peach with CBD 10:10 Cannabis-Infused Gummies-00361",
+        "brand": "Unknown",
+        "category": "Edibles",
+        "price": 34.0,
+        "weight": ""
+      },
+      {
+        "name": "eachSativa",
+        "brand": "Unknown",
+        "category": "Edibles",
+        "price": 34.0,
+        "weight": ""
+      },
+      {
+        "name": "Worship Together Bible NIV",
+        "brand": "Unknown",
+        "category": "Edibles",
+        "price": 34.99,
+        "weight": ""
+      },
+      {
+        "name": "LIT \\ Dad Hat \\ Forest Green",
+        "brand": "Unknown",
+        "category": "Edibles",
+        "price": 35.0,
+        "weight": ""
+      },
+      {
+        "name": "LIT \\ Crewneck Sweatshirt \\ Tan S",
+        "brand": "Unknown",
+        "category": "Edibles",
+        "price": 35.0,
+        "weight": ""
+      },
+      {
+        "name": "LIT \\ Crewneck Sweatshirt \\ Tan M",
+        "brand": "Unknown",
+        "category": "Edibles",
+        "price": 35.0,
+        "weight": ""
+      },
+      {
+        "name": "LIT \\ Trucker Hat \\ Black/Red",
+        "brand": "Unknown",
+        "category": "Edibles",
+        "price": 35.0,
+        "weight": ""
+      },
+      {
+        "name": "1/8 ozIndica",
+        "brand": "Unknown",
+        "category": "Edibles",
+        "price": 35.0,
+        "weight": "8 oz"
+      },
+      {
+        "name": "1/8 ozHybrid",
+        "brand": "Unknown",
+        "category": "Flower",
+        "price": 35.0,
+        "weight": "8 oz"
+      },
+      {
+        "name": "LIT \\ Trucker Hat \\ Black/Gold",
+        "brand": "Unknown",
+        "category": "Flower",
+        "price": 35.0,
+        "weight": ""
+      },
+      {
+        "name": "2 gIndica",
+        "brand": "Unknown",
+        "category": "Flower",
+        "price": 35.0,
+        "weight": "2 g"
+      },
+      {
+        "name": "LIT \\ Crewneck Sweatshirt \\ White 3XL",
+        "brand": "Unknown",
+        "category": "Flower",
+        "price": 35.0,
+        "weight": ""
+      },
+      {
+        "name": "LIT \\ Dad Hat \\ Red/Black",
+        "brand": "Unknown",
+        "category": "Flower",
+        "price": 35.0,
+        "weight": ""
+      },
+      {
+        "name": "3/10 gIndica",
+        "brand": "Unknown",
+        "category": "Flower",
+        "price": 36.0,
+        "weight": "10 g"
+      },
+      {
+        "name": "3/10 gSativa",
+        "brand": "Unknown",
+        "category": "Flower",
+        "price": 36.0,
+        "weight": "10 g"
+      },
+      {
+        "name": "1 gIndica",
+        "brand": "Unknown",
+        "category": "Flower",
+        "price": 37.0,
+        "weight": "1 g"
+      },
+      {
+        "name": "1 gSativa",
+        "brand": "Unknown",
+        "category": "Flower",
+        "price": 37.0,
+        "weight": "1 g"
+      },
+      {
+        "name": "1.6 gIndica",
+        "brand": "Unknown",
+        "category": "Flower",
+        "price": 39.0,
+        "weight": "1.6 g"
+      },
+      {
+        "name": "RYOT Super Slim Magnetic Dugout with One Hitter Blue",
+        "brand": "Unknown",
+        "category": "Flower",
+        "price": 40.0,
+        "weight": ""
+      },
+      {
+        "name": "Brix Cannabis1/8 oz",
+        "brand": "Unknown",
+        "category": "Flower",
+        "price": 40.0,
+        "weight": "8 oz"
+      },
+      {
+        "name": "1/8 ozIndica",
+        "brand": "Unknown",
+        "category": "Flower",
+        "price": 40.0,
+        "weight": "8 oz"
+      },
+      {
+        "name": "Brix Cannabis1/8 ozSativa",
+        "brand": "Unknown",
+        "category": "Flower",
+        "price": 40.0,
+        "weight": "8 oz"
+      },
+      {
+        "name": "Brix Cannabis1/8 ozIndica",
+        "brand": "Unknown",
+        "category": "Flower",
+        "price": 40.0,
+        "weight": "8 oz"
+      },
+      {
+        "name": "RYOT Super Slim Magnetic Dugout with One Hitter Black",
+        "brand": "Unknown",
+        "category": "Flower",
+        "price": 40.0,
+        "weight": ""
+      },
+      {
+        "name": "RYOT Super Slim Magnetic Dugout with One Hitter Green",
+        "brand": "Unknown",
+        "category": "Flower",
+        "price": 40.0,
+        "weight": ""
+      },
+      {
+        "name": "RYOT Super Slim Magnetic Dugout with One Hitter Purple",
+        "brand": "Unknown",
+        "category": "Flower",
+        "price": 40.0,
+        "weight": ""
+      },
+      {
+        "name": "Cookies1/8 ozHybrid",
+        "brand": "Unknown",
+        "category": "Flower",
+        "price": 40.0,
+        "weight": "8 oz"
+      },
+      {
+        "name": "1/8 ozIndica",
+        "brand": "Unknown",
+        "category": "Flower",
+        "price": 42.0,
+        "weight": "8 oz"
+      },
+      {
+        "name": "LIT \\ Heavyweight Hoodie \\ Black S",
+        "brand": "Unknown",
+        "category": "Flower",
+        "price": 45.0,
+        "weight": ""
+      },
+      {
+        "name": "LIT \\ Heavyweight Hoodie \\ Black XL",
+        "brand": "Unknown",
+        "category": "Flower",
+        "price": 45.0,
+        "weight": ""
+      },
+      {
+        "name": "LIT \\ Heavyweight Hoodie \\ Charcoal 2XL",
+        "brand": "Unknown",
+        "category": "Flower",
+        "price": 45.0,
+        "weight": ""
+      },
+      {
+        "name": "1/2 gIndica",
+        "brand": "Unknown",
+        "category": "Vaporizers",
+        "price": 45.0,
+        "weight": "2 g"
+      },
+      {
+        "name": "1/2 gHybrid",
+        "brand": "Unknown",
+        "category": "Vaporizers",
+        "price": 45.0,
+        "weight": "2 g"
+      },
+      {
+        "name": "LIT \\ Trucker Hat \\ Coyote Brown",
+        "brand": "Unknown",
+        "category": "Vaporizers",
+        "price": 45.0,
+        "weight": ""
+      },
+      {
+        "name": "1/8 ozSativa",
+        "brand": "Unknown",
+        "category": "Flower",
+        "price": 45.0,
+        "weight": "8 oz"
+      },
+      {
+        "name": "1/8 ozHybrid",
+        "brand": "Unknown",
+        "category": "Flower",
+        "price": 45.0,
+        "weight": "8 oz"
+      },
+      {
+        "name": "1/8 ozIndica",
+        "brand": "Unknown",
+        "category": "Flower",
+        "price": 45.0,
+        "weight": "8 oz"
+      },
+      {
+        "name": "CTPharma1/8 ozSativa",
+        "brand": "Unknown",
+        "category": "Flower",
+        "price": 45.0,
+        "weight": "8 oz"
+      },
+      {
+        "name": "LIT \\ Heavyweight Hoodie \\ Charcoal XL",
+        "brand": "Unknown",
+        "category": "Flower",
+        "price": 45.0,
+        "weight": ""
+      },
+      {
+        "name": "LIT \\ Heavyweight Hoodie \\ Charcoal S",
+        "brand": "Unknown",
+        "category": "Flower",
+        "price": 45.0,
+        "weight": ""
+      },
+      {
+        "name": "LIT \\ Heavyweight Hoodie \\ Charcoal M",
+        "brand": "Unknown",
+        "category": "Flower",
+        "price": 45.0,
+        "weight": ""
+      },
+      {
+        "name": "LIT \\ Heavyweight Hoodie \\ Charcoal L",
+        "brand": "Unknown",
+        "category": "Flower",
+        "price": 45.0,
+        "weight": ""
+      },
+      {
+        "name": "LIT \\ Heavyweight Hoodie \\ Charcoal 3XL",
+        "brand": "Unknown",
+        "category": "Flower",
+        "price": 45.0,
+        "weight": ""
+      },
+      {
+        "name": "LIT \\ Heavyweight Hoodie \\ Black 2XL",
+        "brand": "Unknown",
+        "category": "Flower",
+        "price": 45.0,
+        "weight": ""
+      },
+      {
+        "name": "LIT \\ Heavyweight Hoodie \\ Black 3XL",
+        "brand": "Unknown",
+        "category": "Flower",
+        "price": 45.0,
+        "weight": ""
+      },
+      {
+        "name": "LIT \\ Heavyweight Hoodie \\ Black M",
+        "brand": "Unknown",
+        "category": "Flower",
+        "price": 45.0,
+        "weight": ""
+      },
+      {
+        "name": "LIT \\ Heavyweight Hoodie \\ Black L",
+        "brand": "Unknown",
+        "category": "Flower",
+        "price": 45.0,
+        "weight": ""
+      },
+      {
+        "name": "Cookies1/8 ozHybrid",
+        "brand": "Unknown",
+        "category": "Flower",
+        "price": 46.0,
+        "weight": "8 oz"
+      },
+      {
+        "name": "1/8 ozHybrid",
+        "brand": "Unknown",
+        "category": "Flower",
+        "price": 46.0,
+        "weight": "8 oz"
+      },
+      {
+        "name": "Cookies1/8 ozIndica",
+        "brand": "Unknown",
+        "category": "Flower",
+        "price": 46.0,
+        "weight": "8 oz"
+      },
+      {
+        "name": "Cookies1/8 oz",
+        "brand": "Unknown",
+        "category": "Flower",
+        "price": 46.0,
+        "weight": "8 oz"
+      },
+      {
+        "name": "1 gSativa",
+        "brand": "Unknown",
+        "category": "Vaporizers",
+        "price": 48.0,
+        "weight": "1 g"
+      },
+      {
+        "name": "RYTHM1/8 oz",
+        "brand": "Unknown",
+        "category": "Vaporizers",
+        "price": 50.0,
+        "weight": "8 oz"
+      },
+      {
+        "name": "REEBOK x LIT \\ Icon \\ 1/2 Zip-Up Womens Jacket \\ Black L",
+        "brand": "Unknown",
+        "category": "Vaporizers",
+        "price": 50.0,
+        "weight": ""
+      },
+      {
+        "name": "1/8 ozIndica",
+        "brand": "Unknown",
+        "category": "Vaporizers",
+        "price": 50.0,
+        "weight": "8 oz"
+      },
+      {
+        "name": "1/8 ozHybrid",
+        "brand": "Unknown",
+        "category": "Vaporizers",
+        "price": 50.0,
+        "weight": "8 oz"
+      },
+      {
+        "name": "REEBOK x LIT \\ Icon \\ 1/2 Zip-Up Womens Jacket \\ Black S",
+        "brand": "Unknown",
+        "category": "Vaporizers",
+        "price": 50.0,
+        "weight": ""
+      },
+      {
+        "name": "REEBOK x LIT \\ Icon \\ 1/2 Zip-Up Womens Jacket \\ Black XL",
+        "brand": "Unknown",
+        "category": "Vaporizers",
+        "price": 50.0,
+        "weight": ""
+      },
+      {
+        "name": "REEBOK x LIT \\ Icon \\ 1/2 Zip-Up Womens Jacket \\ Red L",
+        "brand": "Unknown",
+        "category": "Vaporizers",
+        "price": 50.0,
+        "weight": ""
+      },
+      {
+        "name": "REEBOK x LIT \\ Icon \\ 1/2 Zip-Up Womens Jacket \\ Red S",
+        "brand": "Unknown",
+        "category": "Vaporizers",
+        "price": 50.0,
+        "weight": ""
+      },
+      {
+        "name": "REEBOK x LIT \\ Icon \\ 1/2 Zip-Up Womens Jacket \\ Red XL",
+        "brand": "Unknown",
+        "category": "Vaporizers",
+        "price": 50.0,
+        "weight": ""
+      },
+      {
+        "name": "CTPharma2 gHybrid",
+        "brand": "Unknown",
+        "category": "Vaporizers",
+        "price": 50.0,
+        "weight": "2 g"
+      },
+      {
+        "name": "Brix Cannabis1 g",
+        "brand": "Unknown",
+        "category": "Vaporizers",
+        "price": 50.0,
+        "weight": "1 g"
+      },
+      {
+        "name": "ARDENT \\ FX \\ Single Lifter",
+        "brand": "Unknown",
+        "category": "Vaporizers",
+        "price": 50.0,
+        "weight": ""
+      },
+      {
+        "name": "RYTHM1/8 ozHybrid",
+        "brand": "Unknown",
+        "category": "Flower",
+        "price": 50.0,
+        "weight": "8 oz"
+      },
+      {
+        "name": "1/2 gHybrid",
+        "brand": "Unknown",
+        "category": "Concentrates",
+        "price": 52.0,
+        "weight": "2 g"
+      },
+      {
+        "name": "1 gHybrid",
+        "brand": "Unknown",
+        "category": "Vaporizers",
+        "price": 52.0,
+        "weight": "1 g"
+      },
+      {
+        "name": "CSB Lifeway Women's Bible",
+        "brand": "Unknown",
+        "category": "Vaporizers",
+        "price": 54.99,
+        "weight": ""
+      },
+      {
+        "name": "1/4 ozIndica",
+        "brand": "Unknown",
+        "category": "Vaporizers",
+        "price": 55.0,
+        "weight": "4 oz"
+      },
+      {
+        "name": "1/4 ozIndica",
+        "brand": "Unknown",
+        "category": "Vaporizers",
+        "price": 56.0,
+        "weight": "4 oz"
+      },
+      {
+        "name": "1/4 ozHybrid",
+        "brand": "Unknown",
+        "category": "Vaporizers",
+        "price": 56.0,
+        "weight": "4 oz"
+      },
+      {
+        "name": "1/4 ozSativa",
+        "brand": "Unknown",
+        "category": "Vaporizers",
+        "price": 56.0,
+        "weight": "4 oz"
+      },
+      {
+        "name": "1 gSativa",
+        "brand": "Unknown",
+        "category": "Vaporizers",
+        "price": 60.0,
+        "weight": "1 g"
+      },
+      {
+        "name": "1/8 ozIndica",
+        "brand": "Unknown",
+        "category": "Vaporizers",
+        "price": 60.0,
+        "weight": "8 oz"
+      },
+      {
+        "name": "1/8 ozHybrid",
+        "brand": "Unknown",
+        "category": "Vaporizers",
+        "price": 60.0,
+        "weight": "8 oz"
+      },
+      {
+        "name": "1 gIndica",
+        "brand": "Unknown",
+        "category": "Vaporizers",
+        "price": 60.0,
+        "weight": "1 g"
+      },
+      {
+        "name": "1/4 ozHybrid",
+        "brand": "Unknown",
+        "category": "Vaporizers",
+        "price": 62.0,
+        "weight": "4 oz"
+      },
+      {
+        "name": "1/4 ozSativa",
+        "brand": "Unknown",
+        "category": "Vaporizers",
+        "price": 64.0,
+        "weight": "4 oz"
+      },
+      {
+        "name": "1/4 ozSativa",
+        "brand": "Unknown",
+        "category": "Flower",
+        "price": 65.0,
+        "weight": "4 oz"
+      },
+      {
+        "name": "LIT \\ Paramount Embroidered \\ Zip-Up Hoodie \\ Navy S",
+        "brand": "Unknown",
+        "category": "Flower",
+        "price": 65.0,
+        "weight": ""
+      },
+      {
+        "name": "LIT \\ Paramount Embroidered \\ Zip-Up Hoodie \\ Navy XL",
+        "brand": "Unknown",
+        "category": "Flower",
+        "price": 65.0,
+        "weight": ""
+      },
+      {
+        "name": "LIT \\ Paramount Embroidered \\ Zip-Up Hoodie \\ Navy 2XL",
+        "brand": "Unknown",
+        "category": "Flower",
+        "price": 65.0,
+        "weight": ""
+      },
+      {
+        "name": "LIT \\ Paramount Embroidered \\ Zip-Up Hoodie \\ Navy 3XL",
+        "brand": "Unknown",
+        "category": "Flower",
+        "price": 65.0,
+        "weight": ""
+      },
+      {
+        "name": "LIT \\ Paramount Embroidered \\ Zip-Up Hoodie \\ Navy L",
+        "brand": "Unknown",
+        "category": "Flower",
+        "price": 65.0,
+        "weight": ""
+      },
+      {
+        "name": "LIT \\ Paramount Embroidered \\ Zip-Up Hoodie \\ Navy M",
+        "brand": "Unknown",
+        "category": "Flower",
+        "price": 65.0,
+        "weight": ""
+      },
+      {
+        "name": "1 gHybrid",
+        "brand": "Unknown",
+        "category": "Vaporizers",
+        "price": 70.0,
+        "weight": "1 g"
+      },
+      {
+        "name": "1 gIndica",
+        "brand": "Unknown",
+        "category": "Vaporizers",
+        "price": 72.0,
+        "weight": "1 g"
+      },
+      {
+        "name": "1 gIndica",
+        "brand": "Unknown",
+        "category": "Vaporizers",
+        "price": 75.0,
+        "weight": "1 g"
+      },
+      {
+        "name": "1 gSativa",
+        "brand": "Unknown",
+        "category": "Vaporizers",
+        "price": 75.0,
+        "weight": "1 g"
+      },
+      {
+        "name": "1 gHybrid",
+        "brand": "Unknown",
+        "category": "Vaporizers",
+        "price": 75.0,
+        "weight": "1 g"
+      },
+      {
+        "name": "1 gHybrid",
+        "brand": "Unknown",
+        "category": "Concentrates",
+        "price": 80.0,
+        "weight": "1 g"
+      },
+      {
+        "name": "MJ ARSENAL \\ Gemini Mini Rig Water Pipe",
+        "brand": "Unknown",
+        "category": "Concentrates",
+        "price": 80.0,
+        "weight": ""
+      },
+      {
+        "name": "1 gIndica",
+        "brand": "Unknown",
+        "category": "Concentrates",
+        "price": 80.0,
+        "weight": "1 g"
+      },
+      {
+        "name": "RYOT VERB DHV Vaporizer",
+        "brand": "Unknown",
+        "category": "Concentrates",
+        "price": 85.0,
+        "weight": ""
+      },
+      {
+        "name": "2 gHybrid",
+        "brand": "Unknown",
+        "category": "Concentrates",
+        "price": 85.0,
+        "weight": "2 g"
+      },
+      {
+        "name": "2 gIndica",
+        "brand": "Unknown",
+        "category": "Concentrates",
+        "price": 85.0,
+        "weight": "2 g"
+      },
+      {
+        "name": "2 gSativa",
+        "brand": "Unknown",
+        "category": "Concentrates",
+        "price": 85.0,
+        "weight": "2 g"
+      },
+      {
+        "name": "2 gIndica",
+        "brand": "Unknown",
+        "category": "Vaporizers",
+        "price": 110.0,
+        "weight": "2 g"
+      },
+      {
+        "name": "2 gSativa",
+        "brand": "Unknown",
+        "category": "Vaporizers",
+        "price": 110.0,
+        "weight": "2 g"
+      },
+      {
+        "name": "2 gHybrid",
+        "brand": "Unknown",
+        "category": "Vaporizers",
+        "price": 110.0,
+        "weight": "2 g"
+      },
+      {
+        "name": "ARDENT \\ FX Mini \\ Precision Heater",
+        "brand": "Unknown",
+        "category": "Vaporizers",
+        "price": 180.0,
+        "weight": ""
+      },
+      {
+        "name": "ARDENT \\ FX \\ Precision Heater",
+        "brand": "Unknown",
+        "category": "Vaporizers",
+        "price": 299.0,
+        "weight": ""
+      },
+      {
+        "name": "Starting at",
+        "brand": "Products247",
+        "category": "Vaporizers",
+        "price": 1.5,
+        "weight": ""
+      }
+    ],
+    "deals": []
+  },
+  "Insa New Haven": {
+    "products": [],
+    "deals": []
+  },
+  "RISE Dispensary Orange": {
+    "products": [
+      {
+        "name": "From \\Avg",
+        "brand": "50productsUpdated 26d ago",
+        "category": "Vaporizers",
+        "price": 5.0,
+        "weight": ""
+      },
+      {
+        "name": "ayrloom12fl ozTHC: 5mg THC",
+        "brand": "Unknown",
+        "category": "Pre-Rolls",
+        "price": 5.0,
+        "weight": "5mg"
+      },
+      {
+        "name": "ayrloom12fl ozTHC: 3mg THC",
+        "brand": "Unknown",
+        "category": "Pre-Rolls",
+        "price": 5.0,
+        "weight": "3mg"
+      },
+      {
+        "name": "Astro Confections5pkTHC: 24.5mg",
+        "brand": "Unknown",
+        "category": "Pre-Rolls",
+        "price": 8.0,
+        "weight": "24.5mg"
+      },
+      {
+        "name": "Dogwalkers1gTHC: 24%",
+        "brand": "Unknown",
+        "category": "Pre-Rolls",
+        "price": 12.0,
+        "weight": "1g"
+      },
+      {
+        "name": "Dogwalkers1gTHC: 22.1%",
+        "brand": "Unknown",
+        "category": "Pre-Rolls",
+        "price": 12.0,
+        "weight": "1g"
+      },
+      {
+        "name": "inc.edibles20 PackTHC: 100mg",
+        "brand": "Unknown",
+        "category": "Edibles",
+        "price": 24.0,
+        "weight": "100mg"
+      },
+      {
+        "name": "RYTHM3.5gTHC: 22.4%",
+        "brand": "Unknown",
+        "category": "Edibles",
+        "price": 24.0,
+        "weight": "3.5g"
+      },
+      {
+        "name": "Camino20pkTHC: 96mg CBD",
+        "brand": "Unknown",
+        "category": "Edibles",
+        "price": 25.0,
+        "weight": "96mg"
+      },
+      {
+        "name": "RYTHM3.5gTHC: 20.34%",
+        "brand": "Unknown",
+        "category": "Edibles",
+        "price": 32.0,
+        "weight": "3.5g"
+      },
+      {
+        "name": "RYTHM3.5gTHC: 24.4%",
+        "brand": "Unknown",
+        "category": "Edibles",
+        "price": 32.0,
+        "weight": "3.5g"
+      },
+      {
+        "name": "RYTHM0.5gTHC: 83.3%",
+        "brand": "Unknown",
+        "category": "Vaporizers",
+        "price": 36.0,
+        "weight": "0.5g"
+      },
+      {
+        "name": "RYTHM3.5gTHC: 26%",
+        "brand": "Unknown",
+        "category": "Vaporizers",
+        "price": 40.0,
+        "weight": "3.5g"
+      },
+      {
+        "name": "RYTHM3.5gTHC: 33.76%",
+        "brand": "Unknown",
+        "category": "Vaporizers",
+        "price": 40.0,
+        "weight": "3.5g"
+      },
+      {
+        "name": "RYTHM3.5gTHC: 32.98%",
+        "brand": "Unknown",
+        "category": "Vaporizers",
+        "price": 40.0,
+        "weight": "3.5g"
+      },
+      {
+        "name": "RYTHM3.5gTHC: 29.11%",
+        "brand": "Unknown",
+        "category": "Vaporizers",
+        "price": 40.0,
+        "weight": "3.5g"
+      },
+      {
+        "name": "RYTHM3.5gTHC: 31.19%",
+        "brand": "Unknown",
+        "category": "Vaporizers",
+        "price": 40.0,
+        "weight": "3.5g"
+      },
+      {
+        "name": "RYTHM3.5gTHC: 22.49%",
+        "brand": "Unknown",
+        "category": "Vaporizers",
+        "price": 40.0,
+        "weight": "3.5g"
+      },
+      {
+        "name": "RYTHM3.5gTHC: 28%",
+        "brand": "Unknown",
+        "category": "Vaporizers",
+        "price": 40.0,
+        "weight": "3.5g"
+      },
+      {
+        "name": "RYTHM3.5gTHC: 26.5%",
+        "brand": "Unknown",
+        "category": "Vaporizers",
+        "price": 40.0,
+        "weight": "3.5g"
+      },
+      {
+        "name": "RYTHM3.5gTHC: 24.92%",
+        "brand": "Unknown",
+        "category": "Vaporizers",
+        "price": 40.0,
+        "weight": "3.5g"
+      },
+      {
+        "name": "RYTHM3.5gTHC: 26.61%",
+        "brand": "Unknown",
+        "category": "Vaporizers",
+        "price": 40.0,
+        "weight": "3.5g"
+      },
+      {
+        "name": "Dogwalkers1.75gTHC: 24%",
+        "brand": "Unknown",
+        "category": "Vaporizers",
+        "price": 40.0,
+        "weight": "1.75g"
+      },
+      {
+        "name": "all:hours3.5gTHC: 35.49%",
+        "brand": "Unknown",
+        "category": "Vaporizers",
+        "price": 45.0,
+        "weight": "3.5g"
+      },
+      {
+        "name": "all:hours3.5gTHC: 38.99%",
+        "brand": "Unknown",
+        "category": "Vaporizers",
+        "price": 45.0,
+        "weight": "3.5g"
+      },
+      {
+        "name": "RYTHM7gTHC: 20.34%",
+        "brand": "Unknown",
+        "category": "Flower",
+        "price": 52.0,
+        "weight": "7g"
+      },
+      {
+        "name": "RYTHM7gTHC: 30.86%",
+        "brand": "Unknown",
+        "category": "Flower",
+        "price": 52.0,
+        "weight": "7g"
+      },
+      {
+        "name": "RYTHM7gTHC: 18.7%",
+        "brand": "Unknown",
+        "category": "Flower",
+        "price": 52.0,
+        "weight": "7g"
+      },
+      {
+        "name": "RYTHM7gTHC: 32.15%",
+        "brand": "Unknown",
+        "category": "Flower",
+        "price": 52.0,
+        "weight": "7g"
+      },
+      {
+        "name": "RYTHM7gTHC: 26.62%",
+        "brand": "Unknown",
+        "category": "Flower",
+        "price": 52.0,
+        "weight": "7g"
+      },
+      {
+        "name": "RYTHM7gTHC: 22.49%",
+        "brand": "Unknown",
+        "category": "Flower",
+        "price": 52.0,
+        "weight": "7g"
+      },
+      {
+        "name": "RYTHM7gTHC: 28.98%",
+        "brand": "Unknown",
+        "category": "Flower",
+        "price": 52.0,
+        "weight": "7g"
+      },
+      {
+        "name": "RYTHM1gTHC: 80%",
+        "brand": "Unknown",
+        "category": "Vaporizers",
+        "price": 56.0,
+        "weight": "1g"
+      },
+      {
+        "name": "Affinity Grow1gTHC: 86.18%",
+        "brand": "Unknown",
+        "category": "Vaporizers",
+        "price": 60.0,
+        "weight": "1g"
+      },
+      {
+        "name": "Good Green14gTHC: 22%",
+        "brand": "Unknown",
+        "category": "Vaporizers",
+        "price": 80.0,
+        "weight": "14g"
+      },
+      {
+        "name": "RYTHM14gTHC: 31.28%",
+        "brand": "Unknown",
+        "category": "Vaporizers",
+        "price": 80.0,
+        "weight": "14g"
+      },
+      {
+        "name": "Good Green14gTHC: 23.91%",
+        "brand": "Unknown",
+        "category": "Vaporizers",
+        "price": 80.0,
+        "weight": "14g"
+      },
+      {
+        "name": "Good Green14gTHC: 21%",
+        "brand": "Unknown",
+        "category": "Vaporizers",
+        "price": 80.0,
+        "weight": "14g"
+      },
+      {
+        "name": "Good Green14gTHC: 20.14%",
+        "brand": "Unknown",
+        "category": "Vaporizers",
+        "price": 80.0,
+        "weight": "14g"
+      },
+      {
+        "name": "Good Green14gTHC: 20%",
+        "brand": "Unknown",
+        "category": "Vaporizers",
+        "price": 80.0,
+        "weight": "14g"
+      },
+      {
+        "name": "RYTHM14gTHC: 20.31%",
+        "brand": "Unknown",
+        "category": "Vaporizers",
+        "price": 96.0,
+        "weight": "14g"
+      },
+      {
+        "name": "RYTHM14gTHC: 25.83%",
+        "brand": "Unknown",
+        "category": "Vaporizers",
+        "price": 96.0,
+        "weight": "14g"
+      },
+      {
+        "name": "RYTHM28gTHC: 19.33%",
+        "brand": "Unknown",
+        "category": "Vaporizers",
+        "price": 144.0,
+        "weight": "28g"
+      },
+      {
+        "name": "RYTHM28gTHC: 21.47%",
+        "brand": "Unknown",
+        "category": "Vaporizers",
+        "price": 144.0,
+        "weight": "28g"
+      },
+      {
+        "name": "Starting at",
+        "brand": "Products50",
+        "category": "Vaporizers",
+        "price": 5.0,
+        "weight": ""
+      }
+    ],
+    "deals": []
+  },
+  "RISE Dispensary Branford": {
+    "products": [
+      {
+        "name": "From \\Avg",
+        "brand": "59productsUpdated 26d ago",
+        "category": "Vaporizers",
+        "price": 5.0,
+        "weight": ""
+      },
+      {
+        "name": "ayrloom12fl ozTHC: 3mg",
+        "brand": "Unknown",
+        "category": "Edibles",
+        "price": 5.0,
+        "weight": "3mg"
+      },
+      {
+        "name": "ayrloom12fl ozTHC: 5mg",
+        "brand": "Unknown",
+        "category": "Edibles",
+        "price": 5.0,
+        "weight": "5mg"
+      },
+      {
+        "name": "Dogwalkers1gTHC: Not specified",
+        "brand": "Unknown",
+        "category": "Edibles",
+        "price": 12.8,
+        "weight": "1g"
+      },
+      {
+        "name": "Dogwalkers1gTHC: 24%?",
+        "brand": "Unknown",
+        "category": "Edibles",
+        "price": 12.8,
+        "weight": "1g"
+      },
+      {
+        "name": "Dogwalkers1gTHC: Not specified",
+        "brand": "Unknown",
+        "category": "Edibles",
+        "price": 16.0,
+        "weight": "1g"
+      },
+      {
+        "name": "inc.edibles20 PackTHC: 100mg",
+        "brand": "Unknown",
+        "category": "Edibles",
+        "price": 24.0,
+        "weight": "100mg"
+      },
+      {
+        "name": "Dogwalkers1.75gTHC: Not specified",
+        "brand": "Unknown",
+        "category": "Edibles",
+        "price": 24.0,
+        "weight": "1.75g"
+      },
+      {
+        "name": "Advanced Grow Labs AGL2.5gTHC: Not specified",
+        "brand": "Unknown",
+        "category": "Edibles",
+        "price": 24.0,
+        "weight": "2.5g"
+      },
+      {
+        "name": "RYTHM0.5gTHC: 83.58%",
+        "brand": "Unknown",
+        "category": "Vaporizers",
+        "price": 32.0,
+        "weight": "0.5g"
+      },
+      {
+        "name": "Dogwalkers2.25gTHC: Not specified",
+        "brand": "Unknown",
+        "category": "Vaporizers",
+        "price": 32.0,
+        "weight": "2.25g"
+      },
+      {
+        "name": "RYTHM0.5gTHC: 75.4%",
+        "brand": "Unknown",
+        "category": "Vaporizers",
+        "price": 32.0,
+        "weight": "0.5g"
+      },
+      {
+        "name": "RYTHM3.5gTHC: 26.5%",
+        "brand": "Unknown",
+        "category": "Vaporizers",
+        "price": 40.0,
+        "weight": "3.5g"
+      },
+      {
+        "name": "RYTHM3.5gTHC: Not specified",
+        "brand": "Unknown",
+        "category": "Vaporizers",
+        "price": 40.0,
+        "weight": "3.5g"
+      },
+      {
+        "name": "RYTHM3.5gTHC: 29.11%",
+        "brand": "Unknown",
+        "category": "Vaporizers",
+        "price": 40.0,
+        "weight": "3.5g"
+      },
+      {
+        "name": "RYTHM3.5gTHC: 20.34%",
+        "brand": "Unknown",
+        "category": "Vaporizers",
+        "price": 40.0,
+        "weight": "3.5g"
+      },
+      {
+        "name": "RYTHM3.5gTHC: 22.49%",
+        "brand": "Unknown",
+        "category": "Vaporizers",
+        "price": 40.0,
+        "weight": "3.5g"
+      },
+      {
+        "name": "RYTHM3.5gTHC: 28.1%",
+        "brand": "Unknown",
+        "category": "Vaporizers",
+        "price": 40.0,
+        "weight": "3.5g"
+      },
+      {
+        "name": "RYTHM3.5gTHC: 26%",
+        "brand": "Unknown",
+        "category": "Vaporizers",
+        "price": 40.0,
+        "weight": "3.5g"
+      },
+      {
+        "name": "RYTHM3.5gTHC: 24.92%",
+        "brand": "Unknown",
+        "category": "Vaporizers",
+        "price": 40.0,
+        "weight": "3.5g"
+      },
+      {
+        "name": "RYTHM3.5gTHC: 26.61%",
+        "brand": "Unknown",
+        "category": "Vaporizers",
+        "price": 40.0,
+        "weight": "3.5g"
+      },
+      {
+        "name": "Good Green3.5gTHC: 25.76%",
+        "brand": "Unknown",
+        "category": "Vaporizers",
+        "price": 40.0,
+        "weight": "3.5g"
+      },
+      {
+        "name": "Good Green3.5gTHC: Not specified",
+        "brand": "Unknown",
+        "category": "Vaporizers",
+        "price": 40.0,
+        "weight": "3.5g"
+      },
+      {
+        "name": "Good Green3.5gTHC: 26.5%",
+        "brand": "Unknown",
+        "category": "Vaporizers",
+        "price": 40.0,
+        "weight": "3.5g"
+      },
+      {
+        "name": "RYTHM7gTHC: Not specified",
+        "brand": "Unknown",
+        "category": "Flower",
+        "price": 52.0,
+        "weight": "7g"
+      },
+      {
+        "name": "Advanced Grow Labs AGL1gTHC: Not specified",
+        "brand": "Unknown",
+        "category": "Vaporizers",
+        "price": 52.0,
+        "weight": "1g"
+      },
+      {
+        "name": "RYTHM7gTHC: 20%?",
+        "brand": "Unknown",
+        "category": "Flower",
+        "price": 52.0,
+        "weight": "7g"
+      },
+      {
+        "name": "RYTHM7gTHC: 28.66%",
+        "brand": "Unknown",
+        "category": "Flower",
+        "price": 52.0,
+        "weight": "7g"
+      },
+      {
+        "name": "RYTHM7gTHC: 28.5%",
+        "brand": "Unknown",
+        "category": "Flower",
+        "price": 52.0,
+        "weight": "7g"
+      },
+      {
+        "name": "RYTHM7gTHC: 18.7%",
+        "brand": "Unknown",
+        "category": "Flower",
+        "price": 52.0,
+        "weight": "7g"
+      },
+      {
+        "name": "all:hours3.5gTHC: 33.3%",
+        "brand": "Unknown",
+        "category": "Flower",
+        "price": 60.0,
+        "weight": "3.5g"
+      },
+      {
+        "name": "all:hours3.5gTHC: 35.49%",
+        "brand": "Unknown",
+        "category": "Flower",
+        "price": 60.0,
+        "weight": "3.5g"
+      },
+      {
+        "name": "all:hours3.5gTHC: 38.98%",
+        "brand": "Unknown",
+        "category": "Flower",
+        "price": 60.0,
+        "weight": "3.5g"
+      },
+      {
+        "name": "RYTHM1gTHC: Not specified",
+        "brand": "Unknown",
+        "category": "Vaporizers",
+        "price": 64.0,
+        "weight": "1g"
+      },
+      {
+        "name": "Good Green14gTHC: 23.81%",
+        "brand": "Unknown",
+        "category": "Vaporizers",
+        "price": 80.0,
+        "weight": "14g"
+      },
+      {
+        "name": "Good Green14gTHC: 20%?",
+        "brand": "Unknown",
+        "category": "Vaporizers",
+        "price": 80.0,
+        "weight": "14g"
+      },
+      {
+        "name": "Good Green14gTHC: Not specified",
+        "brand": "Unknown",
+        "category": "Vaporizers",
+        "price": 80.0,
+        "weight": "14g"
+      },
+      {
+        "name": "RYTHM14gTHC: 19.7%",
+        "brand": "Unknown",
+        "category": "Vaporizers",
+        "price": 100.0,
+        "weight": "14g"
+      },
+      {
+        "name": "RYTHM14gTHC: Not specified",
+        "brand": "Unknown",
+        "category": "Vaporizers",
+        "price": 100.0,
+        "weight": "14g"
+      },
+      {
+        "name": "Good Green28gTHC: 23.99%",
+        "brand": "Unknown",
+        "category": "Vaporizers",
+        "price": 128.0,
+        "weight": "28g"
+      },
+      {
+        "name": "Good Green28gTHC: 26.51%",
+        "brand": "Unknown",
+        "category": "Vaporizers",
+        "price": 128.0,
+        "weight": "28g"
+      },
+      {
+        "name": "Good Green28gTHC: 19.78%",
+        "brand": "Unknown",
+        "category": "Vaporizers",
+        "price": 128.0,
+        "weight": "28g"
+      },
+      {
+        "name": "RYTHM28gTHC: 24.34%",
+        "brand": "Unknown",
+        "category": "Vaporizers",
+        "price": 160.0,
+        "weight": "28g"
+      },
+      {
+        "name": "RYTHM28gTHC: 21.47%",
+        "brand": "Unknown",
+        "category": "Vaporizers",
+        "price": 160.0,
+        "weight": "28g"
+      },
+      {
+        "name": "RYTHM28gTHC: 19.33%",
+        "brand": "Unknown",
+        "category": "Vaporizers",
+        "price": 160.0,
+        "weight": "28g"
+      },
+      {
+        "name": "RYTHM28gTHC: Not specified",
+        "brand": "Unknown",
+        "category": "Vaporizers",
+        "price": 160.0,
+        "weight": "28g"
+      },
+      {
+        "name": "Starting at",
+        "brand": "Products59",
+        "category": "Vaporizers",
+        "price": 5.0,
+        "weight": ""
+      }
+    ],
+    "deals": []
+  },
+  "High Profile Hamden": {
+    "products": [
+      {
+        "name": "\u2022 off total purchase on first visit with High Rollers signup",
+        "brand": "New Connecticut Customer",
+        "category": "Vaporizers",
+        "price": 10.0,
+        "weight": ""
+      },
+      {
+        "name": "\u2022 off total purchase of on second visit",
+        "brand": "Unknown",
+        "category": "Vaporizers",
+        "price": 10.0,
+        "weight": ""
+      },
+      {
+        "name": "\u2022 Sundays: Spend , get 2x points, or spend , get 3x points",
+        "brand": "\u2022 Tuesdays: Get 2x points",
+        "category": "Vaporizers",
+        "price": 200.0,
+        "weight": ""
+      }
+    ],
+    "deals": [
+      {
+        "title": "10% off total purchase for Veterans\n\n\u2022 Not stackable\n\nWisdom (60 )\n\n\u2022 10% off total purchase for cus",
+        "discount_type": "percent",
+        "category": "All"
+      },
+      {
+        "title": "10% off total purchase for Veterans\n\n\u2022 Not stackable\n\nWisdom (60 )\n\n\u2022 10% off total purchase for cus",
+        "discount_type": "percent",
+        "category": "All"
+      }
+    ]
+  },
+  "Hi! People Derby": {
+    "products": [],
+    "deals": []
+  },
+  "Budr Cannabis Stratford": {
+    "products": [
+      {
+        "name": "From \\Avg",
+        "brand": "264productsUpdated 28d ago",
+        "category": "Vaporizers",
+        "price": 1.0,
+        "weight": ""
+      },
+      {
+        "name": "SirEEL USB - C Charger",
+        "brand": "Unknown",
+        "category": "Pre-Rolls",
+        "price": 1.0,
+        "weight": ""
+      },
+      {
+        "name": "eachIndica",
+        "brand": "Unknown",
+        "category": "Pre-Rolls",
+        "price": 9.0,
+        "weight": ""
+      },
+      {
+        "name": "WYLD CBD - CBD - Edibles - Gummies - 25mg CBD - Huckleberry - CBD - 2ct",
+        "brand": "Unknown",
+        "category": "Edibles",
+        "price": 10.0,
+        "weight": ""
+      },
+      {
+        "name": "FindeachHybrid",
+        "brand": "Unknown",
+        "category": "Pre-Rolls",
+        "price": 10.0,
+        "weight": ""
+      },
+      {
+        "name": "eachHybrid",
+        "brand": "Unknown",
+        "category": "Pre-Rolls",
+        "price": 10.0,
+        "weight": ""
+      },
+      {
+        "name": "eachSativa",
+        "brand": "Unknown",
+        "category": "Pre-Rolls",
+        "price": 10.0,
+        "weight": ""
+      },
+      {
+        "name": "eachHybrid",
+        "brand": "Unknown",
+        "category": "Pre-Rolls",
+        "price": 11.0,
+        "weight": ""
+      },
+      {
+        "name": "eachIndica",
+        "brand": "Unknown",
+        "category": "Pre-Rolls",
+        "price": 11.0,
+        "weight": ""
+      },
+      {
+        "name": "eachIndica",
+        "brand": "Unknown",
+        "category": "Pre-Rolls",
+        "price": 13.0,
+        "weight": ""
+      },
+      {
+        "name": "WYLD CBD - CBD - Edibles - Gummies - 20mg CBD + 10mg CBC- Peach - CBD - 2ct",
+        "brand": "Unknown",
+        "category": "Edibles",
+        "price": 13.0,
+        "weight": ""
+      },
+      {
+        "name": "eachIndica",
+        "brand": "Unknown",
+        "category": "Edibles",
+        "price": 14.0,
+        "weight": ""
+      },
+      {
+        "name": "CLIQ Pod Battery",
+        "brand": "Unknown",
+        "category": "Edibles",
+        "price": 14.0,
+        "weight": ""
+      },
+      {
+        "name": "1/2 gIndica",
+        "brand": "Unknown",
+        "category": "Edibles",
+        "price": 15.0,
+        "weight": "2 g"
+      },
+      {
+        "name": "eachIndica",
+        "brand": "Unknown",
+        "category": "Edibles",
+        "price": 15.0,
+        "weight": ""
+      },
+      {
+        "name": "eachHybrid",
+        "brand": "Unknown",
+        "category": "Edibles",
+        "price": 15.0,
+        "weight": ""
+      },
+      {
+        "name": "Dogwalkerseach",
+        "brand": "Unknown",
+        "category": "Edibles",
+        "price": 15.0,
+        "weight": ""
+      },
+      {
+        "name": "1/2 gSativa",
+        "brand": "Unknown",
+        "category": "Vaporizers",
+        "price": 15.0,
+        "weight": "2 g"
+      },
+      {
+        "name": "1/2 gHybrid",
+        "brand": "Unknown",
+        "category": "Vaporizers",
+        "price": 15.0,
+        "weight": "2 g"
+      },
+      {
+        "name": "eachIndica",
+        "brand": "Unknown",
+        "category": "Edibles",
+        "price": 16.0,
+        "weight": ""
+      },
+      {
+        "name": "1/2 gHybrid",
+        "brand": "Unknown",
+        "category": "Vaporizers",
+        "price": 16.0,
+        "weight": "2 g"
+      },
+      {
+        "name": "1/2 gIndica",
+        "brand": "Unknown",
+        "category": "Vaporizers",
+        "price": 16.0,
+        "weight": "2 g"
+      },
+      {
+        "name": "eachIndica",
+        "brand": "Unknown",
+        "category": "Edibles",
+        "price": 18.0,
+        "weight": ""
+      },
+      {
+        "name": "eachHybrid",
+        "brand": "Unknown",
+        "category": "Edibles",
+        "price": 18.0,
+        "weight": ""
+      },
+      {
+        "name": "eachHybrid",
+        "brand": "Unknown",
+        "category": "Edibles",
+        "price": 19.0,
+        "weight": ""
+      },
+      {
+        "name": "eachHybrid",
+        "brand": "Unknown",
+        "category": "Edibles",
+        "price": 20.0,
+        "weight": ""
+      },
+      {
+        "name": "eachIndica",
+        "brand": "Unknown",
+        "category": "Edibles",
+        "price": 20.0,
+        "weight": ""
+      },
+      {
+        "name": "1/2 gSativa",
+        "brand": "Unknown",
+        "category": "Edibles",
+        "price": 22.0,
+        "weight": "2 g"
+      },
+      {
+        "name": "1/2 gIndica",
+        "brand": "Unknown",
+        "category": "Edibles",
+        "price": 22.0,
+        "weight": "2 g"
+      },
+      {
+        "name": "eachSativa",
+        "brand": "Unknown",
+        "category": "Edibles",
+        "price": 23.0,
+        "weight": ""
+      },
+      {
+        "name": "eachIndica",
+        "brand": "Unknown",
+        "category": "Edibles",
+        "price": 23.0,
+        "weight": ""
+      },
+      {
+        "name": "eachHybrid",
+        "brand": "Unknown",
+        "category": "Edibles",
+        "price": 23.0,
+        "weight": ""
+      },
+      {
+        "name": "1/8 ozSativa",
+        "brand": "Unknown",
+        "category": "Pre-Rolls",
+        "price": 23.0,
+        "weight": "8 oz"
+      },
+      {
+        "name": "SMYLE Labs - Penjamin Car Key Variable Voltage 510 Battery",
+        "brand": "Unknown",
+        "category": "Vaporizers",
+        "price": 25.0,
+        "weight": ""
+      },
+      {
+        "name": "1/2 gIndica",
+        "brand": "Unknown",
+        "category": "Vaporizers",
+        "price": 25.0,
+        "weight": "2 g"
+      },
+      {
+        "name": "1/2 gHybrid",
+        "brand": "Unknown",
+        "category": "Vaporizers",
+        "price": 25.0,
+        "weight": "2 g"
+      },
+      {
+        "name": "1/2 gSativa",
+        "brand": "Unknown",
+        "category": "Vaporizers",
+        "price": 25.0,
+        "weight": "2 g"
+      },
+      {
+        "name": "Lookah LOAD 510 Battery",
+        "brand": "Unknown",
+        "category": "Vaporizers",
+        "price": 25.0,
+        "weight": ""
+      },
+      {
+        "name": "eachHybrid",
+        "brand": "Unknown",
+        "category": "Vaporizers",
+        "price": 25.0,
+        "weight": ""
+      },
+      {
+        "name": "CTPharmaeachHybrid",
+        "brand": "Unknown",
+        "category": "Vaporizers",
+        "price": 25.0,
+        "weight": ""
+      },
+      {
+        "name": "eachSativa",
+        "brand": "Unknown",
+        "category": "Edibles",
+        "price": 26.0,
+        "weight": ""
+      },
+      {
+        "name": "eachHybrid",
+        "brand": "Unknown",
+        "category": "Edibles",
+        "price": 26.0,
+        "weight": ""
+      },
+      {
+        "name": "Blazy Susan Secret Box Auto Draw Battery Asst Colors",
+        "brand": "Unknown",
+        "category": "Edibles",
+        "price": 26.0,
+        "weight": ""
+      },
+      {
+        "name": "Grassroots1/8 ozSativa",
+        "brand": "Unknown",
+        "category": "Flower",
+        "price": 27.0,
+        "weight": "8 oz"
+      },
+      {
+        "name": "eachHybrid",
+        "brand": "Unknown",
+        "category": "Flower",
+        "price": 27.0,
+        "weight": ""
+      },
+      {
+        "name": "LOOKAH Snail BAttery",
+        "brand": "Unknown",
+        "category": "Flower",
+        "price": 27.0,
+        "weight": ""
+      },
+      {
+        "name": "eachIndica",
+        "brand": "Unknown",
+        "category": "Flower",
+        "price": 27.0,
+        "weight": ""
+      },
+      {
+        "name": "eachHybrid",
+        "brand": "Unknown",
+        "category": "Flower",
+        "price": 28.0,
+        "weight": ""
+      },
+      {
+        "name": "eachIndica",
+        "brand": "Unknown",
+        "category": "Flower",
+        "price": 28.0,
+        "weight": ""
+      },
+      {
+        "name": "SoundVieweachSativa",
+        "brand": "Unknown",
+        "category": "Edibles",
+        "price": 29.0,
+        "weight": ""
+      },
+      {
+        "name": "eachSativa",
+        "brand": "Unknown",
+        "category": "Edibles",
+        "price": 29.0,
+        "weight": ""
+      },
+      {
+        "name": "eachHybrid",
+        "brand": "Unknown",
+        "category": "Edibles",
+        "price": 29.0,
+        "weight": ""
+      },
+      {
+        "name": "eachIndica",
+        "brand": "Unknown",
+        "category": "Edibles",
+        "price": 29.0,
+        "weight": ""
+      },
+      {
+        "name": "CTP Avexia Relief 4:1 CBD C408mg T95mg Tablets 26450",
+        "brand": "Unknown",
+        "category": "Edibles",
+        "price": 29.0,
+        "weight": ""
+      },
+      {
+        "name": "CTP Avexia Harmony 1:1 CBD:THC C104mg T98mgTablets 26451",
+        "brand": "Unknown",
+        "category": "Edibles",
+        "price": 29.0,
+        "weight": ""
+      },
+      {
+        "name": "CTP Avexia Comfort 1:1:1 CBN:CBD:THC C100mg C96mg T96mg Tablets 26452 40 pk",
+        "brand": "Unknown",
+        "category": "Edibles",
+        "price": 29.0,
+        "weight": ""
+      },
+      {
+        "name": "CTP Avexia Ascend 1:1 CBG:THC C102m T96mg Tablets 26499 40 pk",
+        "brand": "Unknown",
+        "category": "Edibles",
+        "price": 29.0,
+        "weight": ""
+      },
+      {
+        "name": "Lookah Bear 510 Battery",
+        "brand": "Unknown",
+        "category": "Edibles",
+        "price": 29.0,
+        "weight": ""
+      },
+      {
+        "name": "1/8 ozHybrid",
+        "brand": "Unknown",
+        "category": "Edibles",
+        "price": 29.75,
+        "weight": "8 oz"
+      },
+      {
+        "name": "eachIndica",
+        "brand": "Unknown",
+        "category": "Edibles",
+        "price": 30.0,
+        "weight": ""
+      },
+      {
+        "name": "Advanced Grow LabseachIndica",
+        "brand": "Unknown",
+        "category": "Pre-Rolls",
+        "price": 30.0,
+        "weight": ""
+      },
+      {
+        "name": "1/8 ozSativa",
+        "brand": "Unknown",
+        "category": "Pre-Rolls",
+        "price": 30.0,
+        "weight": "8 oz"
+      },
+      {
+        "name": "DogwalkerseachIndica",
+        "brand": "Unknown",
+        "category": "Pre-Rolls",
+        "price": 30.0,
+        "weight": ""
+      },
+      {
+        "name": "1/8 ozHybrid",
+        "brand": "Unknown",
+        "category": "Pre-Rolls",
+        "price": 30.0,
+        "weight": "8 oz"
+      },
+      {
+        "name": "eachSativa",
+        "brand": "Unknown",
+        "category": "Pre-Rolls",
+        "price": 30.0,
+        "weight": ""
+      },
+      {
+        "name": "Cosmonaut 500 mAh Variable Voltage 510 Battery",
+        "brand": "Unknown",
+        "category": "Pre-Rolls",
+        "price": 30.0,
+        "weight": ""
+      },
+      {
+        "name": "eachHybrid",
+        "brand": "Unknown",
+        "category": "Pre-Rolls",
+        "price": 30.0,
+        "weight": ""
+      },
+      {
+        "name": "eachHybrid",
+        "brand": "Unknown",
+        "category": "Edibles",
+        "price": 31.0,
+        "weight": ""
+      },
+      {
+        "name": "CTPharma1/8 ozHybrid",
+        "brand": "Unknown",
+        "category": "Flower",
+        "price": 31.0,
+        "weight": "8 oz"
+      },
+      {
+        "name": "1/8 ozIndica",
+        "brand": "Unknown",
+        "category": "Flower",
+        "price": 31.0,
+        "weight": "8 oz"
+      },
+      {
+        "name": "SoundVieweachIndica",
+        "brand": "Unknown",
+        "category": "Edibles",
+        "price": 31.0,
+        "weight": ""
+      },
+      {
+        "name": "1/2 gSativa",
+        "brand": "Unknown",
+        "category": "Edibles",
+        "price": 31.0,
+        "weight": "2 g"
+      },
+      {
+        "name": "1/8 ozSativa",
+        "brand": "Unknown",
+        "category": "Flower",
+        "price": 31.45,
+        "weight": "8 oz"
+      },
+      {
+        "name": "1/8 ozHybrid",
+        "brand": "Unknown",
+        "category": "Flower",
+        "price": 32.0,
+        "weight": "8 oz"
+      },
+      {
+        "name": "SoundVieweachIndica",
+        "brand": "Unknown",
+        "category": "Edibles",
+        "price": 32.0,
+        "weight": ""
+      },
+      {
+        "name": "eachIndica",
+        "brand": "Unknown",
+        "category": "Edibles",
+        "price": 32.0,
+        "weight": ""
+      },
+      {
+        "name": "SoundVieweachHybrid",
+        "brand": "Unknown",
+        "category": "Edibles",
+        "price": 32.0,
+        "weight": ""
+      },
+      {
+        "name": "SoundVieweachSativa",
+        "brand": "Unknown",
+        "category": "Edibles",
+        "price": 32.0,
+        "weight": ""
+      },
+      {
+        "name": "eachSativa",
+        "brand": "Unknown",
+        "category": "Edibles",
+        "price": 32.0,
+        "weight": ""
+      },
+      {
+        "name": "eachHybrid",
+        "brand": "Unknown",
+        "category": "Edibles",
+        "price": 32.0,
+        "weight": ""
+      },
+      {
+        "name": "1/8 ozIndica",
+        "brand": "Unknown",
+        "category": "Edibles",
+        "price": 32.0,
+        "weight": "8 oz"
+      },
+      {
+        "name": "1/8 ozSativa",
+        "brand": "Unknown",
+        "category": "Edibles",
+        "price": 32.3,
+        "weight": "8 oz"
+      },
+      {
+        "name": "eachHybrid",
+        "brand": "Unknown",
+        "category": "Edibles",
+        "price": 33.0,
+        "weight": ""
+      },
+      {
+        "name": "CTPharma1/8 ozIndica",
+        "brand": "Unknown",
+        "category": "Flower",
+        "price": 34.0,
+        "weight": "8 oz"
+      },
+      {
+        "name": "1/2 gHybrid",
+        "brand": "Unknown",
+        "category": "Flower",
+        "price": 34.0,
+        "weight": "2 g"
+      },
+      {
+        "name": "1/2 gIndica",
+        "brand": "Unknown",
+        "category": "Flower",
+        "price": 34.0,
+        "weight": "2 g"
+      },
+      {
+        "name": "1/2 gSativa",
+        "brand": "Unknown",
+        "category": "Vaporizers",
+        "price": 34.0,
+        "weight": "2 g"
+      },
+      {
+        "name": "eachHybrid",
+        "brand": "Unknown",
+        "category": "Edibles",
+        "price": 34.0,
+        "weight": ""
+      },
+      {
+        "name": "SoundVieweachIndica",
+        "brand": "Unknown",
+        "category": "Edibles",
+        "price": 34.0,
+        "weight": ""
+      },
+      {
+        "name": "SoundVieweachHybrid",
+        "brand": "Unknown",
+        "category": "Edibles",
+        "price": 34.0,
+        "weight": ""
+      },
+      {
+        "name": "eachIndica",
+        "brand": "Unknown",
+        "category": "Edibles",
+        "price": 34.0,
+        "weight": ""
+      },
+      {
+        "name": "Kiva ConfectionseachHybrid",
+        "brand": "Unknown",
+        "category": "Edibles",
+        "price": 34.0,
+        "weight": ""
+      },
+      {
+        "name": "Hash Planet MT 41565",
+        "brand": "1/2 g",
+        "category": "Edibles",
+        "price": 34.85,
+        "weight": "2 g"
+      },
+      {
+        "name": "1/8 ozIndica",
+        "brand": "Unknown",
+        "category": "Flower",
+        "price": 34.85,
+        "weight": "8 oz"
+      },
+      {
+        "name": "1/8 ozHybrid",
+        "brand": "Unknown",
+        "category": "Flower",
+        "price": 35.0,
+        "weight": "8 oz"
+      },
+      {
+        "name": "eachHybrid",
+        "brand": "Unknown",
+        "category": "Edibles",
+        "price": 35.0,
+        "weight": ""
+      },
+      {
+        "name": "1/8 ozSativa",
+        "brand": "Unknown",
+        "category": "Edibles",
+        "price": 35.0,
+        "weight": "8 oz"
+      },
+      {
+        "name": "1/8 ozHybrid",
+        "brand": "Unknown",
+        "category": "Flower",
+        "price": 36.0,
+        "weight": "8 oz"
+      },
+      {
+        "name": "1/8 ozIndica",
+        "brand": "Unknown",
+        "category": "Flower",
+        "price": 36.0,
+        "weight": "8 oz"
+      },
+      {
+        "name": "eachSativa",
+        "brand": "Unknown",
+        "category": "Edibles",
+        "price": 36.0,
+        "weight": ""
+      },
+      {
+        "name": "SoundVieweachHybrid",
+        "brand": "Unknown",
+        "category": "Edibles",
+        "price": 36.0,
+        "weight": ""
+      },
+      {
+        "name": "1/4 ozHybrid",
+        "brand": "Unknown",
+        "category": "Edibles",
+        "price": 37.4,
+        "weight": "4 oz"
+      },
+      {
+        "name": "1/8 ozHybrid",
+        "brand": "Unknown",
+        "category": "Flower",
+        "price": 38.0,
+        "weight": "8 oz"
+      },
+      {
+        "name": "1/2 gHybrid",
+        "brand": "Unknown",
+        "category": "Flower",
+        "price": 38.25,
+        "weight": "2 g"
+      },
+      {
+        "name": "1/8 ozHybrid",
+        "brand": "Unknown",
+        "category": "Flower",
+        "price": 40.0,
+        "weight": "8 oz"
+      },
+      {
+        "name": "1/4 ozSativa",
+        "brand": "Unknown",
+        "category": "Flower",
+        "price": 40.0,
+        "weight": "4 oz"
+      },
+      {
+        "name": "Comffy1/8 ozSativa",
+        "brand": "Unknown",
+        "category": "Flower",
+        "price": 40.0,
+        "weight": "8 oz"
+      },
+      {
+        "name": "1 gHybrid",
+        "brand": "Unknown",
+        "category": "Flower",
+        "price": 40.0,
+        "weight": "1 g"
+      },
+      {
+        "name": "1/8 ozHybrid",
+        "brand": "Unknown",
+        "category": "Flower",
+        "price": 40.8,
+        "weight": "8 oz"
+      },
+      {
+        "name": "1/8 ozHybrid",
+        "brand": "Unknown",
+        "category": "Flower",
+        "price": 41.0,
+        "weight": "8 oz"
+      },
+      {
+        "name": "1/8 ozIndica",
+        "brand": "Unknown",
+        "category": "Flower",
+        "price": 41.0,
+        "weight": "8 oz"
+      },
+      {
+        "name": "Cookies1/8 ozHybrid",
+        "brand": "Unknown",
+        "category": "Flower",
+        "price": 41.0,
+        "weight": "8 oz"
+      },
+      {
+        "name": "1 gIndica",
+        "brand": "Unknown",
+        "category": "Flower",
+        "price": 41.65,
+        "weight": "1 g"
+      },
+      {
+        "name": "1/8 ozHybrid",
+        "brand": "Unknown",
+        "category": "Flower",
+        "price": 43.0,
+        "weight": "8 oz"
+      },
+      {
+        "name": "1/2 gHybrid",
+        "brand": "Unknown",
+        "category": "Flower",
+        "price": 44.0,
+        "weight": "2 g"
+      },
+      {
+        "name": "1/8 ozHybrid",
+        "brand": "Unknown",
+        "category": "Flower",
+        "price": 44.0,
+        "weight": "8 oz"
+      },
+      {
+        "name": "1/8 ozHybrid",
+        "brand": "Unknown",
+        "category": "Flower",
+        "price": 45.0,
+        "weight": "8 oz"
+      },
+      {
+        "name": "1/8 ozSativa",
+        "brand": "Unknown",
+        "category": "Flower",
+        "price": 45.0,
+        "weight": "8 oz"
+      },
+      {
+        "name": "1/2 gSativa",
+        "brand": "Unknown",
+        "category": "Vaporizers",
+        "price": 45.0,
+        "weight": "2 g"
+      },
+      {
+        "name": "Earl Baker1/8 ozHybrid",
+        "brand": "Unknown",
+        "category": "Flower",
+        "price": 46.0,
+        "weight": "8 oz"
+      },
+      {
+        "name": "1/8 ozHybrid",
+        "brand": "Unknown",
+        "category": "Flower",
+        "price": 46.0,
+        "weight": "8 oz"
+      },
+      {
+        "name": "RYTHM1/8 ozHybrid",
+        "brand": "Unknown",
+        "category": "Flower",
+        "price": 46.0,
+        "weight": "8 oz"
+      },
+      {
+        "name": "1/8 ozSativa",
+        "brand": "Unknown",
+        "category": "Flower",
+        "price": 46.0,
+        "weight": "8 oz"
+      },
+      {
+        "name": "RYTHM1/8 oz",
+        "brand": "Unknown",
+        "category": "Flower",
+        "price": 46.0,
+        "weight": "8 oz"
+      },
+      {
+        "name": "1/8 ozIndica",
+        "brand": "Unknown",
+        "category": "Flower",
+        "price": 46.0,
+        "weight": "8 oz"
+      },
+      {
+        "name": "1 gIndica",
+        "brand": "Unknown",
+        "category": "Vaporizers",
+        "price": 46.0,
+        "weight": "1 g"
+      },
+      {
+        "name": "1/4 ozIndica",
+        "brand": "Unknown",
+        "category": "Vaporizers",
+        "price": 46.75,
+        "weight": "4 oz"
+      },
+      {
+        "name": "1/2 gIndica",
+        "brand": "Unknown",
+        "category": "Vaporizers",
+        "price": 48.0,
+        "weight": "2 g"
+      },
+      {
+        "name": "eachHybrid",
+        "brand": "Unknown",
+        "category": "Vaporizers",
+        "price": 49.0,
+        "weight": ""
+      },
+      {
+        "name": "RYTHM1/8 ozIndica",
+        "brand": "Unknown",
+        "category": "Flower",
+        "price": 50.0,
+        "weight": "8 oz"
+      },
+      {
+        "name": "1/8 ozIndica",
+        "brand": "Unknown",
+        "category": "Flower",
+        "price": 50.0,
+        "weight": "8 oz"
+      },
+      {
+        "name": "eachHybrid",
+        "brand": "Unknown",
+        "category": "Flower",
+        "price": 50.0,
+        "weight": ""
+      },
+      {
+        "name": "1/4 ozIndica",
+        "brand": "Unknown",
+        "category": "Flower",
+        "price": 50.0,
+        "weight": "4 oz"
+      },
+      {
+        "name": "RYTHM1/8 ozHybrid",
+        "brand": "Unknown",
+        "category": "Flower",
+        "price": 50.0,
+        "weight": "8 oz"
+      },
+      {
+        "name": "1 gHybrid",
+        "brand": "Unknown",
+        "category": "Vaporizers",
+        "price": 50.0,
+        "weight": "1 g"
+      },
+      {
+        "name": "1 gIndica",
+        "brand": "Unknown",
+        "category": "Vaporizers",
+        "price": 50.0,
+        "weight": "1 g"
+      },
+      {
+        "name": "1/8 ozHybrid",
+        "brand": "Unknown",
+        "category": "Flower",
+        "price": 50.0,
+        "weight": "8 oz"
+      },
+      {
+        "name": "1/4 ozHybrid",
+        "brand": "Unknown",
+        "category": "Flower",
+        "price": 51.0,
+        "weight": "4 oz"
+      },
+      {
+        "name": "1/4 ozSativa",
+        "brand": "Unknown",
+        "category": "Flower",
+        "price": 51.0,
+        "weight": "4 oz"
+      },
+      {
+        "name": "1 gSativa",
+        "brand": "Unknown",
+        "category": "Vaporizers",
+        "price": 51.85,
+        "weight": "1 g"
+      },
+      {
+        "name": "1 gIndica",
+        "brand": "Unknown",
+        "category": "Vaporizers",
+        "price": 55.0,
+        "weight": "1 g"
+      },
+      {
+        "name": "CTPharma1/2 gSativa",
+        "brand": "Unknown",
+        "category": "Vaporizers",
+        "price": 56.0,
+        "weight": "2 g"
+      },
+      {
+        "name": "1 gSativa",
+        "brand": "Unknown",
+        "category": "Vaporizers",
+        "price": 56.1,
+        "weight": "1 g"
+      },
+      {
+        "name": "1 gHybrid",
+        "brand": "Unknown",
+        "category": "Vaporizers",
+        "price": 56.1,
+        "weight": "1 g"
+      },
+      {
+        "name": "1 gHybrid",
+        "brand": "Unknown",
+        "category": "Vaporizers",
+        "price": 56.95,
+        "weight": "1 g"
+      },
+      {
+        "name": "1/8 ozIndica",
+        "brand": "Unknown",
+        "category": "Flower",
+        "price": 58.0,
+        "weight": "8 oz"
+      },
+      {
+        "name": "1 gHybrid",
+        "brand": "Unknown",
+        "category": "Vaporizers",
+        "price": 59.0,
+        "weight": "1 g"
+      },
+      {
+        "name": "1/4 ozHybrid",
+        "brand": "Unknown",
+        "category": "Flower",
+        "price": 59.0,
+        "weight": "4 oz"
+      },
+      {
+        "name": "1 gIndica",
+        "brand": "Unknown",
+        "category": "Flower",
+        "price": 59.0,
+        "weight": "1 g"
+      },
+      {
+        "name": "RYTHM1/4 ozHybrid",
+        "brand": "Unknown",
+        "category": "Flower",
+        "price": 59.0,
+        "weight": "4 oz"
+      },
+      {
+        "name": "1/4 ozSativa",
+        "brand": "Unknown",
+        "category": "Flower",
+        "price": 59.0,
+        "weight": "4 oz"
+      },
+      {
+        "name": "RYTHM1/4 ozIndica",
+        "brand": "Unknown",
+        "category": "Flower",
+        "price": 59.0,
+        "weight": "4 oz"
+      },
+      {
+        "name": "1 gSativa",
+        "brand": "Unknown",
+        "category": "Vaporizers",
+        "price": 63.0,
+        "weight": "1 g"
+      },
+      {
+        "name": "1/2 ozIndica",
+        "brand": "Unknown",
+        "category": "Vaporizers",
+        "price": 64.0,
+        "weight": "2 oz"
+      },
+      {
+        "name": "1 gSativa",
+        "brand": "Unknown",
+        "category": "Vaporizers",
+        "price": 65.0,
+        "weight": "1 g"
+      },
+      {
+        "name": "1/4 ozHybrid",
+        "brand": "Unknown",
+        "category": "Vaporizers",
+        "price": 65.0,
+        "weight": "4 oz"
+      },
+      {
+        "name": "1/4 ozSativa",
+        "brand": "Unknown",
+        "category": "Flower",
+        "price": 65.0,
+        "weight": "4 oz"
+      },
+      {
+        "name": "1 gIndica",
+        "brand": "Unknown",
+        "category": "Vaporizers",
+        "price": 65.0,
+        "weight": "1 g"
+      },
+      {
+        "name": "Advanced Grow Labs1/2 ozIndica",
+        "brand": "Unknown",
+        "category": "Flower",
+        "price": 67.0,
+        "weight": "2 oz"
+      },
+      {
+        "name": "1 gIndica",
+        "brand": "Unknown",
+        "category": "Flower",
+        "price": 67.0,
+        "weight": "1 g"
+      },
+      {
+        "name": "1/4 ozHybrid",
+        "brand": "Unknown",
+        "category": "Flower",
+        "price": 70.0,
+        "weight": "4 oz"
+      },
+      {
+        "name": "1/4 ozIndica",
+        "brand": "Unknown",
+        "category": "Flower",
+        "price": 70.0,
+        "weight": "4 oz"
+      },
+      {
+        "name": "1 gSativa",
+        "brand": "Unknown",
+        "category": "Vaporizers",
+        "price": 70.0,
+        "weight": "1 g"
+      },
+      {
+        "name": "1/2 ozSativa",
+        "brand": "Unknown",
+        "category": "Vaporizers",
+        "price": 70.0,
+        "weight": "2 oz"
+      },
+      {
+        "name": "1/2 ozHybrid",
+        "brand": "Unknown",
+        "category": "Vaporizers",
+        "price": 70.0,
+        "weight": "2 oz"
+      },
+      {
+        "name": "Advanced Grow Labs1/2 ozHybrid",
+        "brand": "Unknown",
+        "category": "Vaporizers",
+        "price": 70.0,
+        "weight": "2 oz"
+      },
+      {
+        "name": "1 gSativa",
+        "brand": "Unknown",
+        "category": "Vaporizers",
+        "price": 72.0,
+        "weight": "1 g"
+      },
+      {
+        "name": "1 gHybrid",
+        "brand": "Unknown",
+        "category": "Vaporizers",
+        "price": 72.0,
+        "weight": "1 g"
+      },
+      {
+        "name": "eachHybrid",
+        "brand": "Unknown",
+        "category": "Vaporizers",
+        "price": 73.0,
+        "weight": ""
+      },
+      {
+        "name": "The Happy ConfectioneachIndica",
+        "brand": "Unknown",
+        "category": "Vaporizers",
+        "price": 73.0,
+        "weight": ""
+      },
+      {
+        "name": "eachSativa",
+        "brand": "Unknown",
+        "category": "Edibles",
+        "price": 73.0,
+        "weight": ""
+      },
+      {
+        "name": "1 gIndica",
+        "brand": "Unknown",
+        "category": "Edibles",
+        "price": 74.0,
+        "weight": "1 g"
+      },
+      {
+        "name": "eachHybrid",
+        "brand": "Unknown",
+        "category": "Edibles",
+        "price": 83.0,
+        "weight": ""
+      },
+      {
+        "name": "1 gSativa",
+        "brand": "Unknown",
+        "category": "Concentrates",
+        "price": 90.0,
+        "weight": "1 g"
+      },
+      {
+        "name": "1/2 ozSativa",
+        "brand": "Unknown",
+        "category": "Concentrates",
+        "price": 91.0,
+        "weight": "2 oz"
+      },
+      {
+        "name": "1/2 ozIndica",
+        "brand": "Unknown",
+        "category": "Concentrates",
+        "price": 100.0,
+        "weight": "2 oz"
+      },
+      {
+        "name": "2 gSativa",
+        "brand": "Unknown",
+        "category": "Concentrates",
+        "price": 104.0,
+        "weight": "2 g"
+      },
+      {
+        "name": "eachHybrid",
+        "brand": "Unknown",
+        "category": "Edibles",
+        "price": 109.0,
+        "weight": ""
+      },
+      {
+        "name": "Select2 gIndica",
+        "brand": "Unknown",
+        "category": "Edibles",
+        "price": 109.0,
+        "weight": "2 g"
+      },
+      {
+        "name": "RYTHM1/2 ozIndica",
+        "brand": "Unknown",
+        "category": "Edibles",
+        "price": 109.0,
+        "weight": "2 oz"
+      },
+      {
+        "name": "2 gHybrid",
+        "brand": "Unknown",
+        "category": "Vaporizers",
+        "price": 109.0,
+        "weight": "2 g"
+      },
+      {
+        "name": "1/2 ozHybrid",
+        "brand": "Unknown",
+        "category": "Vaporizers",
+        "price": 109.0,
+        "weight": "2 oz"
+      },
+      {
+        "name": "2 gHybrid",
+        "brand": "Unknown",
+        "category": "Vaporizers",
+        "price": 115.0,
+        "weight": "2 g"
+      },
+      {
+        "name": "2 gIndica",
+        "brand": "Unknown",
+        "category": "Vaporizers",
+        "price": 115.0,
+        "weight": "2 g"
+      },
+      {
+        "name": "1/2 ozSativa",
+        "brand": "Unknown",
+        "category": "Vaporizers",
+        "price": 116.0,
+        "weight": "2 oz"
+      },
+      {
+        "name": "1/2 ozHybrid",
+        "brand": "Unknown",
+        "category": "Vaporizers",
+        "price": 118.0,
+        "weight": "2 oz"
+      },
+      {
+        "name": "2 gSativa",
+        "brand": "Unknown",
+        "category": "Vaporizers",
+        "price": 120.0,
+        "weight": "2 g"
+      },
+      {
+        "name": "RYTHM1/2 oz",
+        "brand": "Unknown",
+        "category": "Vaporizers",
+        "price": 120.0,
+        "weight": "2 oz"
+      },
+      {
+        "name": "RYTHM1/2 oz",
+        "brand": "Unknown",
+        "category": "Flower",
+        "price": 130.0,
+        "weight": "2 oz"
+      },
+      {
+        "name": "1 ozSativa",
+        "brand": "Unknown",
+        "category": "Flower",
+        "price": 153.0,
+        "weight": "1 oz"
+      },
+      {
+        "name": "1 ozIndica",
+        "brand": "Unknown",
+        "category": "Flower",
+        "price": 160.0,
+        "weight": "1 oz"
+      },
+      {
+        "name": "1 ozHybrid",
+        "brand": "Unknown",
+        "category": "Flower",
+        "price": 160.0,
+        "weight": "1 oz"
+      },
+      {
+        "name": "1 ozHybrid",
+        "brand": "Unknown",
+        "category": "Flower",
+        "price": 164.0,
+        "weight": "1 oz"
+      },
+      {
+        "name": "RYTHM1 ozHybrid",
+        "brand": "Unknown",
+        "category": "Flower",
+        "price": 164.0,
+        "weight": "1 oz"
+      },
+      {
+        "name": "RYTHM1 oz",
+        "brand": "Unknown",
+        "category": "Flower",
+        "price": 180.0,
+        "weight": "1 oz"
+      },
+      {
+        "name": "1 ozIndica",
+        "brand": "Unknown",
+        "category": "Flower",
+        "price": 180.0,
+        "weight": "1 oz"
+      },
+      {
+        "name": "1 ozHybrid",
+        "brand": "Unknown",
+        "category": "Flower",
+        "price": 190.0,
+        "weight": "1 oz"
+      },
+      {
+        "name": "1 ozHybrid",
+        "brand": "Unknown",
+        "category": "Flower",
+        "price": 218.0,
+        "weight": "1 oz"
+      },
+      {
+        "name": "1 ozIndica",
+        "brand": "Unknown",
+        "category": "Flower",
+        "price": 240.0,
+        "weight": "1 oz"
+      },
+      {
+        "name": "Starting at",
+        "brand": "Products264",
+        "category": "Vaporizers",
+        "price": 1.0,
+        "weight": ""
+      }
+    ],
+    "deals": [
+      {
+        "title": "15% off\n\n\ud83d\udeac\n\n### AGL 5 Pack Minis Taffy Twist (I) 01123\n\neachIndica\n\n$30",
+        "discount_type": "percent",
+        "category": "All"
+      },
+      {
+        "title": "15% off\n\n\ud83c\udf3f\n\n### Good Green 3",
+        "discount_type": "percent",
+        "category": "All"
+      },
+      {
+        "title": "15% off\n\n\ud83c\udf6a\n\n### COAST Cherry 10:5 CBD:THC 86mg H Gummies 00113 20pk\n\neachHybrid\n\n$33",
+        "discount_type": "percent",
+        "category": "All"
+      },
+      {
+        "title": "15% off\n\n\ud83d\udc8e\n\n### Grand Pappy's Chillemon Vape 41571\n\n1/2 gSativa\n\n$34",
+        "discount_type": "percent",
+        "category": "All"
+      },
+      {
+        "title": "15% off\n\n\ud83c\udf6a\n\n### Camino Freshly Squeezed with CBG 5:10 Cannabis-Infused Gummies 00378\n\neachHybrid\n\n$3",
+        "discount_type": "percent",
+        "category": "All"
+      },
+      {
+        "title": "15% off\n\n\ud83c\udf3f\n\n### Airheadz 3",
+        "discount_type": "percent",
+        "category": "All"
+      },
+      {
+        "title": "15% off\n\n\ud83c\udf3f\n\n### Grassroots Ground Flower 3",
+        "discount_type": "percent",
+        "category": "All"
+      },
+      {
+        "title": "15% off\n\n\ud83c\udf3f\n\n### Brix Cannabis Jungle Cake Whole Flower 3",
+        "discount_type": "percent",
+        "category": "All"
+      },
+      {
+        "title": "15% off\n\n\ud83c\udf3f\n\n### CLF Whole Flower White Hot Guava H 24",
+        "discount_type": "percent",
+        "category": "All"
+      },
+      {
+        "title": "15% off\n\n\ud83c\udf3f\n\n### The Goods Halloweed Flower 23",
+        "discount_type": "percent",
+        "category": "All"
+      },
+      {
+        "title": "15% off\n\n\ud83c\udf3f\n\n### Affinity Grow \\| Alien OG \\| Flower \\| 3",
+        "discount_type": "percent",
+        "category": "All"
+      },
+      {
+        "title": "15% off\n\n\ud83d\udc8e\n\n### Star Killer x CDLC 0",
+        "discount_type": "percent",
+        "category": "All"
+      },
+      {
+        "title": "15% off\n\n\ud83d\udc8e\n\n### BUDR (I-Side) Cherry Alien Papi x Plasma Wedding Dual Chamber 90",
+        "discount_type": "percent",
+        "category": "All"
+      },
+      {
+        "title": "15% off\n\n\ud83d\udc8e\n\n### Green G MT 41176\n\n1 gHybrid\n\n$56",
+        "discount_type": "percent",
+        "category": "All"
+      },
+      {
+        "title": "15% off\n\n\ud83d\udc8e\n\n### Apple Tart Vape 41561\n\n1 gHybrid\n\n$56",
+        "discount_type": "percent",
+        "category": "All"
+      },
+      {
+        "title": "15% off\n\n\ud83c\udf3f\n\n### Earl Baker - Whole Flower - Gee Forcez 086\n\n1/8 ozIndica\n\n$58",
+        "discount_type": "percent",
+        "category": "All"
+      },
+      {
+        "title": "15% off\n\n\ud83c\udf3f\n\n### Good Green 28g Mystic Mint (I) 01286\n\n1 ozIndica\n\n$160",
+        "discount_type": "percent",
+        "category": "All"
+      }
+    ]
+  },
+  "Sweetspot Stamford": {
+    "products": [],
+    "deals": []
+  },
+  "Fine Fettle Newington": {
+    "products": [],
+    "deals": []
+  },
+  "Curaleaf Stamford": {
+    "products": [
+      {
+        "name": "From \\Avg",
+        "brand": "51productsUpdated 26d ago",
+        "category": "Vaporizers",
+        "price": 10.0,
+        "weight": ""
+      },
+      {
+        "name": "Curaleaf1g",
+        "brand": "Unknown",
+        "category": "Pre-Rolls",
+        "price": 10.0,
+        "weight": "1g"
+      },
+      {
+        "name": "Find.1gTHC: 23.94%",
+        "brand": "Unknown",
+        "category": "Pre-Rolls",
+        "price": 10.0,
+        "weight": "1g"
+      },
+      {
+        "name": "Find.1gTHC: 20.28%",
+        "brand": "Unknown",
+        "category": "Pre-Rolls",
+        "price": 10.0,
+        "weight": "1g"
+      },
+      {
+        "name": "JAMS50mgTHC: 50mg",
+        "brand": "Unknown",
+        "category": "Edibles",
+        "price": 10.0,
+        "weight": "50mg"
+      },
+      {
+        "name": "Find.1g",
+        "brand": "Unknown",
+        "category": "Pre-Rolls",
+        "price": 12.0,
+        "weight": "1g"
+      },
+      {
+        "name": "Grassroots1gTHC: 23.74%",
+        "brand": "Unknown",
+        "category": "Pre-Rolls",
+        "price": 13.5,
+        "weight": "1g"
+      },
+      {
+        "name": "Find.1g",
+        "brand": "Unknown",
+        "category": "Pre-Rolls",
+        "price": 13.5,
+        "weight": "1g"
+      },
+      {
+        "name": "Curaleaf0.4g ea \\ 5-Pack",
+        "brand": "Unknown",
+        "category": "Pre-Rolls",
+        "price": 15.0,
+        "weight": "0.4g"
+      },
+      {
+        "name": "Find.0.4g ea \\ 5-Pack",
+        "brand": "Unknown",
+        "category": "Pre-Rolls",
+        "price": 15.0,
+        "weight": "0.4g"
+      },
+      {
+        "name": "Grassroots0.4g ea \\ 5-PackTHC: 23.48%",
+        "brand": "Unknown",
+        "category": "Pre-Rolls",
+        "price": 15.0,
+        "weight": "0.4g"
+      },
+      {
+        "name": "Advanced Grow Labs0.3gTHC: 286.57mg",
+        "brand": "Unknown",
+        "category": "Pre-Rolls",
+        "price": 16.0,
+        "weight": "0.3g"
+      },
+      {
+        "name": "inc.edibles5mg ea \\ 20-Pack \\ 1THC: 82mg",
+        "brand": "Unknown",
+        "category": "Edibles",
+        "price": 20.0,
+        "weight": "5mg"
+      },
+      {
+        "name": "Incredibles20-PackTHC: 4.5mg ea",
+        "brand": "Unknown",
+        "category": "Edibles",
+        "price": 20.0,
+        "weight": "4.5mg"
+      },
+      {
+        "name": "Curaleaf3.5g",
+        "brand": "Unknown",
+        "category": "Flower",
+        "price": 22.0,
+        "weight": "3.5g"
+      },
+      {
+        "name": "Grassroots3.5gTHC: 27.76%",
+        "brand": "Unknown",
+        "category": "Flower",
+        "price": 22.0,
+        "weight": "3.5g"
+      },
+      {
+        "name": "Grassroots3.5gTHC: 26.87%",
+        "brand": "Unknown",
+        "category": "Flower",
+        "price": 22.0,
+        "weight": "3.5g"
+      },
+      {
+        "name": "Select0.3gTHC: 89.91%",
+        "brand": "Unknown",
+        "category": "Flower",
+        "price": 22.5,
+        "weight": "0.3g"
+      },
+      {
+        "name": "Curaleaf1g",
+        "brand": "Unknown",
+        "category": "Pre-Rolls",
+        "price": 22.5,
+        "weight": "1g"
+      },
+      {
+        "name": "Encore Edibles10mg ea \\ 10-PackTHC: 99.6mg",
+        "brand": "Unknown",
+        "category": "Edibles",
+        "price": 24.0,
+        "weight": "10mg"
+      },
+      {
+        "name": "Curaleaf3.5gTHC: 22.12%",
+        "brand": "Unknown",
+        "category": "Flower",
+        "price": 25.0,
+        "weight": "3.5g"
+      },
+      {
+        "name": "Theraplant3.5gTHC: 20.46%",
+        "brand": "Unknown",
+        "category": "Flower",
+        "price": 26.0,
+        "weight": "3.5g"
+      },
+      {
+        "name": "Find.0.4g ea \\ 5-Pack",
+        "brand": "Unknown",
+        "category": "Pre-Rolls",
+        "price": 26.25,
+        "weight": "0.4g"
+      },
+      {
+        "name": "Select0.5gTHC: 90.38%",
+        "brand": "Unknown",
+        "category": "Vaporizers",
+        "price": 30.0,
+        "weight": "0.5g"
+      },
+      {
+        "name": "Comffy3.5gTHC: 25.82%",
+        "brand": "Unknown",
+        "category": "Flower",
+        "price": 30.0,
+        "weight": "3.5g"
+      },
+      {
+        "name": "JAMS5mg ea \\ 20-PackTHC: 95.4mg",
+        "brand": "Unknown",
+        "category": "Edibles",
+        "price": 30.0,
+        "weight": "5mg"
+      },
+      {
+        "name": "Comffy3.5gTHC: 28.1%",
+        "brand": "Unknown",
+        "category": "Flower",
+        "price": 32.0,
+        "weight": "3.5g"
+      },
+      {
+        "name": "Find.3.5g",
+        "brand": "Unknown",
+        "category": "Flower",
+        "price": 34.0,
+        "weight": "3.5g"
+      },
+      {
+        "name": "Theraplant0.4g ea \\ 4-PackTHC: 46.16%",
+        "brand": "Unknown",
+        "category": "Pre-Rolls",
+        "price": 35.0,
+        "weight": "0.4g"
+      },
+      {
+        "name": "Theraplant2gTHC: 48.08%",
+        "brand": "Unknown",
+        "category": "Pre-Rolls",
+        "price": 35.0,
+        "weight": "2g"
+      },
+      {
+        "name": "Curaleaf0.4g ea \\ 5-Pack",
+        "brand": "Unknown",
+        "category": "Pre-Rolls",
+        "price": 37.5,
+        "weight": "0.4g"
+      },
+      {
+        "name": "CTPharma0.4g ea \\ 5-PackTHC: 41.09%",
+        "brand": "Unknown",
+        "category": "Pre-Rolls",
+        "price": 37.5,
+        "weight": "0.4g"
+      },
+      {
+        "name": "Find.0.4g ea \\ 4-Pack",
+        "brand": "Unknown",
+        "category": "Pre-Rolls",
+        "price": 39.0,
+        "weight": "0.4g"
+      },
+      {
+        "name": "Curaleaf3.5g",
+        "brand": "Unknown",
+        "category": "Pre-Rolls",
+        "price": 39.0,
+        "weight": "3.5g"
+      },
+      {
+        "name": "Curaleaf7g",
+        "brand": "Unknown",
+        "category": "Flower",
+        "price": 40.0,
+        "weight": "7g"
+      },
+      {
+        "name": "Curaleaf7gTHC: 21.54%",
+        "brand": "Unknown",
+        "category": "Flower",
+        "price": 40.0,
+        "weight": "7g"
+      },
+      {
+        "name": "Find.7gTHC: 27.14%",
+        "brand": "Unknown",
+        "category": "Flower",
+        "price": 40.0,
+        "weight": "7g"
+      },
+      {
+        "name": "Comffy7gTHC: 19.25%",
+        "brand": "Unknown",
+        "category": "Flower",
+        "price": 40.0,
+        "weight": "7g"
+      },
+      {
+        "name": "Theraplant1gTHC: 86.92%",
+        "brand": "Unknown",
+        "category": "Vaporizers",
+        "price": 41.25,
+        "weight": "1g"
+      },
+      {
+        "name": "Select1g",
+        "brand": "Unknown",
+        "category": "Vaporizers",
+        "price": 50.0,
+        "weight": "1g"
+      },
+      {
+        "name": "Brix1gTHC: 88.91%",
+        "brand": "Unknown",
+        "category": "Vaporizers",
+        "price": 50.0,
+        "weight": "1g"
+      },
+      {
+        "name": "Select1gTHC: 84.63%",
+        "brand": "Unknown",
+        "category": "Vaporizers",
+        "price": 52.5,
+        "weight": "1g"
+      },
+      {
+        "name": "Select2gTHC: 85.86%",
+        "brand": "Unknown",
+        "category": "Vaporizers",
+        "price": 60.0,
+        "weight": "2g"
+      },
+      {
+        "name": "Theraplant1gTHC: 90.13%",
+        "brand": "Unknown",
+        "category": "Vaporizers",
+        "price": 63.0,
+        "weight": "1g"
+      },
+      {
+        "name": "Theraplant1g",
+        "brand": "Unknown",
+        "category": "Vaporizers",
+        "price": 63.0,
+        "weight": "1g"
+      },
+      {
+        "name": "all:hours7gTHC: 24.78%",
+        "brand": "Unknown",
+        "category": "Flower",
+        "price": 69.0,
+        "weight": "7g"
+      },
+      {
+        "name": "Grassroots14g",
+        "brand": "Unknown",
+        "category": "Flower",
+        "price": 71.25,
+        "weight": "14g"
+      },
+      {
+        "name": "Savvy14gTHC: 25.83%",
+        "brand": "Unknown",
+        "category": "Flower",
+        "price": 75.0,
+        "weight": "14g"
+      },
+      {
+        "name": "Theraplant28gTHC: 23.64%",
+        "brand": "Unknown",
+        "category": "Flower",
+        "price": 150.0,
+        "weight": "28g"
+      },
+      {
+        "name": "Savvy28gTHC: 25.21%",
+        "brand": "Unknown",
+        "category": "Flower",
+        "price": 150.0,
+        "weight": "28g"
+      },
+      {
+        "name": "Starting at",
+        "brand": "Products51",
+        "category": "Vaporizers",
+        "price": 10.0,
+        "weight": ""
+      }
+    ],
+    "deals": []
+  }
+}

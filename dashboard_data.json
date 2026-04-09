@@ -1,257 +1,468 @@
 {
-  "scraped_at": "2026-04-09T16:53:50.110511",
+  "scraped_at": "2026-04-09T17:07:32.502612",
   "products": [
     {
-      "name": "4114/gummies-greener-apple-fast-acting-gummies-20pk-258516?stockType=Default",
-      "brand": "https://highercollective.com/locations/b",
+      "name": "2 gSativa",
+      "brand": "Unknown",
+      "category": "Concentrates",
+      "weight": "2 g",
+      "dispensaries": {
+        "Lit New Haven Cannabis": 85.0,
+        "Budr Cannabis Stratford": 104.0
+      }
+    },
+    {
+      "name": "1/8 ozIndica",
+      "brand": "Unknown",
       "category": "Edibles",
-      "weight": "",
+      "weight": "8 oz",
       "dispensaries": {
-        "Higher Collective Bridgeport": 10.0
+        "Lit New Haven Cannabis": 35.0,
+        "Budr Cannabis Stratford": 31.0
       }
     },
     {
-      "name": "4114/gummies-indica-bluezzzberry-5-1-cbn-gummies-20pk-265055?stockType=Default",
-      "brand": "https://highercollective.com/locations/b",
+      "name": "1/8 ozSativa",
+      "brand": "Unknown",
       "category": "Edibles",
-      "weight": "",
+      "weight": "8 oz",
       "dispensaries": {
-        "Higher Collective Bridgeport": 36.0
+        "Lit New Haven Cannabis": 25.0,
+        "Budr Cannabis Stratford": 23.0
       }
     },
     {
-      "name": "4116/ground-flower-hybrid-hickory-hash-ground-flower-3.5g-276945?stockType=Defau",
-      "brand": "https://highercollective.com/locations/b",
-      "category": "Flower",
-      "weight": "",
-      "dispensaries": {
-        "Higher Collective Bridgeport": 13.3
-      }
-    },
-    {
-      "name": "4116/ground-flower-hybrid-jayna's-sunshine-ground-flower-3.5g-276000?stockType=D",
-      "brand": "https://highercollective.com/locations/b",
-      "category": "Flower",
-      "weight": "",
-      "dispensaries": {
-        "Higher Collective Bridgeport": 13.3
-      }
-    },
-    {
-      "name": "4116/small-flower-sativa-banana-acai-mints-part-timers-3.5g-212311?stockType=Def",
-      "brand": "https://highercollective.com/locations/b",
-      "category": "Flower",
-      "weight": "",
-      "dispensaries": {
-        "Higher Collective Bridgeport": 18.0
-      }
-    },
-    {
-      "name": "4116/whole-flower-hybrid-durban-stardawg-whole-flower-3.5g-213060?stockType=Defa",
-      "brand": "https://highercollective.com/locations/b",
-      "category": "Flower",
-      "weight": "",
-      "dispensaries": {
-        "Higher Collective Bridgeport": 25.0
-      }
-    },
-    {
-      "name": "4116/whole-flower-hybrid-omg-mixed-buds-14g-214286?stockType=Default",
-      "brand": "https://highercollective.com/locations/b",
-      "category": "Flower",
-      "weight": "",
-      "dispensaries": {
-        "Higher Collective Bridgeport": 55.0
-      }
-    },
-    {
-      "name": "4116/whole-flower-indica-purple-milk-whole-flower-3.5g-258502?stockType=Default",
-      "brand": "https://highercollective.com/locations/b",
-      "category": "Flower",
-      "weight": "",
-      "dispensaries": {
-        "Higher Collective Bridgeport": 25.0
-      }
-    },
-    {
-      "name": "4116/whole-flower-sativa-agent-z-whole-flower-7g-264652?stockType=Default",
-      "brand": "from https://highercollective.com/locati",
-      "category": "Flower",
-      "weight": "",
-      "dispensaries": {
-        "Higher Collective Bridgeport": 18.9
-      }
-    },
-    {
-      "name": "4116/whole-flower-sativa-berry-pi-whole-flower-3.5g-214753?stockType=Default",
-      "brand": "https://highercollective.com/locations/b",
-      "category": "Flower",
-      "weight": "",
-      "dispensaries": {
-        "Higher Collective Bridgeport": 15.0
-      }
-    },
-    {
-      "name": "4116/whole-flower-sativa-lemon-meringue-whole-flower-3.5g-264724?stockType=Defau",
-      "brand": "https://highercollective.com/locations/b",
-      "category": "Flower",
-      "weight": "",
-      "dispensaries": {
-        "Higher Collective Bridgeport": 40.6
-      }
-    },
-    {
-      "name": "4116/whole-flower-sativa-peanut-butter-muffin-whole-flower-7g-213921?stockType=D",
-      "brand": "from https://highercollective.com/locati",
-      "category": "Flower",
-      "weight": "",
-      "dispensaries": {
-        "Higher Collective Bridgeport": 18.9
-      }
-    },
-    {
-      "name": "2 for !https://media-prime.sweedpos.com/store/prime/177247754777171948-728c-48c9",
-      "brand": "!Cannabis Promo, Cannabis Sales, Cannabi",
-      "category": "Other",
-      "weight": "",
-      "dispensaries": {
-        "Higher Collective Bridgeport": 35.0
-      }
-    },
-    {
-      "name": "50 dollar an eighth flower. Bull droppings",
-      "brand": "Ridiculous prices on flower. Everything",
-      "category": "Other",
-      "weight": "",
-      "dispensaries": {
-        "RISE Dispensary Orange": 14.0
-      }
-    },
-    {
-      "name": "Rolls for https://media-prime.sweedpos.com/store/prime/177558719431ad1575-d3e9-4",
-      "brand": "!Cannabis Promo, Cannabis Sales, Cannabi",
-      "category": "Other",
-      "weight": "",
-      "dispensaries": {
-        "Higher Collective Bridgeport": 30.0
-      }
-    },
-    {
-      "name": "prime.sweedpos.com/store/prime/177126724432bfe90d-8c0f-4de3-9411-b54e9258e0ae.jp",
-      "brand": "!Cannabis Promo, Cannabis Sales, Cannabi",
-      "category": "Other",
-      "weight": "",
-      "dispensaries": {
-        "Higher Collective Bridgeport": 110.0
-      }
-    },
-    {
-      "name": "prime.sweedpos.com/store/prime/1775548544e21a7c54-ff9a-4aaa-b86b-fe2d6b5f2dde.pn",
-      "brand": "!Cannabis Promo, Cannabis Sales, Cannabi",
-      "category": "Other",
-      "weight": "",
-      "dispensaries": {
-        "Higher Collective Bridgeport": 20.0
-      }
-    },
-    {
-      "name": "prime.sweedpos.com/store/prime/17755489953d133f6a-fad5-469f-b9cb-b23e6186fbd6.pn",
-      "brand": "!Cannabis Promo, Cannabis Sales, Cannabi",
-      "category": "Other",
-      "weight": "",
-      "dispensaries": {
-        "Higher Collective Bridgeport": 45.0
-      }
-    },
-    {
-      "name": "prime.sweedpos.com/store/prime/1775588191b2796d38-8efa-4db8-a4cd-a89bfaed7d65.pn",
-      "brand": "!Cannabis Promo, Cannabis Sales, Cannabi",
-      "category": "Other",
-      "weight": "",
-      "dispensaries": {
-        "Higher Collective Bridgeport": 100.0
-      }
-    },
-    {
-      "name": "\u2022 Sundays: Spend , get 2x points, or spend , get 3x points",
+      "name": "2 gHybrid",
       "brand": "Unknown",
-      "category": "Other",
-      "weight": "",
+      "category": "Edibles",
+      "weight": "2 g",
       "dispensaries": {
-        "High Profile Hamden": 200.0
+        "Lit New Haven Cannabis": 28.0,
+        "Budr Cannabis Stratford": 109.0
       }
     },
     {
-      "name": "\u2022 off total purchase of on second visit",
+      "name": "2 gIndica",
       "brand": "Unknown",
-      "category": "Other",
-      "weight": "",
+      "category": "Edibles",
+      "weight": "2 g",
       "dispensaries": {
-        "High Profile Hamden": 10.0
+        "Lit New Haven Cannabis": 28.0,
+        "Budr Cannabis Stratford": 115.0
       }
     },
     {
-      "name": "\u2022 off total purchase on first visit with High Rollers signup",
+      "name": "RYTHM3.5gTHC: 20.34%",
       "brand": "Unknown",
-      "category": "Other",
-      "weight": "",
+      "category": "Edibles",
+      "weight": "3.5g",
       "dispensaries": {
-        "High Profile Hamden": 10.0
+        "RISE Dispensary Orange": 32.0,
+        "RISE Dispensary Branford": 40.0
       }
     },
     {
-      "name": "rolls-4117/singles-hybrid-biscotti-pie-spark---all-times-pre-roll-0.4g-326669?st",
-      "brand": "https://highercollective.com/locations/b",
+      "name": "inc.edibles20 PackTHC: 100mg",
+      "brand": "Unknown",
+      "category": "Edibles",
+      "weight": "100mg",
+      "dispensaries": {
+        "RISE Dispensary Orange": 24.0,
+        "RISE Dispensary Branford": 24.0
+      }
+    },
+    {
+      "name": "1/8 ozHybrid",
+      "brand": "Unknown",
+      "category": "Flower",
+      "weight": "8 oz",
+      "dispensaries": {
+        "Lit New Haven Cannabis": 35.0,
+        "Budr Cannabis Stratford": 29.75
+      }
+    },
+    {
+      "name": "Cookies1/8 ozHybrid",
+      "brand": "Unknown",
+      "category": "Flower",
+      "weight": "8 oz",
+      "dispensaries": {
+        "Lit New Haven Cannabis": 40.0,
+        "Budr Cannabis Stratford": 41.0
+      }
+    },
+    {
+      "name": "RYTHM1/8 ozHybrid",
+      "brand": "Unknown",
+      "category": "Flower",
+      "weight": "8 oz",
+      "dispensaries": {
+        "Lit New Haven Cannabis": 50.0,
+        "Budr Cannabis Stratford": 46.0
+      }
+    },
+    {
+      "name": "RYTHM7gTHC: 18.7%",
+      "brand": "Unknown",
+      "category": "Flower",
+      "weight": "7g",
+      "dispensaries": {
+        "RISE Dispensary Orange": 52.0,
+        "RISE Dispensary Branford": 52.0
+      }
+    },
+    {
+      "name": "1 gHybrid",
+      "brand": "Unknown",
+      "category": "Pre-Rolls",
+      "weight": "1 g",
+      "dispensaries": {
+        "Lit New Haven Cannabis": 8.0,
+        "Budr Cannabis Stratford": 40.0
+      }
+    },
+    {
+      "name": "1 gIndica",
+      "brand": "Unknown",
+      "category": "Pre-Rolls",
+      "weight": "1 g",
+      "dispensaries": {
+        "Lit New Haven Cannabis": 10.0,
+        "Budr Cannabis Stratford": 41.65
+      }
+    },
+    {
+      "name": "1 gSativa",
+      "brand": "Unknown",
+      "category": "Pre-Rolls",
+      "weight": "1 g",
+      "dispensaries": {
+        "Lit New Haven Cannabis": 13.0,
+        "Budr Cannabis Stratford": 51.85
+      }
+    },
+    {
+      "name": "eachIndica",
+      "brand": "Unknown",
       "category": "Pre-Rolls",
       "weight": "",
       "dispensaries": {
-        "Higher Collective Bridgeport": 5.0
+        "Lit New Haven Cannabis": 9.95,
+        "Budr Cannabis Stratford": 9.0
       }
     },
     {
-      "name": "rolls-4117/singles-sativa-seattle-sour-kush-pre-roll-1g-295714?stockType=Default",
-      "brand": "https://highercollective.com/locations/b",
+      "name": "eachSativa",
+      "brand": "Unknown",
       "category": "Pre-Rolls",
       "weight": "",
       "dispensaries": {
-        "Higher Collective Bridgeport": 8.0
+        "Lit New Haven Cannabis": 10.0,
+        "Budr Cannabis Stratford": 10.0
       }
     },
     {
-      "name": "4118/all-in-one-hybrid-chem-band-disposable-0.3g-278789?stockType=Default",
-      "brand": "https://highercollective.com/locations/b",
+      "name": "1/2 gHybrid",
+      "brand": "Unknown",
       "category": "Vaporizers",
-      "weight": "",
+      "weight": "2 g",
       "dispensaries": {
-        "Higher Collective Bridgeport": 16.0
+        "Lit New Haven Cannabis": 25.0,
+        "Budr Cannabis Stratford": 15.0
       }
     },
     {
-      "name": "4118/all-in-one-indica-gush-mintz-disposable-1g-212810?stockType=Default",
-      "brand": "https://highercollective.com/locations/b",
+      "name": "1/2 gIndica",
+      "brand": "Unknown",
       "category": "Vaporizers",
-      "weight": "",
+      "weight": "2 g",
       "dispensaries": {
-        "Higher Collective Bridgeport": 18.0
+        "Lit New Haven Cannabis": 25.0,
+        "Budr Cannabis Stratford": 15.0
       }
     },
     {
-      "name": "4118/cartridge-hybrid-carbon-juice-cartridge-1g-296210?stockType=Default",
-      "brand": "https://highercollective.com/locations/b",
+      "name": "1/4 ozHybrid",
+      "brand": "Unknown",
+      "category": "Vaporizers",
+      "weight": "4 oz",
+      "dispensaries": {
+        "Lit New Haven Cannabis": 56.0,
+        "Budr Cannabis Stratford": 37.4
+      }
+    },
+    {
+      "name": "1/4 ozIndica",
+      "brand": "Unknown",
+      "category": "Vaporizers",
+      "weight": "4 oz",
+      "dispensaries": {
+        "Lit New Haven Cannabis": 55.0,
+        "Budr Cannabis Stratford": 46.75
+      }
+    },
+    {
+      "name": "1/4 ozSativa",
+      "brand": "Unknown",
+      "category": "Vaporizers",
+      "weight": "4 oz",
+      "dispensaries": {
+        "Lit New Haven Cannabis": 56.0,
+        "Budr Cannabis Stratford": 40.0
+      }
+    },
+    {
+      "name": "RYTHM1/8 oz",
+      "brand": "Unknown",
+      "category": "Vaporizers",
+      "weight": "8 oz",
+      "dispensaries": {
+        "Lit New Haven Cannabis": 50.0,
+        "Budr Cannabis Stratford": 46.0
+      }
+    },
+    {
+      "name": "RYTHM28gTHC: 19.33%",
+      "brand": "Unknown",
+      "category": "Vaporizers",
+      "weight": "28g",
+      "dispensaries": {
+        "RISE Dispensary Orange": 144.0,
+        "RISE Dispensary Branford": 160.0
+      }
+    },
+    {
+      "name": "RYTHM28gTHC: 21.47%",
+      "brand": "Unknown",
+      "category": "Vaporizers",
+      "weight": "28g",
+      "dispensaries": {
+        "RISE Dispensary Orange": 144.0,
+        "RISE Dispensary Branford": 160.0
+      }
+    },
+    {
+      "name": "RYTHM3.5gTHC: 22.49%",
+      "brand": "Unknown",
+      "category": "Vaporizers",
+      "weight": "3.5g",
+      "dispensaries": {
+        "RISE Dispensary Orange": 40.0,
+        "RISE Dispensary Branford": 40.0
+      }
+    },
+    {
+      "name": "RYTHM3.5gTHC: 24.92%",
+      "brand": "Unknown",
+      "category": "Vaporizers",
+      "weight": "3.5g",
+      "dispensaries": {
+        "RISE Dispensary Orange": 40.0,
+        "RISE Dispensary Branford": 40.0
+      }
+    },
+    {
+      "name": "RYTHM3.5gTHC: 26%",
+      "brand": "Unknown",
+      "category": "Vaporizers",
+      "weight": "3.5g",
+      "dispensaries": {
+        "RISE Dispensary Orange": 40.0,
+        "RISE Dispensary Branford": 40.0
+      }
+    },
+    {
+      "name": "RYTHM3.5gTHC: 26.5%",
+      "brand": "Unknown",
+      "category": "Vaporizers",
+      "weight": "3.5g",
+      "dispensaries": {
+        "RISE Dispensary Orange": 40.0,
+        "RISE Dispensary Branford": 40.0
+      }
+    },
+    {
+      "name": "RYTHM3.5gTHC: 26.61%",
+      "brand": "Unknown",
+      "category": "Vaporizers",
+      "weight": "3.5g",
+      "dispensaries": {
+        "RISE Dispensary Orange": 40.0,
+        "RISE Dispensary Branford": 40.0
+      }
+    },
+    {
+      "name": "RYTHM3.5gTHC: 29.11%",
+      "brand": "Unknown",
+      "category": "Vaporizers",
+      "weight": "3.5g",
+      "dispensaries": {
+        "RISE Dispensary Orange": 40.0,
+        "RISE Dispensary Branford": 40.0
+      }
+    },
+    {
+      "name": "all:hours3.5gTHC: 35.49%",
+      "brand": "Unknown",
+      "category": "Vaporizers",
+      "weight": "3.5g",
+      "dispensaries": {
+        "RISE Dispensary Orange": 45.0,
+        "RISE Dispensary Branford": 60.0
+      }
+    },
+    {
+      "name": "eachHybrid",
+      "brand": "Unknown",
       "category": "Vaporizers",
       "weight": "",
       "dispensaries": {
-        "Higher Collective Bridgeport": 48.0
+        "Lit New Haven Cannabis": 16.0,
+        "Budr Cannabis Stratford": 10.0
       }
     }
   ],
-  "deals": [],
+  "deals": [
+    {
+      "dispensary": "High Profile Hamden",
+      "title": "10% off total purchase for Veterans\n\n\u2022 Not stackable\n\nWisdom (60 )\n\n\u2022 10% off total purchase for cus",
+      "type": "percent",
+      "category": "All",
+      "expires": null
+    },
+    {
+      "dispensary": "High Profile Hamden",
+      "title": "10% off total purchase for Veterans\n\n\u2022 Not stackable\n\nWisdom (60 )\n\n\u2022 10% off total purchase for cus",
+      "type": "percent",
+      "category": "All",
+      "expires": null
+    },
+    {
+      "dispensary": "Budr Cannabis Stratford",
+      "title": "15% off\n\n\ud83d\udeac\n\n### AGL 5 Pack Minis Taffy Twist (I) 01123\n\neachIndica\n\n$30",
+      "type": "percent",
+      "category": "All",
+      "expires": null
+    },
+    {
+      "dispensary": "Budr Cannabis Stratford",
+      "title": "15% off\n\n\ud83c\udf3f\n\n### Good Green 3",
+      "type": "percent",
+      "category": "All",
+      "expires": null
+    },
+    {
+      "dispensary": "Budr Cannabis Stratford",
+      "title": "15% off\n\n\ud83c\udf6a\n\n### COAST Cherry 10:5 CBD:THC 86mg H Gummies 00113 20pk\n\neachHybrid\n\n$33",
+      "type": "percent",
+      "category": "All",
+      "expires": null
+    },
+    {
+      "dispensary": "Budr Cannabis Stratford",
+      "title": "15% off\n\n\ud83d\udc8e\n\n### Grand Pappy's Chillemon Vape 41571\n\n1/2 gSativa\n\n$34",
+      "type": "percent",
+      "category": "All",
+      "expires": null
+    },
+    {
+      "dispensary": "Budr Cannabis Stratford",
+      "title": "15% off\n\n\ud83c\udf6a\n\n### Camino Freshly Squeezed with CBG 5:10 Cannabis-Infused Gummies 00378\n\neachHybrid\n\n$3",
+      "type": "percent",
+      "category": "All",
+      "expires": null
+    },
+    {
+      "dispensary": "Budr Cannabis Stratford",
+      "title": "15% off\n\n\ud83c\udf3f\n\n### Airheadz 3",
+      "type": "percent",
+      "category": "All",
+      "expires": null
+    },
+    {
+      "dispensary": "Budr Cannabis Stratford",
+      "title": "15% off\n\n\ud83c\udf3f\n\n### Grassroots Ground Flower 3",
+      "type": "percent",
+      "category": "All",
+      "expires": null
+    },
+    {
+      "dispensary": "Budr Cannabis Stratford",
+      "title": "15% off\n\n\ud83c\udf3f\n\n### Brix Cannabis Jungle Cake Whole Flower 3",
+      "type": "percent",
+      "category": "All",
+      "expires": null
+    },
+    {
+      "dispensary": "Budr Cannabis Stratford",
+      "title": "15% off\n\n\ud83c\udf3f\n\n### CLF Whole Flower White Hot Guava H 24",
+      "type": "percent",
+      "category": "All",
+      "expires": null
+    },
+    {
+      "dispensary": "Budr Cannabis Stratford",
+      "title": "15% off\n\n\ud83c\udf3f\n\n### The Goods Halloweed Flower 23",
+      "type": "percent",
+      "category": "All",
+      "expires": null
+    },
+    {
+      "dispensary": "Budr Cannabis Stratford",
+      "title": "15% off\n\n\ud83c\udf3f\n\n### Affinity Grow \\| Alien OG \\| Flower \\| 3",
+      "type": "percent",
+      "category": "All",
+      "expires": null
+    },
+    {
+      "dispensary": "Budr Cannabis Stratford",
+      "title": "15% off\n\n\ud83d\udc8e\n\n### Star Killer x CDLC 0",
+      "type": "percent",
+      "category": "All",
+      "expires": null
+    },
+    {
+      "dispensary": "Budr Cannabis Stratford",
+      "title": "15% off\n\n\ud83d\udc8e\n\n### BUDR (I-Side) Cherry Alien Papi x Plasma Wedding Dual Chamber 90",
+      "type": "percent",
+      "category": "All",
+      "expires": null
+    },
+    {
+      "dispensary": "Budr Cannabis Stratford",
+      "title": "15% off\n\n\ud83d\udc8e\n\n### Green G MT 41176\n\n1 gHybrid\n\n$56",
+      "type": "percent",
+      "category": "All",
+      "expires": null
+    },
+    {
+      "dispensary": "Budr Cannabis Stratford",
+      "title": "15% off\n\n\ud83d\udc8e\n\n### Apple Tart Vape 41561\n\n1 gHybrid\n\n$56",
+      "type": "percent",
+      "category": "All",
+      "expires": null
+    },
+    {
+      "dispensary": "Budr Cannabis Stratford",
+      "title": "15% off\n\n\ud83c\udf3f\n\n### Earl Baker - Whole Flower - Gee Forcez 086\n\n1/8 ozIndica\n\n$58",
+      "type": "percent",
+      "category": "All",
+      "expires": null
+    },
+    {
+      "dispensary": "Budr Cannabis Stratford",
+      "title": "15% off\n\n\ud83c\udf3f\n\n### Good Green 28g Mystic Mint (I) 01286\n\n1 ozIndica\n\n$160",
+      "type": "percent",
+      "category": "All",
+      "expires": null
+    }
+  ],
   "stats": {
-    "total": 37,
-    "comparable": 0,
-    "all": 27,
-    "success": 3,
-    "failed": 16,
-    "deals": 0
+    "total": 563,
+    "comparable": 32,
+    "all": 340,
+    "success": 6,
+    "failed": 6,
+    "deals": 19
   }
 }
