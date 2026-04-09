@@ -1,403 +1,272 @@
 #!/usr/bin/env python3
 """
-DISPENSARY SCRAPER — Playwright Edition
-Loads actual dispensary web pages in a headless browser and extracts product data.
-Works with Dutchie and Weedmaps by intercepting their API responses.
+AFFINITY COMPETITIVE INTEL — Firecrawl Scraper
+Scrapes the 15 closest competitor dispensary menus using Firecrawl API.
+Firecrawl handles JS rendering, anti-bot, and extracts structured data via AI.
+
+Usage:
+    FIRECRAWL_API_KEY=fc-xxx python scrape.py
 """
 
 import json
-import asyncio
 import os
 import sys
 import time
+import requests
 from datetime import datetime
 
-# Playwright imports
-from playwright.async_api import async_playwright
+FIRECRAWL_API = "https://api.firecrawl.dev/v2/scrape"
+API_KEY = os.environ.get("FIRECRAWL_API_KEY", "")
 
-# ─── DUTCHIE DISPENSARY SLUGS ────────────────────────────────
-# Format: dutchie.com/dispensary/{slug}
-DUTCHIE_DISPENSARIES = {
-    "RISE Dispensary Orange": "rise-orange",
-    "RISE Dispensary Branford": "rise-branford",
-    "Fine Fettle Newington": "fine-fettle-newington",
-    "Fine Fettle Manchester": "fine-fettle-manchester",
-    "Fine Fettle Willimantic": "fine-fettle-willimantic",
-    "Fine Fettle Stamford": "fine-fettle-stamford",
-    "Fine Fettle Norwalk": "fine-fettle-norwalk",
-    "Fine Fettle Bristol": "fine-fettle-bristol",
-    "Fine Fettle Waterbury": "fine-fettle-waterbury",
-    "Curaleaf Stamford": "curaleaf-ct-stamford",
-    "Curaleaf Manchester": "curaleaf-ct-manchester",
-    "Curaleaf Groton": "curaleaf-ct-groton",
-    "Sweetspot West Hartford": "sweetspot-west-hartford",
-    "Sweetspot Stamford": "sweetspot-cannabis-dispensary-stamford",
-    "Insa New Haven": "insa-new-haven",
-    "Insa Hartford": "insa-hartford",
-    "Crisp Cannabis Cromwell": "crisp-cannabis-cromwell",
-    "Crisp Cannabis East Hartford": "crisp-cannabis-east-hartford",
-    "Venu Flower Collective": "venu-middletown",
-    "Trulieve Bristol": "trulieve-bristol",
-    "High Profile Hamden": "high-profile-hamden",
-    "Still River Wellness": "still-river-wellness-torrington",
-    "Nova Farms New Britain": "nova-farms-new-britain",
+# ─── YOUR STORES (scraped for price comparison baseline) ──
+AFFINITY_STORES = [
+    {"name": "Affinity - New Haven", "url": "https://weedmaps.com/dispensaries/affinity-new-haven"},
+    {"name": "Affinity - Bridgeport", "url": "https://weedmaps.com/dispensaries/affinity-dispensary-bridgeport"},
+]
+
+# ─── 15 CLOSEST COMPETITORS (sorted by distance to either Affinity location) ──
+COMPETITORS = [
+    {"name": "Higher Collective Bridgeport", "url": "https://weedmaps.com/dispensaries/higher-collective-3", "lat": 41.1547, "lng": -73.2353, "chain": "Higher Collective"},
+    {"name": "Lit New Haven Cannabis", "url": "https://weedmaps.com/dispensaries/lit-new-haven-cannabis", "lat": 41.3029, "lng": -72.9103, "chain": "Lit"},
+    {"name": "Insa New Haven", "url": "https://dutchie.com/dispensary/insa-new-haven", "lat": 41.2942, "lng": -72.9227, "chain": "Insa"},
+    {"name": "RISE Dispensary Orange", "url": "https://dutchie.com/dispensary/rise-orange", "lat": 41.2727, "lng": -72.9951, "chain": "RISE"},
+    {"name": "High Profile Hamden", "url": "https://dutchie.com/dispensary/high-profile-hamden", "lat": 41.3912, "lng": -72.8978, "chain": "High Profile"},
+    {"name": "Hi! People Derby", "url": "https://weedmaps.com/dispensaries/hi-people-derby", "lat": 41.3276, "lng": -73.0847, "chain": "Hi! People"},
+    {"name": "Rejoice Seymour", "url": "https://weedmaps.com/dispensaries/rejoice-dispensary-seymour", "lat": 41.3976, "lng": -73.0619, "chain": "Rejoice"},
+    {"name": "Budr Cannabis Stratford", "url": "https://weedmaps.com/dispensaries/budr-cannabis-stratford", "lat": 41.2539, "lng": -73.1011, "chain": "Budr"},
+    {"name": "RISE Dispensary Branford", "url": "https://dutchie.com/dispensary/rise-branford", "lat": 41.2979, "lng": -72.773, "chain": "RISE"},
+    {"name": "Zen Leaf Naugatuck", "url": "https://weedmaps.com/dispensaries/zen-leaf-cannabis-dispensary-naugatuck", "lat": 41.4786, "lng": -73.0482, "chain": "Zen Leaf"},
+    {"name": "Shangri-La Waterbury", "url": "https://weedmaps.com/dispensaries/shangri-la-dispensary-waterbury", "lat": 41.5355, "lng": -72.9978, "chain": "Shangri-La"},
+    {"name": "Zen Leaf Meriden", "url": "https://weedmaps.com/dispensaries/zen-leaf-cannabis-dispensary-meriden-2", "lat": 41.5253, "lng": -72.7569, "chain": "Zen Leaf"},
+    {"name": "Curaleaf Stamford", "url": "https://dutchie.com/dispensary/curaleaf-ct-stamford", "lat": 41.0559, "lng": -73.5279, "chain": "Curaleaf"},
+    {"name": "Sweetspot Stamford", "url": "https://dutchie.com/dispensary/sweetspot-cannabis-dispensary-stamford", "lat": 41.0759, "lng": -73.549, "chain": "Sweetspot"},
+    {"name": "Fine Fettle Newington", "url": "https://dutchie.com/dispensary/fine-fettle-newington", "lat": 41.6905, "lng": -72.7054, "chain": "Fine Fettle"},
+]
+
+# Schema tells Firecrawl exactly what data structure to extract
+EXTRACT_SCHEMA = {
+    "type": "object",
+    "properties": {
+        "dispensary_name": {"type": "string"},
+        "products": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "name": {"type": "string", "description": "Product name"},
+                    "brand": {"type": "string", "description": "Brand or grower name"},
+                    "category": {"type": "string", "description": "Category: Flower, Pre-Rolls, Vaporizers, Edibles, Concentrates, Tinctures, or Topicals"},
+                    "price": {"type": "number", "description": "Price in dollars (lowest/default price shown)"},
+                    "weight": {"type": "string", "description": "Weight or size (e.g. 3.5g, 1g, 0.5g, 100mg)"},
+                    "strain_type": {"type": "string", "description": "Indica, Sativa, Hybrid, or empty"},
+                },
+                "required": ["name", "price"],
+            },
+        },
+        "deals": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "title": {"type": "string", "description": "Deal or special name"},
+                    "description": {"type": "string"},
+                    "discount_type": {"type": "string", "description": "percent, dollar, bogo, or other"},
+                    "category": {"type": "string"},
+                },
+            },
+        },
+    },
+    "required": ["products"],
 }
 
-# ─── WEEDMAPS DISPENSARY SLUGS ───────────────────────────────
-# Format: weedmaps.com/dispensaries/{slug}
-WEEDMAPS_DISPENSARIES = {
-    "Zen Leaf Meriden": "zen-leaf-cannabis-dispensary-meriden-2",
-    "Zen Leaf Waterbury": "zen-leaf-cannabis-dispensary-waterbury",
-    "Zen Leaf Norwich": "zen-leaf-cannabis-dispensary-norwich",
-    "Zen Leaf Naugatuck": "zen-leaf-cannabis-dispensary-naugatuck",
-    "Zen Leaf Enfield": "zen-leaf-cannabis-dispensary-enfield",
-    "Zen Leaf Newington": "zen-leaf-cannabis-dispensary-newington",
-    "Zen Leaf Ashford": "zen-leaf-cannabis-dispensary-ashford",
-    "Budr Cannabis Stratford": "budr-cannabis-stratford",
-    "Budr Cannabis Danbury": "budr-cannabis-danbury-2",
-    "Budr Cannabis Vernon": "budr-cannabis-vernon",
-    "Budr Cannabis Montville": "budr-cannabis-montville",
-    "Budr Cannabis Tolland": "budr-cannabis-tolland",
-    "Shangri-La Norwalk": "shangri-la-dispensary-norwalk-3",
-    "Shangri-La Waterbury": "shangri-la-dispensary-waterbury",
-    "Shangri-La Plainville": "shangri-la-dispensary-plainville",
-    "Higher Collective Bridgeport": "higher-collective-3",
-    "Higher Collective New London": "higher-collective-new-london",
-    "Lit New Haven Cannabis": "lit-new-haven-cannabis",
-    "Hi! People Derby": "hi-people-derby",
-    "Rejoice Meriden": "rejoice-dispensary-meriden",
-    "Nightjar East Lyme": "nightjar-east-lyme-dispensary",
-    "Octane Enfield": "octane-cannabis-dispensary-enfield",
-}
+EXTRACT_PROMPT = (
+    "Extract ALL cannabis products visible on this dispensary menu page. "
+    "For each product, get the name, brand, category (Flower, Pre-Rolls, Vaporizers, Edibles, Concentrates, Tinctures, Topicals), "
+    "the displayed price in dollars, and weight/size. "
+    "Also extract any deals, specials, or promotions currently shown. "
+    "Get as many products as you can see on the page."
+)
 
 
-async def scrape_dutchie_dispensary(page, name, slug):
-    """Load a Dutchie dispensary page and extract product data."""
-    url = f"https://dutchie.com/dispensary/{slug}"
-    print(f"  → Loading {name}: {url}")
+def scrape_dispensary(name, url):
+    """Scrape a single dispensary using Firecrawl."""
+    print(f"  → Scraping {name}...")
 
-    products = []
-    api_responses = []
+    headers = {
+        "Authorization": f"Bearer {API_KEY}",
+        "Content-Type": "application/json",
+    }
 
-    # Intercept API responses that contain product data
-    async def capture_response(response):
-        try:
-            if "graphql" in response.url or "api" in response.url:
-                if response.status == 200:
-                    try:
-                        body = await response.json()
-                        api_responses.append(body)
-                    except:
-                        pass
-        except:
-            pass
-
-    page.on("response", capture_response)
+    payload = {
+        "url": url,
+        "formats": ["extract"],
+        "extract": {
+            "schema": EXTRACT_SCHEMA,
+            "prompt": EXTRACT_PROMPT,
+        },
+        "timeout": 60000,
+        "waitFor": 5000,
+    }
 
     try:
-        await page.goto(url, wait_until="networkidle", timeout=30000)
-        # Give extra time for dynamic content
-        await page.wait_for_timeout(3000)
+        resp = requests.post(FIRECRAWL_API, json=payload, headers=headers, timeout=90)
 
-        # Try to extract products from the page DOM
-        products = await page.evaluate("""() => {
-            const items = [];
+        if resp.status_code == 402:
+            print(f"  ✗ {name}: Out of Firecrawl credits")
+            return None
+        if resp.status_code == 429:
+            print(f"  ✗ {name}: Rate limited — waiting 30s")
+            time.sleep(30)
+            resp = requests.post(FIRECRAWL_API, json=payload, headers=headers, timeout=90)
 
-            // Try multiple selectors that Dutchie uses
-            const selectors = [
-                '[data-testid="product-card"]',
-                '.product-card',
-                '[class*="ProductCard"]',
-                '[class*="product-card"]',
-                '[class*="MenuProduct"]',
-                'article[class*="product"]',
-                '[data-test="product"]',
-            ];
+        resp.raise_for_status()
+        data = resp.json()
 
-            let cards = [];
-            for (const sel of selectors) {
-                cards = document.querySelectorAll(sel);
-                if (cards.length > 0) break;
-            }
+        if not data.get("success"):
+            print(f"  ✗ {name}: Firecrawl returned success=false")
+            return None
 
-            cards.forEach(card => {
-                try {
-                    // Extract text content and look for price patterns
-                    const text = card.innerText || '';
-                    const nameEl = card.querySelector('h2, h3, [class*="name"], [class*="Name"], [class*="title"], [class*="Title"]');
-                    const priceEl = card.querySelector('[class*="price"], [class*="Price"], [class*="cost"]');
-                    const brandEl = card.querySelector('[class*="brand"], [class*="Brand"]');
-                    const categoryEl = card.querySelector('[class*="category"], [class*="Category"]');
+        extract = data.get("data", {}).get("extract", {})
+        products = extract.get("products", [])
+        deals = extract.get("deals", [])
 
-                    const name = nameEl ? nameEl.innerText.trim() : '';
-                    const priceText = priceEl ? priceEl.innerText.trim() : '';
-                    const brand = brandEl ? brandEl.innerText.trim() : '';
-                    const category = categoryEl ? categoryEl.innerText.trim() : '';
+        # Filter out products with no price or no name
+        products = [p for p in products if p.get("name") and p.get("price") and p["price"] > 0]
 
-                    // Extract price number
-                    const priceMatch = priceText.match(/\\$([\\d.]+)/);
-                    const price = priceMatch ? parseFloat(priceMatch[1]) : null;
+        print(f"  ✓ {name}: {len(products)} products, {len(deals)} deals")
+        return {"products": products, "deals": deals}
 
-                    if (name && price) {
-                        items.push({ name, price, brand, category });
-                    }
-                } catch(e) {}
-            });
-
-            // If no cards found, try extracting from any price-like elements
-            if (items.length === 0) {
-                const allText = document.body.innerText;
-                // Look for product-price patterns in the page text
-                const lines = allText.split('\\n').filter(l => l.includes('$'));
-                // Return raw text for debugging
-                return { raw_lines: lines.slice(0, 50), items: [] };
-            }
-
-            return { items, raw_lines: [] };
-        }""")
-
+    except requests.exceptions.Timeout:
+        print(f"  ✗ {name}: Timeout")
+        return None
+    except requests.exceptions.HTTPError as e:
+        print(f"  ✗ {name}: HTTP {e.response.status_code}")
+        return None
     except Exception as e:
-        print(f"  ✗ Error loading {name}: {e}")
-        return []
-    finally:
-        page.remove_listener("response", capture_response)
-
-    # Try to extract products from captured API responses
-    for resp in api_responses:
-        try:
-            extracted = extract_products_from_api(resp)
-            if extracted:
-                products = extracted
-                break
-        except:
-            pass
-
-    # Use DOM extraction if available
-    if isinstance(products, dict):
-        if products.get("items"):
-            return products["items"]
-        elif products.get("raw_lines"):
-            print(f"  ⚠ Found price text but no structured products for {name}")
-            return []
-    elif isinstance(products, list):
-        return products
-
-    return []
+        print(f"  ✗ {name}: {e}")
+        return None
 
 
-def extract_products_from_api(data):
-    """Try to extract product data from a Dutchie API response."""
-    products = []
-
-    # Navigate through common Dutchie response structures
-    if isinstance(data, dict):
-        # Check for filteredProducts (GraphQL response)
-        fp = (data.get("data", {}).get("filteredProducts", {}) or {}).get("products", [])
-        if fp:
-            for p in fp:
-                pricing = p.get("pricing", {}) or {}
-                products.append({
-                    "name": p.get("name", ""),
-                    "brand": (p.get("brand", {}) or {}).get("name", "Unknown"),
-                    "category": p.get("category", ""),
-                    "price": pricing.get("recPrice") or pricing.get("price") or pricing.get("medPrice"),
-                })
-            return products
-
-        # Check for menu items
-        mi = data.get("data", {}).get("menu", {}).get("items", [])
-        if mi:
-            for p in mi:
-                products.append({
-                    "name": p.get("name", ""),
-                    "brand": p.get("brand", "Unknown"),
-                    "category": p.get("category", ""),
-                    "price": p.get("price") or p.get("recPrice"),
-                })
-            return products
-
-    return products
-
-
-async def scrape_weedmaps_dispensary(page, name, slug):
-    """Load a Weedmaps dispensary menu page and extract product data."""
-    url = f"https://weedmaps.com/dispensaries/{slug}/menu"
-    print(f"  → Loading {name}: {url}")
-
-    try:
-        await page.goto(url, wait_until="networkidle", timeout=30000)
-        await page.wait_for_timeout(3000)
-
-        # Check for age gate and click through
-        try:
-            age_btn = await page.query_selector('button:has-text("Yes"), button:has-text("Enter"), button:has-text("I am")')
-            if age_btn:
-                await age_btn.click()
-                await page.wait_for_timeout(2000)
-        except:
-            pass
-
-        products = await page.evaluate("""() => {
-            const items = [];
-
-            // Weedmaps product card selectors
-            const selectors = [
-                '[data-testid="menu-item"]',
-                '[class*="MenuCard"]',
-                '[class*="menu-item"]',
-                '[class*="ProductCard"]',
-                '[class*="product-card"]',
-                'a[href*="/menu/"]',
-            ];
-
-            let cards = [];
-            for (const sel of selectors) {
-                cards = document.querySelectorAll(sel);
-                if (cards.length > 0) break;
-            }
-
-            cards.forEach(card => {
-                try {
-                    const text = card.innerText || '';
-                    const nameEl = card.querySelector('h2, h3, h4, [class*="name"], [class*="Name"], [class*="title"]');
-                    const priceEl = card.querySelector('[class*="price"], [class*="Price"]');
-                    const brandEl = card.querySelector('[class*="brand"], [class*="Brand"]');
-
-                    const name = nameEl ? nameEl.innerText.trim() : '';
-                    const priceText = priceEl ? priceEl.innerText.trim() : text;
-                    const brand = brandEl ? brandEl.innerText.trim() : '';
-
-                    const priceMatch = priceText.match(/\\$([\\d.]+)/);
-                    const price = priceMatch ? parseFloat(priceMatch[1]) : null;
-
-                    if (name && price) {
-                        items.push({ name, price, brand, category: '' });
-                    }
-                } catch(e) {}
-            });
-
-            return items;
-        }""")
-
-        return products or []
-
-    except Exception as e:
-        print(f"  ✗ Error loading {name}: {e}")
-        return []
-
-
-async def run_scraper():
-    """Main scraper entry point."""
-    print(f"\n{'='*60}")
-    print(f"  🌿 AFFINITY SCRAPER (Playwright)")
-    print(f"  📅 {datetime.now().strftime('%Y-%m-%d %H:%M')}")
-    print(f"  📍 {len(DUTCHIE_DISPENSARIES) + len(WEEDMAPS_DISPENSARIES)} dispensaries")
-    print(f"{'='*60}\n")
-
-    all_products = {}  # dispensary_name -> [products]
-
-    async with async_playwright() as p:
-        browser = await p.chromium.launch(headless=True)
-        context = await browser.new_context(
-            user_agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36",
-            viewport={"width": 1280, "height": 720},
-        )
-        page = await context.new_page()
-
-        # Scrape Dutchie dispensaries
-        print("▸ Phase 1: Dutchie dispensaries\n")
-        for name, slug in DUTCHIE_DISPENSARIES.items():
-            try:
-                products = await scrape_dutchie_dispensary(page, name, slug)
-                all_products[name] = products
-                print(f"  ✓ {name}: {len(products)} products\n")
-            except Exception as e:
-                print(f"  ✗ {name}: {e}\n")
-                all_products[name] = []
-            await asyncio.sleep(2)
-
-        # Scrape Weedmaps dispensaries
-        print("\n▸ Phase 2: Weedmaps dispensaries\n")
-        for name, slug in WEEDMAPS_DISPENSARIES.items():
-            try:
-                products = await scrape_weedmaps_dispensary(page, name, slug)
-                all_products[name] = products
-                print(f"  ✓ {name}: {len(products)} products\n")
-            except Exception as e:
-                print(f"  ✗ {name}: {e}\n")
-                all_products[name] = []
-            await asyncio.sleep(2)
-
-        await browser.close()
-
-    return all_products
-
-
-def build_dashboard_data(all_products):
-    """Convert scraped data into dashboard format."""
-    # Group products by name+brand across dispensaries
+def build_dashboard_data(results):
+    """Convert all scrape results into dashboard JSON format."""
     product_map = {}
 
-    for disp_name, products in all_products.items():
-        for p in products:
-            if not p.get("name") or not p.get("price"):
+    for comp_name, data in results.items():
+        if data is None:
+            continue
+        for p in data.get("products", []):
+            name = p.get("name", "").strip()
+            brand = p.get("brand", "Unknown").strip() if p.get("brand") else "Unknown"
+            category = p.get("category", "Other").strip() if p.get("category") else "Other"
+            price = p.get("price")
+            weight = p.get("weight", "").strip() if p.get("weight") else ""
+
+            if not name or not price or price <= 0:
                 continue
-            key = f"{p.get('brand', 'Unknown')}::{p['name']}".lower().strip()
+
+            key = f"{brand}::{name}".lower()
             if key not in product_map:
                 product_map[key] = {
-                    "name": p["name"],
-                    "brand": p.get("brand", "Unknown"),
-                    "category": p.get("category", "Other") or "Other",
-                    "weight": p.get("weight", ""),
+                    "name": name,
+                    "brand": brand,
+                    "category": category,
+                    "weight": weight,
                     "dispensaries": {},
                 }
-            product_map[key]["dispensaries"][disp_name] = round(p["price"], 2)
+            product_map[key]["dispensaries"][comp_name] = round(float(price), 2)
 
-    # Only keep products found at 2+ dispensaries
+    # Keep products found at 2+ dispensaries for comparison
     comparable = [v for v in product_map.values() if len(v["dispensaries"]) >= 2]
+    # Also keep all products (even single-store) for complete visibility
+    all_products = list(product_map.values())
+
     comparable.sort(key=lambda x: (x["category"], x["name"]))
+    all_products.sort(key=lambda x: (x["category"], x["name"]))
+
+    # Collect deals
+    all_deals = []
+    for comp_name, data in results.items():
+        if data is None:
+            continue
+        for d in data.get("deals", []):
+            if d.get("title"):
+                all_deals.append({
+                    "dispensary": comp_name,
+                    "title": d["title"],
+                    "type": d.get("discount_type", "other"),
+                    "category": d.get("category", "All"),
+                    "expires": None,
+                })
 
     return {
         "scraped_at": datetime.now().isoformat(),
-        "products": comparable,
-        "deals": [],
+        "products": all_products if len(comparable) < 5 else comparable,
+        "deals": all_deals,
         "stats": {
-            "total_products_raw": sum(len(v) for v in all_products.values()),
+            "total_products": sum(
+                len(d["products"]) for d in results.values() if d
+            ),
             "comparable_products": len(comparable),
-            "dispensaries_with_data": len([k for k, v in all_products.items() if v]),
+            "all_products": len(all_products),
+            "dispensaries_scraped": len([k for k, v in results.items() if v]),
+            "dispensaries_failed": len([k for k, v in results.items() if v is None]),
+            "total_deals": len(all_deals),
         },
     }
 
 
-async def main():
-    all_products = await run_scraper()
+def main():
+    if not API_KEY:
+        print("ERROR: FIRECRAWL_API_KEY environment variable not set.")
+        print("Set it as a GitHub secret or export it locally.")
+        sys.exit(1)
 
-    total = sum(len(v) for v in all_products.values())
-    with_data = len([k for k, v in all_products.items() if v])
-    print(f"\n📦 Total products scraped: {total}")
-    print(f"📍 Dispensaries with data: {with_data}")
+    print(f"\n{'='*60}")
+    print(f"  🌿 AFFINITY SCRAPER (Firecrawl)")
+    print(f"  📅 {datetime.now().strftime('%Y-%m-%d %H:%M')}")
+    all_stores = AFFINITY_STORES + COMPETITORS
+    print(f"  📍 {len(COMPETITORS)} competitors + {len(AFFINITY_STORES)} Affinity stores")
+    print(f"{'='*60}\n")
 
-    # Save raw data
+    results = {}
+
+    for comp in all_stores:
+        data = scrape_dispensary(comp["name"], comp["url"])
+        results[comp["name"]] = data
+        # Respect rate limits — 3 second pause between requests
+        time.sleep(3)
+
+    # Build dashboard data
+    dashboard = build_dashboard_data(results)
+
+    print(f"\n{'='*60}")
+    print(f"  📦 Products scraped: {dashboard['stats']['total_products']}")
+    print(f"  📊 Comparable (2+ stores): {dashboard['stats']['comparable_products']}")
+    print(f"  🏪 Dispensaries with data: {dashboard['stats']['dispensaries_scraped']}")
+    print(f"  ❌ Dispensaries failed: {dashboard['stats']['dispensaries_failed']}")
+    print(f"  🏷  Deals found: {dashboard['stats']['total_deals']}")
+    print(f"{'='*60}\n")
+
+    # Save to data/ directory
     os.makedirs("data", exist_ok=True)
     ts = datetime.now().strftime("%Y%m%d_%H%M%S")
-    with open(f"data/raw_scrape_{ts}.json", "w") as f:
-        json.dump(all_products, f, indent=2, default=str)
+    raw_path = f"data/raw_{ts}.json"
+    with open(raw_path, "w") as f:
+        json.dump(results, f, indent=2, default=str)
+    print(f"  ✓ Raw data → {raw_path}")
 
-    # Build and save dashboard data
-    dashboard = build_dashboard_data(all_products)
-    print(f"📊 Comparable products: {dashboard['stats']['comparable_products']}")
+    # Save dashboard JSON to parent directory (for GitHub Pages)
+    dash_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "dashboard_data.json")
+    with open(dash_path, "w") as f:
+        json.dump(dashboard, f, indent=2, default=str)
+    print(f"  ✓ Dashboard data → dashboard_data.json")
 
-    # Save to both data/ and parent (for GitHub Actions)
-    with open(f"data/dashboard_data_{ts}.json", "w") as f:
+    # Also save a local copy
+    with open(f"data/dashboard_{ts}.json", "w") as f:
         json.dump(dashboard, f, indent=2, default=str)
 
-    # Also save to parent directory for GitHub Actions workflow
-    parent_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "dashboard_data.json")
-    with open(parent_path, "w") as f:
-        json.dump(dashboard, f, indent=2, default=str)
-
-    print(f"\n✅ Dashboard data saved")
+    print(f"\n  ✅ DONE\n")
 
 
 if __name__ == "__main__":
-    asyncio.run(main())
+    main()
