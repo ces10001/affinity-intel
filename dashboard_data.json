@@ -1,13 +1,221 @@
 {
-  "scraped_at": "2026-04-09T16:29:29.921232",
-  "products": [],
+  "scraped_at": "2026-04-09T16:34:22.418841",
+  "products": [
+    {
+      "name": "4114/gummies-greener-apple-fast-acting-gummies-20pk-258516?stockType=Default",
+      "brand": "https://highercollective.com/locations/b",
+      "category": "Edibles",
+      "weight": "",
+      "dispensaries": {
+        "Higher Collective Bridgeport": 10.0
+      }
+    },
+    {
+      "name": "4114/gummies-indica-bluezzzberry-5-1-cbn-gummies-20pk-265055?stockType=Default",
+      "brand": "https://highercollective.com/locations/b",
+      "category": "Edibles",
+      "weight": "",
+      "dispensaries": {
+        "Higher Collective Bridgeport": 36.0
+      }
+    },
+    {
+      "name": "4116/ground-flower-hybrid-hickory-hash-ground-flower-3.5g-276945?stockType=Defau",
+      "brand": "https://highercollective.com/locations/b",
+      "category": "Flower",
+      "weight": "",
+      "dispensaries": {
+        "Higher Collective Bridgeport": 13.3
+      }
+    },
+    {
+      "name": "4116/ground-flower-hybrid-jayna's-sunshine-ground-flower-3.5g-276000?stockType=D",
+      "brand": "https://highercollective.com/locations/b",
+      "category": "Flower",
+      "weight": "",
+      "dispensaries": {
+        "Higher Collective Bridgeport": 13.3
+      }
+    },
+    {
+      "name": "4116/small-flower-sativa-banana-acai-mints-part-timers-3.5g-212311?stockType=Def",
+      "brand": "https://highercollective.com/locations/b",
+      "category": "Flower",
+      "weight": "",
+      "dispensaries": {
+        "Higher Collective Bridgeport": 18.0
+      }
+    },
+    {
+      "name": "4116/whole-flower-hybrid-durban-stardawg-whole-flower-3.5g-213060?stockType=Defa",
+      "brand": "https://highercollective.com/locations/b",
+      "category": "Flower",
+      "weight": "",
+      "dispensaries": {
+        "Higher Collective Bridgeport": 25.0
+      }
+    },
+    {
+      "name": "4116/whole-flower-hybrid-omg-mixed-buds-14g-214286?stockType=Default",
+      "brand": "https://highercollective.com/locations/b",
+      "category": "Flower",
+      "weight": "",
+      "dispensaries": {
+        "Higher Collective Bridgeport": 55.0
+      }
+    },
+    {
+      "name": "4116/whole-flower-indica-purple-milk-whole-flower-3.5g-258502?stockType=Default",
+      "brand": "https://highercollective.com/locations/b",
+      "category": "Flower",
+      "weight": "",
+      "dispensaries": {
+        "Higher Collective Bridgeport": 25.0
+      }
+    },
+    {
+      "name": "4116/whole-flower-sativa-agent-z-whole-flower-7g-264652?stockType=Default",
+      "brand": "from https://highercollective.com/locati",
+      "category": "Flower",
+      "weight": "",
+      "dispensaries": {
+        "Higher Collective Bridgeport": 18.9
+      }
+    },
+    {
+      "name": "4116/whole-flower-sativa-berry-pi-whole-flower-3.5g-214753?stockType=Default",
+      "brand": "https://highercollective.com/locations/b",
+      "category": "Flower",
+      "weight": "",
+      "dispensaries": {
+        "Higher Collective Bridgeport": 15.0
+      }
+    },
+    {
+      "name": "4116/whole-flower-sativa-lemon-meringue-whole-flower-3.5g-264724?stockType=Defau",
+      "brand": "https://highercollective.com/locations/b",
+      "category": "Flower",
+      "weight": "",
+      "dispensaries": {
+        "Higher Collective Bridgeport": 40.6
+      }
+    },
+    {
+      "name": "4116/whole-flower-sativa-peanut-butter-muffin-whole-flower-7g-213921?stockType=D",
+      "brand": "from https://highercollective.com/locati",
+      "category": "Flower",
+      "weight": "",
+      "dispensaries": {
+        "Higher Collective Bridgeport": 18.9
+      }
+    },
+    {
+      "name": "2 for !https://media-prime.sweedpos.com/store/prime/177247754777171948-728c-48c9",
+      "brand": "!Cannabis Promo, Cannabis Sales, Cannabi",
+      "category": "Other",
+      "weight": "",
+      "dispensaries": {
+        "Higher Collective Bridgeport": 35.0
+      }
+    },
+    {
+      "name": "Rolls for https://media-prime.sweedpos.com/store/prime/177558719431ad1575-d3e9-4",
+      "brand": "!Cannabis Promo, Cannabis Sales, Cannabi",
+      "category": "Other",
+      "weight": "",
+      "dispensaries": {
+        "Higher Collective Bridgeport": 30.0
+      }
+    },
+    {
+      "name": "prime.sweedpos.com/store/prime/177126724432bfe90d-8c0f-4de3-9411-b54e9258e0ae.jp",
+      "brand": "!Cannabis Promo, Cannabis Sales, Cannabi",
+      "category": "Other",
+      "weight": "",
+      "dispensaries": {
+        "Higher Collective Bridgeport": 110.0
+      }
+    },
+    {
+      "name": "prime.sweedpos.com/store/prime/1775548544e21a7c54-ff9a-4aaa-b86b-fe2d6b5f2dde.pn",
+      "brand": "!Cannabis Promo, Cannabis Sales, Cannabi",
+      "category": "Other",
+      "weight": "",
+      "dispensaries": {
+        "Higher Collective Bridgeport": 20.0
+      }
+    },
+    {
+      "name": "prime.sweedpos.com/store/prime/17755489953d133f6a-fad5-469f-b9cb-b23e6186fbd6.pn",
+      "brand": "!Cannabis Promo, Cannabis Sales, Cannabi",
+      "category": "Other",
+      "weight": "",
+      "dispensaries": {
+        "Higher Collective Bridgeport": 45.0
+      }
+    },
+    {
+      "name": "prime.sweedpos.com/store/prime/1775588191b2796d38-8efa-4db8-a4cd-a89bfaed7d65.pn",
+      "brand": "!Cannabis Promo, Cannabis Sales, Cannabi",
+      "category": "Other",
+      "weight": "",
+      "dispensaries": {
+        "Higher Collective Bridgeport": 100.0
+      }
+    },
+    {
+      "name": "rolls-4117/singles-hybrid-biscotti-pie-spark---all-times-pre-roll-0.4g-326669?st",
+      "brand": "https://highercollective.com/locations/b",
+      "category": "Pre-Rolls",
+      "weight": "",
+      "dispensaries": {
+        "Higher Collective Bridgeport": 5.0
+      }
+    },
+    {
+      "name": "rolls-4117/singles-sativa-seattle-sour-kush-pre-roll-1g-295714?stockType=Default",
+      "brand": "https://highercollective.com/locations/b",
+      "category": "Pre-Rolls",
+      "weight": "",
+      "dispensaries": {
+        "Higher Collective Bridgeport": 8.0
+      }
+    },
+    {
+      "name": "4118/all-in-one-hybrid-chem-band-disposable-0.3g-278789?stockType=Default",
+      "brand": "https://highercollective.com/locations/b",
+      "category": "Vaporizers",
+      "weight": "",
+      "dispensaries": {
+        "Higher Collective Bridgeport": 16.0
+      }
+    },
+    {
+      "name": "4118/all-in-one-indica-gush-mintz-disposable-1g-212810?stockType=Default",
+      "brand": "https://highercollective.com/locations/b",
+      "category": "Vaporizers",
+      "weight": "",
+      "dispensaries": {
+        "Higher Collective Bridgeport": 18.0
+      }
+    },
+    {
+      "name": "4118/cartridge-hybrid-carbon-juice-cartridge-1g-296210?stockType=Default",
+      "brand": "https://highercollective.com/locations/b",
+      "category": "Vaporizers",
+      "weight": "",
+      "dispensaries": {
+        "Higher Collective Bridgeport": 48.0
+      }
+    }
+  ],
   "deals": [],
   "stats": {
-    "total": 0,
+    "total": 26,
     "comparable": 0,
-    "all": 0,
-    "success": 0,
-    "failed": 19,
+    "all": 23,
+    "success": 1,
+    "failed": 18,
     "deals": 0
   }
 }
