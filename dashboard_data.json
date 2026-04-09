@@ -1,468 +1,728 @@
 {
-  "scraped_at": "2026-04-09T17:07:32.502612",
+  "scraped_at": "2026-04-09T17:25:54.014245",
   "products": [
     {
-      "name": "2 gSativa",
-      "brand": "Unknown",
-      "category": "Concentrates",
-      "weight": "2 g",
-      "dispensaries": {
-        "Lit New Haven Cannabis": 85.0,
-        "Budr Cannabis Stratford": 104.0
-      }
-    },
-    {
-      "name": "1/8 ozIndica",
+      "name": "Camino Freshly Squeezed with CBG 5:10 Cannabis-Infused Gummies 00378",
       "brand": "Unknown",
       "category": "Edibles",
-      "weight": "8 oz",
+      "weight": "",
       "dispensaries": {
-        "Lit New Haven Cannabis": 35.0,
-        "Budr Cannabis Stratford": 31.0
+        "Lit New Haven Cannabis": 34.0,
+        "Budr Cannabis Stratford": 34.0
       }
     },
     {
-      "name": "1/8 ozSativa",
+      "name": "Camino Sours-Blackberry Dream with CBN & CBD 10:10:10 Cannabis-Infused Gummies-00395",
       "brand": "Unknown",
       "category": "Edibles",
-      "weight": "8 oz",
+      "weight": "",
       "dispensaries": {
-        "Lit New Haven Cannabis": 25.0,
-        "Budr Cannabis Stratford": 23.0
+        "Lit New Haven Cannabis": 34.0,
+        "Budr Cannabis Stratford": 34.0
       }
     },
     {
-      "name": "2 gHybrid",
+      "name": "Camino Sours-Strawberry Sunset Cannabis-Infused Gummies-00365",
       "brand": "Unknown",
       "category": "Edibles",
-      "weight": "2 g",
+      "weight": "",
       "dispensaries": {
-        "Lit New Haven Cannabis": 28.0,
-        "Budr Cannabis Stratford": 109.0
+        "Lit New Haven Cannabis": 34.0,
+        "Budr Cannabis Stratford": 29.0
       }
     },
     {
-      "name": "2 gIndica",
+      "name": "Camino Wild Berry Cannabis-Infused Gummies 00396",
       "brand": "Unknown",
       "category": "Edibles",
-      "weight": "2 g",
+      "weight": "",
       "dispensaries": {
-        "Lit New Haven Cannabis": 28.0,
-        "Budr Cannabis Stratford": 115.0
+        "Lit New Haven Cannabis": 32.0,
+        "Budr Cannabis Stratford": 32.0
       }
     },
     {
-      "name": "RYTHM3.5gTHC: 20.34%",
+      "name": "Chew Chocolate Covered RSO Orange Gummies I 00806",
       "brand": "Unknown",
       "category": "Edibles",
-      "weight": "3.5g",
+      "weight": "",
       "dispensaries": {
-        "RISE Dispensary Orange": 32.0,
-        "RISE Dispensary Branford": 40.0
+        "Lit New Haven Cannabis": 18.0,
+        "Budr Cannabis Stratford": 16.0
       }
     },
     {
-      "name": "inc.edibles20 PackTHC: 100mg",
+      "name": "Encore Pomegranate Punch CBN:THC Gummies CBN46.4mg T90.8mg I 26781",
       "brand": "Unknown",
       "category": "Edibles",
-      "weight": "100mg",
+      "weight": "",
       "dispensaries": {
-        "RISE Dispensary Orange": 24.0,
-        "RISE Dispensary Branford": 24.0
+        "Lit New Haven Cannabis": 29.0,
+        "Budr Cannabis Stratford": 29.0
       }
     },
     {
-      "name": "1/8 ozHybrid",
-      "brand": "Unknown",
+      "name": "Brix Cannabis Jungle Cake Whole Flower 3.5g (H) 00484",
+      "brand": "1/8 oz",
       "category": "Flower",
-      "weight": "8 oz",
+      "weight": "",
       "dispensaries": {
-        "Lit New Haven Cannabis": 35.0,
-        "Budr Cannabis Stratford": 29.75
+        "Lit New Haven Cannabis": 45.0,
+        "Budr Cannabis Stratford": 38.0
       }
     },
     {
-      "name": "Cookies1/8 ozHybrid",
-      "brand": "Unknown",
+      "name": "Brownie Scout 3.5g",
+      "brand": "RYTHM",
       "category": "Flower",
-      "weight": "8 oz",
-      "dispensaries": {
-        "Lit New Haven Cannabis": 40.0,
-        "Budr Cannabis Stratford": 41.0
-      }
-    },
-    {
-      "name": "RYTHM1/8 ozHybrid",
-      "brand": "Unknown",
-      "category": "Flower",
-      "weight": "8 oz",
+      "weight": "1/8 oz",
       "dispensaries": {
         "Lit New Haven Cannabis": 50.0,
         "Budr Cannabis Stratford": 46.0
       }
     },
     {
-      "name": "RYTHM7gTHC: 18.7%",
-      "brand": "Unknown",
+      "name": "Grassroots Ground Flower 3.5g Hickory Hash (H) 01476 TC 30.586%",
+      "brand": "1/8 oz",
       "category": "Flower",
-      "weight": "7g",
+      "weight": "",
+      "dispensaries": {
+        "Lit New Haven Cannabis": 35.0,
+        "Budr Cannabis Stratford": 35.0
+      }
+    },
+    {
+      "name": "Mendo Wedding Flower I 26561",
+      "brand": "1/8 oz",
+      "category": "Flower",
+      "weight": "",
+      "dispensaries": {
+        "Lit New Haven Cannabis": 45.0,
+        "Budr Cannabis Stratford": 50.0
+      }
+    },
+    {
+      "name": "Rythm 7g Small Flower Black Maple 22 (I) 01116",
+      "brand": "RYTHM7gTHC: 26.62%",
+      "category": "Flower",
+      "weight": "",
       "dispensaries": {
         "RISE Dispensary Orange": 52.0,
         "RISE Dispensary Branford": 52.0
       }
     },
     {
-      "name": "1 gHybrid",
-      "brand": "Unknown",
-      "category": "Pre-Rolls",
-      "weight": "1 g",
-      "dispensaries": {
-        "Lit New Haven Cannabis": 8.0,
-        "Budr Cannabis Stratford": 40.0
-      }
-    },
-    {
-      "name": "1 gIndica",
-      "brand": "Unknown",
-      "category": "Pre-Rolls",
-      "weight": "1 g",
-      "dispensaries": {
-        "Lit New Haven Cannabis": 10.0,
-        "Budr Cannabis Stratford": 41.65
-      }
-    },
-    {
-      "name": "1 gSativa",
-      "brand": "Unknown",
-      "category": "Pre-Rolls",
-      "weight": "1 g",
-      "dispensaries": {
-        "Lit New Haven Cannabis": 13.0,
-        "Budr Cannabis Stratford": 51.85
-      }
-    },
-    {
-      "name": "eachIndica",
-      "brand": "Unknown",
-      "category": "Pre-Rolls",
+      "name": "Rythm 7g Small Flower Confidential Cherries (I) 00992",
+      "brand": "RYTHM7gTHC: 20.34%",
+      "category": "Flower",
       "weight": "",
       "dispensaries": {
-        "Lit New Haven Cannabis": 9.95,
-        "Budr Cannabis Stratford": 9.0
+        "RISE Dispensary Orange": 52.0,
+        "RISE Dispensary Branford": 52.0
       }
     },
     {
-      "name": "eachSativa",
-      "brand": "Unknown",
-      "category": "Pre-Rolls",
+      "name": "Rythm 7g Small Flower Creamsicle Sunset (H) 01130",
+      "brand": "RYTHM7gTHC: 22.49%",
+      "category": "Flower",
       "weight": "",
       "dispensaries": {
-        "Lit New Haven Cannabis": 10.0,
-        "Budr Cannabis Stratford": 10.0
+        "RISE Dispensary Orange": 52.0,
+        "RISE Dispensary Branford": 52.0
       }
     },
     {
-      "name": "1/2 gHybrid",
-      "brand": "Unknown",
-      "category": "Vaporizers",
-      "weight": "2 g",
+      "name": "Rythm 7g Small Flower Jet Fuel (H) 01095",
+      "brand": "RYTHM7gTHC: 18.7%",
+      "category": "Flower",
+      "weight": "",
       "dispensaries": {
-        "Lit New Haven Cannabis": 25.0,
-        "Budr Cannabis Stratford": 15.0
+        "RISE Dispensary Orange": 52.0,
+        "RISE Dispensary Branford": 52.0
       }
     },
     {
-      "name": "1/2 gIndica",
-      "brand": "Unknown",
-      "category": "Vaporizers",
-      "weight": "2 g",
+      "name": "Rythm 7g Small Flower Lemon Drip (S) 01253",
+      "brand": "1/4 oz",
+      "category": "Flower",
+      "weight": "",
       "dispensaries": {
-        "Lit New Haven Cannabis": 25.0,
-        "Budr Cannabis Stratford": 15.0
+        "Lit New Haven Cannabis": 65.0,
+        "RISE Dispensary Branford": 52.0
       }
     },
     {
-      "name": "1/4 ozHybrid",
-      "brand": "Unknown",
-      "category": "Vaporizers",
-      "weight": "4 oz",
+      "name": "Rythm 7g Small Flower OMG (H) 01270",
+      "brand": "RYTHM7gTHC: 32.15%",
+      "category": "Flower",
+      "weight": "",
+      "dispensaries": {
+        "RISE Dispensary Orange": 52.0,
+        "RISE Dispensary Branford": 52.0
+      }
+    },
+    {
+      "name": "Zuava Flower H 26761",
+      "brand": "1/8 oz",
+      "category": "Flower",
+      "weight": "",
+      "dispensaries": {
+        "Lit New Haven Cannabis": 45.0,
+        "Budr Cannabis Stratford": 45.0
+      }
+    },
+    {
+      "name": "3.5G - Blue Raz",
+      "brand": "Cookies",
+      "category": "Other",
+      "weight": "",
+      "dispensaries": {
+        "Lit New Haven Cannabis": 40.0,
+        "Budr Cannabis Stratford": 41.0
+      }
+    },
+    {
+      "name": "Affinity Grow Products",
+      "brand": "\\\\",
+      "category": "Other",
+      "weight": "",
+      "dispensaries": {
+        "Affinity - New Haven (Rec)": 24.0,
+        "Affinity - New Haven (Med)": 48.0
+      }
+    },
+    {
+      "name": "Chem 91 Lil' Budz 7g (S) 00444",
+      "brand": "1/4 oz",
+      "category": "Other",
+      "weight": "",
       "dispensaries": {
         "Lit New Haven Cannabis": 56.0,
-        "Budr Cannabis Stratford": 37.4
+        "Budr Cannabis Stratford": 51.0
       }
     },
     {
-      "name": "1/4 ozIndica",
-      "brand": "Unknown",
-      "category": "Vaporizers",
-      "weight": "4 oz",
+      "name": "GOOD GREEN 14G REGINA GORGEOUS (H) 01205",
+      "brand": "Good Green14gTHC: 20%",
+      "category": "Other",
+      "weight": "",
       "dispensaries": {
-        "Lit New Haven Cannabis": 55.0,
-        "Budr Cannabis Stratford": 46.75
+        "RISE Dispensary Orange": 80.0,
+        "RISE Dispensary Branford": 80.0
       }
     },
     {
-      "name": "1/4 ozSativa",
-      "brand": "Unknown",
-      "category": "Vaporizers",
-      "weight": "4 oz",
+      "name": "Good Green 14g Granny Canny (S) 01276",
+      "brand": "Good Green14gTHC: 20%?",
+      "category": "Other",
+      "weight": "",
       "dispensaries": {
-        "Lit New Haven Cannabis": 56.0,
-        "Budr Cannabis Stratford": 40.0
+        "RISE Dispensary Branford": 80.0,
+        "Budr Cannabis Stratford": 91.0
       }
     },
     {
-      "name": "RYTHM1/8 oz",
-      "brand": "Unknown",
-      "category": "Vaporizers",
-      "weight": "8 oz",
+      "name": "Good Green 14g Paradise Snacks (I) 01285",
+      "brand": "Good Green14gTHC: 22%",
+      "category": "Other",
+      "weight": "",
       "dispensaries": {
-        "Lit New Haven Cannabis": 50.0,
+        "RISE Dispensary Orange": 80.0,
+        "RISE Dispensary Branford": 80.0,
+        "Budr Cannabis Stratford": 100.0
+      }
+    },
+    {
+      "name": "Good Green 28g Regina Gorgeous (H) 01237",
+      "brand": "Good Green28gTHC: 23.99%",
+      "category": "Other",
+      "weight": "",
+      "dispensaries": {
+        "RISE Dispensary Branford": 128.0,
+        "Budr Cannabis Stratford": 160.0
+      }
+    },
+    {
+      "name": "Good Green 28g Slapz (H) 01311",
+      "brand": "Good Green28gTHC: 26.51%",
+      "category": "Other",
+      "weight": "",
+      "dispensaries": {
+        "RISE Dispensary Branford": 128.0,
+        "Budr Cannabis Stratford": 160.0
+      }
+    },
+    {
+      "name": "Good Green 3.5g Paradise Snacks (I) 01261",
+      "brand": "1/8 oz",
+      "category": "Other",
+      "weight": "",
+      "dispensaries": {
+        "Lit New Haven Cannabis": 35.0,
+        "RISE Dispensary Branford": 40.0,
+        "Budr Cannabis Stratford": 32.0
+      }
+    },
+    {
+      "name": "Good Green 3.5g Slapz (H) 01313",
+      "brand": "Good Green3.5gTHC: 26.5%",
+      "category": "Other",
+      "weight": "",
+      "dispensaries": {
+        "RISE Dispensary Branford": 40.0,
+        "Budr Cannabis Stratford": 32.0
+      }
+    },
+    {
+      "name": "RYTHM 14G CREAMSICLE SUNSET (H) 01146",
+      "brand": "RYTHM14gTHC: 20.31%",
+      "category": "Other",
+      "weight": "",
+      "dispensaries": {
+        "RISE Dispensary Orange": 96.0,
+        "RISE Dispensary Branford": 100.0
+      }
+    },
+    {
+      "name": "RYTHM 28G DULCE DE UVA (I) 01214",
+      "brand": "RYTHM28gTHC: 24.34%",
+      "category": "Other",
+      "weight": "",
+      "dispensaries": {
+        "RISE Dispensary Branford": 160.0,
+        "Budr Cannabis Stratford": 180.0
+      }
+    },
+    {
+      "name": "RYTHM 3.5G LEMON FRESH (S) 01196",
+      "brand": "RYTHM3.5gTHC: 26.61%",
+      "category": "Other",
+      "weight": "",
+      "dispensaries": {
+        "RISE Dispensary Orange": 40.0,
+        "RISE Dispensary Branford": 40.0,
         "Budr Cannabis Stratford": 46.0
       }
     },
     {
-      "name": "RYTHM28gTHC: 19.33%",
-      "brand": "Unknown",
-      "category": "Vaporizers",
-      "weight": "28g",
+      "name": "Rythm 28g Creamsicle Sunset (H) 01287",
+      "brand": "RYTHM28gTHC: 19.33%",
+      "category": "Other",
+      "weight": "",
       "dispensaries": {
         "RISE Dispensary Orange": 144.0,
         "RISE Dispensary Branford": 160.0
       }
     },
     {
-      "name": "RYTHM28gTHC: 21.47%",
-      "brand": "Unknown",
-      "category": "Vaporizers",
-      "weight": "28g",
+      "name": "Rythm 28g Lemon Drip (S) 01334",
+      "brand": "RYTHM28gTHC: 21.47%",
+      "category": "Other",
+      "weight": "",
       "dispensaries": {
         "RISE Dispensary Orange": 144.0,
         "RISE Dispensary Branford": 160.0
       }
     },
     {
-      "name": "RYTHM3.5gTHC: 22.49%",
-      "brand": "Unknown",
-      "category": "Vaporizers",
-      "weight": "3.5g",
+      "name": "Rythm 3.5g Animal Face (I) 01304",
+      "brand": "RYTHM3.5gTHC: 32.98%",
+      "category": "Other",
+      "weight": "",
       "dispensaries": {
         "RISE Dispensary Orange": 40.0,
         "RISE Dispensary Branford": 40.0
       }
     },
     {
-      "name": "RYTHM3.5gTHC: 24.92%",
-      "brand": "Unknown",
-      "category": "Vaporizers",
-      "weight": "3.5g",
+      "name": "Rythm 3.5g Animal Scout \\#10 (I) 01264",
+      "brand": "RYTHM3.5gTHC: 33.76%",
+      "category": "Other",
+      "weight": "",
       "dispensaries": {
         "RISE Dispensary Orange": 40.0,
         "RISE Dispensary Branford": 40.0
       }
     },
     {
-      "name": "RYTHM3.5gTHC: 26%",
-      "brand": "Unknown",
-      "category": "Vaporizers",
-      "weight": "3.5g",
+      "name": "Rythm 3.5g Black Maple 22 (I) 01092",
+      "brand": "RYTHM3.5gTHC: 29.11%",
+      "category": "Other",
+      "weight": "",
       "dispensaries": {
         "RISE Dispensary Orange": 40.0,
         "RISE Dispensary Branford": 40.0
       }
     },
     {
-      "name": "RYTHM3.5gTHC: 26.5%",
-      "brand": "Unknown",
-      "category": "Vaporizers",
-      "weight": "3.5g",
+      "name": "Rythm 3.5g Cheddar Cheeze (I) 01273",
+      "brand": "RYTHM3.5gTHC: 31.19%",
+      "category": "Other",
+      "weight": "",
       "dispensaries": {
         "RISE Dispensary Orange": 40.0,
         "RISE Dispensary Branford": 40.0
       }
     },
     {
-      "name": "RYTHM3.5gTHC: 26.61%",
-      "brand": "Unknown",
-      "category": "Vaporizers",
-      "weight": "3.5g",
+      "name": "Rythm 3.5g Confidential Cherries (I) 00985",
+      "brand": "RYTHM3.5gTHC: 20.34%",
+      "category": "Other",
+      "weight": "",
+      "dispensaries": {
+        "RISE Dispensary Orange": 32.0,
+        "RISE Dispensary Branford": 40.0
+      }
+    },
+    {
+      "name": "Rythm 3.5g Creamsicle Sunset (H) 01115",
+      "brand": "RYTHM3.5gTHC: 22.49%",
+      "category": "Other",
+      "weight": "",
       "dispensaries": {
         "RISE Dispensary Orange": 40.0,
         "RISE Dispensary Branford": 40.0
       }
     },
     {
-      "name": "RYTHM3.5gTHC: 29.11%",
-      "brand": "Unknown",
-      "category": "Vaporizers",
-      "weight": "3.5g",
+      "name": "Rythm 3.5g Do Not Trip (H) 01268",
+      "brand": "RYTHM3.5gTHC: 28%",
+      "category": "Other",
+      "weight": "",
       "dispensaries": {
         "RISE Dispensary Orange": 40.0,
         "RISE Dispensary Branford": 40.0
       }
     },
     {
-      "name": "all:hours3.5gTHC: 35.49%",
-      "brand": "Unknown",
-      "category": "Vaporizers",
-      "weight": "3.5g",
+      "name": "Rythm 3.5g Dulce De Uva (I) 01162",
+      "brand": "RYTHM3.5gTHC: 26%",
+      "category": "Other",
+      "weight": "",
       "dispensaries": {
-        "RISE Dispensary Orange": 45.0,
+        "RISE Dispensary Orange": 40.0,
+        "RISE Dispensary Branford": 40.0
+      }
+    },
+    {
+      "name": "Rythm 3.5g Grape Bubble G (H) 01198",
+      "brand": "RYTHM3.5gTHC: 26.5%",
+      "category": "Other",
+      "weight": "",
+      "dispensaries": {
+        "RISE Dispensary Orange": 40.0,
+        "RISE Dispensary Branford": 40.0
+      }
+    },
+    {
+      "name": "Rythm 3.5g Lemon Drip (S) 01069",
+      "brand": "RYTHM3.5gTHC: 24.92%",
+      "category": "Other",
+      "weight": "",
+      "dispensaries": {
+        "RISE Dispensary Orange": 40.0,
+        "RISE Dispensary Branford": 40.0
+      }
+    },
+    {
+      "name": "Savvy Strut AIO 2g Golden Tangie T1794 S 26818",
+      "brand": "2 g",
+      "category": "Other",
+      "weight": "",
+      "dispensaries": {
+        "Lit New Haven Cannabis": 110.0,
+        "Budr Cannabis Stratford": 104.0
+      }
+    },
+    {
+      "name": "all:hours Mule Fuel Hash Nugs 41629",
+      "brand": "1/8 oz",
+      "category": "Other",
+      "weight": "",
+      "dispensaries": {
+        "Lit New Haven Cannabis": 60.0,
         "RISE Dispensary Branford": 60.0
       }
     },
     {
-      "name": "eachHybrid",
+      "name": "AGL 1g Pre Roll Mystic Mint (I) 01302",
+      "brand": "1 g",
+      "category": "Pre-Rolls",
+      "weight": "",
+      "dispensaries": {
+        "Lit New Haven Cannabis": 10.0,
+        "Budr Cannabis Stratford": 9.0
+      }
+    },
+    {
+      "name": "AGL 1g Pre Roll Regina Gorgeous (H) 01222",
+      "brand": "1 g",
+      "category": "Pre-Rolls",
+      "weight": "",
+      "dispensaries": {
+        "Lit New Haven Cannabis": 8.0,
+        "Budr Cannabis Stratford": 10.0
+      }
+    },
+    {
+      "name": "AGL 5 Pack Minis Living Legend (S) 01163",
+      "brand": "2.5 g",
+      "category": "Pre-Rolls",
+      "weight": "",
+      "dispensaries": {
+        "Lit New Haven Cannabis": 15.0,
+        "Budr Cannabis Stratford": 30.0
+      }
+    },
+    {
+      "name": "AGL 5 Pack Minis Regina Gorgeous (H) 01228",
+      "brand": "2.5 g",
+      "category": "Pre-Rolls",
+      "weight": "",
+      "dispensaries": {
+        "Lit New Haven Cannabis": 15.0,
+        "Budr Cannabis Stratford": 30.0
+      }
+    },
+    {
+      "name": "Brix Cannabis Bananaconda 1g Pre Roll (H) 00502",
+      "brand": "1 g",
+      "category": "Pre-Rolls",
+      "weight": "",
+      "dispensaries": {
+        "Lit New Haven Cannabis": 13.0,
+        "Budr Cannabis Stratford": 11.0
+      }
+    },
+    {
+      "name": "Dogwalkers 1g Big Dog B Scout (I) 01229",
+      "brand": "Dogwalkers1gTHC: 24%",
+      "category": "Pre-Rolls",
+      "weight": "",
+      "dispensaries": {
+        "RISE Dispensary Orange": 12.0,
+        "RISE Dispensary Branford": 12.8,
+        "Budr Cannabis Stratford": 14.0
+      }
+    },
+    {
+      "name": "Dogwalkers 1g Big Dog Black Maple 22 (I) 01111",
+      "brand": "Dogwalkers1gTHC: 24%",
+      "category": "Pre-Rolls",
+      "weight": "",
+      "dispensaries": {
+        "RISE Dispensary Orange": 12.0,
+        "RISE Dispensary Branford": 12.8
+      }
+    },
+    {
+      "name": "Dogwalkers 1g Big Dog Lemon Drip (S) 01294",
+      "brand": "Dogwalkers1gTHC: 24%",
+      "category": "Pre-Rolls",
+      "weight": "",
+      "dispensaries": {
+        "RISE Dispensary Orange": 12.0,
+        "RISE Dispensary Branford": 12.8
+      }
+    },
+    {
+      "name": "Dogwalkers 5 Pack Minis Animal Scout \\#10 (I) 01300",
+      "brand": "Dogwalkers1.75gTHC: 24%",
+      "category": "Pre-Rolls",
+      "weight": "",
+      "dispensaries": {
+        "RISE Dispensary Orange": 40.0,
+        "RISE Dispensary Branford": 24.0,
+        "Budr Cannabis Stratford": 27.0
+      }
+    },
+    {
+      "name": "Dogwalkers 5 Pack Minis Cheddar Cheeze (I) 01301",
+      "brand": "Dogwalkers1.75gTHC: 24%",
+      "category": "Pre-Rolls",
+      "weight": "",
+      "dispensaries": {
+        "RISE Dispensary Orange": 40.0,
+        "RISE Dispensary Branford": 24.0
+      }
+    },
+    {
+      "name": "Dogwalkers 5 Pack Minis Do Not Trip (H) 01309",
+      "brand": "1.75 g",
+      "category": "Pre-Rolls",
+      "weight": "",
+      "dispensaries": {
+        "Lit New Haven Cannabis": 20.0,
+        "RISE Dispensary Orange": 40.0,
+        "RISE Dispensary Branford": 24.0
+      }
+    },
+    {
+      "name": "Dogwalkers 5 Pack Minis Go Gr Tz (H) 01307",
+      "brand": "Dogwalkers1.75gTHC: 24%",
+      "category": "Pre-Rolls",
+      "weight": "",
+      "dispensaries": {
+        "RISE Dispensary Orange": 40.0,
+        "RISE Dispensary Branford": 24.0
+      }
+    },
+    {
+      "name": "Savvy Guap RSO Tangie Crush S 26852",
       "brand": "Unknown",
+      "category": "Tinctures",
+      "weight": "",
+      "dispensaries": {
+        "Lit New Haven Cannabis": 10.0,
+        "Budr Cannabis Stratford": 10.0
+      }
+    },
+    {
+      "name": "AGL 1g Vape B Scout x LA Kush CKE (I) 01212",
+      "brand": "Advanced Grow Labs (AGL)1gTHC: Not specified",
+      "category": "Vaporizers",
+      "weight": "",
+      "dispensaries": {
+        "RISE Dispensary Branford": 52.0,
+        "Budr Cannabis Stratford": 46.0
+      }
+    },
+    {
+      "name": "AGL 300mg Pen Animal Face x LA Kush CKE (I) 01292",
+      "brand": "3 g",
       "category": "Vaporizers",
       "weight": "",
       "dispensaries": {
         "Lit New Haven Cannabis": 16.0,
-        "Budr Cannabis Stratford": 10.0
+        "Budr Cannabis Stratford": 16.0
+      }
+    },
+    {
+      "name": "AGL 300mg Pen Apple Cobbler x RNTZ (H) 01293",
+      "brand": "3/10 g",
+      "category": "Vaporizers",
+      "weight": "",
+      "dispensaries": {
+        "Lit New Haven Cannabis": 16.0,
+        "Budr Cannabis Stratford": 16.0
+      }
+    },
+    {
+      "name": "AGL 300mg Pen Chkn n WflZ (S) 01258",
+      "brand": "3/10 g",
+      "category": "Vaporizers",
+      "weight": "",
+      "dispensaries": {
+        "Lit New Haven Cannabis": 16.0,
+        "Budr Cannabis Stratford": 15.0
+      }
+    },
+    {
+      "name": "AGL 300mg Pen East Coast Sour Diesel (S) 01259",
+      "brand": "3/10 g",
+      "category": "Vaporizers",
+      "weight": "",
+      "dispensaries": {
+        "Lit New Haven Cannabis": 16.0,
+        "Budr Cannabis Stratford": 15.0
+      }
+    },
+    {
+      "name": "AGL 300mg Pen FumeZ x Grease Monkey (H) 01188",
+      "brand": "3/10 g",
+      "category": "Vaporizers",
+      "weight": "",
+      "dispensaries": {
+        "Lit New Haven Cannabis": 16.0,
+        "Budr Cannabis Stratford": 16.0
+      }
+    },
+    {
+      "name": "Rythm 0.5g Vape 95 Cook (H) 01282",
+      "brand": "1/2 g",
+      "category": "Vaporizers",
+      "weight": "",
+      "dispensaries": {
+        "Lit New Haven Cannabis": 25.0,
+        "RISE Dispensary Branford": 32.0,
+        "Budr Cannabis Stratford": 25.0
+      }
+    },
+    {
+      "name": "Rythm 0.5g Vape Cheddar Cheeze (I) 01312",
+      "brand": "1/2 g",
+      "category": "Vaporizers",
+      "weight": "",
+      "dispensaries": {
+        "Lit New Haven Cannabis": 25.0,
+        "RISE Dispensary Orange": 36.0,
+        "Budr Cannabis Stratford": 25.0
+      }
+    },
+    {
+      "name": "Rythm 0.5g Vape Chkn n WflZ (S) 01320",
+      "brand": "RYTHM0.5gTHC: 83.58%",
+      "category": "Vaporizers",
+      "weight": "",
+      "dispensaries": {
+        "RISE Dispensary Branford": 32.0,
+        "Budr Cannabis Stratford": 25.0
+      }
+    },
+    {
+      "name": "Rythm 1g LEAF Live Sauce Pen Permanent Marker (H) 01327",
+      "brand": "RYTHM1gTHC: 80%",
+      "category": "Vaporizers",
+      "weight": "",
+      "dispensaries": {
+        "RISE Dispensary Orange": 56.0,
+        "RISE Dispensary Branford": 64.0
       }
     }
   ],
   "deals": [
     {
-      "dispensary": "High Profile Hamden",
-      "title": "10% off total purchase for Veterans\n\n\u2022 Not stackable\n\nWisdom (60 )\n\n\u2022 10% off total purchase for cus",
+      "dispensary": "Affinity NH (Rec)",
+      "title": "20% OFF](https://dutchie",
+      "type": "percent",
+      "category": "All",
+      "expires": null
+    },
+    {
+      "dispensary": "Affinity NH (Med)",
+      "title": "20% OFF](https://dutchie",
       "type": "percent",
       "category": "All",
       "expires": null
     },
     {
       "dispensary": "High Profile Hamden",
-      "title": "10% off total purchase for Veterans\n\n\u2022 Not stackable\n\nWisdom (60 )\n\n\u2022 10% off total purchase for cus",
+      "title": "10% off total purchase for Veterans",
       "type": "percent",
       "category": "All",
       "expires": null
     },
     {
-      "dispensary": "Budr Cannabis Stratford",
-      "title": "15% off\n\n\ud83d\udeac\n\n### AGL 5 Pack Minis Taffy Twist (I) 01123\n\neachIndica\n\n$30",
+      "dispensary": "High Profile Hamden",
+      "title": "10% off total purchase for customers 60 years and older",
       "type": "percent",
       "category": "All",
       "expires": null
     },
     {
-      "dispensary": "Budr Cannabis Stratford",
-      "title": "15% off\n\n\ud83c\udf3f\n\n### Good Green 3",
-      "type": "percent",
-      "category": "All",
-      "expires": null
-    },
-    {
-      "dispensary": "Budr Cannabis Stratford",
-      "title": "15% off\n\n\ud83c\udf6a\n\n### COAST Cherry 10:5 CBD:THC 86mg H Gummies 00113 20pk\n\neachHybrid\n\n$33",
-      "type": "percent",
-      "category": "All",
-      "expires": null
-    },
-    {
-      "dispensary": "Budr Cannabis Stratford",
-      "title": "15% off\n\n\ud83d\udc8e\n\n### Grand Pappy's Chillemon Vape 41571\n\n1/2 gSativa\n\n$34",
-      "type": "percent",
-      "category": "All",
-      "expires": null
-    },
-    {
-      "dispensary": "Budr Cannabis Stratford",
-      "title": "15% off\n\n\ud83c\udf6a\n\n### Camino Freshly Squeezed with CBG 5:10 Cannabis-Infused Gummies 00378\n\neachHybrid\n\n$3",
-      "type": "percent",
-      "category": "All",
-      "expires": null
-    },
-    {
-      "dispensary": "Budr Cannabis Stratford",
-      "title": "15% off\n\n\ud83c\udf3f\n\n### Airheadz 3",
-      "type": "percent",
-      "category": "All",
-      "expires": null
-    },
-    {
-      "dispensary": "Budr Cannabis Stratford",
-      "title": "15% off\n\n\ud83c\udf3f\n\n### Grassroots Ground Flower 3",
-      "type": "percent",
-      "category": "All",
-      "expires": null
-    },
-    {
-      "dispensary": "Budr Cannabis Stratford",
-      "title": "15% off\n\n\ud83c\udf3f\n\n### Brix Cannabis Jungle Cake Whole Flower 3",
-      "type": "percent",
-      "category": "All",
-      "expires": null
-    },
-    {
-      "dispensary": "Budr Cannabis Stratford",
-      "title": "15% off\n\n\ud83c\udf3f\n\n### CLF Whole Flower White Hot Guava H 24",
-      "type": "percent",
-      "category": "All",
-      "expires": null
-    },
-    {
-      "dispensary": "Budr Cannabis Stratford",
-      "title": "15% off\n\n\ud83c\udf3f\n\n### The Goods Halloweed Flower 23",
-      "type": "percent",
-      "category": "All",
-      "expires": null
-    },
-    {
-      "dispensary": "Budr Cannabis Stratford",
-      "title": "15% off\n\n\ud83c\udf3f\n\n### Affinity Grow \\| Alien OG \\| Flower \\| 3",
-      "type": "percent",
-      "category": "All",
-      "expires": null
-    },
-    {
-      "dispensary": "Budr Cannabis Stratford",
-      "title": "15% off\n\n\ud83d\udc8e\n\n### Star Killer x CDLC 0",
-      "type": "percent",
-      "category": "All",
-      "expires": null
-    },
-    {
-      "dispensary": "Budr Cannabis Stratford",
-      "title": "15% off\n\n\ud83d\udc8e\n\n### BUDR (I-Side) Cherry Alien Papi x Plasma Wedding Dual Chamber 90",
-      "type": "percent",
-      "category": "All",
-      "expires": null
-    },
-    {
-      "dispensary": "Budr Cannabis Stratford",
-      "title": "15% off\n\n\ud83d\udc8e\n\n### Green G MT 41176\n\n1 gHybrid\n\n$56",
-      "type": "percent",
-      "category": "All",
-      "expires": null
-    },
-    {
-      "dispensary": "Budr Cannabis Stratford",
-      "title": "15% off\n\n\ud83d\udc8e\n\n### Apple Tart Vape 41561\n\n1 gHybrid\n\n$56",
-      "type": "percent",
-      "category": "All",
-      "expires": null
-    },
-    {
-      "dispensary": "Budr Cannabis Stratford",
-      "title": "15% off\n\n\ud83c\udf3f\n\n### Earl Baker - Whole Flower - Gee Forcez 086\n\n1/8 ozIndica\n\n$58",
-      "type": "percent",
-      "category": "All",
-      "expires": null
-    },
-    {
-      "dispensary": "Budr Cannabis Stratford",
-      "title": "15% off\n\n\ud83c\udf3f\n\n### Good Green 28g Mystic Mint (I) 01286\n\n1 ozIndica\n\n$160",
+      "dispensary": "High Profile Hamden",
+      "title": "10% off total purchase for industry professionals",
       "type": "percent",
       "category": "All",
       "expires": null
     }
   ],
   "stats": {
-    "total": 563,
-    "comparable": 32,
-    "all": 340,
-    "success": 6,
-    "failed": 6,
-    "deals": 19
+    "total": 594,
+    "comparable": 67,
+    "all": 519,
+    "success": 8,
+    "failed": 7,
+    "deals": 5
   }
 }

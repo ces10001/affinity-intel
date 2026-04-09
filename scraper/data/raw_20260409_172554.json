@@ -1,0 +1,4850 @@
+{
+  "Affinity NH (Rec)": {
+    "products": [
+      {
+        "name": "Affinity Grow Products",
+        "brand": "\\\\",
+        "category": "Other",
+        "price": 24.0,
+        "weight": "",
+        "strain": ""
+      }
+    ],
+    "deals": [
+      {
+        "title": "20% OFF](https://dutchie",
+        "discount_type": "percent",
+        "category": "All"
+      }
+    ]
+  },
+  "Affinity NH (Med)": {
+    "products": [
+      {
+        "name": "Affinity Grow Products",
+        "brand": "\\\\",
+        "category": "Other",
+        "price": 48.0,
+        "weight": "",
+        "strain": ""
+      }
+    ],
+    "deals": [
+      {
+        "title": "20% OFF](https://dutchie",
+        "discount_type": "percent",
+        "category": "All"
+      }
+    ]
+  },
+  "Affinity BP (Rec)": {
+    "products": [],
+    "deals": []
+  },
+  "Affinity BP (Med)": {
+    "products": [],
+    "deals": []
+  },
+  "Higher Collective Bridgeport": {
+    "products": [],
+    "deals": []
+  },
+  "Lit New Haven Cannabis": {
+    "products": [
+      {
+        "name": "Pineapple Paradise High Hemp Wraps 2pc",
+        "brand": "Unknown",
+        "category": "Other",
+        "price": 1.5,
+        "weight": "",
+        "strain": ""
+      },
+      {
+        "name": "Blazy Susan Honey Lemon Tea Wrap (2pk)",
+        "brand": "Unknown",
+        "category": "Other",
+        "price": 1.75,
+        "weight": "",
+        "strain": ""
+      },
+      {
+        "name": "3pk Bob Marley Pre-Rolled Cones - King Size",
+        "brand": "Unknown",
+        "category": "Pre-Rolls",
+        "price": 2.5,
+        "weight": "",
+        "strain": ""
+      },
+      {
+        "name": "3Pk. Raw Black Pre-Roll Cone King Size",
+        "brand": "Unknown",
+        "category": "Pre-Rolls",
+        "price": 3.0,
+        "weight": "",
+        "strain": ""
+      },
+      {
+        "name": "HI5 \\| Black Cherry \\| THC Seltzer \\| Beverage",
+        "brand": "Unknown",
+        "category": "Edibles",
+        "price": 5.0,
+        "weight": "",
+        "strain": ""
+      },
+      {
+        "name": "LAYUP \\| Classic \\| THC Lemonade",
+        "brand": "Unknown",
+        "category": "Edibles",
+        "price": 5.0,
+        "weight": "",
+        "strain": ""
+      },
+      {
+        "name": "HI5 \\| Blueberry Lemonade \\| THC Seltzer \\| Beverage",
+        "brand": "Unknown",
+        "category": "Edibles",
+        "price": 5.0,
+        "weight": "",
+        "strain": ""
+      },
+      {
+        "name": "FIVE ISLANDS \\| Classic \\| THC Iced Tea \\| Beverage",
+        "brand": "Unknown",
+        "category": "Edibles",
+        "price": 5.0,
+        "weight": "",
+        "strain": ""
+      },
+      {
+        "name": "FIVE ISLANDS \\| Half & Half \\| THC Iced Tea \\| Beverage",
+        "brand": "Unknown",
+        "category": "Edibles",
+        "price": 5.0,
+        "weight": "",
+        "strain": ""
+      },
+      {
+        "name": "FIVE ISLANDS \\| Peach \\| THC Iced Tea \\| Beverage",
+        "brand": "Unknown",
+        "category": "Edibles",
+        "price": 5.0,
+        "weight": "",
+        "strain": ""
+      },
+      {
+        "name": "FIZZ \\| Black Cherry \\| THC Soda \\| Beverage",
+        "brand": "Unknown",
+        "category": "Edibles",
+        "price": 5.0,
+        "weight": "",
+        "strain": ""
+      },
+      {
+        "name": "FIZZ \\| Lemon Lime \\| THC Soda \\| Beverage",
+        "brand": "Unknown",
+        "category": "Edibles",
+        "price": 5.0,
+        "weight": "",
+        "strain": ""
+      },
+      {
+        "name": "FIZZ \\| Orange \\| THC Soda \\| Beverage",
+        "brand": "Unknown",
+        "category": "Edibles",
+        "price": 5.0,
+        "weight": "",
+        "strain": ""
+      },
+      {
+        "name": "LAYUP \\| Black Cherry \\| THC Lemonade \\| Beverage",
+        "brand": "Unknown",
+        "category": "Edibles",
+        "price": 5.0,
+        "weight": "",
+        "strain": ""
+      },
+      {
+        "name": "LAYUP \\| Limeade \\| THC Lemonade \\| Beverage",
+        "brand": "Unknown",
+        "category": "Edibles",
+        "price": 5.0,
+        "weight": "",
+        "strain": ""
+      },
+      {
+        "name": "HI5 \\| Peach Mango \\| THC Seltzer \\| Beverage",
+        "brand": "Unknown",
+        "category": "Edibles",
+        "price": 5.0,
+        "weight": "",
+        "strain": ""
+      },
+      {
+        "name": "AGL 1g Pre Roll Regina Gorgeous (H) 01222",
+        "brand": "1 g",
+        "category": "Pre-Rolls",
+        "price": 8.0,
+        "weight": "",
+        "strain": "Hybrid"
+      },
+      {
+        "name": "Savvy Guap RSO Tangie Crush S 26852",
+        "brand": "Unknown",
+        "category": "Tinctures",
+        "price": 10.0,
+        "weight": "",
+        "strain": "Sativa"
+      },
+      {
+        "name": "AGL 1g Pre Roll Mystic Mint (I) 01302",
+        "brand": "1 g",
+        "category": "Pre-Rolls",
+        "price": 10.0,
+        "weight": "",
+        "strain": "Indica"
+      },
+      {
+        "name": "Brix \\| 1g Pre-Roll - Cap Junk",
+        "brand": "Brix Cannabis1 g",
+        "category": "Pre-Rolls",
+        "price": 13.0,
+        "weight": "",
+        "strain": "Hybrid"
+      },
+      {
+        "name": "Brix \\| 1g Pre-Roll - Gush Mintz",
+        "brand": "Brix Cannabis1 g",
+        "category": "Pre-Rolls",
+        "price": 13.0,
+        "weight": "",
+        "strain": "Indica"
+      },
+      {
+        "name": "Brix \\| 1g Pre-Roll - Mac Stomper",
+        "brand": "Brix Cannabis1 g",
+        "category": "Pre-Rolls",
+        "price": 13.0,
+        "weight": "",
+        "strain": "Sativa"
+      },
+      {
+        "name": "Brix \\| 1g Pre-Roll - Soap",
+        "brand": "Brix Cannabis1 g",
+        "category": "Pre-Rolls",
+        "price": 13.0,
+        "weight": "",
+        "strain": "Sativa"
+      },
+      {
+        "name": "Chemdog's Chem 91 1g Pre Roll (S) 00461",
+        "brand": "1 g",
+        "category": "Pre-Rolls",
+        "price": 13.0,
+        "weight": "",
+        "strain": "Sativa"
+      },
+      {
+        "name": "Brix Cannabis Zoap 1g Pre Roll (H) 00500",
+        "brand": "1 g",
+        "category": "Pre-Rolls",
+        "price": 13.0,
+        "weight": "",
+        "strain": "Hybrid"
+      },
+      {
+        "name": "Brix Cannabis Jungle Cake 1g Pre Roll (H) 00462",
+        "brand": "1 g",
+        "category": "Pre-Rolls",
+        "price": 13.0,
+        "weight": "",
+        "strain": "Hybrid"
+      },
+      {
+        "name": "Brix Cannabis Bananaconda 1g Pre Roll (H) 00502",
+        "brand": "1 g",
+        "category": "Pre-Rolls",
+        "price": 13.0,
+        "weight": "",
+        "strain": "Hybrid"
+      },
+      {
+        "name": "Brix \\| 1g Pre-Roll - Fresh Kicks",
+        "brand": "Brix Cannabis1 g",
+        "category": "Pre-Rolls",
+        "price": 13.0,
+        "weight": "",
+        "strain": "Hybrid"
+      },
+      {
+        "name": "Savvy Seattle Sour Kush 1g Pre-Roll S 26863",
+        "brand": "1 g",
+        "category": "Pre-Rolls",
+        "price": 14.0,
+        "weight": "",
+        "strain": "Sativa"
+      },
+      {
+        "name": "Bulbz Pre Roll 1g",
+        "brand": "Find1 g",
+        "category": "Pre-Rolls",
+        "price": 14.0,
+        "weight": "",
+        "strain": "Hybrid"
+      },
+      {
+        "name": "AGL 5 Pack Minis Living Legend (S) 01163",
+        "brand": "2.5 g",
+        "category": "Pre-Rolls",
+        "price": 15.0,
+        "weight": "",
+        "strain": "Sativa"
+      },
+      {
+        "name": "AGL 5 Pack Minis Regina Gorgeous (H) 01228",
+        "brand": "2.5 g",
+        "category": "Pre-Rolls",
+        "price": 15.0,
+        "weight": "",
+        "strain": "Hybrid"
+      },
+      {
+        "name": "Yoke: My Yoga of Self-Acceptance",
+        "brand": "Unknown",
+        "category": "Other",
+        "price": 15.95,
+        "weight": "",
+        "strain": ""
+      },
+      {
+        "name": "Poverty, Riches & Wealth: Moving From A Life Of Lack Into True Kingdom Abundance",
+        "brand": "Unknown",
+        "category": "Other",
+        "price": 15.99,
+        "weight": "",
+        "strain": ""
+      },
+      {
+        "name": "AGL 300mg Pen Apple Cobbler x RNTZ (H) 01293",
+        "brand": "3/10 g",
+        "category": "Vaporizers",
+        "price": 16.0,
+        "weight": "",
+        "strain": "Hybrid"
+      },
+      {
+        "name": "AGL 300mg Pen East Coast Sour Diesel (S) 01259",
+        "brand": "3/10 g",
+        "category": "Vaporizers",
+        "price": 16.0,
+        "weight": "",
+        "strain": "Sativa"
+      },
+      {
+        "name": "AGL 300mg Pen FumeZ x Grease Monkey (H) 01188",
+        "brand": "3/10 g",
+        "category": "Vaporizers",
+        "price": 16.0,
+        "weight": "",
+        "strain": "Hybrid"
+      },
+      {
+        "name": "AGL 300mg Pen White Durban x Night Owl Haze (S) 01224",
+        "brand": "3/10 g",
+        "category": "Vaporizers",
+        "price": 16.0,
+        "weight": "",
+        "strain": "Sativa"
+      },
+      {
+        "name": "Astro Salted Caramel Squares 10pk 0044",
+        "brand": "Unknown",
+        "category": "Other",
+        "price": 16.0,
+        "weight": "",
+        "strain": "Hybrid"
+      },
+      {
+        "name": "Astro PB Cups 10pk 0342",
+        "brand": "Unknown",
+        "category": "Other",
+        "price": 16.0,
+        "weight": "",
+        "strain": "Hybrid"
+      },
+      {
+        "name": "Star Killer x CDLC 1g Big Ray T18.65% I 00858",
+        "brand": "1 g",
+        "category": "Other",
+        "price": 16.0,
+        "weight": "",
+        "strain": "Indica"
+      },
+      {
+        "name": "Grassroots Preroll 1g Single Ched R Cheez (I) 01362 TC 27.170%",
+        "brand": "1 g",
+        "category": "Pre-Rolls",
+        "price": 16.0,
+        "weight": "",
+        "strain": "Indica"
+      },
+      {
+        "name": "AGL 300mg Pen Animal Face x LA Kush CKE (I) 01292",
+        "brand": "3 g",
+        "category": "Vaporizers",
+        "price": 16.0,
+        "weight": "",
+        "strain": "Indica"
+      },
+      {
+        "name": "AGL 300mg Pen Chkn n WflZ (S) 01258",
+        "brand": "3/10 g",
+        "category": "Vaporizers",
+        "price": 16.0,
+        "weight": "",
+        "strain": "Sativa"
+      },
+      {
+        "name": "Chew Chocolate Covered RSO Orange Gummies I 00806",
+        "brand": "Unknown",
+        "category": "Edibles",
+        "price": 18.0,
+        "weight": "",
+        "strain": "Indica"
+      },
+      {
+        "name": "High Yoga: Enhance Yoga W/ Cannabis & CBD Treatments For Relaxation, Healing, & Bliss",
+        "brand": "Unknown",
+        "category": "Other",
+        "price": 18.95,
+        "weight": "",
+        "strain": ""
+      },
+      {
+        "name": "Green Weed: The Guide to Growing Organic Cannabis",
+        "brand": "Unknown",
+        "category": "Other",
+        "price": 19.95,
+        "weight": "",
+        "strain": "Sativa"
+      },
+      {
+        "name": "Ice Cream Cke 1g Infused PR 41524",
+        "brand": "1 g",
+        "category": "Other",
+        "price": 20.0,
+        "weight": "",
+        "strain": "Indica"
+      },
+      {
+        "name": "Dogwalkers 5 Pack Minis Do Not Trip (H) 01309",
+        "brand": "1.75 g",
+        "category": "Pre-Rolls",
+        "price": 20.0,
+        "weight": "",
+        "strain": "Hybrid"
+      },
+      {
+        "name": "Waiting To Inhale: Cannabis Legalization & The Fight For Racial Justice",
+        "brand": "Unknown",
+        "category": "Other",
+        "price": 22.95,
+        "weight": "",
+        "strain": ""
+      },
+      {
+        "name": "Cannabis for Health: The Essential Guide to Using Cannabis for Total Wellness (Cannabis Wellness)",
+        "brand": "Unknown",
+        "category": "Other",
+        "price": 24.95,
+        "weight": "",
+        "strain": ""
+      },
+      {
+        "name": "Homegrown Cannabis: A Beginner's Guide to Cultivating Organic Cannabis (Cannabis Wellness)",
+        "brand": "Unknown",
+        "category": "Other",
+        "price": 24.95,
+        "weight": "",
+        "strain": ""
+      },
+      {
+        "name": "Cooking with Cannabis: Delicious Recipes for Edibles and Everyday Favorites",
+        "brand": "Unknown",
+        "category": "Edibles",
+        "price": 24.99,
+        "weight": "",
+        "strain": ""
+      },
+      {
+        "name": "Good Green 3.5g Living Legend (S) 01125",
+        "brand": "1/8 oz",
+        "category": "Other",
+        "price": 25.0,
+        "weight": "",
+        "strain": "Sativa"
+      },
+      {
+        "name": "Rythm 0.5g Vape 95 Cook (H) 01282",
+        "brand": "1/2 g",
+        "category": "Vaporizers",
+        "price": 25.0,
+        "weight": "",
+        "strain": "Hybrid"
+      },
+      {
+        "name": "Rythm 0.5g Vape Cheddar Cheeze (I) 01312",
+        "brand": "1/2 g",
+        "category": "Vaporizers",
+        "price": 25.0,
+        "weight": "",
+        "strain": "Indica"
+      },
+      {
+        "name": "ARDENT \\| Gen 2 Frainer \\| Funnel Strainer",
+        "brand": "Unknown",
+        "category": "Other",
+        "price": 25.0,
+        "weight": "",
+        "strain": "Hybrid"
+      },
+      {
+        "name": "On The Rocks Live Rosin Sour Apricot Apple Gummies T95.4mg H 26870",
+        "brand": "Unknown",
+        "category": "Edibles",
+        "price": 28.0,
+        "weight": "",
+        "strain": "Hybrid"
+      },
+      {
+        "name": "Wook Stomper Shorties H 26792",
+        "brand": "2 g",
+        "category": "Pre-Rolls",
+        "price": 28.0,
+        "weight": "",
+        "strain": "Hybrid"
+      },
+      {
+        "name": "Runner's High: How A Movement Of Cannabis-Fueled Athletes Is Changing The Science Of Sports",
+        "brand": "Unknown",
+        "category": "Other",
+        "price": 28.0,
+        "weight": "",
+        "strain": ""
+      },
+      {
+        "name": "CTP Shorties I 26711",
+        "brand": "GMO",
+        "category": "Pre-Rolls",
+        "price": 28.0,
+        "weight": "",
+        "strain": "Indica"
+      },
+      {
+        "name": "Encore Pomegranate Punch CBN:THC Gummies CBN46.4mg T90.8mg I 26781",
+        "brand": "Unknown",
+        "category": "Edibles",
+        "price": 29.0,
+        "weight": "",
+        "strain": "Indica"
+      },
+      {
+        "name": "Lato 1:1 Infused Shorties 41085",
+        "brand": "1.",
+        "category": "Pre-Rolls",
+        "price": 29.0,
+        "weight": "6 g",
+        "strain": ""
+      },
+      {
+        "name": "Pey Cough 3:2 Infused Shorties 41063",
+        "brand": "1.",
+        "category": "Pre-Rolls",
+        "price": 29.0,
+        "weight": "6 g",
+        "strain": ""
+      },
+      {
+        "name": "KJV, The Everyday Bible",
+        "brand": "Unknown",
+        "category": "Other",
+        "price": 29.99,
+        "weight": "",
+        "strain": ""
+      },
+      {
+        "name": "AGL 5 Pack Minis LA Kush CKE (I) 01122",
+        "brand": "2.5 g",
+        "category": "Pre-Rolls",
+        "price": 30.0,
+        "weight": "",
+        "strain": "Indica"
+      },
+      {
+        "name": "Encore Milk Chocolate RSO T92.8mg I 26589",
+        "brand": "Unknown",
+        "category": "Edibles",
+        "price": 32.0,
+        "weight": "",
+        "strain": "Indica"
+      },
+      {
+        "name": "JAMS Fast Acting Jellies Sour Green Apple (H) 01118",
+        "brand": "Unknown",
+        "category": "Edibles",
+        "price": 32.0,
+        "weight": "",
+        "strain": "Hybrid"
+      },
+      {
+        "name": "Camino Watermelon Lemonade Cannabis-Infused Gummies 00343",
+        "brand": "Unknown",
+        "category": "Edibles",
+        "price": 32.0,
+        "weight": "",
+        "strain": "Hybrid"
+      },
+      {
+        "name": "Camino Wild Berry Cannabis-Infused Gummies 00396",
+        "brand": "Unknown",
+        "category": "Edibles",
+        "price": 32.0,
+        "weight": "",
+        "strain": "Indica"
+      },
+      {
+        "name": "Citral Ice Flower Minis T21.74% S 00864",
+        "brand": "1/8 oz",
+        "category": "Pre-Rolls",
+        "price": 32.0,
+        "weight": "",
+        "strain": "Sativa"
+      },
+      {
+        "name": "Encore Dark Chocolate RSO T97.2mg I 26702",
+        "brand": "Unknown",
+        "category": "Edibles",
+        "price": 32.0,
+        "weight": "",
+        "strain": "Indica"
+      },
+      {
+        "name": "Encore Dark Chocolate RSO T99mg S 26839",
+        "brand": "Unknown",
+        "category": "Edibles",
+        "price": 32.0,
+        "weight": "",
+        "strain": "Sativa"
+      },
+      {
+        "name": "Encore Milk Chocolate RSO T90.8mg S 26672",
+        "brand": "Unknown",
+        "category": "Edibles",
+        "price": 32.0,
+        "weight": "",
+        "strain": "Sativa"
+      },
+      {
+        "name": "Camino Pineapple Habanero Cannabis-Infused Gummies 00327",
+        "brand": "Unknown",
+        "category": "Edibles",
+        "price": 32.0,
+        "weight": "",
+        "strain": "Sativa"
+      },
+      {
+        "name": "Brix \\| 3.5g Flower - Mac Stomper",
+        "brand": "Brix Cannabis1/8 oz",
+        "category": "Flower",
+        "price": 32.0,
+        "weight": "",
+        "strain": "Sativa"
+      },
+      {
+        "name": "Sour Watermelon Lime 100mg \\| 20pk",
+        "brand": "Fast Acting Jellies",
+        "category": "Other",
+        "price": 32.0,
+        "weight": "",
+        "strain": "Indica"
+      },
+      {
+        "name": "Camino Sours-Strawberry Sunset Cannabis-Infused Gummies-00365",
+        "brand": "Unknown",
+        "category": "Edibles",
+        "price": 34.0,
+        "weight": "",
+        "strain": "Indica"
+      },
+      {
+        "name": "Camino Freshly Squeezed with CBG 5:10 Cannabis-Infused Gummies 00378",
+        "brand": "Unknown",
+        "category": "Edibles",
+        "price": 34.0,
+        "weight": "",
+        "strain": ""
+      },
+      {
+        "name": "Camino Mango with CBD 5:5 Cannabis-Infused Gummies 00227",
+        "brand": "Unknown",
+        "category": "Edibles",
+        "price": 34.0,
+        "weight": "",
+        "strain": ""
+      },
+      {
+        "name": "Camino Midnight Blueberry Cannabis-Infused Gummies 00364",
+        "brand": "Unknown",
+        "category": "Edibles",
+        "price": 34.0,
+        "weight": "",
+        "strain": ""
+      },
+      {
+        "name": "Camino Sours-Blackberry Dream with CBN & CBD 10:10:10 Cannabis-Infused Gummies-00395",
+        "brand": "Unknown",
+        "category": "Edibles",
+        "price": 34.0,
+        "weight": "",
+        "strain": ""
+      },
+      {
+        "name": "Camino Sours-Orchard Peach with CBD 10:10 Cannabis-Infused Gummies-00361",
+        "brand": "Unknown",
+        "category": "Edibles",
+        "price": 34.0,
+        "weight": "",
+        "strain": ""
+      },
+      {
+        "name": "Camino Sours-Tropical Burst with THCV 10:6 Cannabis-Infused Gummies-00342",
+        "brand": "Unknown",
+        "category": "Edibles",
+        "price": 34.0,
+        "weight": "",
+        "strain": "Sativa"
+      },
+      {
+        "name": "Worship Together Bible (NIV)",
+        "brand": "Unknown",
+        "category": "Other",
+        "price": 34.99,
+        "weight": "",
+        "strain": ""
+      },
+      {
+        "name": "Good Green 3.5g Paradise Snacks (I) 01261",
+        "brand": "1/8 oz",
+        "category": "Other",
+        "price": 35.0,
+        "weight": "",
+        "strain": "Indica"
+      },
+      {
+        "name": "Jokerz Flower I 26746",
+        "brand": "1/8 oz",
+        "category": "Flower",
+        "price": 35.0,
+        "weight": "",
+        "strain": "Indica"
+      },
+      {
+        "name": "Grassroots Ground Flower 3.5g Hickory Hash (H) 01476 TC 30.586%",
+        "brand": "1/8 oz",
+        "category": "Flower",
+        "price": 35.0,
+        "weight": "",
+        "strain": "Hybrid"
+      },
+      {
+        "name": "Gangsta Grillz 2g Fatboy 41618",
+        "brand": "2 g",
+        "category": "Pre-Rolls",
+        "price": 35.0,
+        "weight": "",
+        "strain": "Indica"
+      },
+      {
+        "name": "Wedding Cake 2g Fatboy 41648",
+        "brand": "2 g",
+        "category": "Pre-Rolls",
+        "price": 35.0,
+        "weight": "",
+        "strain": "Indica"
+      },
+      {
+        "name": "CTP Disposable T259 I 26428",
+        "brand": "Savvy GMO Purps",
+        "category": "Vaporizers",
+        "price": 36.0,
+        "weight": "",
+        "strain": "Indica"
+      },
+      {
+        "name": "Savvy Yellow Haze OG Disposable T257 S 26610",
+        "brand": "3/10 g",
+        "category": "Vaporizers",
+        "price": 36.0,
+        "weight": "",
+        "strain": "Sativa"
+      },
+      {
+        "name": "Savvy Mendo Wedding Disposable T247 I 26842",
+        "brand": "3/10 g",
+        "category": "Vaporizers",
+        "price": 36.0,
+        "weight": "",
+        "strain": "Indica"
+      },
+      {
+        "name": "Loud Cannabis Mango Puff (I) C0170000021",
+        "brand": "1 g",
+        "category": "Other",
+        "price": 37.0,
+        "weight": "",
+        "strain": "Indica"
+      },
+      {
+        "name": "Loud Cannabis Golden Tangie (S) C0170000018",
+        "brand": "1 g",
+        "category": "Other",
+        "price": 37.0,
+        "weight": "",
+        "strain": "Sativa"
+      },
+      {
+        "name": "Airheadz 4pk Infused Shorties (1.6g)",
+        "brand": "1.6 g",
+        "category": "Pre-Rolls",
+        "price": 39.0,
+        "weight": "",
+        "strain": "Indica"
+      },
+      {
+        "name": "RYOT Super Slim Magnetic Dugout with One Hitter (Blue)",
+        "brand": "Unknown",
+        "category": "Other",
+        "price": 40.0,
+        "weight": "",
+        "strain": ""
+      },
+      {
+        "name": "Brix \\| 3.5g Flower - Chemdog's Chem D",
+        "brand": "Brix Cannabis",
+        "category": "Flower",
+        "price": 40.0,
+        "weight": "1/8 oz",
+        "strain": ""
+      },
+      {
+        "name": "Let's Burn CT Rainbows 3.5g 0012",
+        "brand": "1/8 oz",
+        "category": "Other",
+        "price": 40.0,
+        "weight": "",
+        "strain": "Indica"
+      },
+      {
+        "name": "Brix \\| 3.5g Flower - Soap",
+        "brand": "Brix Cannabis1/8 oz",
+        "category": "Flower",
+        "price": 40.0,
+        "weight": "",
+        "strain": "Sativa"
+      },
+      {
+        "name": "Brix \\| 3.5g Flower - Permanent Marker",
+        "brand": "Brix Cannabis1/8 oz",
+        "category": "Flower",
+        "price": 40.0,
+        "weight": "",
+        "strain": "Indica"
+      },
+      {
+        "name": "RYOT Super Slim Magnetic Dugout with One Hitter (Black)",
+        "brand": "Unknown",
+        "category": "Other",
+        "price": 40.0,
+        "weight": "",
+        "strain": ""
+      },
+      {
+        "name": "RYOT Super Slim Magnetic Dugout with One Hitter (Green)",
+        "brand": "Unknown",
+        "category": "Other",
+        "price": 40.0,
+        "weight": "",
+        "strain": ""
+      },
+      {
+        "name": "RYOT Super Slim Magnetic Dugout with One Hitter (Purple)",
+        "brand": "Unknown",
+        "category": "Other",
+        "price": 40.0,
+        "weight": "",
+        "strain": ""
+      },
+      {
+        "name": "3.5G - Blue Raz",
+        "brand": "Cookies",
+        "category": "Other",
+        "price": 40.0,
+        "weight": "",
+        "strain": "Hybrid"
+      },
+      {
+        "name": "Brix \\| 3.5g Flower - Gush Mintz",
+        "brand": "Brix Cannabis1/8 oz",
+        "category": "Flower",
+        "price": 40.0,
+        "weight": "",
+        "strain": "Indica"
+      },
+      {
+        "name": "The Goods Whole Flower 3.5g Tropical Kush (C0193330001)",
+        "brand": "1/8 oz",
+        "category": "Flower",
+        "price": 42.0,
+        "weight": "",
+        "strain": "Indica"
+      },
+      {
+        "name": "LIT \\| Heavyweight Hoodie \\| Black (S)",
+        "brand": "Unknown",
+        "category": "Other",
+        "price": 45.0,
+        "weight": "",
+        "strain": ""
+      },
+      {
+        "name": "LIT \\| Heavyweight Hoodie \\| Black (XL)",
+        "brand": "Unknown",
+        "category": "Other",
+        "price": 45.0,
+        "weight": "",
+        "strain": ""
+      },
+      {
+        "name": "LIT \\| Heavyweight Hoodie \\| Charcoal (2XL)",
+        "brand": "Unknown",
+        "category": "Other",
+        "price": 45.0,
+        "weight": "",
+        "strain": ""
+      },
+      {
+        "name": "Select Elite Cartridge .5g Dosido (I) 01479",
+        "brand": "1/2 g",
+        "category": "Vaporizers",
+        "price": 45.0,
+        "weight": "",
+        "strain": "Indica"
+      },
+      {
+        "name": "Select Elite Cartridge .5g Banana Cream Cayk (H) 01452",
+        "brand": "1/2 g",
+        "category": "Vaporizers",
+        "price": 45.0,
+        "weight": "",
+        "strain": "Hybrid"
+      },
+      {
+        "name": "Select Elite Cartridge .5g Sundae Slumber (I) 01350",
+        "brand": "1/2 g",
+        "category": "Vaporizers",
+        "price": 45.0,
+        "weight": "",
+        "strain": "Indica"
+      },
+      {
+        "name": "E85 Flower S 26812",
+        "brand": "1/8 oz",
+        "category": "Flower",
+        "price": 45.0,
+        "weight": "",
+        "strain": "Sativa"
+      },
+      {
+        "name": "Zuava Flower H 26761",
+        "brand": "1/8 oz",
+        "category": "Flower",
+        "price": 45.0,
+        "weight": "",
+        "strain": "Hybrid"
+      },
+      {
+        "name": "Hash Planet MT 41565",
+        "brand": "1/2 g",
+        "category": "Other",
+        "price": 45.0,
+        "weight": "",
+        "strain": "Indica"
+      },
+      {
+        "name": "Mendo Wedding Flower I 26561",
+        "brand": "1/8 oz",
+        "category": "Flower",
+        "price": 45.0,
+        "weight": "",
+        "strain": "Indica"
+      },
+      {
+        "name": "Green G MT 41177",
+        "brand": "1/2 g",
+        "category": "Other",
+        "price": 45.0,
+        "weight": "",
+        "strain": "Hybrid"
+      },
+      {
+        "name": "Brix Cannabis Jungle Cake Whole Flower 3.5g (H) 00484",
+        "brand": "1/8 oz",
+        "category": "Flower",
+        "price": 45.0,
+        "weight": "",
+        "strain": "Hybrid"
+      },
+      {
+        "name": "Green Diesel (Gretolex) Flower 3.5g",
+        "brand": "CTPharma1/8 oz",
+        "category": "Flower",
+        "price": 45.0,
+        "weight": "",
+        "strain": "Sativa"
+      },
+      {
+        "name": "LIT \\| Heavyweight Hoodie \\| Charcoal (XL)",
+        "brand": "Unknown",
+        "category": "Other",
+        "price": 45.0,
+        "weight": "",
+        "strain": ""
+      },
+      {
+        "name": "LIT \\| Heavyweight Hoodie \\| Charcoal (S)",
+        "brand": "Unknown",
+        "category": "Other",
+        "price": 45.0,
+        "weight": "",
+        "strain": ""
+      },
+      {
+        "name": "LIT \\| Heavyweight Hoodie \\| Charcoal (M)",
+        "brand": "Unknown",
+        "category": "Other",
+        "price": 45.0,
+        "weight": "",
+        "strain": ""
+      },
+      {
+        "name": "LIT \\| Heavyweight Hoodie \\| Charcoal (L)",
+        "brand": "Unknown",
+        "category": "Other",
+        "price": 45.0,
+        "weight": "",
+        "strain": ""
+      },
+      {
+        "name": "LIT \\| Heavyweight Hoodie \\| Charcoal (3XL)",
+        "brand": "Unknown",
+        "category": "Other",
+        "price": 45.0,
+        "weight": "",
+        "strain": ""
+      },
+      {
+        "name": "Red Gary Flower H 26800",
+        "brand": "1/8 oz",
+        "category": "Flower",
+        "price": 45.0,
+        "weight": "",
+        "strain": "Hybrid"
+      },
+      {
+        "name": "LIT \\| Heavyweight Hoodie \\| Black (2XL)",
+        "brand": "Unknown",
+        "category": "Other",
+        "price": 45.0,
+        "weight": "",
+        "strain": ""
+      },
+      {
+        "name": "LIT \\| Heavyweight Hoodie \\| Black (3XL)",
+        "brand": "Unknown",
+        "category": "Other",
+        "price": 45.0,
+        "weight": "",
+        "strain": ""
+      },
+      {
+        "name": "LIT \\| Heavyweight Hoodie \\| Black (M)",
+        "brand": "Unknown",
+        "category": "Other",
+        "price": 45.0,
+        "weight": "",
+        "strain": ""
+      },
+      {
+        "name": "LIT \\| Heavyweight Hoodie \\| Black (L)",
+        "brand": "Unknown",
+        "category": "Other",
+        "price": 45.0,
+        "weight": "",
+        "strain": ""
+      },
+      {
+        "name": "3.5G Flower Tub - Ridgeline Lantz",
+        "brand": "Cookies",
+        "category": "Flower",
+        "price": 46.0,
+        "weight": "",
+        "strain": "Hybrid"
+      },
+      {
+        "name": "3.5G Flower Tub - London Pound Cake 75",
+        "brand": "Cookies",
+        "category": "Flower",
+        "price": 46.0,
+        "weight": "",
+        "strain": "Hybrid"
+      },
+      {
+        "name": "Cookies Whole Flower 3.5g Vienna (C0193110001)",
+        "brand": "1/8 oz",
+        "category": "Flower",
+        "price": 46.0,
+        "weight": "",
+        "strain": "Hybrid"
+      },
+      {
+        "name": "Affinity Grow \\| Coconut Milk \\| Flower \\| 3.5G",
+        "brand": "1/8 oz",
+        "category": "Flower",
+        "price": 46.0,
+        "weight": "",
+        "strain": "Hybrid"
+      },
+      {
+        "name": "3.5G Flower Tub - Blueberry Banana",
+        "brand": "Cookies",
+        "category": "Flower",
+        "price": 46.0,
+        "weight": "",
+        "strain": "Indica"
+      },
+      {
+        "name": "3.5G Flower Tub - Blackberry Caviar",
+        "brand": "Cookies",
+        "category": "Flower",
+        "price": 46.0,
+        "weight": "1/8 oz",
+        "strain": ""
+      },
+      {
+        "name": "The Goods Tropical RNTZ 1g Vape Cartridge T88.740% S 50001",
+        "brand": "1 g",
+        "category": "Vaporizers",
+        "price": 48.0,
+        "weight": "",
+        "strain": "Sativa"
+      },
+      {
+        "name": "Brownie Scout 3.5g",
+        "brand": "RYTHM",
+        "category": "Flower",
+        "price": 50.0,
+        "weight": "1/8 oz",
+        "strain": ""
+      },
+      {
+        "name": "REEBOK x LIT \\| Icon \\| 1/2 Zip-Up Womens Jacket \\| Black (L)",
+        "brand": "Unknown",
+        "category": "Other",
+        "price": 50.0,
+        "weight": "",
+        "strain": ""
+      },
+      {
+        "name": "Grassroots Whole Flower 3.5g White Caps (I) 01383 TC 30.367%",
+        "brand": "1/8 oz",
+        "category": "Flower",
+        "price": 50.0,
+        "weight": "",
+        "strain": "Indica"
+      },
+      {
+        "name": "Grassroots Whole Flower 3.5g Apple Tartz (H) 01416 TC 37.98%",
+        "brand": "1/8 oz",
+        "category": "Flower",
+        "price": 50.0,
+        "weight": "",
+        "strain": "Hybrid"
+      },
+      {
+        "name": "REEBOK x LIT \\| Icon \\| 1/2 Zip-Up Womens Jacket \\| Black (S)",
+        "brand": "Unknown",
+        "category": "Other",
+        "price": 50.0,
+        "weight": "",
+        "strain": ""
+      },
+      {
+        "name": "REEBOK x LIT \\| Icon \\| 1/2 Zip-Up Womens Jacket \\| Black (XL)",
+        "brand": "Unknown",
+        "category": "Other",
+        "price": 50.0,
+        "weight": "",
+        "strain": ""
+      },
+      {
+        "name": "REEBOK x LIT \\| Icon \\| 1/2 Zip-Up Womens Jacket \\| Red (L)",
+        "brand": "Unknown",
+        "category": "Other",
+        "price": 50.0,
+        "weight": "",
+        "strain": ""
+      },
+      {
+        "name": "REEBOK x LIT \\| Icon \\| 1/2 Zip-Up Womens Jacket \\| Red (S)",
+        "brand": "Unknown",
+        "category": "Other",
+        "price": 50.0,
+        "weight": "",
+        "strain": ""
+      },
+      {
+        "name": "REEBOK x LIT \\| Icon \\| 1/2 Zip-Up Womens Jacket \\| Red (XL)",
+        "brand": "Unknown",
+        "category": "Other",
+        "price": 50.0,
+        "weight": "",
+        "strain": ""
+      },
+      {
+        "name": "Grassroots Dark Heart Collection Whole Flower 3.5g Triple Stack (I) 01458 TC 33.265%",
+        "brand": "1/8 oz",
+        "category": "Flower",
+        "price": 50.0,
+        "weight": "",
+        "strain": "Indica"
+      },
+      {
+        "name": "Durban StarDawg (Jellivex) Shorties 2g",
+        "brand": "CTPharma2 g",
+        "category": "Pre-Rolls",
+        "price": 50.0,
+        "weight": "",
+        "strain": "Hybrid"
+      },
+      {
+        "name": "Brix \\| 1g Disposable - Gush Mintz",
+        "brand": "Brix Cannabis",
+        "category": "Vaporizers",
+        "price": 50.0,
+        "weight": "1 g",
+        "strain": ""
+      },
+      {
+        "name": "ARDENT \\| FX \\| Single Lifter",
+        "brand": "Unknown",
+        "category": "Other",
+        "price": 50.0,
+        "weight": "",
+        "strain": ""
+      },
+      {
+        "name": "Animal Face Flower 3.5g",
+        "brand": "RYTHM1/8 oz",
+        "category": "Flower",
+        "price": 50.0,
+        "weight": "",
+        "strain": "Hybrid"
+      },
+      {
+        "name": "all:hours Banapple Burger Rosin Voca Pro 41616",
+        "brand": "1/2 g",
+        "category": "Concentrates",
+        "price": 52.0,
+        "weight": "",
+        "strain": "Hybrid"
+      },
+      {
+        "name": "Cookies C. Rollz 1g Vape Cartridge T84.854% I 60001",
+        "brand": "1 g",
+        "category": "Vaporizers",
+        "price": 52.0,
+        "weight": "",
+        "strain": "Hybrid"
+      },
+      {
+        "name": "CSB Lifeway Women's Bible",
+        "brand": "Unknown",
+        "category": "Other",
+        "price": 54.99,
+        "weight": "",
+        "strain": ""
+      },
+      {
+        "name": "Afgooey Lil' Budz 7g (I) 00445",
+        "brand": "1/4 oz",
+        "category": "Other",
+        "price": 55.0,
+        "weight": "",
+        "strain": "Indica"
+      },
+      {
+        "name": "Jelly Roll 7g 41477",
+        "brand": "1/4 oz",
+        "category": "Other",
+        "price": 56.0,
+        "weight": "",
+        "strain": "Indica"
+      },
+      {
+        "name": "Permanent Marker 7g 41484",
+        "brand": "1/4 oz",
+        "category": "Other",
+        "price": 56.0,
+        "weight": "",
+        "strain": "Indica"
+      },
+      {
+        "name": "Bananaconda Lil' Budz 7g (H) 00494",
+        "brand": "1/4 oz",
+        "category": "Other",
+        "price": 56.0,
+        "weight": "",
+        "strain": "Hybrid"
+      },
+      {
+        "name": "Chem 91 Lil' Budz 7g (S) 00444",
+        "brand": "1/4 oz",
+        "category": "Other",
+        "price": 56.0,
+        "weight": "",
+        "strain": "Sativa"
+      },
+      {
+        "name": "The Essence Hyphen Pod 1g Super Jack T836 S 26706",
+        "brand": "1 g",
+        "category": "Other",
+        "price": 60.0,
+        "weight": "",
+        "strain": "Sativa"
+      },
+      {
+        "name": "all:hours Air Hdz Hash Nugs 41504",
+        "brand": "1/8 oz",
+        "category": "Other",
+        "price": 60.0,
+        "weight": "",
+        "strain": "Indica"
+      },
+      {
+        "name": "all:hours Mule Fuel Hash Nugs 41629",
+        "brand": "1/8 oz",
+        "category": "Other",
+        "price": 60.0,
+        "weight": "",
+        "strain": "Hybrid"
+      },
+      {
+        "name": "The Essence Hyphen Pod 1g Spacedawg T848 I 26707",
+        "brand": "1 g",
+        "category": "Other",
+        "price": 60.0,
+        "weight": "",
+        "strain": "Indica"
+      },
+      {
+        "name": "Cookies C Rollz 7.0g Smalls (C0194160001)",
+        "brand": "1/4 oz",
+        "category": "Other",
+        "price": 62.0,
+        "weight": "",
+        "strain": "Hybrid"
+      },
+      {
+        "name": "Strawberry Cndy 7g 41539",
+        "brand": "1/4 oz",
+        "category": "Other",
+        "price": 64.0,
+        "weight": "",
+        "strain": "Sativa"
+      },
+      {
+        "name": "Rythm 7g Small Flower Lemon Drip (S) 01253",
+        "brand": "1/4 oz",
+        "category": "Flower",
+        "price": 65.0,
+        "weight": "",
+        "strain": "Sativa"
+      },
+      {
+        "name": "LIT \\| Paramount Embroidered \\| Zip-Up Hoodie \\| Navy (S)",
+        "brand": "Unknown",
+        "category": "Other",
+        "price": 65.0,
+        "weight": "",
+        "strain": ""
+      },
+      {
+        "name": "LIT \\| Paramount Embroidered \\| Zip-Up Hoodie \\| Navy (XL)",
+        "brand": "Unknown",
+        "category": "Other",
+        "price": 65.0,
+        "weight": "",
+        "strain": ""
+      },
+      {
+        "name": "LIT \\| Paramount Embroidered \\| Zip-Up Hoodie \\| Navy (2XL)",
+        "brand": "Unknown",
+        "category": "Other",
+        "price": 65.0,
+        "weight": "",
+        "strain": ""
+      },
+      {
+        "name": "LIT \\| Paramount Embroidered \\| Zip-Up Hoodie \\| Navy (3XL)",
+        "brand": "Unknown",
+        "category": "Other",
+        "price": 65.0,
+        "weight": "",
+        "strain": ""
+      },
+      {
+        "name": "LIT \\| Paramount Embroidered \\| Zip-Up Hoodie \\| Navy (L)",
+        "brand": "Unknown",
+        "category": "Other",
+        "price": 65.0,
+        "weight": "",
+        "strain": ""
+      },
+      {
+        "name": "LIT \\| Paramount Embroidered \\| Zip-Up Hoodie \\| Navy (M)",
+        "brand": "Unknown",
+        "category": "Other",
+        "price": 65.0,
+        "weight": "",
+        "strain": ""
+      },
+      {
+        "name": "Affinity Grow \\| Capy \\| LT Vape Cartridges \\| 1G",
+        "brand": "1 g",
+        "category": "Vaporizers",
+        "price": 70.0,
+        "weight": "",
+        "strain": "Hybrid"
+      },
+      {
+        "name": "Hash Breath MT 41300",
+        "brand": "1 g",
+        "category": "Other",
+        "price": 72.0,
+        "weight": "",
+        "strain": "Indica"
+      },
+      {
+        "name": "The Essence Hyphen AIO 1g Spacedawg T838 I 26558",
+        "brand": "1 g",
+        "category": "Other",
+        "price": 75.0,
+        "weight": "",
+        "strain": "Indica"
+      },
+      {
+        "name": "The Essence Hyphen AIO 1g Super Jack T828 S 26559",
+        "brand": "1 g",
+        "category": "Other",
+        "price": 75.0,
+        "weight": "",
+        "strain": "Sativa"
+      },
+      {
+        "name": "The Essence Hyphen AIO 1g Juice OG T818 H 26557",
+        "brand": "1 g",
+        "category": "Other",
+        "price": 75.0,
+        "weight": "",
+        "strain": "Hybrid"
+      },
+      {
+        "name": "The Essence Hyphen AIO 1g GMOG T851 I 26678",
+        "brand": "1 g",
+        "category": "Other",
+        "price": 75.0,
+        "weight": "",
+        "strain": "Indica"
+      },
+      {
+        "name": "Zuava Live Rosin AIO 1g T811 H 26710",
+        "brand": "On The Rocks",
+        "category": "Concentrates",
+        "price": 80.0,
+        "weight": "",
+        "strain": "Hybrid"
+      },
+      {
+        "name": "Jokerz Live Rosin AIO 1g T828 I 26788",
+        "brand": "On The Rocks",
+        "category": "Concentrates",
+        "price": 80.0,
+        "weight": "",
+        "strain": "Indica"
+      },
+      {
+        "name": "RYOT VERB DHV Vaporizer",
+        "brand": "Unknown",
+        "category": "Other",
+        "price": 85.0,
+        "weight": "",
+        "strain": ""
+      },
+      {
+        "name": "Savvy Hyphen AIO 2g Tahoe OG T1749 H 26784",
+        "brand": "2 g",
+        "category": "Other",
+        "price": 85.0,
+        "weight": "",
+        "strain": "Hybrid"
+      },
+      {
+        "name": "Savvy Hyphen AIO 2g Red Pop T1542 I 26782",
+        "brand": "2 g",
+        "category": "Other",
+        "price": 85.0,
+        "weight": "",
+        "strain": "Indica"
+      },
+      {
+        "name": "Savvy Hyphen AIO 2g Haze Berry T1687 S 26786",
+        "brand": "2 g",
+        "category": "Other",
+        "price": 85.0,
+        "weight": "",
+        "strain": "Sativa"
+      },
+      {
+        "name": "Select Elite Briq All In One Disposable Vape 2g Sundae Slumber (I) 01343",
+        "brand": "2 g",
+        "category": "Vaporizers",
+        "price": 110.0,
+        "weight": "",
+        "strain": "Indica"
+      },
+      {
+        "name": "Select Elite Briq All In One Disposable Vape 2g Purple Urkel (I) 01266",
+        "brand": "2 g",
+        "category": "Vaporizers",
+        "price": 110.0,
+        "weight": "",
+        "strain": "Indica"
+      },
+      {
+        "name": "Savvy Strut AIO 2g Golden Tangie T1794 S 26818",
+        "brand": "2 g",
+        "category": "Other",
+        "price": 110.0,
+        "weight": "",
+        "strain": "Sativa"
+      },
+      {
+        "name": "Select Elite Briq All In One Disposable Vape 2g Diesel Moon (H) 01280",
+        "brand": "2 g",
+        "category": "Vaporizers",
+        "price": 110.0,
+        "weight": "",
+        "strain": "Hybrid"
+      },
+      {
+        "name": "Savvy Strut AIO 2g Alien OG T1619 H 26776",
+        "brand": "2 g",
+        "category": "Other",
+        "price": 110.0,
+        "weight": "",
+        "strain": "Hybrid"
+      },
+      {
+        "name": "ARDENT \\| FX Mini \\| Precision Heater",
+        "brand": "Unknown",
+        "category": "Pre-Rolls",
+        "price": 180.0,
+        "weight": "",
+        "strain": ""
+      },
+      {
+        "name": "ARDENT \\| FX \\| Precision Heater",
+        "brand": "Unknown",
+        "category": "Other",
+        "price": 299.0,
+        "weight": "",
+        "strain": ""
+      }
+    ],
+    "deals": []
+  },
+  "Insa New Haven": {
+    "products": [],
+    "deals": []
+  },
+  "RISE Dispensary Orange": {
+    "products": [
+      {
+        "name": "ayrloom 1:1 Honey Crisp (5mg CBD/5mg THC)",
+        "brand": "ayrloom12fl ozTHC:  THC",
+        "category": "Other",
+        "price": 5.0,
+        "weight": "5mg",
+        "strain": ""
+      },
+      {
+        "name": "ayrloom 1:1 Black Cherry (3mg THC/3mg CBD)",
+        "brand": "ayrloom12fl ozTHC:  THC",
+        "category": "Other",
+        "price": 5.0,
+        "weight": "3mg",
+        "strain": ""
+      },
+      {
+        "name": "Astro PB Cups 5pk 0030",
+        "brand": "Astro Confections5pkTHC: 24.",
+        "category": "Pre-Rolls",
+        "price": 8.0,
+        "weight": "5mg",
+        "strain": ""
+      },
+      {
+        "name": "Dogwalkers 1g Big Dog Do Not Trip (H) 01330",
+        "brand": "Dogwalkers1gTHC: 24%",
+        "category": "Pre-Rolls",
+        "price": 12.0,
+        "weight": "",
+        "strain": ""
+      },
+      {
+        "name": "Dogwalkers Dulce de Uva \\[1g\\] Big Dog",
+        "brand": "Dogwalkers1gTHC: 22.1%",
+        "category": "Pre-Rolls",
+        "price": 12.0,
+        "weight": "",
+        "strain": ""
+      },
+      {
+        "name": "Dogwalkers 1g Big Dog Lemon Drip (S) 01294",
+        "brand": "Dogwalkers1gTHC: 24%",
+        "category": "Pre-Rolls",
+        "price": 12.0,
+        "weight": "",
+        "strain": ""
+      },
+      {
+        "name": "Dogwalkers 1g Big Dog Black Maple 22 (I) 01111",
+        "brand": "Dogwalkers1gTHC: 24%",
+        "category": "Pre-Rolls",
+        "price": 12.0,
+        "weight": "",
+        "strain": ""
+      },
+      {
+        "name": "Dogwalkers 1g Big Dog B Scout (I) 01229",
+        "brand": "Dogwalkers1gTHC: 24%",
+        "category": "Pre-Rolls",
+        "price": 12.0,
+        "weight": "",
+        "strain": ""
+      },
+      {
+        "name": "inc.edibles 20 Pack Fast Acting Sour Cherry Tart",
+        "brand": "inc.edibles20 PackTHC:",
+        "category": "Edibles",
+        "price": 24.0,
+        "weight": "100mg",
+        "strain": ""
+      },
+      {
+        "name": "Rythm 3.5g Jet Fuel (H) 00871",
+        "brand": "RYTHM3.5gTHC: 22.4%",
+        "category": "Other",
+        "price": 24.0,
+        "weight": "",
+        "strain": ""
+      },
+      {
+        "name": "Camino Mango with CBD 5:5 Gummies",
+        "brand": "Camino20pkTHC:  CBD",
+        "category": "Edibles",
+        "price": 25.0,
+        "weight": "96mg",
+        "strain": ""
+      },
+      {
+        "name": "Rythm 3.5g Confidential Cherries (I) 00985",
+        "brand": "RYTHM3.5gTHC: 20.34%",
+        "category": "Other",
+        "price": 32.0,
+        "weight": "",
+        "strain": ""
+      },
+      {
+        "name": "Rythm 3.5g Jack's Delight (H) 00988",
+        "brand": "RYTHM3.5gTHC: 24.4%",
+        "category": "Other",
+        "price": 32.0,
+        "weight": "",
+        "strain": ""
+      },
+      {
+        "name": "Rythm 0.5g Vape Cheddar Cheeze (I) 01312",
+        "brand": "RYTHM0.5gTHC: 83.3%",
+        "category": "Vaporizers",
+        "price": 36.0,
+        "weight": "",
+        "strain": ""
+      },
+      {
+        "name": "Rythm 3.5g Dulce De Uva (I) 01162",
+        "brand": "RYTHM3.5gTHC: 26%",
+        "category": "Other",
+        "price": 40.0,
+        "weight": "",
+        "strain": ""
+      },
+      {
+        "name": "Rythm 3.5g Animal Scout \\#10 (I) 01264",
+        "brand": "RYTHM3.5gTHC: 33.76%",
+        "category": "Other",
+        "price": 40.0,
+        "weight": "",
+        "strain": ""
+      },
+      {
+        "name": "Rythm 3.5g Animal Face (I) 01304",
+        "brand": "RYTHM3.5gTHC: 32.98%",
+        "category": "Other",
+        "price": 40.0,
+        "weight": "",
+        "strain": ""
+      },
+      {
+        "name": "Rythm 3.5g Black Maple 22 (I) 01092",
+        "brand": "RYTHM3.5gTHC: 29.11%",
+        "category": "Other",
+        "price": 40.0,
+        "weight": "",
+        "strain": ""
+      },
+      {
+        "name": "Rythm 3.5g Cheddar Cheeze (I) 01273",
+        "brand": "RYTHM3.5gTHC: 31.19%",
+        "category": "Other",
+        "price": 40.0,
+        "weight": "",
+        "strain": ""
+      },
+      {
+        "name": "Rythm 3.5g Creamsicle Sunset (H) 01115",
+        "brand": "RYTHM3.5gTHC: 22.49%",
+        "category": "Other",
+        "price": 40.0,
+        "weight": "",
+        "strain": ""
+      },
+      {
+        "name": "Rythm 3.5g Do Not Trip (H) 01268",
+        "brand": "RYTHM3.5gTHC: 28%",
+        "category": "Other",
+        "price": 40.0,
+        "weight": "",
+        "strain": ""
+      },
+      {
+        "name": "Rythm 3.5g Grape Bubble G (H) 01198",
+        "brand": "RYTHM3.5gTHC: 26.5%",
+        "category": "Other",
+        "price": 40.0,
+        "weight": "",
+        "strain": ""
+      },
+      {
+        "name": "Rythm 3.5g Lemon Drip (S) 01069",
+        "brand": "RYTHM3.5gTHC: 24.92%",
+        "category": "Other",
+        "price": 40.0,
+        "weight": "",
+        "strain": ""
+      },
+      {
+        "name": "RYTHM 3.5G LEMON FRESH (S) 01196",
+        "brand": "RYTHM3.5gTHC: 26.61%",
+        "category": "Other",
+        "price": 40.0,
+        "weight": "",
+        "strain": ""
+      },
+      {
+        "name": "Dogwalkers 5 Pack Minis Animal Scout \\#10 (I) 01300",
+        "brand": "Dogwalkers1.75gTHC: 24%",
+        "category": "Pre-Rolls",
+        "price": 40.0,
+        "weight": "",
+        "strain": ""
+      },
+      {
+        "name": "Dogwalkers 5 Pack Minis B Scout (I) 01316",
+        "brand": "Dogwalkers1.75gTHC: 24%",
+        "category": "Pre-Rolls",
+        "price": 40.0,
+        "weight": "",
+        "strain": ""
+      },
+      {
+        "name": "Dogwalkers 5 Pack Minis Cheddar Cheeze (I) 01301",
+        "brand": "Dogwalkers1.75gTHC: 24%",
+        "category": "Pre-Rolls",
+        "price": 40.0,
+        "weight": "",
+        "strain": ""
+      },
+      {
+        "name": "Dogwalkers 5 Pack Minis Do Not Trip (H) 01309",
+        "brand": "Dogwalkers1.75gTHC: 24%",
+        "category": "Pre-Rolls",
+        "price": 40.0,
+        "weight": "",
+        "strain": ""
+      },
+      {
+        "name": "Dogwalkers 5 Pack Minis Go Gr Tz (H) 01307",
+        "brand": "Dogwalkers1.75gTHC: 24%",
+        "category": "Pre-Rolls",
+        "price": 40.0,
+        "weight": "",
+        "strain": ""
+      },
+      {
+        "name": "Hash Burger Hash Nugs 41630",
+        "brand": "all:hours3.5gTHC: 35.49%",
+        "category": "Other",
+        "price": 45.0,
+        "weight": "",
+        "strain": ""
+      },
+      {
+        "name": "Mule Fuel Hash Nugs 41629",
+        "brand": "all:hours3.5gTHC: 38.99%",
+        "category": "Other",
+        "price": 45.0,
+        "weight": "",
+        "strain": ""
+      },
+      {
+        "name": "Rythm 7g Small Flower Confidential Cherries (I) 00992",
+        "brand": "RYTHM7gTHC: 20.34%",
+        "category": "Flower",
+        "price": 52.0,
+        "weight": "",
+        "strain": ""
+      },
+      {
+        "name": "RYTHM 7G SMALL FLOWER CHEDDAR CHEEZE (I) 01251",
+        "brand": "RYTHM7gTHC: 30.86%",
+        "category": "Flower",
+        "price": 52.0,
+        "weight": "",
+        "strain": ""
+      },
+      {
+        "name": "Rythm 7g Small Flower Jet Fuel (H) 01095",
+        "brand": "RYTHM7gTHC: 18.7%",
+        "category": "Flower",
+        "price": 52.0,
+        "weight": "",
+        "strain": ""
+      },
+      {
+        "name": "Rythm 7g Small Flower OMG (H) 01270",
+        "brand": "RYTHM7gTHC: 32.15%",
+        "category": "Flower",
+        "price": 52.0,
+        "weight": "",
+        "strain": ""
+      },
+      {
+        "name": "Rythm 7g Small Flower Black Maple 22 (I) 01116",
+        "brand": "RYTHM7gTHC: 26.62%",
+        "category": "Flower",
+        "price": 52.0,
+        "weight": "",
+        "strain": ""
+      },
+      {
+        "name": "Rythm 7g Small Flower Creamsicle Sunset (H) 01130",
+        "brand": "RYTHM7gTHC: 22.49%",
+        "category": "Flower",
+        "price": 52.0,
+        "weight": "",
+        "strain": ""
+      },
+      {
+        "name": "Rythm 7g Small Flower B Scout (I) 01241",
+        "brand": "RYTHM7gTHC: 28.98%",
+        "category": "Flower",
+        "price": 52.0,
+        "weight": "",
+        "strain": ""
+      },
+      {
+        "name": "Rythm 1g LEAF Live Sauce Pen Permanent Marker (H) 01327",
+        "brand": "RYTHM1gTHC: 80%",
+        "category": "Vaporizers",
+        "price": 56.0,
+        "weight": "",
+        "strain": ""
+      },
+      {
+        "name": "Affinity Grow Deadhead OG 1g Vape T862 I",
+        "brand": "Affinity Grow1gTHC: 86.18%",
+        "category": "Vaporizers",
+        "price": 60.0,
+        "weight": "",
+        "strain": ""
+      },
+      {
+        "name": "Good Green 14g Paradise Snacks (I) 01285",
+        "brand": "Good Green14gTHC: 22%",
+        "category": "Other",
+        "price": 80.0,
+        "weight": "",
+        "strain": ""
+      },
+      {
+        "name": "Rythm 14g B Scout (I) 01232",
+        "brand": "RYTHM14gTHC: 31.28%",
+        "category": "Other",
+        "price": 80.0,
+        "weight": "",
+        "strain": ""
+      },
+      {
+        "name": "Good Green 14g Bubba F (I) 01144",
+        "brand": "Good Green14gTHC: 23.91%",
+        "category": "Other",
+        "price": 80.0,
+        "weight": "",
+        "strain": ""
+      },
+      {
+        "name": "Good Green 14g Glue Fondue (S) 01179",
+        "brand": "Good Green14gTHC: 21%",
+        "category": "Other",
+        "price": 80.0,
+        "weight": "",
+        "strain": ""
+      },
+      {
+        "name": "Good Green 14g Jack Herer (S) 00957",
+        "brand": "Good Green14gTHC: 20.14%",
+        "category": "Other",
+        "price": 80.0,
+        "weight": "",
+        "strain": ""
+      },
+      {
+        "name": "GOOD GREEN 14G REGINA GORGEOUS (H) 01205",
+        "brand": "Good Green14gTHC: 20%",
+        "category": "Other",
+        "price": 80.0,
+        "weight": "",
+        "strain": ""
+      },
+      {
+        "name": "RYTHM 14G CREAMSICLE SUNSET (H) 01146",
+        "brand": "RYTHM14gTHC: 20.31%",
+        "category": "Other",
+        "price": 96.0,
+        "weight": "",
+        "strain": ""
+      },
+      {
+        "name": "Rythm 14g Do Not Trip (H) 01284",
+        "brand": "RYTHM14gTHC: 25.83%",
+        "category": "Other",
+        "price": 96.0,
+        "weight": "",
+        "strain": ""
+      },
+      {
+        "name": "Rythm 28g Creamsicle Sunset (H) 01287",
+        "brand": "RYTHM28gTHC: 19.33%",
+        "category": "Other",
+        "price": 144.0,
+        "weight": "",
+        "strain": ""
+      },
+      {
+        "name": "Rythm 28g Lemon Drip (S) 01334",
+        "brand": "RYTHM28gTHC: 21.47%",
+        "category": "Other",
+        "price": 144.0,
+        "weight": "",
+        "strain": ""
+      }
+    ],
+    "deals": []
+  },
+  "RISE Dispensary Branford": {
+    "products": [
+      {
+        "name": "ayrloom 1:1 Pineapple Mango (3mg THC/3mg CBD) Infused Beverage",
+        "brand": "ayrloom12fl ozTHC:",
+        "category": "Other",
+        "price": 5.0,
+        "weight": "3mg",
+        "strain": ""
+      },
+      {
+        "name": "ayrloom 1:1 Black Cherry (3mg THC/3mg CBD) Infused Beverage",
+        "brand": "ayrloom12fl ozTHC:",
+        "category": "Other",
+        "price": 5.0,
+        "weight": "3mg",
+        "strain": ""
+      },
+      {
+        "name": "ayrloom 1:1 Honey Crisp (5mg CBD/5mg THC) Infused Beverage",
+        "brand": "ayrloom12fl ozTHC:",
+        "category": "Other",
+        "price": 5.0,
+        "weight": "5mg",
+        "strain": ""
+      },
+      {
+        "name": "ayrloom 1:1 Lemonade (3mg THC/3mg CBD) Infused Beverage",
+        "brand": "ayrloom12fl ozTHC:",
+        "category": "Edibles",
+        "price": 5.0,
+        "weight": "3mg",
+        "strain": ""
+      },
+      {
+        "name": "Dogwalkers 1g Big Dog Lemon Drip (S) 01294",
+        "brand": "Dogwalkers1gTHC: Not specified",
+        "category": "Pre-Rolls",
+        "price": 12.8,
+        "weight": "",
+        "strain": ""
+      },
+      {
+        "name": "Dogwalkers 1g Big Dog Black Maple 22 (I) 01111",
+        "brand": "Dogwalkers1gTHC: Not specified",
+        "category": "Pre-Rolls",
+        "price": 12.8,
+        "weight": "",
+        "strain": ""
+      },
+      {
+        "name": "Dogwalkers 1g Big Dog B Scout (I) 01229",
+        "brand": "Dogwalkers1gTHC: 24%?",
+        "category": "Pre-Rolls",
+        "price": 12.8,
+        "weight": "",
+        "strain": ""
+      },
+      {
+        "name": "Dogwalkers Infused 1g Showdogs Animal Face (I) 01274",
+        "brand": "Dogwalkers1gTHC: Not specified",
+        "category": "Pre-Rolls",
+        "price": 16.0,
+        "weight": "",
+        "strain": ""
+      },
+      {
+        "name": "inc.edibles 20 Pack Snoozzzeberry THC CBN Gummies",
+        "brand": "inc.edibles20 PackTHC:",
+        "category": "Edibles",
+        "price": 24.0,
+        "weight": "100mg",
+        "strain": ""
+      },
+      {
+        "name": "inc.edibles 20 Pack Pineapple Express Fast Acting THC Gummies",
+        "brand": "inc.edibles20 PackTHC:",
+        "category": "Edibles",
+        "price": 24.0,
+        "weight": "100mg",
+        "strain": ""
+      },
+      {
+        "name": "inc.edibles 20 Pack Fast Acting Sour Cherry Tart THC Gummies",
+        "brand": "inc.edibles20 PackTHC:",
+        "category": "Edibles",
+        "price": 24.0,
+        "weight": "100mg",
+        "strain": ""
+      },
+      {
+        "name": "Dogwalkers 5 Pack Minis Go Gr Tz (H) 01307",
+        "brand": "Dogwalkers1.75gTHC: Not specified",
+        "category": "Pre-Rolls",
+        "price": 24.0,
+        "weight": "",
+        "strain": ""
+      },
+      {
+        "name": "AGL 5 Pack Minis Bubba F (I) 01175",
+        "brand": "Advanced Grow Labs (AGL)2.5gTHC: Not specified",
+        "category": "Pre-Rolls",
+        "price": 24.0,
+        "weight": "",
+        "strain": ""
+      },
+      {
+        "name": "Dogwalkers 5 Pack Minis Do Not Trip (H) 01309",
+        "brand": "Dogwalkers1.75gTHC: Not specified",
+        "category": "Pre-Rolls",
+        "price": 24.0,
+        "weight": "",
+        "strain": ""
+      },
+      {
+        "name": "Dogwalkers 5 Pack Minis Animal Scout \\#10 (I) 01300",
+        "brand": "Dogwalkers1.75gTHC: Not specified",
+        "category": "Pre-Rolls",
+        "price": 24.0,
+        "weight": "",
+        "strain": ""
+      },
+      {
+        "name": "Dogwalkers 5 Pack Minis Cheddar Cheeze (I) 01301",
+        "brand": "Dogwalkers1.75gTHC: Not specified",
+        "category": "Pre-Rolls",
+        "price": 24.0,
+        "weight": "",
+        "strain": ""
+      },
+      {
+        "name": "Rythm 0.5g Vape Chkn n WflZ (S) 01320",
+        "brand": "RYTHM0.5gTHC: 83.58%",
+        "category": "Vaporizers",
+        "price": 32.0,
+        "weight": "",
+        "strain": ""
+      },
+      {
+        "name": "Dogwalkers Infused 5 Pack Minis Showdogs Animal Face (I) 01269",
+        "brand": "Dogwalkers2.25gTHC: Not specified",
+        "category": "Pre-Rolls",
+        "price": 32.0,
+        "weight": "",
+        "strain": ""
+      },
+      {
+        "name": "Rythm 0.5g Vape 95 Cook (H) 01282",
+        "brand": "RYTHM0.5gTHC: 75.4%",
+        "category": "Vaporizers",
+        "price": 32.0,
+        "weight": "",
+        "strain": ""
+      },
+      {
+        "name": "Rythm 3.5g Grape Bubble G (H) 01198",
+        "brand": "RYTHM3.5gTHC: 26.5%",
+        "category": "Other",
+        "price": 40.0,
+        "weight": "",
+        "strain": ""
+      },
+      {
+        "name": "Rythm 3.5g Animal Scout \\#10 (I) 01264",
+        "brand": "RYTHM3.5gTHC: Not specified",
+        "category": "Other",
+        "price": 40.0,
+        "weight": "",
+        "strain": ""
+      },
+      {
+        "name": "Rythm 3.5g Animal Face (I) 01304",
+        "brand": "RYTHM3.5gTHC: Not specified",
+        "category": "Other",
+        "price": 40.0,
+        "weight": "",
+        "strain": ""
+      },
+      {
+        "name": "Rythm 3.5g Black Maple 22 (I) 01092",
+        "brand": "RYTHM3.5gTHC: 29.11%",
+        "category": "Other",
+        "price": 40.0,
+        "weight": "",
+        "strain": ""
+      },
+      {
+        "name": "Rythm 3.5g Cheddar Cheeze (I) 01273",
+        "brand": "RYTHM3.5gTHC: Not specified",
+        "category": "Other",
+        "price": 40.0,
+        "weight": "",
+        "strain": ""
+      },
+      {
+        "name": "Rythm 3.5g Confidential Cherries (I) 00985",
+        "brand": "RYTHM3.5gTHC: 20.34%",
+        "category": "Other",
+        "price": 40.0,
+        "weight": "",
+        "strain": ""
+      },
+      {
+        "name": "Rythm 3.5g Creamsicle Sunset (H) 01115",
+        "brand": "RYTHM3.5gTHC: 22.49%",
+        "category": "Other",
+        "price": 40.0,
+        "weight": "",
+        "strain": ""
+      },
+      {
+        "name": "Rythm 3.5g Do Not Trip (H) 01268",
+        "brand": "RYTHM3.5gTHC: 28.1%",
+        "category": "Other",
+        "price": 40.0,
+        "weight": "",
+        "strain": ""
+      },
+      {
+        "name": "Rythm 3.5g Dulce De Uva (I) 01162",
+        "brand": "RYTHM3.5gTHC: 26%",
+        "category": "Other",
+        "price": 40.0,
+        "weight": "",
+        "strain": ""
+      },
+      {
+        "name": "Rythm 3.5g Lemon Drip (S) 01069",
+        "brand": "RYTHM3.5gTHC: 24.92%",
+        "category": "Other",
+        "price": 40.0,
+        "weight": "",
+        "strain": ""
+      },
+      {
+        "name": "RYTHM 3.5G LEMON FRESH (S) 01196",
+        "brand": "RYTHM3.5gTHC: 26.61%",
+        "category": "Other",
+        "price": 40.0,
+        "weight": "",
+        "strain": ""
+      },
+      {
+        "name": "Good Green 3.5g Bubba F (I) 01168",
+        "brand": "Good Green3.5gTHC: 25.76%",
+        "category": "Other",
+        "price": 40.0,
+        "weight": "",
+        "strain": ""
+      },
+      {
+        "name": "Good Green 3.5g Paradise Snacks (I) 01261",
+        "brand": "Good Green3.5gTHC: Not specified",
+        "category": "Other",
+        "price": 40.0,
+        "weight": "",
+        "strain": ""
+      },
+      {
+        "name": "Good Green 3.5g Slapz (H) 01313",
+        "brand": "Good Green3.5gTHC: 26.5%",
+        "category": "Other",
+        "price": 40.0,
+        "weight": "",
+        "strain": ""
+      },
+      {
+        "name": "Rythm 7g Small Flower Creamsicle Sunset (H) 01130",
+        "brand": "RYTHM7gTHC: Not specified",
+        "category": "Flower",
+        "price": 52.0,
+        "weight": "",
+        "strain": ""
+      },
+      {
+        "name": "Rythm 7g Small Flower Animal Scout \\#10 (I) 01263",
+        "brand": "RYTHM7gTHC: Not specified",
+        "category": "Flower",
+        "price": 52.0,
+        "weight": "",
+        "strain": ""
+      },
+      {
+        "name": "AGL 1g Vape B Scout x LA Kush CKE (I) 01212",
+        "brand": "Advanced Grow Labs (AGL)1gTHC: Not specified",
+        "category": "Vaporizers",
+        "price": 52.0,
+        "weight": "",
+        "strain": ""
+      },
+      {
+        "name": "Rythm 7g Small Flower B Scout (I) 01240",
+        "brand": "RYTHM7gTHC: Not specified",
+        "category": "Flower",
+        "price": 52.0,
+        "weight": "",
+        "strain": ""
+      },
+      {
+        "name": "Rythm 7g Small Flower Black Maple 22 (I) 01116",
+        "brand": "RYTHM7gTHC: 20%?",
+        "category": "Flower",
+        "price": 52.0,
+        "weight": "",
+        "strain": ""
+      },
+      {
+        "name": "Rythm 7g Small Flower Confidential Cherries (I) 00992",
+        "brand": "RYTHM7gTHC: Not specified",
+        "category": "Flower",
+        "price": 52.0,
+        "weight": "",
+        "strain": ""
+      },
+      {
+        "name": "Rythm 7g Small Flower OMG (H) 01270",
+        "brand": "RYTHM7gTHC: 28.66%",
+        "category": "Flower",
+        "price": 52.0,
+        "weight": "",
+        "strain": ""
+      },
+      {
+        "name": "Rythm 7g Small Flower Lemon Drip (S) 01253",
+        "brand": "RYTHM7gTHC: 28.5%",
+        "category": "Flower",
+        "price": 52.0,
+        "weight": "",
+        "strain": ""
+      },
+      {
+        "name": "Rythm 7g Small Flower Jet Fuel (H) 01095",
+        "brand": "RYTHM7gTHC: 18.7%",
+        "category": "Flower",
+        "price": 52.0,
+        "weight": "",
+        "strain": ""
+      },
+      {
+        "name": "all:hours Nimbus Snacks Hash Nugs 41631",
+        "brand": "all:hours3.5gTHC: 33.3%",
+        "category": "Other",
+        "price": 60.0,
+        "weight": "",
+        "strain": ""
+      },
+      {
+        "name": "all:hours Hash Burger Hash Nugs 41630",
+        "brand": "all:hours3.5gTHC: 35.49%",
+        "category": "Other",
+        "price": 60.0,
+        "weight": "",
+        "strain": ""
+      },
+      {
+        "name": "all:hours Mule Fuel Hash Nugs 41629",
+        "brand": "all:hours3.5gTHC: 38.98%",
+        "category": "Other",
+        "price": 60.0,
+        "weight": "",
+        "strain": ""
+      },
+      {
+        "name": "Rythm 1g LEAF Live Sauce Pen Rainbow Zelato (I) 01318",
+        "brand": "RYTHM1gTHC: Not specified",
+        "category": "Vaporizers",
+        "price": 64.0,
+        "weight": "",
+        "strain": ""
+      },
+      {
+        "name": "Rythm 1g LEAF Live Sauce Pen Permanent Marker (H) 01327",
+        "brand": "RYTHM1gTHC: Not specified",
+        "category": "Vaporizers",
+        "price": 64.0,
+        "weight": "",
+        "strain": ""
+      },
+      {
+        "name": "GOOD GREEN 14G REGINA GORGEOUS (H) 01205",
+        "brand": "Good Green14gTHC: 23.81%",
+        "category": "Other",
+        "price": 80.0,
+        "weight": "",
+        "strain": ""
+      },
+      {
+        "name": "Good Green 14g Granny Canny (S) 01276",
+        "brand": "Good Green14gTHC: 20%?",
+        "category": "Other",
+        "price": 80.0,
+        "weight": "",
+        "strain": ""
+      },
+      {
+        "name": "Good Green 14g Paradise Snacks (I) 01285",
+        "brand": "Good Green14gTHC: Not specified",
+        "category": "Other",
+        "price": 80.0,
+        "weight": "",
+        "strain": ""
+      },
+      {
+        "name": "RYTHM 14G CREAMSICLE SUNSET (H) 01146",
+        "brand": "RYTHM14gTHC: 19.7%",
+        "category": "Other",
+        "price": 100.0,
+        "weight": "",
+        "strain": ""
+      },
+      {
+        "name": "Rythm 14g Animal Face (I) 01331",
+        "brand": "RYTHM14gTHC: Not specified",
+        "category": "Other",
+        "price": 100.0,
+        "weight": "",
+        "strain": ""
+      },
+      {
+        "name": "Good Green 28g Regina Gorgeous (H) 01237",
+        "brand": "Good Green28gTHC: 23.99%",
+        "category": "Other",
+        "price": 128.0,
+        "weight": "",
+        "strain": ""
+      },
+      {
+        "name": "Good Green 28g Slapz (H) 01311",
+        "brand": "Good Green28gTHC: 26.51%",
+        "category": "Other",
+        "price": 128.0,
+        "weight": "",
+        "strain": ""
+      },
+      {
+        "name": "Good Green 28g Chkn n WflZ (S) 01305",
+        "brand": "Good Green28gTHC: 19.78%",
+        "category": "Other",
+        "price": 128.0,
+        "weight": "",
+        "strain": ""
+      },
+      {
+        "name": "RYTHM 28G DULCE DE UVA (I) 01214",
+        "brand": "RYTHM28gTHC: 24.34%",
+        "category": "Other",
+        "price": 160.0,
+        "weight": "",
+        "strain": ""
+      },
+      {
+        "name": "Rythm 28g Lemon Drip (S) 01334",
+        "brand": "RYTHM28gTHC: 21.47%",
+        "category": "Other",
+        "price": 160.0,
+        "weight": "",
+        "strain": ""
+      },
+      {
+        "name": "Rythm 28g Creamsicle Sunset (H) 01287",
+        "brand": "RYTHM28gTHC: 19.33%",
+        "category": "Other",
+        "price": 160.0,
+        "weight": "",
+        "strain": ""
+      },
+      {
+        "name": "Rythm 28g Afternoon Delight \\#4 (H) 01227",
+        "brand": "RYTHM28gTHC: Not specified",
+        "category": "Other",
+        "price": 160.0,
+        "weight": "",
+        "strain": ""
+      }
+    ],
+    "deals": []
+  },
+  "High Profile Hamden": {
+    "products": [
+      {
+        "name": "Big Buds Flower",
+        "brand": "\\\\",
+        "category": "Flower",
+        "price": 180.0,
+        "weight": "",
+        "strain": ""
+      }
+    ],
+    "deals": [
+      {
+        "title": "10% off total purchase for Veterans",
+        "discount_type": "percent",
+        "category": "All"
+      },
+      {
+        "title": "10% off total purchase for customers 60 years and older",
+        "discount_type": "percent",
+        "category": "All"
+      },
+      {
+        "title": "10% off total purchase for industry professionals",
+        "discount_type": "percent",
+        "category": "All"
+      }
+    ]
+  },
+  "Hi! People Derby": {
+    "products": [],
+    "deals": []
+  },
+  "Budr Cannabis Stratford": {
+    "products": [
+      {
+        "name": "C Charger",
+        "brand": "SirEEL USB",
+        "category": "Other",
+        "price": 1.0,
+        "weight": "",
+        "strain": ""
+      },
+      {
+        "name": "AGL 1g Pre Roll Mystic Mint (I) 01302",
+        "brand": "Unknown",
+        "category": "Pre-Rolls",
+        "price": 9.0,
+        "weight": "",
+        "strain": "Indica"
+      },
+      {
+        "name": "CBD - Edibles - Gummies - 25mg CBD - Huckleberry - (CBD) - 2ct",
+        "brand": "WYLD CBD",
+        "category": "Edibles",
+        "price": 10.0,
+        "weight": "",
+        "strain": ""
+      },
+      {
+        "name": "PB Bites Pre Roll 1g",
+        "brand": "Find",
+        "category": "Pre-Rolls",
+        "price": 10.0,
+        "weight": "",
+        "strain": "Hybrid"
+      },
+      {
+        "name": "AGL 1g Pre Roll Regina Gorgeous (H) 01222",
+        "brand": "Unknown",
+        "category": "Pre-Rolls",
+        "price": 10.0,
+        "weight": "",
+        "strain": "Hybrid"
+      },
+      {
+        "name": "Savvy Guap RSO Tangie Crush S 26852",
+        "brand": "Unknown",
+        "category": "Tinctures",
+        "price": 10.0,
+        "weight": "",
+        "strain": "Sativa"
+      },
+      {
+        "name": "Brix Cannabis Bananaconda 1g Pre Roll (H) 00502",
+        "brand": "Unknown",
+        "category": "Pre-Rolls",
+        "price": 11.0,
+        "weight": "",
+        "strain": "Hybrid"
+      },
+      {
+        "name": "Comffy\\|PreRoll 1g\\|Starstruck 00128",
+        "brand": "Unknown",
+        "category": "Pre-Rolls",
+        "price": 11.0,
+        "weight": "",
+        "strain": "Indica"
+      },
+      {
+        "name": "Chemdog's Permanent Funk 1g Pre Roll (I) 00455",
+        "brand": "Unknown",
+        "category": "Pre-Rolls",
+        "price": 13.0,
+        "weight": "",
+        "strain": "Indica"
+      },
+      {
+        "name": "CBD - Edibles - Gummies - 20mg CBD + 10mg CBC- Peach - (CBD) - 2ct",
+        "brand": "WYLD CBD",
+        "category": "Edibles",
+        "price": 13.0,
+        "weight": "",
+        "strain": ""
+      },
+      {
+        "name": "Dogwalkers 1g Big Dog B Scout (I) 01229",
+        "brand": "Unknown",
+        "category": "Pre-Rolls",
+        "price": 14.0,
+        "weight": "",
+        "strain": "Indica"
+      },
+      {
+        "name": "AGL Black Maple 22 81.61% (I) 300mg 01156",
+        "brand": "1/2 g",
+        "category": "Other",
+        "price": 15.0,
+        "weight": "",
+        "strain": "Indica"
+      },
+      {
+        "name": "AGL Big Dog Black Maple 22 Dogwalker 21.31% I 01111 1g",
+        "brand": "Unknown",
+        "category": "Pre-Rolls",
+        "price": 15.0,
+        "weight": "",
+        "strain": "Indica"
+      },
+      {
+        "name": "Dogwalkers 1g Big Dog 95 Cook (H) 01153",
+        "brand": "Unknown",
+        "category": "Pre-Rolls",
+        "price": 15.0,
+        "weight": "",
+        "strain": "Hybrid"
+      },
+      {
+        "name": "Dogwalkers 1g Big Dog Dulce De Uva (I) 01207",
+        "brand": "Unknown",
+        "category": "Pre-Rolls",
+        "price": 15.0,
+        "weight": "",
+        "strain": "Indica"
+      },
+      {
+        "name": "Dogwalkers 1g Big Dog \\| Lemon Drip",
+        "brand": "Dogwalkers",
+        "category": "Pre-Rolls",
+        "price": 15.0,
+        "weight": "",
+        "strain": ""
+      },
+      {
+        "name": "LB SF Blueberry Lemonade Lucky Chews 125.4mg H 00007 6pk",
+        "brand": "Unknown",
+        "category": "Edibles",
+        "price": 15.0,
+        "weight": "",
+        "strain": "Hybrid"
+      },
+      {
+        "name": "AGL 300mg Pen Chkn n WflZ (S) 01258",
+        "brand": "1/2 g",
+        "category": "Vaporizers",
+        "price": 15.0,
+        "weight": "",
+        "strain": "Sativa"
+      },
+      {
+        "name": "AGL 300mg Pen Dulce De Uva x Cherry Maui Wowie (H) 01216",
+        "brand": "1/2 g",
+        "category": "Vaporizers",
+        "price": 15.0,
+        "weight": "",
+        "strain": "Hybrid"
+      },
+      {
+        "name": "AGL 300mg Pen Durban Z (S) 01158",
+        "brand": "1/2 g",
+        "category": "Vaporizers",
+        "price": 15.0,
+        "weight": "",
+        "strain": "Sativa"
+      },
+      {
+        "name": "AGL 300mg Pen East Coast Sour Diesel (S) 01259",
+        "brand": "1/2 g",
+        "category": "Vaporizers",
+        "price": 15.0,
+        "weight": "",
+        "strain": "Sativa"
+      },
+      {
+        "name": "AGL 300mg Pen Purple Tyde x Bubba F (H) 01183",
+        "brand": "1/2 g",
+        "category": "Vaporizers",
+        "price": 15.0,
+        "weight": "",
+        "strain": "Hybrid"
+      },
+      {
+        "name": "AGL 300mg Pen Jet Fuel x Afternoon Delight (H) 01295",
+        "brand": "1/2 g",
+        "category": "Vaporizers",
+        "price": 15.0,
+        "weight": "",
+        "strain": "Hybrid"
+      },
+      {
+        "name": "Chew Chocolate Covered RSO Orange Gummies I 00806",
+        "brand": "Unknown",
+        "category": "Edibles",
+        "price": 16.0,
+        "weight": "",
+        "strain": "Indica"
+      },
+      {
+        "name": "AGL 300mg Pen Fantasy Melonz x OMG (H) 01289",
+        "brand": "1/2 g",
+        "category": "Vaporizers",
+        "price": 16.0,
+        "weight": "",
+        "strain": "Hybrid"
+      },
+      {
+        "name": "AGL 300mg Pen Animal Face x LA Kush CKE (I) 01292",
+        "brand": "1/2 g",
+        "category": "Vaporizers",
+        "price": 16.0,
+        "weight": "",
+        "strain": "Indica"
+      },
+      {
+        "name": "AGL 300mg Pen Apple Cobbler x RNTZ (H) 01293",
+        "brand": "1/2 g",
+        "category": "Vaporizers",
+        "price": 16.0,
+        "weight": "",
+        "strain": "Hybrid"
+      },
+      {
+        "name": "AGL 300mg Pen FumeZ x Grease Monkey (H) 01188",
+        "brand": "1/2 g",
+        "category": "Vaporizers",
+        "price": 16.0,
+        "weight": "",
+        "strain": "Hybrid"
+      },
+      {
+        "name": "AGL B Scout x Confidential Cherries 84.54% (I) 300mg 01157",
+        "brand": "1/2 g",
+        "category": "Other",
+        "price": 16.0,
+        "weight": "",
+        "strain": "Indica"
+      },
+      {
+        "name": "AGL 300mg Pen Taffy Twist x Bubba F (I) 01291",
+        "brand": "1/2 g",
+        "category": "Vaporizers",
+        "price": 16.0,
+        "weight": "",
+        "strain": "Indica"
+      },
+      {
+        "name": "inc.edibles Snoozzzeberry THC.CBN Bar 96 mg 00768",
+        "brand": "Unknown",
+        "category": "Edibles",
+        "price": 18.0,
+        "weight": "",
+        "strain": "Indica"
+      },
+      {
+        "name": "inc.edibles 20 Pack Sour Tangahhhrine THC CBD Gummies 01215",
+        "brand": "Unknown",
+        "category": "Edibles",
+        "price": 18.0,
+        "weight": "",
+        "strain": "Hybrid"
+      },
+      {
+        "name": "AGL IE Greener Apple Fast Acting THC Gummies 82mg 01004 20pk",
+        "brand": "Unknown",
+        "category": "Edibles",
+        "price": 18.0,
+        "weight": "",
+        "strain": "Hybrid"
+      },
+      {
+        "name": "inc.edibles 20 Pack Snoozzzeberry THC CBN Gummies 01136",
+        "brand": "Unknown",
+        "category": "Edibles",
+        "price": 19.0,
+        "weight": "",
+        "strain": "Hybrid"
+      },
+      {
+        "name": "Asteroid Galaxeats Gummies Blueberry Bliss T98mg - C0120000009",
+        "brand": "Unknown",
+        "category": "Edibles",
+        "price": 19.0,
+        "weight": "",
+        "strain": "Hybrid"
+      },
+      {
+        "name": "inc.edibles 20 Pack Summer Peach THC Gummies 01087",
+        "brand": "Unknown",
+        "category": "Edibles",
+        "price": 19.0,
+        "weight": "",
+        "strain": "Hybrid"
+      },
+      {
+        "name": "Asteroid Galaxeats Gummies Sour Watermelon T88mg - C0170000010",
+        "brand": "Unknown",
+        "category": "Edibles",
+        "price": 19.0,
+        "weight": "",
+        "strain": "Hybrid"
+      },
+      {
+        "name": "Asteroid Galaxeats Gummies Sour Green Apple T97.2mg - C0170000011",
+        "brand": "Unknown",
+        "category": "Edibles",
+        "price": 19.0,
+        "weight": "",
+        "strain": "Hybrid"
+      },
+      {
+        "name": "Asteroid Galaxeats Gummies Pink Lemonade T98.6mg - C0120000007",
+        "brand": "Unknown",
+        "category": "Edibles",
+        "price": 19.0,
+        "weight": "",
+        "strain": "Hybrid"
+      },
+      {
+        "name": "Asteroid Galaxeats Gummies Raspberry Rush T89.4mg - C0170000008",
+        "brand": "Unknown",
+        "category": "Edibles",
+        "price": 19.0,
+        "weight": "",
+        "strain": "Hybrid"
+      },
+      {
+        "name": "inc.edibles Peanut Budda Buddha THC Bar 01248",
+        "brand": "Unknown",
+        "category": "Edibles",
+        "price": 19.0,
+        "weight": "",
+        "strain": "Hybrid"
+      },
+      {
+        "name": "inc.edibles 20 Pack Sour Blue Razzberry THC/CBG Gummies 01315",
+        "brand": "Unknown",
+        "category": "Edibles",
+        "price": 19.0,
+        "weight": "",
+        "strain": "Hybrid"
+      },
+      {
+        "name": "inc.edibles 20 Pack Fast Acting Sour Cherry Tart THC Gummies 01094",
+        "brand": "Unknown",
+        "category": "Edibles",
+        "price": 20.0,
+        "weight": "",
+        "strain": "Hybrid"
+      },
+      {
+        "name": "THC Sunset Citron Gummies 50.8mg S 00219 20pk",
+        "brand": "Unknown",
+        "category": "Edibles",
+        "price": 20.0,
+        "weight": "",
+        "strain": "Indica"
+      },
+      {
+        "name": "inc.edibles 20 Pack Watermelon Smash THC Gummies 01014",
+        "brand": "Unknown",
+        "category": "Edibles",
+        "price": 20.0,
+        "weight": "",
+        "strain": "Hybrid"
+      },
+      {
+        "name": "inc.edibles 20 Pack Strahhhberry THC/CBD Gummies 01181",
+        "brand": "Unknown",
+        "category": "Edibles",
+        "price": 20.0,
+        "weight": "",
+        "strain": "Hybrid"
+      },
+      {
+        "name": "inc.edibles 20 Pack Pineapple Express Fast Acting THC Gummies 01160",
+        "brand": "Unknown",
+        "category": "Edibles",
+        "price": 20.0,
+        "weight": "",
+        "strain": "Hybrid"
+      },
+      {
+        "name": "Asteroid Galaxeats Gummies Sugar Free Pomegranate T94.8mg - C0170000014",
+        "brand": "Unknown",
+        "category": "Edibles",
+        "price": 20.0,
+        "weight": "",
+        "strain": "Hybrid"
+      },
+      {
+        "name": "Select Elite All In One.3g Durban Poison (S) 01387",
+        "brand": "1/2 g",
+        "category": "Other",
+        "price": 22.0,
+        "weight": "",
+        "strain": "Sativa"
+      },
+      {
+        "name": "Select Elite All In One.3g Dosido (I) 01410",
+        "brand": "1/2 g",
+        "category": "Other",
+        "price": 22.0,
+        "weight": "",
+        "strain": "Indica"
+      },
+      {
+        "name": "THC Boosted Berry Gummies T50.8mg S 00129 20pk",
+        "brand": "Unknown",
+        "category": "Edibles",
+        "price": 23.0,
+        "weight": "",
+        "strain": "Sativa"
+      },
+      {
+        "name": "Rodeo RSO Moscow Mule (I) Gummies (C0070000374)",
+        "brand": "Unknown",
+        "category": "Edibles",
+        "price": 23.0,
+        "weight": "",
+        "strain": "Indica"
+      },
+      {
+        "name": "THC Medium Dose Sultry Cinnamon Gummies 1:2:1 88mg H 00174 20pk",
+        "brand": "Unknown",
+        "category": "Edibles",
+        "price": 23.0,
+        "weight": "",
+        "strain": "Hybrid"
+      },
+      {
+        "name": "Dark Heart Collection Preroll 5 Pack 2g Delphi Diesel (S) 01527 TC 23.589%",
+        "brand": "Unknown",
+        "category": "Pre-Rolls",
+        "price": 23.0,
+        "weight": "",
+        "strain": "Sativa"
+      },
+      {
+        "name": "Dark Heart Collection Ground Flower 3.5g Delphi Diesel (S) 01528 TC 23.709%",
+        "brand": "1/8 oz",
+        "category": "Flower",
+        "price": 23.0,
+        "weight": "",
+        "strain": "Sativa"
+      },
+      {
+        "name": "SEL Elite Disposable .3g Purple Urkel 91.67% (I) 01312",
+        "brand": "1/2 g",
+        "category": "Vaporizers",
+        "price": 25.0,
+        "weight": "",
+        "strain": "Indica"
+      },
+      {
+        "name": "Rythm 0.5g Vape 95 Cook (H) 01282",
+        "brand": "1/2 g",
+        "category": "Vaporizers",
+        "price": 25.0,
+        "weight": "",
+        "strain": "Hybrid"
+      },
+      {
+        "name": "Rythm 0.5g Vape Chkn n WflZ (S) 01320",
+        "brand": "1/2 g",
+        "category": "Vaporizers",
+        "price": 25.0,
+        "weight": "",
+        "strain": "Sativa"
+      },
+      {
+        "name": "Rythm 0.5g Vape Cheddar Cheeze (I) 01312",
+        "brand": "1/2 g",
+        "category": "Vaporizers",
+        "price": 25.0,
+        "weight": "",
+        "strain": "Indica"
+      },
+      {
+        "name": "LB Peppermint Lucky Spritz 83.2mg H 00043",
+        "brand": "Unknown",
+        "category": "Other",
+        "price": 25.0,
+        "weight": "",
+        "strain": "Hybrid"
+      },
+      {
+        "name": "Modified Haze (Modivec) Shorties 2g",
+        "brand": "CTPharma",
+        "category": "Pre-Rolls",
+        "price": 25.0,
+        "weight": "",
+        "strain": "Hybrid"
+      },
+      {
+        "name": "Encore Sweet Strawberry Gummies T96.4mg S 26703",
+        "brand": "Unknown",
+        "category": "Edibles",
+        "price": 26.0,
+        "weight": "",
+        "strain": "Sativa"
+      },
+      {
+        "name": "Encore Sour Strawberry Peach Gummies T98.6mg C193.4mg 26803",
+        "brand": "Unknown",
+        "category": "Edibles",
+        "price": 26.0,
+        "weight": "",
+        "strain": "Hybrid"
+      },
+      {
+        "name": "Encore Sour Watermelon Gummies T93.4mg S 26729",
+        "brand": "Unknown",
+        "category": "Edibles",
+        "price": 26.0,
+        "weight": "",
+        "strain": "Sativa"
+      },
+      {
+        "name": "LB Sugar Free Lemon Ginger Lucky Chews 129mg H 00003 6pk",
+        "brand": "Unknown",
+        "category": "Edibles",
+        "price": 26.0,
+        "weight": "",
+        "strain": "Hybrid"
+      },
+      {
+        "name": "Dark Heart Collection",
+        "brand": "Titan Express Whole Flower",
+        "category": "Other",
+        "price": 27.0,
+        "weight": "",
+        "strain": "Sativa"
+      },
+      {
+        "name": "Select X Bites Raspberry Orange Lime 00842",
+        "brand": "Unknown",
+        "category": "Other",
+        "price": 27.0,
+        "weight": "",
+        "strain": "Hybrid"
+      },
+      {
+        "name": "Select X Bites Orange Matter 01375",
+        "brand": "Unknown",
+        "category": "Other",
+        "price": 27.0,
+        "weight": "",
+        "strain": "Hybrid"
+      },
+      {
+        "name": "Dogwalkers 5 Pack Minis Animal Scout \\#10 (I) 01300",
+        "brand": "Unknown",
+        "category": "Pre-Rolls",
+        "price": 27.0,
+        "weight": "",
+        "strain": "Indica"
+      },
+      {
+        "name": "LB Spearmint Lucky Spritz 84mg H 00046",
+        "brand": "Unknown",
+        "category": "Other",
+        "price": 28.0,
+        "weight": "",
+        "strain": "Hybrid"
+      },
+      {
+        "name": "AGL 5 Pack Minis Mystic Mint (I) 01303",
+        "brand": "Unknown",
+        "category": "Pre-Rolls",
+        "price": 28.0,
+        "weight": "",
+        "strain": "Indica"
+      },
+      {
+        "name": "LB Mango Tango Lucky Chews 132.6mg H 00013 6pk",
+        "brand": "Unknown",
+        "category": "Edibles",
+        "price": 28.0,
+        "weight": "",
+        "strain": "Hybrid"
+      },
+      {
+        "name": "Blood Orange Gummies 100mg 20pk",
+        "brand": "SoundVIew",
+        "category": "Edibles",
+        "price": 29.0,
+        "weight": "",
+        "strain": "Sativa"
+      },
+      {
+        "name": "The Happy Confection-Creative Clementine THCV-(S)-00346",
+        "brand": "Unknown",
+        "category": "Other",
+        "price": 29.0,
+        "weight": "",
+        "strain": "Sativa"
+      },
+      {
+        "name": "Camino Sours Watermelon Spritz Cannabis-Infused Gummies 00404",
+        "brand": "Unknown",
+        "category": "Edibles",
+        "price": 29.0,
+        "weight": "",
+        "strain": "Hybrid"
+      },
+      {
+        "name": "Camino Pineapple Habanero Cannabis-Infused Gummies 00421",
+        "brand": "Unknown",
+        "category": "Edibles",
+        "price": 29.0,
+        "weight": "",
+        "strain": "Sativa"
+      },
+      {
+        "name": "Encore Sweet Berry Burst Gummies T97.2mg I 26811",
+        "brand": "Unknown",
+        "category": "Edibles",
+        "price": 29.0,
+        "weight": "",
+        "strain": "Indica"
+      },
+      {
+        "name": "Encore Sour Mandarin RSO Gummies T95.4mg C106.6mg I 26744",
+        "brand": "Unknown",
+        "category": "Edibles",
+        "price": 29.0,
+        "weight": "",
+        "strain": "Hybrid"
+      },
+      {
+        "name": "Encore Pomegranate Punch CBN:THC Gummies CBN46.4mg T90.8mg I 26781",
+        "brand": "Unknown",
+        "category": "Edibles",
+        "price": 29.0,
+        "weight": "",
+        "strain": "Indica"
+      },
+      {
+        "name": "Encore Pineapple Raspberry Gummies T96.4mg H 26831",
+        "brand": "Unknown",
+        "category": "Edibles",
+        "price": 29.0,
+        "weight": "",
+        "strain": "Hybrid"
+      },
+      {
+        "name": "Encore Milk Chocolate RSO T90.2mg I 26730",
+        "brand": "Unknown",
+        "category": "Edibles",
+        "price": 29.0,
+        "weight": "",
+        "strain": "Indica"
+      },
+      {
+        "name": "Encore Grape RSO Gummies T98.2mg I 26790",
+        "brand": "Unknown",
+        "category": "Edibles",
+        "price": 29.0,
+        "weight": "",
+        "strain": "Indica"
+      },
+      {
+        "name": "Encore Dark Chocolate RSO T92.8mg S 26745",
+        "brand": "Unknown",
+        "category": "Edibles",
+        "price": 29.0,
+        "weight": "",
+        "strain": "Sativa"
+      },
+      {
+        "name": "CTP Avexia Relief 4:1 CBD C408mg T95mg Tablets 26450",
+        "brand": "Unknown",
+        "category": "Edibles",
+        "price": 29.0,
+        "weight": "",
+        "strain": ""
+      },
+      {
+        "name": "CTP Avexia Harmony 1:1 CBD:THC C104mg T98mgTablets 26451",
+        "brand": "Unknown",
+        "category": "Edibles",
+        "price": 29.0,
+        "weight": "",
+        "strain": ""
+      },
+      {
+        "name": "CTP Avexia Comfort 1:1:1 CBN:CBD:THC C100mg C96mg T96mg Tablets 26452 40 pk",
+        "brand": "Unknown",
+        "category": "Edibles",
+        "price": 29.0,
+        "weight": "",
+        "strain": ""
+      },
+      {
+        "name": "CTP Avexia Ascend 1:1 CBG:THC C102m T96mg Tablets 26499 40 pk",
+        "brand": "Unknown",
+        "category": "Edibles",
+        "price": 29.0,
+        "weight": "",
+        "strain": ""
+      },
+      {
+        "name": "CCC Peach 20:1 CBD:THC Gummies T24 00131 20pk",
+        "brand": "Unknown",
+        "category": "Edibles",
+        "price": 29.0,
+        "weight": "",
+        "strain": "Hybrid"
+      },
+      {
+        "name": "Camino Sours-Strawberry Sunset Cannabis-Infused Gummies-00365",
+        "brand": "Unknown",
+        "category": "Edibles",
+        "price": 29.0,
+        "weight": "",
+        "strain": "Hybrid"
+      },
+      {
+        "name": "AGL 5 Pack Minis Taffy Twist (I) 01123",
+        "brand": "Unknown",
+        "category": "Pre-Rolls",
+        "price": 30.0,
+        "weight": "",
+        "strain": "Indica"
+      },
+      {
+        "name": "Bubba F Pre-Roll Minis 5pk 2.5g",
+        "brand": "Advanced Grow Labs",
+        "category": "Pre-Rolls",
+        "price": 30.0,
+        "weight": "",
+        "strain": "Indica"
+      },
+      {
+        "name": "Grassroots Dark Heart Collection Whole Flower 3.5g Titan Express (S) 01407 TC 32.40%",
+        "brand": "1/8 oz",
+        "category": "Flower",
+        "price": 30.0,
+        "weight": "",
+        "strain": "Sativa"
+      },
+      {
+        "name": "Dogwalkers 1.75g Mini Dog Pre-rolls \\| Animal Face",
+        "brand": "Dogwalkers",
+        "category": "Pre-Rolls",
+        "price": 30.0,
+        "weight": "",
+        "strain": "Indica"
+      },
+      {
+        "name": "Grassroots Whole Flower 3.5g Apple Tartz (H) 01532 TC 35.208%",
+        "brand": "1/8 oz",
+        "category": "Flower",
+        "price": 30.0,
+        "weight": "",
+        "strain": "Hybrid"
+      },
+      {
+        "name": "AGL 5 Pack Minis Living Legend (S) 01163",
+        "brand": "Unknown",
+        "category": "Pre-Rolls",
+        "price": 30.0,
+        "weight": "",
+        "strain": "Sativa"
+      },
+      {
+        "name": "AGL 5 Pack Minis Regina Gorgeous (H) 01228",
+        "brand": "Unknown",
+        "category": "Pre-Rolls",
+        "price": 30.0,
+        "weight": "",
+        "strain": "Hybrid"
+      },
+      {
+        "name": "Sugar Free Grape Escape Lucky Chews 20.5mg C0130000005 - 6 Gummies",
+        "brand": "Unknown",
+        "category": "Edibles",
+        "price": 31.0,
+        "weight": "",
+        "strain": "Hybrid"
+      },
+      {
+        "name": "Modified Haze (Modivec) Flower 3.5g",
+        "brand": "CTPharma1/8 oz",
+        "category": "Flower",
+        "price": 31.0,
+        "weight": "",
+        "strain": "Hybrid"
+      },
+      {
+        "name": "CTP Tasty Jane Flower 22.72% I 26464 3.5g",
+        "brand": "1/8 oz",
+        "category": "Flower",
+        "price": 31.0,
+        "weight": "",
+        "strain": "Indica"
+      },
+      {
+        "name": "Berry Dreamy Gummies 1:1 THC:CBN 100mg 20pk",
+        "brand": "SoundView",
+        "category": "Edibles",
+        "price": 31.0,
+        "weight": "",
+        "strain": "Indica"
+      },
+      {
+        "name": "LB Watermelon Marg Lucky Chews 23.2mg C0130000010 - 6 Gummies",
+        "brand": "Unknown",
+        "category": "Edibles",
+        "price": 31.0,
+        "weight": "",
+        "strain": "Hybrid"
+      },
+      {
+        "name": "Select Cliq Elite Pod .5g Durban Poison (S) 00944",
+        "brand": "1/2 g",
+        "category": "Other",
+        "price": 31.0,
+        "weight": "",
+        "strain": "Sativa"
+      },
+      {
+        "name": "Good Green 3.5g Slapz (H) 01313",
+        "brand": "1/8 oz",
+        "category": "Other",
+        "price": 32.0,
+        "weight": "",
+        "strain": "Hybrid"
+      },
+      {
+        "name": "BlueZZZberry Gummies 5:1 CBN:THC 100mg 20pk",
+        "brand": "SoundView",
+        "category": "Edibles",
+        "price": 32.0,
+        "weight": "",
+        "strain": "Indica"
+      },
+      {
+        "name": "Camino Wild Berry Cannabis-Infused Gummies 00396",
+        "brand": "Unknown",
+        "category": "Edibles",
+        "price": 32.0,
+        "weight": "",
+        "strain": "Indica"
+      },
+      {
+        "name": "Live Resin Watermelon Gummies 1:1:1 THC:CBD:CBG 100mg 20pk",
+        "brand": "SoundView",
+        "category": "Edibles",
+        "price": 32.0,
+        "weight": "",
+        "strain": "Hybrid"
+      },
+      {
+        "name": "Encore Dark Chocolate RSO T99mg I 26830",
+        "brand": "Unknown",
+        "category": "Edibles",
+        "price": 32.0,
+        "weight": "",
+        "strain": "Indica"
+      },
+      {
+        "name": "Margarita RSO Gummies 100mg 20pk",
+        "brand": "SoundView",
+        "category": "Edibles",
+        "price": 32.0,
+        "weight": "",
+        "strain": "Sativa"
+      },
+      {
+        "name": "Encore Mango RSO Gummies T95mg S 26683",
+        "brand": "Unknown",
+        "category": "Edibles",
+        "price": 32.0,
+        "weight": "",
+        "strain": "Sativa"
+      },
+      {
+        "name": "Encore Sour Black Cherry RSO Gummies T99mg H 26779",
+        "brand": "Unknown",
+        "category": "Edibles",
+        "price": 32.0,
+        "weight": "",
+        "strain": "Hybrid"
+      },
+      {
+        "name": "JAMS Fast Acting Jellies Sour Strawberry Lemonade (S) 01146",
+        "brand": "Unknown",
+        "category": "Edibles",
+        "price": 32.0,
+        "weight": "",
+        "strain": "Sativa"
+      },
+      {
+        "name": "Good Green 3.5g Paradise Snacks (I) 01261",
+        "brand": "1/8 oz",
+        "category": "Other",
+        "price": 32.0,
+        "weight": "",
+        "strain": "Indica"
+      },
+      {
+        "name": "THC Crushin' It Cran-Raspberry Gummies 95.2mg 00245 20pk",
+        "brand": "Unknown",
+        "category": "Edibles",
+        "price": 32.0,
+        "weight": "",
+        "strain": "Sativa"
+      },
+      {
+        "name": "COAST Cherry 10:5 CBD:THC 86mg H Gummies 00113 20pk",
+        "brand": "Unknown",
+        "category": "Edibles",
+        "price": 33.0,
+        "weight": "",
+        "strain": "Hybrid"
+      },
+      {
+        "name": "Coast Cannabis CO. Tangerine 5:5:5 Infused Gummies (CBG:CBD:THC) (C0070000347)",
+        "brand": "Unknown",
+        "category": "Edibles",
+        "price": 33.0,
+        "weight": "",
+        "strain": "Hybrid"
+      },
+      {
+        "name": "GMO (Jeemodex) Flower 3.5g",
+        "brand": "CTPharma1/8 oz",
+        "category": "Flower",
+        "price": 34.0,
+        "weight": "",
+        "strain": "Indica"
+      },
+      {
+        "name": "SEL Tropic Thunder Cliq Pod 84.96% H 00938 0.5g",
+        "brand": "1/2 g",
+        "category": "Other",
+        "price": 34.0,
+        "weight": "",
+        "strain": "Hybrid"
+      },
+      {
+        "name": "SEL Forbidden Fruit Cliq Pod I 86.67% 00915 0.5g",
+        "brand": "1/2 g",
+        "category": "Other",
+        "price": 34.0,
+        "weight": "",
+        "strain": "Indica"
+      },
+      {
+        "name": "SEL Cliq Pod Purple Urkel 87.18% 00957 (I) 0.5g",
+        "brand": "1/2 g",
+        "category": "Other",
+        "price": 34.0,
+        "weight": "",
+        "strain": "Indica"
+      },
+      {
+        "name": "Camino Freshly Squeezed with CBG 5:10 Cannabis-Infused Gummies 00378",
+        "brand": "Unknown",
+        "category": "Edibles",
+        "price": 34.0,
+        "weight": "",
+        "strain": "Hybrid"
+      },
+      {
+        "name": "G'Night Grape Gummies 2:1 THC:CBN 100mg 20pk",
+        "brand": "SoundView",
+        "category": "Edibles",
+        "price": 34.0,
+        "weight": "",
+        "strain": "Indica"
+      },
+      {
+        "name": "Fast-Acting Strawberry Kiwi Gummies 100mg 20pk",
+        "brand": "SoundView",
+        "category": "Edibles",
+        "price": 34.0,
+        "weight": "",
+        "strain": "Hybrid"
+      },
+      {
+        "name": "Camino Sours-Blackberry Dream with CBN & CBD 10:10:10 Cannabis-Infused Gummies-00395",
+        "brand": "Unknown",
+        "category": "Edibles",
+        "price": 34.0,
+        "weight": "",
+        "strain": "Indica"
+      },
+      {
+        "name": "Camino Midnight Blueberry 5:1 THC:CBN Sleep Gummies 20pc",
+        "brand": "Kiva Confections",
+        "category": "Edibles",
+        "price": 34.0,
+        "weight": "",
+        "strain": "Hybrid"
+      },
+      {
+        "name": "Grassroots Ground Flower 3.5g Hickory Hash (H) 01476 TC 30.586%",
+        "brand": "1/8 oz",
+        "category": "Flower",
+        "price": 35.0,
+        "weight": "",
+        "strain": "Hybrid"
+      },
+      {
+        "name": "On The Rocks Live Rosin Peach Mango Gummies T98.2mg H 26758",
+        "brand": "Unknown",
+        "category": "Edibles",
+        "price": 35.0,
+        "weight": "",
+        "strain": "Hybrid"
+      },
+      {
+        "name": "Good Green 3.5g Regina Gorgeous (H) 01213",
+        "brand": "1/8 oz",
+        "category": "Other",
+        "price": 35.0,
+        "weight": "",
+        "strain": "Hybrid"
+      },
+      {
+        "name": "Good Green 3.5g Granny Canny (S) 01262",
+        "brand": "1/8 oz",
+        "category": "Other",
+        "price": 35.0,
+        "weight": "",
+        "strain": "Sativa"
+      },
+      {
+        "name": "CTP Canna-Tsu Flower THC:CBD 5.87% 26426 3.5g",
+        "brand": "1/8 oz",
+        "category": "Flower",
+        "price": 35.0,
+        "weight": "",
+        "strain": "Hybrid"
+      },
+      {
+        "name": "AGL GG Living Legend Flower 16.19% S 01125 3.5g",
+        "brand": "1/8 oz",
+        "category": "Flower",
+        "price": 35.0,
+        "weight": "",
+        "strain": "Sativa"
+      },
+      {
+        "name": "Black Cherry GMO Lucky Dugout 3g 0071",
+        "brand": "1/8 oz",
+        "category": "Other",
+        "price": 36.0,
+        "weight": "",
+        "strain": "Hybrid"
+      },
+      {
+        "name": "Ice Cream Cke Lucky Dugout 3g 0065",
+        "brand": "1/8 oz",
+        "category": "Other",
+        "price": 36.0,
+        "weight": "",
+        "strain": "Hybrid"
+      },
+      {
+        "name": "GMO Flower T34.43% I 00846",
+        "brand": "1/8 oz",
+        "category": "Flower",
+        "price": 36.0,
+        "weight": "",
+        "strain": "Indica"
+      },
+      {
+        "name": "Wana Quick Sativa Peach Bellini Fast-Acting Gummies-00375",
+        "brand": "Unknown",
+        "category": "Edibles",
+        "price": 36.0,
+        "weight": "",
+        "strain": "Sativa"
+      },
+      {
+        "name": "Raspberry Lime Gummies 5:1 CBD:THC 100mg 20pk",
+        "brand": "SoundView",
+        "category": "Edibles",
+        "price": 36.0,
+        "weight": "",
+        "strain": "Hybrid"
+      },
+      {
+        "name": "Brix Cannabis Jungle Cake Whole Flower 3.5g (H) 00484",
+        "brand": "1/8 oz",
+        "category": "Flower",
+        "price": 38.0,
+        "weight": "",
+        "strain": "Hybrid"
+      },
+      {
+        "name": "CLF Whole Flower White Hot Guava H 24.19% 00959 3.5g",
+        "brand": "1/8 oz",
+        "category": "Flower",
+        "price": 40.0,
+        "weight": "",
+        "strain": "Hybrid"
+      },
+      {
+        "name": "Comffy\\|Flower 7g\\|Atomic Tangerine 00175",
+        "brand": "1/4 oz",
+        "category": "Flower",
+        "price": 40.0,
+        "weight": "",
+        "strain": "Sativa"
+      },
+      {
+        "name": "Type A (S) Flower",
+        "brand": "Comffy",
+        "category": "Flower",
+        "price": 40.0,
+        "weight": "",
+        "strain": "Sativa"
+      },
+      {
+        "name": "Comffy\\|Flower 7g\\|FreeStyle 00156",
+        "brand": "1/4 oz",
+        "category": "Flower",
+        "price": 40.0,
+        "weight": "",
+        "strain": "Sativa"
+      },
+      {
+        "name": "Loud Cannabis Starblast (H) C0170000026",
+        "brand": "1 g",
+        "category": "Other",
+        "price": 40.0,
+        "weight": "",
+        "strain": "Hybrid"
+      },
+      {
+        "name": "The Goods Halloweed Flower 23.76% 40001 3.5g",
+        "brand": "1/8 oz",
+        "category": "Flower",
+        "price": 41.0,
+        "weight": "",
+        "strain": "Hybrid"
+      },
+      {
+        "name": "The Goods Ridgeline Lantz Flower 26.84% 80001 3.5g",
+        "brand": "1/8 oz",
+        "category": "Flower",
+        "price": 41.0,
+        "weight": "",
+        "strain": "Hybrid"
+      },
+      {
+        "name": "AGL RTM Animal Scout \\#10 Flower 37.58% I 01062 3.5g",
+        "brand": "1/8 oz",
+        "category": "Flower",
+        "price": 41.0,
+        "weight": "",
+        "strain": "Indica"
+      },
+      {
+        "name": "Affinity Grow \\| Capy \\| Flower \\| 3.5G",
+        "brand": "1/8 oz",
+        "category": "Flower",
+        "price": 41.0,
+        "weight": "",
+        "strain": "Hybrid"
+      },
+      {
+        "name": "3.5G - Blue Raz",
+        "brand": "Cookies",
+        "category": "Other",
+        "price": 41.0,
+        "weight": "",
+        "strain": "Hybrid"
+      },
+      {
+        "name": "Affinity Grow \\| Alien OG \\| Flower \\| 3.5G",
+        "brand": "1/8 oz",
+        "category": "Flower",
+        "price": 43.0,
+        "weight": "",
+        "strain": "Hybrid"
+      },
+      {
+        "name": "LB Pineapple Expression AIO 83.45% S 00072 0.5g",
+        "brand": "1/2 g",
+        "category": "Other",
+        "price": 44.0,
+        "weight": "",
+        "strain": "Hybrid"
+      },
+      {
+        "name": "PB Breath Flower T30.36% H 00778",
+        "brand": "1/8 oz",
+        "category": "Flower",
+        "price": 44.0,
+        "weight": "",
+        "strain": "Hybrid"
+      },
+      {
+        "name": "Zuava Flower H 26761",
+        "brand": "1/8 oz",
+        "category": "Flower",
+        "price": 45.0,
+        "weight": "",
+        "strain": "Hybrid"
+      },
+      {
+        "name": "AGL RTM Lemon Drip Flower 24.99% S 01069 3.5g",
+        "brand": "1/8 oz",
+        "category": "Flower",
+        "price": 45.0,
+        "weight": "",
+        "strain": "Sativa"
+      },
+      {
+        "name": "Heir Heads Flower H 26778",
+        "brand": "1/8 oz",
+        "category": "Flower",
+        "price": 45.0,
+        "weight": "",
+        "strain": "Hybrid"
+      },
+      {
+        "name": "RTM Go Gr Tz Flower 28.49% H 00955 3.5g",
+        "brand": "1/8 oz",
+        "category": "Flower",
+        "price": 45.0,
+        "weight": "",
+        "strain": "Hybrid"
+      },
+      {
+        "name": "RC Airo Pod Rainbow Haze Vape 86.66% S 00280 0.5g",
+        "brand": "1/2 g",
+        "category": "Vaporizers",
+        "price": 45.0,
+        "weight": "",
+        "strain": "Sativa"
+      },
+      {
+        "name": "Frozen Bag 3.5g Flower",
+        "brand": "Earl Baker",
+        "category": "Flower",
+        "price": 46.0,
+        "weight": "",
+        "strain": "Hybrid"
+      },
+      {
+        "name": "RTM Fantasy Melonz Flower 24.86% H 00959 3.5g",
+        "brand": "1/8 oz",
+        "category": "Flower",
+        "price": 46.0,
+        "weight": "",
+        "strain": "Hybrid"
+      },
+      {
+        "name": "RYTHM Hybrid Premium Flower Afternoon Delight \\#4 3.5g",
+        "brand": "RYTHM1/8 oz",
+        "category": "Flower",
+        "price": 46.0,
+        "weight": "",
+        "strain": "Hybrid"
+      },
+      {
+        "name": "Rythm 3.5g Lemon Fresh (S) 01196",
+        "brand": "1/8 oz",
+        "category": "Other",
+        "price": 46.0,
+        "weight": "",
+        "strain": "Sativa"
+      },
+      {
+        "name": "Brownie Scout 3.5g",
+        "brand": "RYTHM",
+        "category": "Flower",
+        "price": 46.0,
+        "weight": "1/8 oz",
+        "strain": ""
+      },
+      {
+        "name": "Rythm 3.5g Black Maple 22 (1) 01092",
+        "brand": "1/8 oz",
+        "category": "Other",
+        "price": 46.0,
+        "weight": "",
+        "strain": "Indica"
+      },
+      {
+        "name": "The Goods Blue Raz Flower 19.30% 10001 3.5g",
+        "brand": "1/8 oz",
+        "category": "Flower",
+        "price": 46.0,
+        "weight": "",
+        "strain": "Hybrid"
+      },
+      {
+        "name": "AGL 1g Vape B Scout x LA Kush CKE (I) 01212",
+        "brand": "1 g",
+        "category": "Vaporizers",
+        "price": 46.0,
+        "weight": "",
+        "strain": "Indica"
+      },
+      {
+        "name": "Star Killer x CDLC 0.5g BHO Vape T414 I 00850",
+        "brand": "1/2 g",
+        "category": "Vaporizers",
+        "price": 48.0,
+        "weight": "",
+        "strain": "Indica"
+      },
+      {
+        "name": "LB Stars & Stripes 23.1mg H 00012 10pk",
+        "brand": "Unknown",
+        "category": "Other",
+        "price": 49.0,
+        "weight": "",
+        "strain": "Hybrid"
+      },
+      {
+        "name": "Head Cracker Flower 3.5g",
+        "brand": "RYTHM1/8 oz",
+        "category": "Flower",
+        "price": 50.0,
+        "weight": "",
+        "strain": "Indica"
+      },
+      {
+        "name": "Rythm Dulce De Uva 3.5g (I) 01162",
+        "brand": "1/8 oz",
+        "category": "Other",
+        "price": 50.0,
+        "weight": "",
+        "strain": "Indica"
+      },
+      {
+        "name": "CLF Raspberry Classic Bites 263.7mg 00849 10pk",
+        "brand": "Unknown",
+        "category": "Other",
+        "price": 50.0,
+        "weight": "",
+        "strain": "Hybrid"
+      },
+      {
+        "name": "Mendo Wedding Flower I 26561",
+        "brand": "1/8 oz",
+        "category": "Flower",
+        "price": 50.0,
+        "weight": "",
+        "strain": "Indica"
+      },
+      {
+        "name": "Purple Milk Lil' Budz 7g (I) 00474",
+        "brand": "1/4 oz",
+        "category": "Other",
+        "price": 50.0,
+        "weight": "",
+        "strain": "Indica"
+      },
+      {
+        "name": "Runtz S1 Indoor Flower 3.5g",
+        "brand": "RYTHM1/8 oz",
+        "category": "Flower",
+        "price": 50.0,
+        "weight": "",
+        "strain": "Hybrid"
+      },
+      {
+        "name": "Rodeo Live Resin Rainbow B. (H) 1g Disposable Vape(C0070000396)",
+        "brand": "1 g",
+        "category": "Vaporizers",
+        "price": 50.0,
+        "weight": "",
+        "strain": "Hybrid"
+      },
+      {
+        "name": "AGL 1g Vape Cheddar Cheeze x Headcracker (I) 01280",
+        "brand": "1 g",
+        "category": "Vaporizers",
+        "price": 50.0,
+        "weight": "",
+        "strain": "Indica"
+      },
+      {
+        "name": "AGL 1g Vape OMG x Go Gr Tz (H) 01256",
+        "brand": "1 g",
+        "category": "Vaporizers",
+        "price": 50.0,
+        "weight": "",
+        "strain": "Hybrid"
+      },
+      {
+        "name": "AGL 1g Vape Taffy Twist x Dulce De Uva (I) 01296",
+        "brand": "1 g",
+        "category": "Vaporizers",
+        "price": 50.0,
+        "weight": "",
+        "strain": "Indica"
+      },
+      {
+        "name": "AFG Star Killer x CDLC 25.17% I 00656 3.5g",
+        "brand": "1/8 oz",
+        "category": "Other",
+        "price": 50.0,
+        "weight": "",
+        "strain": "Indica"
+      },
+      {
+        "name": "Gush Mintz Flower I 26712",
+        "brand": "1/8 oz",
+        "category": "Flower",
+        "price": 50.0,
+        "weight": "",
+        "strain": "Indica"
+      },
+      {
+        "name": "Rythm 3.5g Vel Croz (H) 01208",
+        "brand": "1/8 oz",
+        "category": "Other",
+        "price": 50.0,
+        "weight": "",
+        "strain": "Hybrid"
+      },
+      {
+        "name": "RTM 95 Cook 32.08% H 01108 3.5g",
+        "brand": "1/8 oz",
+        "category": "Other",
+        "price": 50.0,
+        "weight": "",
+        "strain": "Hybrid"
+      },
+      {
+        "name": "AFG Star Killer x CDLC 26.01% I 00645 3.5g",
+        "brand": "1/8 oz",
+        "category": "Other",
+        "price": 50.0,
+        "weight": "",
+        "strain": "Indica"
+      },
+      {
+        "name": "CTP Savvy Canna-Tsu Smalls THC:CBD 5.22% 26416 7g",
+        "brand": "1/4 oz",
+        "category": "Other",
+        "price": 51.0,
+        "weight": "",
+        "strain": "Hybrid"
+      },
+      {
+        "name": "Chem 91 Lil' Budz 7g (S) 00444",
+        "brand": "1/4 oz",
+        "category": "Other",
+        "price": 51.0,
+        "weight": "",
+        "strain": "Sativa"
+      },
+      {
+        "name": "BUDR (I-Side) Cherry Alien Papi x Plasma Wedding Dual Chamber 90.14% I 00950 1g",
+        "brand": "1 g",
+        "category": "Other",
+        "price": 55.0,
+        "weight": "",
+        "strain": "Indica"
+      },
+      {
+        "name": "Mendo Cooler (Fresaden) Live Rosin Pure Vape Cartridge 0.5g",
+        "brand": "CTPharma1/2 g",
+        "category": "Vaporizers",
+        "price": 56.0,
+        "weight": "",
+        "strain": "Sativa"
+      },
+      {
+        "name": "Whole Flower - Gee Forcez 086",
+        "brand": "Earl Baker",
+        "category": "Flower",
+        "price": 58.0,
+        "weight": "",
+        "strain": "Indica"
+      },
+      {
+        "name": "GG Skunk 1g Pure Vape T872 H 26646",
+        "brand": "1 g",
+        "category": "Vaporizers",
+        "price": 59.0,
+        "weight": "",
+        "strain": "Hybrid"
+      },
+      {
+        "name": "RTM Vel Croz Small Flower 31.75% H 00864 7g",
+        "brand": "1/4 oz",
+        "category": "Flower",
+        "price": 59.0,
+        "weight": "",
+        "strain": "Hybrid"
+      },
+      {
+        "name": "The Essence Hyphen AIO 1g Banana Cream OG T882 H 26815",
+        "brand": "1 g",
+        "category": "Other",
+        "price": 59.0,
+        "weight": "",
+        "strain": "Indica"
+      },
+      {
+        "name": "Rythm 7g Small Flower Vel Croz (H) 01249",
+        "brand": "1/4 oz",
+        "category": "Flower",
+        "price": 59.0,
+        "weight": "",
+        "strain": "Hybrid"
+      },
+      {
+        "name": "RYTHM Premium Flower Afternoon Delight \\#4 7g",
+        "brand": "RYTHM1/4 oz",
+        "category": "Flower",
+        "price": 59.0,
+        "weight": "",
+        "strain": "Hybrid"
+      },
+      {
+        "name": "Savvy Smalls 7g E85 S 26802",
+        "brand": "1/4 oz",
+        "category": "Other",
+        "price": 59.0,
+        "weight": "",
+        "strain": "Sativa"
+      },
+      {
+        "name": "Brownie Scout 7g",
+        "brand": "RYTHM Mini Buds",
+        "category": "Other",
+        "price": 59.0,
+        "weight": "",
+        "strain": "Indica"
+      },
+      {
+        "name": "Lemon Skunk 1g LT Vape T847 S 00820",
+        "brand": "1 g",
+        "category": "Vaporizers",
+        "price": 63.0,
+        "weight": "",
+        "strain": "Sativa"
+      },
+      {
+        "name": "AGL 14g Select Grind Indica Blend (I) 01236",
+        "brand": "1/2 oz",
+        "category": "Other",
+        "price": 64.0,
+        "weight": "",
+        "strain": "Indica"
+      },
+      {
+        "name": "SoundView Raspberry Lemonade Live Resin Disposable Vape (1g) T90.810% (S) 00228",
+        "brand": "1 g",
+        "category": "Vaporizers",
+        "price": 65.0,
+        "weight": "",
+        "strain": "Sativa"
+      },
+      {
+        "name": "Savvy Smalls 7g Lemon Cherry Sherb H 26854",
+        "brand": "1/4 oz",
+        "category": "Other",
+        "price": 65.0,
+        "weight": "",
+        "strain": "Hybrid"
+      },
+      {
+        "name": "Rythm 7g Small Flower Lemon Fresh (S) 01197",
+        "brand": "1/4 oz",
+        "category": "Flower",
+        "price": 65.0,
+        "weight": "",
+        "strain": "Sativa"
+      },
+      {
+        "name": "SoundView Dank Sinatra Live Resin Disposable Vape (1g) T91.62% (I) 00223",
+        "brand": "1 g",
+        "category": "Vaporizers",
+        "price": 65.0,
+        "weight": "",
+        "strain": "Indica"
+      },
+      {
+        "name": "Select Grind Bubba F Flower 14g",
+        "brand": "Advanced Grow Labs",
+        "category": "Flower",
+        "price": 67.0,
+        "weight": "",
+        "strain": "Indica"
+      },
+      {
+        "name": "The Essence Hyphen AIO 1g Spacedawg T815 I 26719",
+        "brand": "1 g",
+        "category": "Other",
+        "price": 67.0,
+        "weight": "",
+        "strain": "Indica"
+      },
+      {
+        "name": "FIND. Whole Flower 7g Forest Reserve (H) 01514 TC 33.979%",
+        "brand": "1/4 oz",
+        "category": "Flower",
+        "price": 70.0,
+        "weight": "",
+        "strain": "Hybrid"
+      },
+      {
+        "name": "FIND. Whole Flower 7g Modified Goat (I) 01414 TC 32.11%",
+        "brand": "1/4 oz",
+        "category": "Flower",
+        "price": 70.0,
+        "weight": "",
+        "strain": "Indica"
+      },
+      {
+        "name": "Flower by Edie Parker-Green Queen-Sativa Vape Cartridge-1g-00420",
+        "brand": "1 g",
+        "category": "Vaporizers",
+        "price": 70.0,
+        "weight": "",
+        "strain": "Sativa"
+      },
+      {
+        "name": "AGL 14g Select Grind Lemon Drip (S) 01199",
+        "brand": "1/2 oz",
+        "category": "Other",
+        "price": 70.0,
+        "weight": "",
+        "strain": "Sativa"
+      },
+      {
+        "name": "AGL 14g Select Grind Hybrid Blend (H) 01234",
+        "brand": "1/2 oz",
+        "category": "Other",
+        "price": 70.0,
+        "weight": "",
+        "strain": "Hybrid"
+      },
+      {
+        "name": "Select Grind Fantasy Melonz 14g",
+        "brand": "Advanced Grow Labs",
+        "category": "Other",
+        "price": 70.0,
+        "weight": "",
+        "strain": "Hybrid"
+      },
+      {
+        "name": "The Essence Hyphen AIO 1g Super Jack T836 S 26718",
+        "brand": "1 g",
+        "category": "Other",
+        "price": 72.0,
+        "weight": "",
+        "strain": "Sativa"
+      },
+      {
+        "name": "SoundView Peaches n' Cream Live Resin Disposable Vape (1g) T92.899% H 00222",
+        "brand": "1 g",
+        "category": "Vaporizers",
+        "price": 72.0,
+        "weight": "",
+        "strain": "Hybrid"
+      },
+      {
+        "name": "THC Mega Dose Chillaxing Cherry Limeade 1:1:1: 501.8 mg 00298 20pk",
+        "brand": "Unknown",
+        "category": "Other",
+        "price": 73.0,
+        "weight": "",
+        "strain": "Hybrid"
+      },
+      {
+        "name": "Sunset Citron Infused Macro Gems 20pk \\| 1000mg total",
+        "brand": "The Happy Confection",
+        "category": "Other",
+        "price": 73.0,
+        "weight": "",
+        "strain": "Indica"
+      },
+      {
+        "name": "THC High Dose Boosted Berry Gummies T516.8mg S 00279 20pk",
+        "brand": "Unknown",
+        "category": "Edibles",
+        "price": 73.0,
+        "weight": "",
+        "strain": "Sativa"
+      },
+      {
+        "name": "Z Cke 1g LT Bar T863 I 00825",
+        "brand": "1 g",
+        "category": "Other",
+        "price": 74.0,
+        "weight": "",
+        "strain": "Indica"
+      },
+      {
+        "name": "LB Fast Acting Lightening Berry 287.4mg 00018 6pk",
+        "brand": "Unknown",
+        "category": "Other",
+        "price": 83.0,
+        "weight": "",
+        "strain": "Hybrid"
+      },
+      {
+        "name": "Pinyatti Live Rosin AIO 1g T843 S 26821",
+        "brand": "On The Rocks",
+        "category": "Concentrates",
+        "price": 90.0,
+        "weight": "",
+        "strain": "Sativa"
+      },
+      {
+        "name": "Good Green 14g Granny Canny (S) 01276",
+        "brand": "1/2 oz",
+        "category": "Other",
+        "price": 91.0,
+        "weight": "",
+        "strain": "Sativa"
+      },
+      {
+        "name": "Good Green 14g Paradise Snacks (I) 01285",
+        "brand": "1/2 oz",
+        "category": "Other",
+        "price": 100.0,
+        "weight": "",
+        "strain": "Indica"
+      },
+      {
+        "name": "Savvy Strut AIO 2g Golden Tangie T1794 S 26818",
+        "brand": "2 g",
+        "category": "Other",
+        "price": 104.0,
+        "weight": "",
+        "strain": "Sativa"
+      },
+      {
+        "name": "LB Potency Punch Lucky Chews 102mg H 00066 6pk",
+        "brand": "Unknown",
+        "category": "Edibles",
+        "price": 109.0,
+        "weight": "",
+        "strain": "Hybrid"
+      },
+      {
+        "name": "BRIQ Essentials Blueberry Muffin 2g All in One",
+        "brand": "Select2 g",
+        "category": "Other",
+        "price": 109.0,
+        "weight": "",
+        "strain": "Indica"
+      },
+      {
+        "name": "Brownie Scout 14g",
+        "brand": "RYTHM Mini Buds",
+        "category": "Other",
+        "price": 109.0,
+        "weight": "",
+        "strain": "Indica"
+      },
+      {
+        "name": "Select Elite Briq All In One Disposable Vape 2g Moonburst (H) 01353",
+        "brand": "2 g",
+        "category": "Vaporizers",
+        "price": 109.0,
+        "weight": "",
+        "strain": "Hybrid"
+      },
+      {
+        "name": "Rythm 14g Go Gr Tz (H) 01283",
+        "brand": "1/2 oz",
+        "category": "Other",
+        "price": 109.0,
+        "weight": "",
+        "strain": "Hybrid"
+      },
+      {
+        "name": "Savvy Strut AIO 2g Pinnacle T1629 H 26705",
+        "brand": "2 g",
+        "category": "Other",
+        "price": 115.0,
+        "weight": "",
+        "strain": "Hybrid"
+      },
+      {
+        "name": "Savvy Strut AIO 2g Sour Bubble T1667 I 26843",
+        "brand": "2 g",
+        "category": "Other",
+        "price": 115.0,
+        "weight": "",
+        "strain": "Indica"
+      },
+      {
+        "name": "RTM Jack Herer Mixed Buds 19.22% S 00860 14g",
+        "brand": "1/2 oz",
+        "category": "Other",
+        "price": 116.0,
+        "weight": "",
+        "strain": "Sativa"
+      },
+      {
+        "name": "RTM Jet Fuel Mixed Buds 25.02% H 00853 14g",
+        "brand": "1/2 oz",
+        "category": "Other",
+        "price": 118.0,
+        "weight": "",
+        "strain": "Hybrid"
+      },
+      {
+        "name": "Select Elite Briq All In One Disposable Vape 2g Sour Durban (S) 01366",
+        "brand": "2 g",
+        "category": "Vaporizers",
+        "price": 120.0,
+        "weight": "",
+        "strain": "Sativa"
+      },
+      {
+        "name": "RYTHM Animal Face 14g",
+        "brand": "RYTHM",
+        "category": "Other",
+        "price": 120.0,
+        "weight": "1/2 oz",
+        "strain": ""
+      },
+      {
+        "name": "RYTHM Premium Flower Afternoon Delight \\#4 14g",
+        "brand": "RYTHM",
+        "category": "Flower",
+        "price": 130.0,
+        "weight": "1/2 oz",
+        "strain": ""
+      },
+      {
+        "name": "Good Green 28g Mystic Mint (I) 01286",
+        "brand": "1 oz",
+        "category": "Other",
+        "price": 160.0,
+        "weight": "",
+        "strain": "Indica"
+      },
+      {
+        "name": "Good Green 28g Slapz (H) 01311",
+        "brand": "1 oz",
+        "category": "Other",
+        "price": 160.0,
+        "weight": "",
+        "strain": "Hybrid"
+      },
+      {
+        "name": "Good Green 28g Regina Gorgeous (H) 01237",
+        "brand": "1 oz",
+        "category": "Other",
+        "price": 160.0,
+        "weight": "",
+        "strain": "Hybrid"
+      },
+      {
+        "name": "Rythm 28g Vel Croz (H) 01242",
+        "brand": "1 oz",
+        "category": "Other",
+        "price": 164.0,
+        "weight": "",
+        "strain": "Hybrid"
+      },
+      {
+        "name": "Grassroots Whole Flower 28g Nuclear Mfns (H) 01431 TC 26.829%",
+        "brand": "1 oz",
+        "category": "Flower",
+        "price": 164.0,
+        "weight": "",
+        "strain": "Hybrid"
+      },
+      {
+        "name": "RYTHM Premium Flower Afternoon Delight \\#4 28g",
+        "brand": "RYTHM1 oz",
+        "category": "Flower",
+        "price": 164.0,
+        "weight": "",
+        "strain": "Hybrid"
+      },
+      {
+        "name": "RYTHM Hybrid Premium Flower Afternoon Delight \\#4 1.0oz",
+        "brand": "RYTHM",
+        "category": "Flower",
+        "price": 180.0,
+        "weight": "1 oz",
+        "strain": ""
+      },
+      {
+        "name": "Rythm 28g Dulce De Uva (I) 01214",
+        "brand": "1 oz",
+        "category": "Other",
+        "price": 180.0,
+        "weight": "",
+        "strain": "Indica"
+      },
+      {
+        "name": "Animal Face 28g",
+        "brand": "RYTHM Smalls",
+        "category": "Other",
+        "price": 180.0,
+        "weight": "1 oz",
+        "strain": ""
+      },
+      {
+        "name": "CTP Savvy Dos Mendos Smalls 23.59% H 26306 28g",
+        "brand": "1 oz",
+        "category": "Other",
+        "price": 190.0,
+        "weight": "",
+        "strain": "Hybrid"
+      },
+      {
+        "name": "Curaleaf Whole Flower 28g White Hot Guava (H) 01345 TC 33.14%",
+        "brand": "1 oz",
+        "category": "Flower",
+        "price": 218.0,
+        "weight": "",
+        "strain": "Hybrid"
+      },
+      {
+        "name": "Grassroots Dark Heart Collection Whole Flower 28g Zesty Garlic Kookyz (I) 01358 TC 30.31%",
+        "brand": "1 oz",
+        "category": "Flower",
+        "price": 240.0,
+        "weight": "",
+        "strain": "Indica"
+      }
+    ],
+    "deals": []
+  },
+  "Sweetspot Stamford": {
+    "products": [],
+    "deals": []
+  },
+  "Fine Fettle Newington": {
+    "products": [],
+    "deals": []
+  },
+  "Curaleaf Stamford": {
+    "products": [
+      {
+        "name": "GMO Skunk Pre-Roll",
+        "brand": "Curaleaf",
+        "category": "Pre-Rolls",
+        "price": 10.0,
+        "weight": "1g",
+        "strain": ""
+      },
+      {
+        "name": "Pappy Kush Pre-Roll",
+        "brand": "Find.1gTHC: 23.94%",
+        "category": "Pre-Rolls",
+        "price": 10.0,
+        "weight": "",
+        "strain": ""
+      },
+      {
+        "name": "GMO Pre-Roll",
+        "brand": "Find.1gTHC: 20.28%",
+        "category": "Pre-Rolls",
+        "price": 10.0,
+        "weight": "",
+        "strain": ""
+      },
+      {
+        "name": "Tangie Crush RSO Macro Dose Gummies",
+        "brand": "JAMS50mgTHC:",
+        "category": "Edibles",
+        "price": 10.0,
+        "weight": "50mg",
+        "strain": ""
+      },
+      {
+        "name": "RP Pre-Roll",
+        "brand": "Curaleaf",
+        "category": "Pre-Rolls",
+        "price": 10.0,
+        "weight": "1g",
+        "strain": ""
+      },
+      {
+        "name": "Fritterz Pre-Roll",
+        "brand": "Find.",
+        "category": "Pre-Rolls",
+        "price": 12.0,
+        "weight": "1g",
+        "strain": ""
+      },
+      {
+        "name": "Pineapple Sunrise Pre-Roll",
+        "brand": "Grassroots1gTHC: 23.74%",
+        "category": "Pre-Rolls",
+        "price": 13.5,
+        "weight": "",
+        "strain": ""
+      },
+      {
+        "name": "Apple Tartz Pre-Roll",
+        "brand": "Find.",
+        "category": "Pre-Rolls",
+        "price": 13.5,
+        "weight": "1g",
+        "strain": ""
+      },
+      {
+        "name": "Indica Princess Pre-Roll Pack",
+        "brand": "Curaleaf0. ea \\| 5-Pack",
+        "category": "Pre-Rolls",
+        "price": 15.0,
+        "weight": "4g",
+        "strain": ""
+      },
+      {
+        "name": "Dos Mendos Pre-Roll Pack",
+        "brand": "Find.0. ea \\| 5-Pack",
+        "category": "Pre-Rolls",
+        "price": 15.0,
+        "weight": "4g",
+        "strain": ""
+      },
+      {
+        "name": "Singapore Sling Pre-Roll Pack",
+        "brand": "Grassroots0. ea \\| 5-PackTHC: 23.48%",
+        "category": "Pre-Rolls",
+        "price": 15.0,
+        "weight": "4g",
+        "strain": ""
+      },
+      {
+        "name": "Jack's Delight All-in-One",
+        "brand": "Advanced Grow Labs0.3gTHC: 286.",
+        "category": "Other",
+        "price": 16.0,
+        "weight": "57mg",
+        "strain": ""
+      },
+      {
+        "name": "Sour Blue Razzberry Ratioed Gummies",
+        "brand": "inc.edibles ea \\| 20-Pack \\| 1THC:",
+        "category": "Edibles",
+        "price": 20.0,
+        "weight": "5mg",
+        "strain": ""
+      },
+      {
+        "name": "Snoozzzeberry Ratioed Gummies",
+        "brand": "Incredibles20-PackTHC: 4. ea",
+        "category": "Edibles",
+        "price": 20.0,
+        "weight": "5mg",
+        "strain": ""
+      },
+      {
+        "name": "Triple Stack Whole Flower",
+        "brand": "Curaleaf3.",
+        "category": "Flower",
+        "price": 22.0,
+        "weight": "5g",
+        "strain": ""
+      },
+      {
+        "name": "Paw Paw Whole Flower",
+        "brand": "Grassroots3.5gTHC: 27.76%",
+        "category": "Flower",
+        "price": 22.0,
+        "weight": "",
+        "strain": ""
+      },
+      {
+        "name": "Zesty Garlic Cookies Whole Flower",
+        "brand": "Grassroots3.5gTHC: 26.87%",
+        "category": "Flower",
+        "price": 22.0,
+        "weight": "",
+        "strain": ""
+      },
+      {
+        "name": "Sundae Slumber All-in-One",
+        "brand": "Select0.3gTHC: 89.91%",
+        "category": "Other",
+        "price": 22.5,
+        "weight": "",
+        "strain": ""
+      },
+      {
+        "name": "Tropical Haze Infused Pre-Roll",
+        "brand": "Curaleaf",
+        "category": "Pre-Rolls",
+        "price": 22.5,
+        "weight": "1g",
+        "strain": ""
+      },
+      {
+        "name": "Sour Black Cherry RSO Gummies",
+        "brand": "Encore Edibles ea \\| 10-PackTHC: 99.",
+        "category": "Edibles",
+        "price": 24.0,
+        "weight": "10mg",
+        "strain": ""
+      },
+      {
+        "name": "Growers Mix Whole Flower",
+        "brand": "Curaleaf3.5gTHC: 22.12%",
+        "category": "Flower",
+        "price": 25.0,
+        "weight": "",
+        "strain": ""
+      },
+      {
+        "name": "Permanent Marker Whole Flower",
+        "brand": "Theraplant3.5gTHC: 20.46%",
+        "category": "Flower",
+        "price": 26.0,
+        "weight": "",
+        "strain": ""
+      },
+      {
+        "name": "Atomic Breath Pre-Roll Pack",
+        "brand": "Find.0. ea \\| 5-Pack",
+        "category": "Pre-Rolls",
+        "price": 26.25,
+        "weight": "4g",
+        "strain": ""
+      },
+      {
+        "name": "Tahoe OG Cartridge",
+        "brand": "Select0.5gTHC: 90.38%",
+        "category": "Vaporizers",
+        "price": 30.0,
+        "weight": "",
+        "strain": ""
+      },
+      {
+        "name": "Starstruck Whole Flower",
+        "brand": "Comffy3.5gTHC: 25.82%",
+        "category": "Flower",
+        "price": 30.0,
+        "weight": "",
+        "strain": ""
+      },
+      {
+        "name": "Raspberry Pomegranate Fast-Acting Ratioed Gummies",
+        "brand": "JAMS ea \\| 20-PackTHC: 95.",
+        "category": "Edibles",
+        "price": 30.0,
+        "weight": "5mg",
+        "strain": ""
+      },
+      {
+        "name": "Homebody Whole Flower",
+        "brand": "Comffy3.5gTHC: 28.1%",
+        "category": "Flower",
+        "price": 32.0,
+        "weight": "",
+        "strain": ""
+      },
+      {
+        "name": "Grinz Small Buds",
+        "brand": "Find.3.",
+        "category": "Other",
+        "price": 34.0,
+        "weight": "5g",
+        "strain": ""
+      },
+      {
+        "name": "Black Cherry GMO Infused Pre-Roll Pack",
+        "brand": "Theraplant0. ea \\| 4-PackTHC: 46.16%",
+        "category": "Pre-Rolls",
+        "price": 35.0,
+        "weight": "4g",
+        "strain": ""
+      },
+      {
+        "name": "Black Cherry GMO Infused Pre-Roll",
+        "brand": "Theraplant2gTHC: 48.08%",
+        "category": "Pre-Rolls",
+        "price": 35.0,
+        "weight": "",
+        "strain": ""
+      },
+      {
+        "name": "GMO Skunk Infused Pre-Roll Pack",
+        "brand": "Curaleaf0. ea \\| 5-Pack",
+        "category": "Pre-Rolls",
+        "price": 37.5,
+        "weight": "4g",
+        "strain": ""
+      },
+      {
+        "name": "Durban Stardawg Infused Pre-Roll Pack",
+        "brand": "CTPharma0. ea \\| 5-PackTHC: 41.09%",
+        "category": "Pre-Rolls",
+        "price": 37.5,
+        "weight": "4g",
+        "strain": ""
+      },
+      {
+        "name": "Mule Fuel Hash Infused Pre-Roll Pack",
+        "brand": "Find.0. ea \\| 4-Pack",
+        "category": "Pre-Rolls",
+        "price": 39.0,
+        "weight": "4g",
+        "strain": ""
+      },
+      {
+        "name": "Nimbus Snacks Small Buds",
+        "brand": "Curaleaf3.",
+        "category": "Other",
+        "price": 39.0,
+        "weight": "5g",
+        "strain": ""
+      },
+      {
+        "name": "Modified Goat Whole Flower",
+        "brand": "Curaleaf",
+        "category": "Flower",
+        "price": 40.0,
+        "weight": "7g",
+        "strain": ""
+      },
+      {
+        "name": "Fields of Haze Whole Flower",
+        "brand": "Curaleaf7gTHC: 21.54%",
+        "category": "Flower",
+        "price": 40.0,
+        "weight": "",
+        "strain": ""
+      },
+      {
+        "name": "PB Bites Whole Flower",
+        "brand": "Curaleaf",
+        "category": "Flower",
+        "price": 40.0,
+        "weight": "7g",
+        "strain": ""
+      },
+      {
+        "name": "Tropical Heatwave Whole Flower",
+        "brand": "Find.7gTHC: 27.14%",
+        "category": "Flower",
+        "price": 40.0,
+        "weight": "",
+        "strain": ""
+      },
+      {
+        "name": "Golden Hour Whole Flower",
+        "brand": "Comffy7gTHC: 19.25%",
+        "category": "Flower",
+        "price": 40.0,
+        "weight": "",
+        "strain": ""
+      },
+      {
+        "name": "Red Racer Cartridge",
+        "brand": "Theraplant1gTHC: 86.92%",
+        "category": "Vaporizers",
+        "price": 41.25,
+        "weight": "",
+        "strain": ""
+      },
+      {
+        "name": "Afgooey Cartridge",
+        "brand": "Select",
+        "category": "Vaporizers",
+        "price": 50.0,
+        "weight": "1g",
+        "strain": ""
+      },
+      {
+        "name": "Jungle Cake Cartridge",
+        "brand": "Brix1gTHC: 88.91%",
+        "category": "Vaporizers",
+        "price": 50.0,
+        "weight": "",
+        "strain": ""
+      },
+      {
+        "name": "Garlotti CLIQ",
+        "brand": "Select1gTHC: 84.63%",
+        "category": "Other",
+        "price": 52.5,
+        "weight": "",
+        "strain": ""
+      },
+      {
+        "name": "Purple Urkel BRIQ",
+        "brand": "Select2gTHC: 85.86%",
+        "category": "Other",
+        "price": 60.0,
+        "weight": "",
+        "strain": ""
+      },
+      {
+        "name": "Dream Clouds All-in-One",
+        "brand": "Theraplant1gTHC: 90.13%",
+        "category": "Other",
+        "price": 63.0,
+        "weight": "",
+        "strain": ""
+      },
+      {
+        "name": "Hash Breath All-in-One",
+        "brand": "Theraplant",
+        "category": "Other",
+        "price": 63.0,
+        "weight": "1g",
+        "strain": ""
+      },
+      {
+        "name": "Banana Acai Mints Whole Flower",
+        "brand": "all:hours7gTHC: 24.78%",
+        "category": "Flower",
+        "price": 69.0,
+        "weight": "",
+        "strain": ""
+      },
+      {
+        "name": "Singapore Sling Whole Flower",
+        "brand": "Grassroots",
+        "category": "Flower",
+        "price": 71.25,
+        "weight": "14g",
+        "strain": ""
+      },
+      {
+        "name": "Mint Diesel Small Buds",
+        "brand": "Savvy14gTHC: 25.83%",
+        "category": "Other",
+        "price": 75.0,
+        "weight": "",
+        "strain": ""
+      },
+      {
+        "name": "Ice Cream CKE Whole Flower",
+        "brand": "Theraplant28gTHC: 23.64%",
+        "category": "Flower",
+        "price": 150.0,
+        "weight": "",
+        "strain": ""
+      },
+      {
+        "name": "E85 Small Buds",
+        "brand": "Savvy28gTHC: 25.21%",
+        "category": "Other",
+        "price": 150.0,
+        "weight": "",
+        "strain": ""
+      }
+    ],
+    "deals": []
+  }
+}
