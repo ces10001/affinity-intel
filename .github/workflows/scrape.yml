@@ -21,16 +21,15 @@ jobs:
           python-version: '3.11'
 
       - name: Install dependencies
-        run: pip install requests
+        run: |
+          pip install playwright
+          playwright install chromium
+          playwright install-deps chromium
 
       - name: Run scraper
         working-directory: ./scraper
-        run: python run.py
-        timeout-minutes: 30
-
-      - name: Convert to dashboard format
-        working-directory: ./scraper
-        run: python convert.py --output ../dashboard_data.json
+        run: python scrape.py
+        timeout-minutes: 45
 
       - name: Commit updated data
         run: |
