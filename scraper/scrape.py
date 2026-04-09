@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """
-AFFINITY COMPETITIVE INTEL — Firecrawl Scraper v2
+AFFINITY COMPETITIVE INTEL — Firecrawl Scraper v3
+Uses /v2/extract for AI extraction, /v2/scrape as markdown fallback.
 """
 
 import json
@@ -11,7 +12,8 @@ import re
 import requests
 from datetime import datetime
 
-FIRECRAWL_API = "https://api.firecrawl.dev/v2/scrape"
+EXTRACT_URL = "https://api.firecrawl.dev/v2/extract"
+SCRAPE_URL = "https://api.firecrawl.dev/v2/scrape"
 API_KEY = os.environ.get("FIRECRAWL_API_KEY", "")
 
 AFFINITY_STORES = [
@@ -37,7 +39,7 @@ COMPETITORS = [
     {"name": "Fine Fettle Newington", "url": "https://finefettle.com/locations/newington"},
 ]
 
-EXTRACT_SCHEMA = {
+SCHEMA = {
     "type": "object",
     "properties": {
         "products": {
@@ -61,7 +63,6 @@ EXTRACT_SCHEMA = {
                 "properties": {
                     "title": {"type": "string"},
                     "discount_type": {"type": "string"},
-                    "category": {"type": "string"},
                 },
             },
         },
@@ -69,209 +70,265 @@ EXTRACT_SCHEMA = {
     "required": ["products"],
 }
 
-EXTRACT_PROMPT = (
-    "Extract ALL cannabis products from this dispensary menu page. "
-    "For each product get: name, brand, category (Flower/Pre-Rolls/Vaporizers/Edibles/Concentrates/Tinctures), "
-    "price in dollars, and weight. Also extract any deals or specials shown."
+PROMPT = (
+    "Extract ALL cannabis products from this dispensary menu. "
+    "For each: name, brand, category (Flower/Pre-Rolls/Vaporizers/Edibles/Concentrates/Tinctures), "
+    "price in dollars, weight/size. Also get any deals or specials."
 )
 
+HEADERS = {}
 
-def scrape_dispensary(name, url):
-    print(f"  -> Scraping {name}...")
 
-    headers = {
+def init_headers():
+    global HEADERS
+    HEADERS = {
         "Authorization": f"Bearer {API_KEY}",
         "Content-Type": "application/json",
     }
 
+
+def try_extract(name, url):
+    """Primary method: use /v2/extract endpoint."""
     payload = {
-        "url": url,
-        "formats": ["extract"],
-        "extract": {
-            "schema": EXTRACT_SCHEMA,
-            "prompt": EXTRACT_PROMPT,
-        },
+        "urls": [url],
+        "prompt": PROMPT,
+        "schema": SCHEMA,
     }
-
     try:
-        resp = requests.post(FIRECRAWL_API, json=payload, headers=headers, timeout=90)
-
-        if resp.status_code == 402:
-            print(f"  X {name}: Out of credits")
-            return None
-        if resp.status_code == 429:
-            print(f"  X {name}: Rate limited, waiting 30s...")
-            time.sleep(30)
-            resp = requests.post(FIRECRAWL_API, json=payload, headers=headers, timeout=90)
+        resp = requests.post(EXTRACT_URL, json=payload, headers=HEADERS, timeout=120)
         if resp.status_code != 200:
             try:
                 err = resp.json()
-                print(f"  X {name}: HTTP {resp.status_code} -> {json.dumps(err)[:300]}")
+                msg = err.get("error", str(err))[:200]
             except Exception:
-                print(f"  X {name}: HTTP {resp.status_code} -> {resp.text[:300]}")
-            return scrape_fallback(name, url, headers)
+                msg = resp.text[:200]
+            print(f"    extract failed: HTTP {resp.status_code} -> {msg}")
+            return None
 
         data = resp.json()
         if not data.get("success"):
-            print(f"  X {name}: success=false -> {data.get('error','unknown')}")
-            return scrape_fallback(name, url, headers)
+            # Extract is async - check if we got a job ID
+            job_id = data.get("id")
+            if job_id:
+                return poll_extract_job(name, job_id)
+            print(f"    extract failed: {data.get('error', 'unknown')}")
+            return None
 
-        extract = data.get("data", {}).get("extract", {})
-        products = extract.get("products", [])
-        deals = extract.get("deals", [])
+        result = data.get("data", {})
+        products = result.get("products", [])
+        deals = result.get("deals", [])
         products = [p for p in products if p.get("name") and p.get("price") and p["price"] > 0]
-        print(f"  OK {name}: {len(products)} products, {len(deals)} deals")
-        return {"products": products, "deals": deals}
+        return {"products": products, "deals": deals or []}
 
-    except requests.exceptions.Timeout:
-        print(f"  X {name}: Timeout")
-        return None
     except Exception as e:
-        print(f"  X {name}: {type(e).__name__}: {e}")
+        print(f"    extract error: {e}")
         return None
 
 
-def scrape_fallback(name, url, headers):
-    print(f"  .. {name}: Trying markdown fallback...")
-    payload = {"url": url, "formats": ["markdown"]}
+def poll_extract_job(name, job_id):
+    """Poll an async extract job until complete."""
+    poll_url = f"{EXTRACT_URL}/{job_id}"
+    for attempt in range(20):
+        time.sleep(5)
+        try:
+            resp = requests.get(poll_url, headers=HEADERS, timeout=30)
+            if resp.status_code != 200:
+                continue
+            data = resp.json()
+            status = data.get("status", "")
+            if status == "completed":
+                result = data.get("data", {})
+                products = result.get("products", [])
+                deals = result.get("deals", [])
+                products = [p for p in products if p.get("name") and p.get("price") and p["price"] > 0]
+                return {"products": products, "deals": deals or []}
+            elif status == "failed":
+                print(f"    extract job failed")
+                return None
+        except Exception:
+            continue
+    print(f"    extract job timed out")
+    return None
+
+
+def try_scrape_markdown(name, url):
+    """Fallback: scrape page as markdown, parse for products."""
+    payload = {"url": url}
     try:
-        resp = requests.post(FIRECRAWL_API, json=payload, headers=headers, timeout=90)
+        resp = requests.post(SCRAPE_URL, json=payload, headers=HEADERS, timeout=90)
         if resp.status_code != 200:
-            print(f"  X {name}: Fallback HTTP {resp.status_code}")
+            print(f"    markdown failed: HTTP {resp.status_code}")
             return None
         data = resp.json()
         if not data.get("success"):
-            print(f"  X {name}: Fallback failed")
+            print(f"    markdown failed: {data.get('error','unknown')[:100]}")
             return None
         md = data.get("data", {}).get("markdown", "")
         if not md:
-            print(f"  X {name}: No markdown")
+            print(f"    no markdown content")
             return None
-        products = parse_markdown_products(md)
-        print(f"  OK {name}: {len(products)} products (markdown)")
+        products = parse_markdown(md)
         return {"products": products, "deals": []}
     except Exception as e:
-        print(f"  X {name}: Fallback error: {e}")
+        print(f"    markdown error: {e}")
         return None
 
 
-def parse_markdown_products(md):
+def parse_markdown(md):
+    """Parse product names and prices from markdown text."""
     products = []
     lines = md.split("\n")
     price_pat = re.compile(r'\$(\d+\.?\d*)')
     current_cat = "Other"
+
     for i, line in enumerate(lines):
         line = line.strip()
         if not line:
             continue
+
         lower = line.lower()
-        for cat in ["flower","pre-roll","vaporizer","vape","edible","concentrate","tincture"]:
-            if cat in lower and len(line) < 40:
-                cat_map = {"vape":"Vaporizers","pre-roll":"Pre-Rolls","edible":"Edibles",
-                           "concentrate":"Concentrates","tincture":"Tinctures","flower":"Flower","vaporizer":"Vaporizers"}
-                current_cat = cat_map.get(cat, cat.title())
+        for cat, label in [("flower","Flower"),("pre-roll","Pre-Rolls"),("preroll","Pre-Rolls"),
+                           ("vaporizer","Vaporizers"),("vape","Vaporizers"),("cartridge","Vaporizers"),
+                           ("edible","Edibles"),("gummies","Edibles"),("chocolate","Edibles"),
+                           ("concentrate","Concentrates"),("wax","Concentrates"),("shatter","Concentrates"),
+                           ("tincture","Tinctures")]:
+            if cat in lower and len(line) < 50:
+                current_cat = label
                 break
+
         prices = price_pat.findall(line)
-        if prices:
-            price = float(prices[0])
-            if 5 <= price <= 500:
-                name_line = re.sub(r'\$[\d.]+','',line).strip()
-                name_line = re.sub(r'[#*_\[\]()]','',name_line).strip()
-                if len(name_line) < 3 and i > 0:
-                    name_line = re.sub(r'[#*_\[\]()]','',lines[i-1]).strip()
-                if name_line and len(name_line) >= 3:
-                    parts = re.split(r'[-|]', name_line, 1)
-                    brand = parts[0].strip() if len(parts) > 1 else "Unknown"
-                    name = parts[1].strip() if len(parts) > 1 else name_line
-                    products.append({"name":name[:80],"brand":brand[:40],"category":current_cat,"price":price,"weight":""})
+        if not prices:
+            continue
+
+        price = float(prices[0])
+        if price < 5 or price > 500:
+            continue
+
+        name_line = re.sub(r'\$[\d.]+', '', line).strip()
+        name_line = re.sub(r'[#*_\[\]()>|]', '', name_line).strip()
+        name_line = re.sub(r'\s+', ' ', name_line).strip()
+
+        if len(name_line) < 3 and i > 0:
+            name_line = re.sub(r'[#*_\[\]()>|]', '', lines[i-1]).strip()
+
+        if not name_line or len(name_line) < 3:
+            continue
+
+        parts = re.split(r'\s*[-–—|]\s*', name_line, 1)
+        brand = parts[0].strip()[:40] if len(parts) > 1 else "Unknown"
+        pname = parts[1].strip()[:80] if len(parts) > 1 else name_line[:80]
+
+        products.append({
+            "name": pname,
+            "brand": brand,
+            "category": current_cat,
+            "price": price,
+            "weight": "",
+        })
+
     return products
 
 
-def build_dashboard_data(results):
+def scrape_dispensary(name, url):
+    """Try extract first, fall back to markdown scrape."""
+    print(f"  -> {name}")
+
+    # Try AI extract
+    result = try_extract(name, url)
+    if result and len(result["products"]) > 0:
+        print(f"     OK: {len(result['products'])} products (extract)")
+        return result
+
+    # Fallback to markdown
+    print(f"     trying markdown fallback...")
+    result = try_scrape_markdown(name, url)
+    if result and len(result["products"]) > 0:
+        print(f"     OK: {len(result['products'])} products (markdown)")
+        return result
+
+    print(f"     FAILED: 0 products")
+    return None
+
+
+def build_dashboard(results):
     product_map = {}
-    for disp_name, data in results.items():
-        if data is None:
+    for disp, data in results.items():
+        if not data:
             continue
         for p in data.get("products", []):
             name = (p.get("name") or "").strip()
             brand = (p.get("brand") or "Unknown").strip()
-            category = (p.get("category") or "Other").strip()
+            cat = (p.get("category") or "Other").strip()
             price = p.get("price")
-            weight = (p.get("weight") or "").strip()
+            wt = (p.get("weight") or "").strip()
             if not name or not price or price <= 0:
                 continue
             key = f"{brand}::{name}".lower()
             if key not in product_map:
-                product_map[key] = {"name":name,"brand":brand,"category":category,"weight":weight,"dispensaries":{}}
-            product_map[key]["dispensaries"][disp_name] = round(float(price), 2)
+                product_map[key] = {"name": name, "brand": brand, "category": cat, "weight": wt, "dispensaries": {}}
+            product_map[key]["dispensaries"][disp] = round(float(price), 2)
 
-    comparable = [v for v in product_map.values() if len(v["dispensaries"]) >= 2]
-    all_products = list(product_map.values())
-    comparable.sort(key=lambda x: (x["category"], x["name"]))
-    all_products.sort(key=lambda x: (x["category"], x["name"]))
-    output = comparable if len(comparable) >= 5 else all_products
+    comparable = sorted([v for v in product_map.values() if len(v["dispensaries"]) >= 2], key=lambda x: (x["category"], x["name"]))
+    all_prods = sorted(product_map.values(), key=lambda x: (x["category"], x["name"]))
+    output = comparable if len(comparable) >= 5 else all_prods
 
-    all_deals = []
-    for disp_name, data in results.items():
-        if data is None:
+    deals = []
+    for disp, data in results.items():
+        if not data:
             continue
         for d in data.get("deals", []):
             if d.get("title"):
-                all_deals.append({"dispensary":disp_name,"title":d["title"],"type":d.get("discount_type","other"),"category":d.get("category","All"),"expires":None})
+                deals.append({"dispensary": disp, "title": d["title"], "type": d.get("discount_type", "other"), "category": d.get("category", "All"), "expires": None})
 
     return {
         "scraped_at": datetime.now().isoformat(),
         "products": output,
-        "deals": all_deals,
+        "deals": deals,
         "stats": {
             "total_products": sum(len(d["products"]) for d in results.values() if d),
-            "comparable_products": len(comparable),
-            "all_products": len(all_products),
-            "dispensaries_scraped": len([k for k,v in results.items() if v]),
-            "dispensaries_failed": len([k for k,v in results.items() if v is None]),
-            "total_deals": len(all_deals),
+            "comparable": len(comparable),
+            "all_products": len(all_prods),
+            "success": len([v for v in results.values() if v]),
+            "failed": len([v for v in results.values() if not v]),
+            "deals": len(deals),
         },
     }
 
 
 def main():
     if not API_KEY:
-        print("ERROR: FIRECRAWL_API_KEY not set.")
+        print("ERROR: FIRECRAWL_API_KEY not set")
         sys.exit(1)
 
+    init_headers()
+    stores = AFFINITY_STORES + COMPETITORS
     print(f"\n{'='*60}")
-    print(f"  AFFINITY SCRAPER (Firecrawl)")
+    print(f"  AFFINITY SCRAPER (Firecrawl v3)")
     print(f"  {datetime.now().strftime('%Y-%m-%d %H:%M')}")
-    all_stores = AFFINITY_STORES + COMPETITORS
-    print(f"  {len(COMPETITORS)} competitors + {len(AFFINITY_STORES)} Affinity stores")
+    print(f"  {len(COMPETITORS)} competitors + {len(AFFINITY_STORES)} own stores")
     print(f"{'='*60}\n")
 
     results = {}
-    for store in all_stores:
-        data = scrape_dispensary(store["name"], store["url"])
-        results[store["name"]] = data
+    for s in stores:
+        results[s["name"]] = scrape_dispensary(s["name"], s["url"])
         time.sleep(3)
 
-    dashboard = build_dashboard_data(results)
-
+    dash = build_dashboard(results)
     print(f"\n{'='*60}")
-    print(f"  Products: {dashboard['stats']['total_products']}")
-    print(f"  Comparable: {dashboard['stats']['comparable_products']}")
-    print(f"  Success: {dashboard['stats']['dispensaries_scraped']}")
-    print(f"  Failed: {dashboard['stats']['dispensaries_failed']}")
-    print(f"  Deals: {dashboard['stats']['total_deals']}")
+    for k, v in dash["stats"].items():
+        print(f"  {k}: {v}")
     print(f"{'='*60}\n")
 
     os.makedirs("data", exist_ok=True)
     ts = datetime.now().strftime("%Y%m%d_%H%M%S")
     with open(f"data/raw_{ts}.json", "w") as f:
         json.dump(results, f, indent=2, default=str)
-    dash_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "dashboard_data.json")
-    with open(dash_path, "w") as f:
-        json.dump(dashboard, f, indent=2, default=str)
+    out = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "dashboard_data.json")
+    with open(out, "w") as f:
+        json.dump(dash, f, indent=2, default=str)
     with open(f"data/dashboard_{ts}.json", "w") as f:
-        json.dump(dashboard, f, indent=2, default=str)
-    print(f"  DONE\n")
+        json.dump(dash, f, indent=2, default=str)
+    print("  DONE\n")
 
 
 if __name__ == "__main__":
