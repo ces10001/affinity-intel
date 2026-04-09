@@ -1,310 +1,280 @@
 #!/usr/bin/env python3
-"""AFFINITY SCRAPER v8b — Affinity via Dutchie, competitors via Leefii"""
+"""
+AFFINITY SCRAPER v9 — Hoodie Analytics API
+Pulls real POS-backed pricing data for all CT dispensaries directly from Hoodie's API.
+No web scraping needed — uses the same data source Hoodie's dashboard uses.
+"""
 
-import json, os, sys, time, re, requests
-from datetime import datetime
+import json, os, sys, time, requests
+from datetime import datetime, date
 
-SCRAPE_URL = "https://api.firecrawl.dev/v2/scrape"
-API_KEY = os.environ.get("FIRECRAWL_API_KEY", "")
+# ─── CONFIG ──────────────────────────────────────────────────
+AUTH0_DOMAIN = "dev-cfqdc946.us.auth0.com"
+AUTH0_CLIENT_ID = "3lL2GMZKQYHw0en00bS4okH5wf02nRDu"
+HOODIE_API = "https://app.hoodieanalytics.com/api"
+REFRESH_TOKEN = os.environ.get("HOODIE_REFRESH_TOKEN", "")
 
-STORES = [
-    # Affinity — Dutchie direct pages
-    {"name": "Affinity NH (Rec)", "url": "https://dutchie.com/dispensary/affinity-health-and-wellness-rec"},
-    {"name": "Affinity NH (Med)", "url": "https://dutchie.com/dispensary/affinity-health-and-wellness"},
-    {"name": "Affinity BP (Rec)", "url": "https://dutchie.com/dispensary/affinity-bridgeport-rec"},
-    {"name": "Affinity BP (Med)", "url": "https://dutchie.com/dispensary/affinity-bridgeport"},
-    # Competitors — verified Leefii URLs + 1 Weedmaps
-    {"name": "Higher Collective Bridgeport", "url": "https://leefii.com/dispensary/higher-collective-bridgeport"},
-    {"name": "Lit New Haven Cannabis", "url": "https://leefii.com/dispensary/lit-new-haven-cannabis"},
-    {"name": "Insa New Haven", "url": "https://leefii.com/dispensary/insa-cannabis-dispensary-new-haven"},
-    {"name": "RISE Dispensary Orange", "url": "https://leefii.com/dispensary/rise-medical-recreational-cannabis-dispensary-orange"},
-    {"name": "RISE Dispensary Branford", "url": "https://leefii.com/dispensary/rise-medical-recreational-cannabis-dispensary-branford"},
-    {"name": "High Profile Hamden", "url": "https://weedmaps.com/dispensaries/high-profile-hamden"},
-    {"name": "Hi! People Derby", "url": "https://leefii.com/dispensary/hi-people-derby"},
-    {"name": "Budr Cannabis Stratford", "url": "https://leefii.com/dispensary/budr-cannabis-stratford"},
-    {"name": "Sweetspot Stamford", "url": "https://leefii.com/dispensary/sweetspot-cannabis-dispensary-stamford"},
-    {"name": "Fine Fettle Newington", "url": "https://leefii.com/dispensary/fine-fettle-newington-dispensary"},
-    {"name": "Curaleaf Stamford", "url": "https://leefii.com/dispensary/curaleaf-dispensary-stamford"},
+# Target cities covering our 15 closest competitors + Affinity
+TARGET_CITIES = [
+    "New Haven", "Bridgeport", "Orange", "Branford", "Hamden",
+    "Derby", "Stratford", "Naugatuck", "Meriden", "Stamford",
+    "Newington", "Waterbury", "Seymour",
 ]
 
-HEADERS = {}
+# Dispensaries we track (exact names as they appear in Hoodie)
+AFFINITY_NAMES = [
+    "Affinity Dispensary - New Haven",
+    "Affinity Dispensary - Bridgeport",
+]
 
-def init():
-    global HEADERS
-    HEADERS = {"Authorization": f"Bearer {API_KEY}", "Content-Type": "application/json"}
-
-def scrape_page(name, url):
-    print(f"  -> {name}")
-    print(f"     {url}")
-    try:
-        resp = requests.post(SCRAPE_URL, json={"url": url}, headers=HEADERS, timeout=90)
-        if resp.status_code == 402:
-            print(f"     OUT OF CREDITS"); return "no_credits"
-        if resp.status_code == 429:
-            print(f"     rate limited, waiting 25s..."); time.sleep(25)
-            resp = requests.post(SCRAPE_URL, json={"url": url}, headers=HEADERS, timeout=90)
-        if resp.status_code != 200:
-            print(f"     HTTP {resp.status_code}"); return None
-        data = resp.json()
-        if not data.get("success"):
-            print(f"     failed: {data.get('error','?')[:100]}"); return None
-        md = data.get("data", {}).get("markdown", "")
-        if not md:
-            print(f"     empty page"); return None
-        products = parse_leefii(md)
-        deals = parse_deals(md)
-        print(f"     OK: {len(products)} products, {len(deals)} deals")
-        return {"products": products, "deals": deals}
-    except Exception as e:
-        print(f"     error: {e}"); return None
+COMPETITOR_NAMES = [
+    "Higher Collective - Bridgeport",
+    "Lit - New Haven",
+    "INSA - New Haven - Sargent Dr",
+    "RISE - Orange",
+    "RISE - Branford",
+    "High Profile - Hamden",
+    "Hi! People - Derby",
+    "Budr Cannabis - Stratford",
+    "Zen Leaf - Naugatuck",
+    "Zen Leaf - Meriden",
+    "Curaleaf - Stamford",
+    "Sweetspot - Stamford",
+    "Fine Fettle - Newington",
+    "Shangri-La - Waterbury",
+    "Rejoice - Seymour",
+]
 
 
-def parse_leefii(md):
-    """
-    Parses Leefii and Dutchie markdown.
-    Leefii format:
-      ### Product Name Here
-      Brand Name  Weight  StrainType
-      $XX.00
-    Dutchie format varies but also has product names + prices.
-    """
-    products = []
-    lines = md.split("\n")
-    price_pat = re.compile(r'^\$(\d+\.?\d*)$')
-    header_pat = re.compile(r'^#{1,4}\s+(.+)')
-    weight_pat = re.compile(r'(\d+(?:/\d+)?\s*(?:g|oz|mg|ml)\b)', re.I)
-    seen = set()
+def get_auth_token():
+    """Use refresh token to get a fresh id_token from Auth0."""
+    print("  Authenticating with Hoodie...")
+    resp = requests.post(f"https://{AUTH0_DOMAIN}/oauth/token", json={
+        "grant_type": "refresh_token",
+        "client_id": AUTH0_CLIENT_ID,
+        "refresh_token": REFRESH_TOKEN,
+    }, timeout=30)
 
-    pending_name = None
-    pending_meta = None
-    global_cat = "Other"
+    if resp.status_code != 200:
+        print(f"  Auth failed: {resp.status_code} — {resp.text[:200]}")
+        return None
 
-    for i, raw_line in enumerate(lines):
-        line = raw_line.strip()
-        if not line:
-            continue
+    data = resp.json()
+    token = data.get("id_token")
+    if not token:
+        print(f"  No id_token in response. Keys: {list(data.keys())}")
+        return None
 
-        # Track global category from filter tabs
-        lo = line.lower()
-        if lo in ["flower", "🌿 flower", "pre-rolls", "🚬 pre-rolls", "edibles", "🍪 edibles",
-                   "concentrates", "💎 concentrates", "vaporizers", "tinctures", "accessories",
-                   "🌱 accessories", "🌱 drink", "drink", "drinks"]:
-            cat_map = {"flower": "Flower", "🌿 flower": "Flower", "pre-rolls": "Pre-Rolls",
-                       "🚬 pre-rolls": "Pre-Rolls", "edibles": "Edibles", "🍪 edibles": "Edibles",
-                       "concentrates": "Concentrates", "💎 concentrates": "Concentrates",
-                       "vaporizers": "Vaporizers", "tinctures": "Tinctures",
-                       "🌱 drink": "Edibles", "drink": "Edibles", "drinks": "Edibles",
-                       "accessories": "SKIP", "🌱 accessories": "SKIP"}
-            global_cat = cat_map.get(lo, "Other")
-            continue
+    print(f"  Authenticated OK")
+    return token
 
-        if global_cat == "SKIP":
-            # Reset if we hit a new category header
-            if header_pat.match(line) and any(c in lo for c in ["flower", "pre-roll", "edible", "vape", "concentrate", "tincture"]):
-                global_cat = "Other"
-            continue
 
-        # Detect ### headers = product names
-        hm = header_pat.match(line)
-        if hm:
-            pending_name = hm.group(1).strip()
-            pending_meta = None
-            continue
+def fetch_dispensary_skus(token, city, page=0, size=50):
+    """Fetch one page of SKUs from Hoodie's OpenSearch API."""
+    headers = {
+        "Content-Type": "application/json",
+        "Authorization": f"Bearer {token}",
+    }
 
-        # Detect price line
-        pm = price_pat.match(line)
-        if pm and pending_name:
-            price = float(pm.group(1))
-            if price < 1 or price > 500:
-                pending_name = None
-                pending_meta = None
+    payload = {
+        "variables": {
+            "date": date.today().isoformat(),
+            "sort": [{"field": "UNITS_7_ROLLING", "order": "desc"}],
+            "search": "",
+            "size": size,
+            "from": page * size,
+        },
+        "filterset": {
+            "filterBy": {
+                "states": ["Connecticut"],
+                "cities": [city],
+                "dispensaries": [],
+                "brands": [],
+                "categories": [],
+            }
+        }
+    }
+
+    resp = requests.post(
+        f"{HOODIE_API}/openSearch.getDispensarySKUs",
+        json=payload, headers=headers, timeout=60,
+    )
+
+    if resp.status_code != 200:
+        print(f"    HTTP {resp.status_code}")
+        return None
+
+    data = resp.json()
+    result = data.get("result", {}).get("data", {})
+    return {
+        "items": result.get("page", []),
+        "total": result.get("totalSKUs", 0),
+    }
+
+
+def fetch_all_city_skus(token, city, max_pages=20):
+    """Fetch all SKUs for a city, paginating as needed."""
+    all_items = []
+    for page in range(max_pages):
+        result = fetch_dispensary_skus(token, city, page=page)
+        if not result or not result["items"]:
+            break
+        all_items.extend(result["items"])
+        total = result["total"]
+        print(f"    {city}: page {page+1}, got {len(all_items)}/{total}")
+        if len(all_items) >= total:
+            break
+        time.sleep(0.5)  # Be nice to the API
+    return all_items
+
+
+def build_dashboard(all_items):
+    """Build dashboard JSON from Hoodie data."""
+    # Group products by dispensary
+    by_dispensary = {}
+    for item in all_items:
+        disp = item.get("DISPENSARY_NAME", "Unknown")
+        if disp not in by_dispensary:
+            by_dispensary[disp] = []
+        by_dispensary[disp].append({
+            "name": item.get("NAME", ""),
+            "brand": item.get("BRAND", "Unknown"),
+            "category": item.get("CATEGORY", "Other"),
+            "price": item.get("ACTUAL_PRICE"),
+            "original_price": item.get("ORIGINAL_PRICE"),
+            "discounted_price": item.get("DISCOUNTED_PRICE"),
+            "cannabis_type": item.get("CANNABIS_TYPE", ""),
+            "pack_size": item.get("PACK_SIZE", ""),
+            "is_promo": item.get("IS_ON_PROMOTION", False),
+            "units_7d": item.get("UNITS_7_ROLLING"),
+            "sales_7d": item.get("SALES_7_ROLLING"),
+        })
+
+    # Build cross-dispensary product comparison
+    product_map = {}
+    for disp, products in by_dispensary.items():
+        for p in products:
+            name = (p.get("name") or "").strip()
+            brand = (p.get("brand") or "Unknown").strip()
+            cat = (p.get("category") or "Other").strip()
+            price = p.get("price")
+            if not name or not price or price <= 0:
                 continue
 
-            name = pending_name
-            brand = "Unknown"
-            weight = ""
-            strain = ""
+            # Normalize key for matching across dispensaries
+            key = f"{name}".lower()
+            if key not in product_map:
+                product_map[key] = {
+                    "name": name,
+                    "brand": brand,
+                    "category": cat,
+                    "weight": p.get("pack_size") or "",
+                    "dispensaries": {},
+                }
+            product_map[key]["dispensaries"][disp] = round(float(price), 2)
 
-            # Clean emoji prefixes
-            name = re.sub(r'^[🌿🚬🍪💎🌱]\s*', '', name).strip()
+    # Separate comparable vs all
+    comparable = sorted(
+        [v for v in product_map.values() if len(v["dispensaries"]) >= 2],
+        key=lambda x: (x["category"], x["name"])
+    )
+    all_products = sorted(product_map.values(), key=lambda x: (x["category"], x["name"]))
+    output = comparable if len(comparable) >= 10 else all_products
 
-            # Extract brand from "Brand | Product" format
-            if " | " in name:
-                parts = name.split(" | ", 1)
-                brand = parts[0].strip()
-                name = parts[1].strip()
-            elif " - " in name and len(name.split(" - ", 1)[0]) < 30:
-                parts = name.split(" - ", 1)
-                if not any(c.isdigit() for c in parts[0]):
-                    brand = parts[0].strip()
-                    name = parts[1].strip()
-
-            # Parse metadata line
-            if pending_meta:
-                meta = pending_meta
-                wm = weight_pat.search(meta)
-                if wm:
-                    weight = wm.group(1)
-                for st in ["Hybrid", "Indica", "Sativa"]:
-                    if st in meta:
-                        strain = st
-                        break
-                if brand == "Unknown":
-                    meta_clean = meta
-                    meta_clean = re.sub(r'\d+(?:/\d+)?\s*(?:g|oz|mg|ml)\b', '', meta_clean, flags=re.I)
-                    meta_clean = re.sub(r'(Hybrid|Indica|Sativa|each)', '', meta_clean, flags=re.I)
-                    meta_clean = meta_clean.strip()
-                    if meta_clean and len(meta_clean) > 1 and len(meta_clean) < 50:
-                        brand = meta_clean
-
-            # Determine category
-            cat = global_cat
-            name_lo = name.lower()
-            if any(w in name_lo for w in ["pre-roll", "preroll", "pre roll", "shortie", "fatboy", "dogwalker", "mini", "5 pack", "5pk"]):
-                cat = "Pre-Rolls"
-            elif any(w in name_lo for w in ["vape", "cart", "pen", "disposable", "510"]):
-                cat = "Vaporizers"
-            elif any(w in name_lo for w in ["gummies", "gummy", "chocolate", "chew", "edible", "tablet", "seltzer", "lemonade", "iced tea", "soda", "jellies"]):
-                cat = "Edibles"
-            elif any(w in name_lo for w in ["rosin", "badder", "shatter", "wax", "sugar", "concentrate", "diamonds", "sauce"]):
-                cat = "Concentrates"
-            elif any(w in name_lo for w in ["tincture", "rso"]):
-                cat = "Tinctures"
-            elif any(w in name_lo for w in ["flower", "ground", "whole flower"]) or weight in ["1/8 oz", "3.5 g", "7 g", "14 g", "28 g"]:
-                cat = "Flower"
-
-            # Skip non-cannabis
-            if any(w in name_lo for w in ["paper", "lighter", "grinder", "tray", "pipe", "journal", "book",
-                                           "shirt", "tee", "hat", "sock", "mug", "sweatshirt", "beanie",
-                                           "battery", "accessories", "spray", "ozium", "rolling"]):
-                pending_name = None
-                pending_meta = None
-                continue
-
-            # Deduplicate
-            key = f"{name}:{price}"
-            if key in seen:
-                pending_name = None
-                pending_meta = None
-                continue
-            seen.add(key)
-
-            products.append({
-                "name": name[:100],
-                "brand": brand[:50],
-                "category": cat if cat != "SKIP" else "Other",
-                "price": price,
-                "weight": weight,
-                "strain": strain,
+    # Extract deals (items on promotion)
+    deals = []
+    for item in all_items:
+        if item.get("IS_ON_PROMOTION") and item.get("PROMO_NAME"):
+            deals.append({
+                "dispensary": item.get("DISPENSARY_NAME", ""),
+                "title": item.get("PROMO_NAME", ""),
+                "product": item.get("NAME", ""),
+                "original_price": item.get("ORIGINAL_PRICE"),
+                "discounted_price": item.get("DISCOUNTED_PRICE"),
+                "type": "percent",
+                "category": item.get("CATEGORY", "All"),
+                "expires": None,
             })
 
-            pending_name = None
-            pending_meta = None
-            continue
+    # Deduplicate deals
+    seen_deals = set()
+    unique_deals = []
+    for d in deals:
+        key = f"{d['dispensary']}:{d['title']}"
+        if key not in seen_deals:
+            seen_deals.add(key)
+            unique_deals.append(d)
 
-        # Metadata line (between header and price)
-        if pending_name and not hm:
-            if len(line) < 100 and not line.startswith("[") and not line.startswith("http"):
-                pending_meta = line
-
-    return products
-
-
-def parse_deals(md):
-    deals = []
-    pats = [
-        re.compile(r'(\d+%\s*off[^.!\n]{3,60})', re.I),
-        re.compile(r'(buy\s+\d+\s+get\s+\d+[^.!\n]{3,60})', re.I),
-        re.compile(r'(bogo[^.!\n]{3,60})', re.I),
-        re.compile(r'(happy\s+hour[^.!\n]{3,60})', re.I),
-        re.compile(r'(first.time[^.!\n]{3,40}(?:discount|off)[^.!\n]{0,30})', re.I),
-    ]
-    seen = set()
-    for pat in pats:
-        for m in pat.finditer(md):
-            t = m.group(1).strip()[:100]
-            if t not in seen:
-                seen.add(t)
-                deals.append({"title": t, "discount_type": "percent", "category": "All"})
-    return deals
-
-
-def build_dash(results):
-    pm = {}
-    for disp, data in results.items():
-        if not data or not isinstance(data, dict): continue
-        # Normalize Affinity display names
-        display = disp
-        if "Affinity NH" in disp:
-            display = "Affinity - New Haven"
-        elif "Affinity BP" in disp:
-            display = "Affinity - Bridgeport"
-        menu_type = " (Rec)" if "(Rec)" in disp else " (Med)" if "(Med)" in disp else ""
-
-        for p in data.get("products", []):
-            nm = (p.get("name") or "").strip()
-            br = (p.get("brand") or "Unknown").strip()
-            ct = (p.get("category") or "Other").strip()
-            pr = p.get("price")
-            wt = (p.get("weight") or "").strip()
-            if not nm or not pr or pr <= 0: continue
-            key = f"{nm}".lower()
-            if key not in pm:
-                pm[key] = {"name": nm, "brand": br, "category": ct, "weight": wt, "dispensaries": {}}
-            label = f"{display}{menu_type}".strip()
-            if label in pm[key]["dispensaries"]:
-                pm[key]["dispensaries"][label] = min(pm[key]["dispensaries"][label], round(float(pr), 2))
-            else:
-                pm[key]["dispensaries"][label] = round(float(pr), 2)
-
-    comp = sorted([v for v in pm.values() if len(v["dispensaries"]) >= 2], key=lambda x: (x["category"], x["name"]))
-    allp = sorted(pm.values(), key=lambda x: (x["category"], x["name"]))
-    out = comp if len(comp) >= 5 else allp
-    deals = []
-    for disp, data in results.items():
-        if not data or not isinstance(data, dict): continue
-        for d in data.get("deals", []):
-            if d.get("title"):
-                deals.append({"dispensary": disp, "title": d["title"], "type": d.get("discount_type", "other"), "category": "All", "expires": None})
     return {
         "scraped_at": datetime.now().isoformat(),
-        "products": out, "deals": deals,
+        "source": "hoodie_analytics",
+        "products": output,
+        "deals": unique_deals[:50],
         "stats": {
-            "total": sum(len(d["products"]) for d in results.values() if d and isinstance(d, dict)),
-            "comparable": len(comp), "all": len(allp),
-            "success": len([v for v in results.values() if v and isinstance(v, dict) and v.get("products")]),
-            "failed": len([v for v in results.values() if not v or not isinstance(v, dict) or not v.get("products")]),
-            "deals": len(deals),
+            "total_skus": len(all_items),
+            "dispensaries": len(by_dispensary),
+            "comparable": len(comparable),
+            "all_products": len(all_products),
+            "deals": len(unique_deals),
+            "dispensary_counts": {k: len(v) for k, v in sorted(by_dispensary.items(), key=lambda x: -len(x[1]))},
         },
     }
 
 
 def main():
-    if not API_KEY:
-        print("ERROR: FIRECRAWL_API_KEY not set"); sys.exit(1)
-    init()
+    if not REFRESH_TOKEN:
+        print("ERROR: HOODIE_REFRESH_TOKEN not set")
+        sys.exit(1)
+
     print(f"\n{'='*60}")
-    print(f"  AFFINITY SCRAPER v8b (Dutchie + Leefii)")
+    print(f"  AFFINITY SCRAPER v9 (Hoodie Analytics API)")
     print(f"  {datetime.now().strftime('%Y-%m-%d %H:%M')}")
-    print(f"  {len(STORES)} dispensaries")
+    print(f"  {len(TARGET_CITIES)} cities to scrape")
     print(f"{'='*60}\n")
-    results = {}
-    for s in STORES:
-        result = scrape_page(s["name"], s["url"])
-        if result == "no_credits":
-            print("\n  !!! OUT OF CREDITS !!!\n"); break
-        results[s["name"]] = result
-        time.sleep(6)
-    dash = build_dash(results)
+
+    # Step 1: Authenticate
+    token = get_auth_token()
+    if not token:
+        print("  FATAL: Could not authenticate")
+        sys.exit(1)
+
+    # Step 2: Fetch data for each target city
+    all_items = []
+    for city in TARGET_CITIES:
+        print(f"\n  -> {city}")
+        items = fetch_all_city_skus(token, city)
+        all_items.extend(items)
+        print(f"    Total: {len(items)} SKUs")
+
     print(f"\n{'='*60}")
-    for k, v in dash["stats"].items(): print(f"  {k}: {v}")
+    print(f"  Total SKUs collected: {len(all_items)}")
+
+    # Step 3: Build dashboard
+    dashboard = build_dashboard(all_items)
+
+    print(f"  Dispensaries found: {dashboard['stats']['dispensaries']}")
+    print(f"  Comparable products: {dashboard['stats']['comparable']}")
+    print(f"  Deals: {dashboard['stats']['deals']}")
+    print(f"\n  Dispensary breakdown:")
+    for disp, count in list(dashboard['stats']['dispensary_counts'].items())[:20]:
+        marker = " <-- YOU" if "Affinity" in disp else ""
+        print(f"    {disp}: {count} SKUs{marker}")
     print(f"{'='*60}\n")
+
+    # Step 4: Save
     os.makedirs("data", exist_ok=True)
     ts = datetime.now().strftime("%Y%m%d_%H%M%S")
-    with open(f"data/raw_{ts}.json", "w") as f: json.dump(results, f, indent=2, default=str)
+
+    with open(f"data/raw_{ts}.json", "w") as f:
+        json.dump({"items": all_items[:100], "total": len(all_items)}, f, indent=2, default=str)
+
     out = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "dashboard_data.json")
-    with open(out, "w") as f: json.dump(dash, f, indent=2, default=str)
-    print("  DONE\n")
+    with open(out, "w") as f:
+        json.dump(dashboard, f, indent=2, default=str)
+
+    print(f"  Dashboard saved to dashboard_data.json")
+    print(f"  DONE\n")
+
 
 if __name__ == "__main__":
     main()
