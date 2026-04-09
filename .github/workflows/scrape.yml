@@ -21,22 +21,20 @@ jobs:
           python-version: '3.11'
 
       - name: Install dependencies
-        run: |
-          pip install playwright
-          playwright install chromium
-          playwright install-deps chromium
+        run: pip install requests
 
-      - name: Run scraper
+      - name: Run Firecrawl scraper
         working-directory: ./scraper
+        env:
+          FIRECRAWL_API_KEY: ${{ secrets.FIRECRAWL_API_KEY }}
         run: python scrape.py
-        timeout-minutes: 45
+        timeout-minutes: 20
 
       - name: Commit updated data
         run: |
           git config user.name "Affinity Intel Bot"
           git config user.email "bot@affinity.com"
           git add dashboard_data.json
-          git diff --cached --quiet || git commit -m "Auto-update $(date '+%Y-%m-%d %H:%M')"
           git pull --rebase
+          git diff --cached --quiet || git commit -m "Auto-update $(date '+%Y-%m-%d %H:%M')"
           git push
-         
