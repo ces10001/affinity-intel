@@ -23,12 +23,12 @@ jobs:
       - name: Install dependencies
         run: pip install requests
 
-      - name: Run Hoodie scraper
+      - name: Run Apify scraper
         working-directory: ./scraper
         env:
-          HOODIE_REFRESH_TOKEN: ${{ secrets.HOODIE_REFRESH_TOKEN }}
+          APIFY_TOKEN: ${{ secrets.APIFY_TOKEN }}
         run: python scrape.py
-        timeout-minutes: 15
+        timeout-minutes: 30
 
       - name: Commit updated data
         run: |
