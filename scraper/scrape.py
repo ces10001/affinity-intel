@@ -1,8 +1,7 @@
 #!/usr/bin/env python3
 """
-AFFINITY SCRAPER v11 — Apify (Live Dutchie + Weedmaps menus)
-Scrapes the actual live dispensary websites via Apify actors.
-Only returns products currently on the menu — what customers see right now.
+AFFINITY SCRAPER v13 — Apify Only (Web Scraper for Dutchie + Weedmaps actor)
+No Hoodie. Scrapes live menus directly.
 """
 
 import json, os, sys, time, requests
@@ -11,76 +10,161 @@ from datetime import datetime
 APIFY_TOKEN = os.environ.get("APIFY_TOKEN", "")
 APIFY_API = "https://api.apify.com/v2"
 
-# Dutchie actor: tfmcg3/dutchie-dispensary-scraper
-DUTCHIE_ACTOR = "tfmcg3~dutchie-dispensary-scraper"
-# Weedmaps actor: kinaesthetic_millionaire/weedmaps-dispensaries-products
-WEEDMAPS_ACTOR = "kinaesthetic_millionaire~weedmaps-dispensaries-products"
+# Apify actors
+WEB_SCRAPER = "apify~web-scraper"  # Generic JS-rendering scraper for Dutchie
+WM_ACTOR = "kinaesthetic_millionaire~weedmaps-dispensaries-products"
 
-DISPENSARIES = [
-    # Affinity
-    {"name": "Affinity NH (Rec)", "slug": "affinity-health-and-wellness-rec", "type": "dutchie"},
-    {"name": "Affinity NH (Med)", "slug": "affinity-health-and-wellness", "type": "dutchie"},
-    {"name": "Affinity BP (Rec)", "slug": "affinity-dispensary-bridgeport", "type": "dutchie"},
-    {"name": "Affinity BP (Med)", "slug": "affinity-dispensary-bridgeport-med", "type": "dutchie"},
-    # Competitors — Dutchie
-    {"name": "INSA New Haven", "slug": "insa-new-haven-sargent-drive", "type": "dutchie"},
-    {"name": "RISE Orange", "slug": "rise-dispensaries-orange", "type": "dutchie"},
-    {"name": "RISE Branford", "slug": "rise-dispensaries-branford", "type": "dutchie"},
-    {"name": "Zen Leaf Meriden", "slug": "zen-leaf-meriden", "type": "dutchie"},
-    {"name": "Zen Leaf Naugatuck", "slug": "zen-leaf-naugatuck", "type": "dutchie"},
-    {"name": "Fine Fettle Newington", "slug": "fine-fettle-dispensary-newington", "type": "dutchie"},
-    {"name": "Curaleaf Stamford", "slug": "curaleaf-ct-stamford", "type": "dutchie"},
-    # Competitors — Weedmaps
-    {"name": "High Profile Hamden", "url": "https://weedmaps.com/dispensaries/high-profile-hamden", "type": "weedmaps"},
-    {"name": "Lit New Haven", "url": "https://weedmaps.com/dispensaries/lit-new-haven-cannabis", "type": "weedmaps"},
-    {"name": "Higher Collective Bridgeport", "url": "https://weedmaps.com/dispensaries/higher-collective-bridgeport", "type": "weedmaps"},
-    {"name": "Budr Stratford", "url": "https://weedmaps.com/dispensaries/budr-cannabis", "type": "weedmaps"},
+# All dispensaries to scrape
+DUTCHIE_STORES = [
+    {"name": "Affinity NH (Rec)", "url": "https://dutchie.com/dispensary/affinity-health-and-wellness-rec/products/flower"},
+    {"name": "Affinity NH (Med)", "url": "https://dutchie.com/dispensary/affinity-health-and-wellness/products/flower"},
+    {"name": "Affinity BP (Rec)", "url": "https://dutchie.com/dispensary/affinity-dispensary-bridgeport/products/flower"},
+    {"name": "Affinity BP (Med)", "url": "https://dutchie.com/dispensary/affinity-dispensary-bridgeport-med/products/flower"},
+    {"name": "INSA New Haven", "url": "https://dutchie.com/dispensary/insa-new-haven-sargent-drive/products/flower"},
+    {"name": "RISE Orange", "url": "https://dutchie.com/dispensary/rise-dispensaries-orange/products/flower"},
+    {"name": "RISE Branford", "url": "https://dutchie.com/dispensary/rise-dispensaries-branford/products/flower"},
+    {"name": "Zen Leaf Meriden", "url": "https://dutchie.com/dispensary/zen-leaf-meriden/products/flower"},
+    {"name": "Zen Leaf Naugatuck", "url": "https://dutchie.com/dispensary/zen-leaf-naugatuck/products/flower"},
+    {"name": "Fine Fettle Newington", "url": "https://dutchie.com/dispensary/fine-fettle-dispensary-newington/products/flower"},
+    {"name": "Curaleaf Stamford", "url": "https://dutchie.com/dispensary/curaleaf-ct-stamford/products/flower"},
 ]
 
+WEEDMAPS_URLS = [
+    "https://weedmaps.com/dispensaries/high-profile-hamden",
+    "https://weedmaps.com/dispensaries/lit-new-haven-cannabis",
+    "https://weedmaps.com/dispensaries/higher-collective-bridgeport",
+    "https://weedmaps.com/dispensaries/budr-cannabis",
+]
 
-def run_dutchie_actor(slugs):
-    """Run the Dutchie scraper for multiple dispensary slugs."""
-    print(f"  Running Dutchie actor for {len(slugs)} dispensaries...")
-    urls = [f"https://dutchie.com/dispensary/{s}" for s in slugs]
+# Page function that runs inside the browser on each Dutchie page
+DUTCHIE_PAGE_FUNCTION = """
+async function pageFunction(context) {
+    const { page, request } = context;
+    
+    // Wait for products to load
+    await page.waitForSelector('body', { timeout: 15000 });
+    await new Promise(r => setTimeout(r, 5000)); // Wait for JS to render
+    
+    // Extract dispensary name from URL
+    const urlParts = request.url.split('/dispensary/');
+    const slug = urlParts[1] ? urlParts[1].split('/')[0] : 'unknown';
+    
+    // Scroll to load all products
+    for (let i = 0; i < 10; i++) {
+        await page.evaluate(() => window.scrollBy(0, 1000));
+        await new Promise(r => setTimeout(r, 500));
+    }
+    
+    // Extract product data from rendered DOM
+    const products = await page.evaluate((dispSlug) => {
+        const text = document.body.innerText;
+        const results = [];
+        
+        // Parse products from page text
+        // Dutchie renders products in blocks with name, brand, type, THC, price
+        const lines = text.split('\\n').map(l => l.trim()).filter(l => l);
+        
+        let current = {};
+        for (let i = 0; i < lines.length; i++) {
+            const line = lines[i];
+            
+            // Price pattern
+            if (line.match(/^\\$\\d+\\.\\d{2}$/)) {
+                if (!current.price) {
+                    current.price = parseFloat(line.replace('$', ''));
+                } else if (!current.originalPrice) {
+                    current.originalPrice = parseFloat(line.replace('$', ''));
+                }
+            }
+            
+            // THC pattern
+            if (line.match(/^THC:\\s*[\\d.]+%$/)) {
+                current.thc = line;
+            }
+            
+            // Type pattern
+            if (['Indica', 'Sativa', 'Hybrid', 'Indica-Hybrid', 'Sativa-Hybrid'].includes(line)) {
+                current.type = line;
+            }
+            
+            // Weight pattern
+            if (line.match(/^(1\\/8|1\\/4|1\\/2|1|3\\.5g|7g|14g|28g|1g|0\\.5g|\\d+\\s*(g|mg|oz|pk|ct))/) || 
+                line.match(/^\\d+\\/\\d+\\s*oz$/)) {
+                current.weight = line;
+            }
+            
+            // "Add to cart" signals end of a product
+            if (line.includes('Add') && line.includes('cart') && current.price) {
+                if (Object.keys(current).length >= 2) {
+                    // Look back for product name and brand
+                    // Name is typically 2-5 lines before the brand
+                    for (let j = i - 1; j >= Math.max(0, i - 15); j--) {
+                        const prev = lines[j];
+                        if (prev.length > 10 && !prev.match(/^\\$/) && !prev.match(/^THC:/) && 
+                            !prev.match(/^CBD:/) && !prev.startsWith('Add') && !prev.startsWith('BUY') &&
+                            !['Indica','Sativa','Hybrid','Indica-Hybrid','Sativa-Hybrid'].includes(prev) &&
+                            !prev.match(/^\\d+\\/\\d+\\s*oz$/) && !prev.match(/^\\d+%\\s*off$/)) {
+                            if (!current.brand) {
+                                current.brand = prev;
+                            } else if (!current.name) {
+                                current.name = prev;
+                            }
+                            if (current.name && current.brand) break;
+                        }
+                    }
+                    
+                    if (current.name || current.brand) {
+                        current.dispensary = dispSlug;
+                        results.push({...current});
+                    }
+                }
+                current = {};
+            }
+        }
+        
+        return results;
+    }, slug);
+    
+    return products;
+}
+"""
 
+def run_apify_actor(actor_id, input_data, label="Actor", max_wait=1500):
+    """Run an Apify actor and wait for results."""
+    print(f"  Starting {label}...")
     resp = requests.post(
-        f"{APIFY_API}/acts/{DUTCHIE_ACTOR}/runs?token={APIFY_TOKEN}&waitForFinish=300",
-        json={"dispensaryUrls": urls},
-        timeout=360,
+        f"{APIFY_API}/acts/{actor_id}/runs?token={APIFY_TOKEN}",
+        json=input_data, timeout=60,
     )
-
     if resp.status_code not in (200, 201):
-        print(f"  Dutchie actor failed: {resp.status_code} — {resp.text[:300]}")
+        print(f"  {label} start failed: {resp.status_code} — {resp.text[:200]}")
         return []
 
     run = resp.json().get("data", {})
     run_id = run.get("id")
-    status = run.get("status")
     dataset_id = run.get("defaultDatasetId")
+    status = run.get("status")
+    print(f"  {label} run {run_id} started")
 
-    # If still running, poll
-    if status not in ("SUCCEEDED", "FAILED"):
-        print(f"  Waiting for Dutchie run {run_id}...")
-        for _ in range(60):
-            time.sleep(10)
-            r = requests.get(f"{APIFY_API}/actor-runs/{run_id}?token={APIFY_TOKEN}", timeout=30)
-            status = r.json().get("data", {}).get("status")
-            if status in ("SUCCEEDED", "FAILED", "ABORTED", "TIMED-OUT"):
-                break
-            print(f"    Status: {status}")
+    for i in range(max_wait // 10):
+        time.sleep(10)
+        r = requests.get(f"{APIFY_API}/actor-runs/{run_id}?token={APIFY_TOKEN}", timeout=30)
+        status = r.json().get("data", {}).get("status")
+        if status in ("SUCCEEDED", "FAILED", "ABORTED", "TIMED-OUT"):
+            break
+        if i % 6 == 0:
+            print(f"    {i*10}s: {status}")
 
+    print(f"  {label} ended: {status}")
     if status != "SUCCEEDED":
-        print(f"  Dutchie run ended with: {status}")
         return []
 
-    # Fetch results
     items = []
     offset = 0
     while True:
         r = requests.get(
             f"{APIFY_API}/datasets/{dataset_id}/items?token={APIFY_TOKEN}&offset={offset}&limit=1000",
-            timeout=60,
-        )
+            timeout=60)
         batch = r.json()
         if not batch:
             break
@@ -88,162 +172,124 @@ def run_dutchie_actor(slugs):
         if len(batch) < 1000:
             break
         offset += 1000
-
-    print(f"  Dutchie: {len(items)} products scraped")
+    print(f"  {label}: {len(items)} items")
     return items
 
 
-def run_weedmaps_actor(urls):
-    """Run the Weedmaps scraper for multiple dispensary URLs."""
-    print(f"  Running Weedmaps actor for {len(urls)} dispensaries...")
+def scrape_dutchie():
+    """Scrape Dutchie stores using Apify Web Scraper."""
+    urls = [{"url": s["url"]} for s in DUTCHIE_STORES]
+    slug_to_name = {}
+    for s in DUTCHIE_STORES:
+        slug = s["url"].split("/dispensary/")[1].split("/")[0]
+        slug_to_name[slug] = s["name"]
 
-    resp = requests.post(
-        f"{APIFY_API}/acts/{WEEDMAPS_ACTOR}/runs?token={APIFY_TOKEN}&waitForFinish=300",
-        json={"startUrls": [{"url": u} for u in urls]},
-        timeout=360,
-    )
+    input_data = {
+        "startUrls": urls,
+        "pageFunction": DUTCHIE_PAGE_FUNCTION,
+        "proxyConfiguration": {"useApifyProxy": True},
+        "maxRequestRetries": 2,
+        "maxConcurrency": 3,
+        "maxPagesPerCrawl": len(urls) + 5,
+    }
 
-    if resp.status_code not in (200, 201):
-        print(f"  Weedmaps actor failed: {resp.status_code} — {resp.text[:300]}")
-        return []
+    raw = run_apify_actor(WEB_SCRAPER, input_data, "Dutchie Web Scraper", max_wait=600)
 
-    run = resp.json().get("data", {})
-    run_id = run.get("id")
-    status = run.get("status")
-    dataset_id = run.get("defaultDatasetId")
-
-    if status not in ("SUCCEEDED", "FAILED"):
-        print(f"  Waiting for Weedmaps run {run_id}...")
-        for _ in range(60):
-            time.sleep(10)
-            r = requests.get(f"{APIFY_API}/actor-runs/{run_id}?token={APIFY_TOKEN}", timeout=30)
-            status = r.json().get("data", {}).get("status")
-            if status in ("SUCCEEDED", "FAILED", "ABORTED", "TIMED-OUT"):
-                break
-            print(f"    Status: {status}")
-
-    if status != "SUCCEEDED":
-        print(f"  Weedmaps run ended with: {status}")
-        return []
-
-    items = []
-    offset = 0
-    while True:
-        r = requests.get(
-            f"{APIFY_API}/datasets/{dataset_id}/items?token={APIFY_TOKEN}&offset={offset}&limit=1000",
-            timeout=60,
-        )
-        batch = r.json()
-        if not batch:
-            break
-        items.extend(batch)
-        if len(batch) < 1000:
-            break
-        offset += 1000
-
-    print(f"  Weedmaps: {len(items)} products scraped")
-    return items
-
-
-def normalize_dutchie(items, slug_to_name):
-    """Normalize Dutchie results to common format."""
+    # Normalize — web scraper returns arrays of products per page
     products = []
-    for item in items:
-        # Map slug back to our friendly name
-        url = item.get("dispensaryUrl", item.get("url", ""))
-        slug = url.rstrip("/").split("/")[-1] if url else ""
-        disp_name = slug_to_name.get(slug, item.get("dispensaryName", slug))
-
-        price = item.get("price") or item.get("prices", [{}])[0].get("price") if isinstance(item.get("prices"), list) else item.get("price")
-        if not price:
-            # Try other price fields
-            for key in ["recPrice", "medPrice", "specialPrice"]:
-                if item.get(key):
-                    price = item[key]
-                    break
-
-        products.append({
-            "name": item.get("name", item.get("productName", "")),
-            "brand": item.get("brand", item.get("brandName", "Unknown")),
-            "category": item.get("category", item.get("type", "Other")),
-            "price": price,
-            "weight": item.get("weight", item.get("size", "")),
-            "thc": item.get("thc", item.get("thcContent", "")),
-            "cbd": item.get("cbd", item.get("cbdContent", "")),
-            "dispensary": disp_name,
-            "cannabis_type": item.get("strainType", item.get("cannabisType", "")),
-        })
+    for item in raw:
+        if isinstance(item, list):
+            for p in item:
+                name = p.get("name", "")
+                brand = p.get("brand", "")
+                price = p.get("price")
+                slug = p.get("dispensary", "")
+                disp = slug_to_name.get(slug, slug.replace("-", " ").title())
+                if name and price:
+                    products.append({
+                        "name": name, "brand": brand,
+                        "category": "Flower",  # We're scraping /products/flower
+                        "price": float(price), "dispensary": disp,
+                        "weight": p.get("weight", ""),
+                        "cannabis_type": p.get("type", ""),
+                    })
+        elif isinstance(item, dict):
+            name = item.get("name", "")
+            price = item.get("price")
+            slug = item.get("dispensary", "")
+            disp = slug_to_name.get(slug, slug.replace("-", " ").title())
+            if name and price:
+                products.append({
+                    "name": name, "brand": item.get("brand", ""),
+                    "category": "Flower", "price": float(price),
+                    "dispensary": disp, "weight": item.get("weight", ""),
+                    "cannabis_type": item.get("type", ""),
+                })
     return products
 
 
-def normalize_weedmaps(items, url_to_name):
-    """Normalize Weedmaps results to common format."""
+def scrape_weedmaps():
+    """Scrape Weedmaps stores using dedicated actor."""
+    raw = run_apify_actor(
+        WM_ACTOR,
+        {"startUrls": [{"url": u} for u in WEEDMAPS_URLS]},
+        "Weedmaps", max_wait=1500
+    )
+
     products = []
-    for item in items:
-        url = item.get("dispensaryUrl", item.get("url", ""))
-        disp_name = url_to_name.get(url, item.get("dispensaryName", "Unknown"))
-        # Try to match by partial URL
-        if disp_name == "Unknown":
-            for u, n in url_to_name.items():
-                if u in url or url in u:
-                    disp_name = n
-                    break
+    for item in raw:
+        price = item.get("price") or item.get("Price")
+        name = item.get("name") or item.get("title") or item.get("productName", "")
+        if not name or not price:
+            continue
+        try:
+            price = float(str(price).replace("$", "").replace(",", "").strip())
+        except (ValueError, TypeError):
+            continue
+        if price <= 0:
+            continue
+
+        url = item.get("url", "")
+        disp = item.get("dispensaryName", "")
+        if not disp and url:
+            parts = url.split("/dispensaries/")
+            if len(parts) > 1:
+                slug = parts[1].split("/")[0]
+                disp = slug.replace("-", " ").title()
 
         products.append({
-            "name": item.get("name", item.get("productName", "")),
-            "brand": item.get("brand", item.get("brandName", "Unknown")),
-            "category": item.get("category", item.get("type", "Other")),
-            "price": item.get("price", item.get("Price")),
-            "weight": item.get("weight", item.get("size", "")),
-            "thc": item.get("thc", ""),
-            "cbd": item.get("cbd", ""),
-            "dispensary": disp_name,
+            "name": name, "brand": item.get("brand", item.get("Brand", "Unknown")),
+            "category": item.get("category", item.get("Category", "Other")),
+            "price": round(price, 2), "dispensary": disp,
+            "weight": item.get("weight", ""),
             "cannabis_type": item.get("strainType", ""),
         })
     return products
 
 
 def build_dashboard(all_products):
-    """Build the dashboard JSON."""
-    # Product comparison map
     product_map = {}
     for p in all_products:
         name = (p.get("name") or "").strip()
-        price = p.get("price")
-        disp = p.get("dispensary", "Unknown")
-        if not name or not price:
+        if not name or not p.get("price"):
             continue
-        try:
-            price = float(price)
-        except (ValueError, TypeError):
-            continue
-        if price <= 0:
-            continue
-
         key = name.lower()
         if key not in product_map:
             product_map[key] = {
-                "name": name,
-                "brand": p.get("brand", "Unknown"),
+                "name": name, "brand": p.get("brand", "Unknown"),
                 "category": p.get("category", "Other"),
-                "weight": p.get("weight", ""),
-                "dispensaries": {},
+                "weight": p.get("weight", ""), "dispensaries": {},
             }
-        product_map[key]["dispensaries"][disp] = round(price, 2)
+        product_map[key]["dispensaries"][p["dispensary"]] = p["price"]
 
-    comparable = sorted(
-        [v for v in product_map.values() if len(v["dispensaries"]) >= 2],
-        key=lambda x: (x["category"], x["name"])
-    )
+    comparable = sorted([v for v in product_map.values() if len(v["dispensaries"]) >= 2],
+                        key=lambda x: (x["category"], x["name"]))
     all_prods = sorted(product_map.values(), key=lambda x: (x["category"], x["name"]))
 
-    # Count by dispensary
     by_disp = {}
     for p in all_products:
         d = p.get("dispensary", "Unknown")
-        if d not in by_disp:
-            by_disp[d] = 0
-        by_disp[d] += 1
+        by_disp[d] = by_disp.get(d, 0) + 1
 
     return {
         "scraped_at": datetime.now().isoformat(),
@@ -267,41 +313,29 @@ def main():
         sys.exit(1)
 
     print(f"\n{'='*60}")
-    print(f"  AFFINITY SCRAPER v11 (Apify — Live Menus)")
+    print(f"  AFFINITY SCRAPER v13 (Apify Live Menus)")
     print(f"  {datetime.now().strftime('%Y-%m-%d %H:%M')}")
-    print(f"  {len(DISPENSARIES)} dispensaries")
+    print(f"  {len(DUTCHIE_STORES)} Dutchie + {len(WEEDMAPS_URLS)} Weedmaps")
     print(f"{'='*60}\n")
-
-    # Split by type
-    dutchie_disps = [d for d in DISPENSARIES if d["type"] == "dutchie"]
-    weedmaps_disps = [d for d in DISPENSARIES if d["type"] == "weedmaps"]
-
-    slug_to_name = {d["slug"]: d["name"] for d in dutchie_disps}
-    url_to_name = {d["url"]: d["name"] for d in weedmaps_disps}
 
     all_products = []
 
-    # Run Dutchie
-    if dutchie_disps:
-        dutchie_slugs = [d["slug"] for d in dutchie_disps]
-        raw = run_dutchie_actor(dutchie_slugs)
-        products = normalize_dutchie(raw, slug_to_name)
-        all_products.extend(products)
-        print(f"  Dutchie normalized: {len(products)}")
+    # Dutchie via Web Scraper
+    print("  === DUTCHIE ===")
+    dutchie_prods = scrape_dutchie()
+    all_products.extend(dutchie_prods)
+    print(f"  Dutchie: {len(dutchie_prods)} products\n")
 
-    # Run Weedmaps
-    if weedmaps_disps:
-        weedmaps_urls = [d["url"] for d in weedmaps_disps]
-        raw = run_weedmaps_actor(weedmaps_urls)
-        products = normalize_weedmaps(raw, url_to_name)
-        all_products.extend(products)
-        print(f"  Weedmaps normalized: {len(products)}")
+    # Weedmaps via dedicated actor
+    print("  === WEEDMAPS ===")
+    wm_prods = scrape_weedmaps()
+    all_products.extend(wm_prods)
+    print(f"  Weedmaps: {len(wm_prods)} products\n")
 
-    # Build dashboard
     dashboard = build_dashboard(all_products)
 
     print(f"\n{'='*60}")
-    print(f"  Total products: {dashboard['stats']['total_products']}")
+    print(f"  Total: {dashboard['stats']['total_products']}")
     print(f"  Dispensaries: {dashboard['stats']['dispensaries']}")
     print(f"  Comparable: {dashboard['stats']['comparable']}")
     print(f"\n  Breakdown:")
@@ -310,14 +344,11 @@ def main():
         print(f"    {disp}: {count}{marker}")
     print(f"{'='*60}\n")
 
-    # Save
     os.makedirs("data", exist_ok=True)
     out = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "dashboard_data.json")
     with open(out, "w") as f:
         json.dump(dashboard, f, indent=2, default=str)
-
-    print(f"  Dashboard saved to dashboard_data.json")
-    print(f"  DONE\n")
+    print(f"  Dashboard saved\n  DONE\n")
 
 
 if __name__ == "__main__":
