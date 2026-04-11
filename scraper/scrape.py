@@ -1,273 +1,317 @@
 #!/usr/bin/env python3
 """
-AFFINITY SCRAPER v9 — Hoodie Analytics API
-Pulls real POS-backed pricing data for all CT dispensaries directly from Hoodie's API.
-No web scraping needed — uses the same data source Hoodie's dashboard uses.
+AFFINITY SCRAPER v11 — Apify (Live Dutchie + Weedmaps menus)
+Scrapes the actual live dispensary websites via Apify actors.
+Only returns products currently on the menu — what customers see right now.
 """
 
 import json, os, sys, time, requests
-from datetime import datetime, date
+from datetime import datetime
 
-# ─── CONFIG ──────────────────────────────────────────────────
-AUTH0_DOMAIN = "dev-cfqdc946.us.auth0.com"
-AUTH0_CLIENT_ID = "3lL2GMZKQYHw0en00bS4okH5wf02nRDu"
-HOODIE_API = "https://app.hoodieanalytics.com/api"
-REFRESH_TOKEN = os.environ.get("HOODIE_REFRESH_TOKEN", "")
+APIFY_TOKEN = os.environ.get("APIFY_TOKEN", "")
+APIFY_API = "https://api.apify.com/v2"
 
-# Target cities covering our 15 closest competitors + Affinity
-TARGET_CITIES = [
-    "New Haven", "Bridgeport", "Orange", "Branford", "Hamden",
-    "Derby", "Stratford", "Naugatuck", "Meriden", "Stamford",
-    "Newington", "Waterbury", "Seymour",
-]
+# Dutchie actor: tfmcg3/dutchie-dispensary-scraper
+DUTCHIE_ACTOR = "tfmcg3~dutchie-dispensary-scraper"
+# Weedmaps actor: kinaesthetic_millionaire/weedmaps-dispensaries-products
+WEEDMAPS_ACTOR = "kinaesthetic_millionaire~weedmaps-dispensaries-products"
 
-# Dispensaries we track (exact names as they appear in Hoodie)
-AFFINITY_NAMES = [
-    "Affinity Dispensary - New Haven",
-    "Affinity Dispensary - Bridgeport",
-]
-
-COMPETITOR_NAMES = [
-    "Higher Collective - Bridgeport",
-    "Lit - New Haven",
-    "INSA - New Haven - Sargent Dr",
-    "RISE - Orange",
-    "RISE - Branford",
-    "High Profile - Hamden",
-    "Hi! People - Derby",
-    "Budr Cannabis - Stratford",
-    "Zen Leaf - Naugatuck",
-    "Zen Leaf - Meriden",
-    "Curaleaf - Stamford",
-    "Sweetspot - Stamford",
-    "Fine Fettle - Newington",
-    "Shangri-La - Waterbury",
-    "Rejoice - Seymour",
+DISPENSARIES = [
+    # Affinity
+    {"name": "Affinity NH (Rec)", "slug": "affinity-health-and-wellness-rec", "type": "dutchie"},
+    {"name": "Affinity NH (Med)", "slug": "affinity-health-and-wellness", "type": "dutchie"},
+    {"name": "Affinity BP (Rec)", "slug": "affinity-dispensary-bridgeport", "type": "dutchie"},
+    {"name": "Affinity BP (Med)", "slug": "affinity-dispensary-bridgeport-med", "type": "dutchie"},
+    # Competitors — Dutchie
+    {"name": "INSA New Haven", "slug": "insa-new-haven-sargent-drive", "type": "dutchie"},
+    {"name": "RISE Orange", "slug": "rise-dispensaries-orange", "type": "dutchie"},
+    {"name": "RISE Branford", "slug": "rise-dispensaries-branford", "type": "dutchie"},
+    {"name": "Zen Leaf Meriden", "slug": "zen-leaf-meriden", "type": "dutchie"},
+    {"name": "Zen Leaf Naugatuck", "slug": "zen-leaf-naugatuck", "type": "dutchie"},
+    {"name": "Fine Fettle Newington", "slug": "fine-fettle-dispensary-newington", "type": "dutchie"},
+    {"name": "Curaleaf Stamford", "slug": "curaleaf-ct-stamford", "type": "dutchie"},
+    # Competitors — Weedmaps
+    {"name": "High Profile Hamden", "url": "https://weedmaps.com/dispensaries/high-profile-hamden", "type": "weedmaps"},
+    {"name": "Lit New Haven", "url": "https://weedmaps.com/dispensaries/lit-new-haven-cannabis", "type": "weedmaps"},
+    {"name": "Higher Collective Bridgeport", "url": "https://weedmaps.com/dispensaries/higher-collective-bridgeport", "type": "weedmaps"},
+    {"name": "Budr Stratford", "url": "https://weedmaps.com/dispensaries/budr-cannabis", "type": "weedmaps"},
 ]
 
 
-def get_auth_token():
-    """Use refresh token to get a fresh id_token from Auth0."""
-    print("  Authenticating with Hoodie...")
-    resp = requests.post(f"https://{AUTH0_DOMAIN}/oauth/token", json={
-        "grant_type": "refresh_token",
-        "client_id": AUTH0_CLIENT_ID,
-        "refresh_token": REFRESH_TOKEN,
-    }, timeout=30)
-
-    if resp.status_code != 200:
-        print(f"  Auth failed: {resp.status_code} — {resp.text[:200]}")
-        return None
-
-    data = resp.json()
-    token = data.get("id_token")
-    if not token:
-        print(f"  No id_token in response. Keys: {list(data.keys())}")
-        return None
-
-    print(f"  Authenticated OK")
-    return token
-
-
-def fetch_dispensary_skus(token, city, page=0, size=50):
-    """Fetch one page of SKUs from Hoodie's OpenSearch API."""
-    headers = {
-        "Content-Type": "application/json",
-        "Authorization": f"Bearer {token}",
-    }
-
-    payload = {
-        "variables": {
-            "date": date.today().isoformat(),
-            "sort": [{"field": "UNITS_7_ROLLING", "order": "desc"}],
-            "search": "",
-            "size": size,
-            "from": page * size,
-        },
-        "filterset": {
-            "filterBy": {
-                "states": ["Connecticut"],
-                "cities": [city],
-                "dispensaries": [],
-                "brands": [],
-                "categories": [],
-            }
-        }
-    }
+def run_dutchie_actor(slugs):
+    """Run the Dutchie scraper for multiple dispensary slugs."""
+    print(f"  Running Dutchie actor for {len(slugs)} dispensaries...")
+    urls = [f"https://dutchie.com/dispensary/{s}" for s in slugs]
 
     resp = requests.post(
-        f"{HOODIE_API}/openSearch.getDispensarySKUs",
-        json=payload, headers=headers, timeout=60,
+        f"{APIFY_API}/acts/{DUTCHIE_ACTOR}/runs?token={APIFY_TOKEN}&waitForFinish=300",
+        json={"dispensaryUrls": urls},
+        timeout=360,
     )
 
-    if resp.status_code != 200:
-        print(f"    HTTP {resp.status_code}")
-        return None
+    if resp.status_code not in (200, 201):
+        print(f"  Dutchie actor failed: {resp.status_code} — {resp.text[:300]}")
+        return []
 
-    data = resp.json()
-    result = data.get("result", {}).get("data", {})
-    return {
-        "items": result.get("page", []),
-        "total": result.get("totalSKUs", 0),
-    }
+    run = resp.json().get("data", {})
+    run_id = run.get("id")
+    status = run.get("status")
+    dataset_id = run.get("defaultDatasetId")
 
+    # If still running, poll
+    if status not in ("SUCCEEDED", "FAILED"):
+        print(f"  Waiting for Dutchie run {run_id}...")
+        for _ in range(60):
+            time.sleep(10)
+            r = requests.get(f"{APIFY_API}/actor-runs/{run_id}?token={APIFY_TOKEN}", timeout=30)
+            status = r.json().get("data", {}).get("status")
+            if status in ("SUCCEEDED", "FAILED", "ABORTED", "TIMED-OUT"):
+                break
+            print(f"    Status: {status}")
 
-def fetch_all_city_skus(token, city, max_pages=20):
-    """Fetch all SKUs for a city, paginating as needed."""
-    all_items = []
-    for page in range(max_pages):
-        result = fetch_dispensary_skus(token, city, page=page)
-        if not result or not result["items"]:
+    if status != "SUCCEEDED":
+        print(f"  Dutchie run ended with: {status}")
+        return []
+
+    # Fetch results
+    items = []
+    offset = 0
+    while True:
+        r = requests.get(
+            f"{APIFY_API}/datasets/{dataset_id}/items?token={APIFY_TOKEN}&offset={offset}&limit=1000",
+            timeout=60,
+        )
+        batch = r.json()
+        if not batch:
             break
-        all_items.extend(result["items"])
-        total = result["total"]
-        print(f"    {city}: page {page+1}, got {len(all_items)}/{total}")
-        if len(all_items) >= total:
+        items.extend(batch)
+        if len(batch) < 1000:
             break
-        time.sleep(0.5)  # Be nice to the API
-    return all_items
+        offset += 1000
+
+    print(f"  Dutchie: {len(items)} products scraped")
+    return items
 
 
-def build_dashboard(all_items):
-    """Build dashboard JSON from Hoodie data."""
-    # Group products by dispensary
-    by_dispensary = {}
-    for item in all_items:
-        disp = item.get("DISPENSARY_NAME", "Unknown")
-        if disp not in by_dispensary:
-            by_dispensary[disp] = []
-        by_dispensary[disp].append({
-            "name": item.get("NAME", ""),
-            "brand": item.get("BRAND", "Unknown"),
-            "category": item.get("CATEGORY", "Other"),
-            "price": item.get("ACTUAL_PRICE"),
-            "original_price": item.get("ORIGINAL_PRICE"),
-            "discounted_price": item.get("DISCOUNTED_PRICE"),
-            "cannabis_type": item.get("CANNABIS_TYPE", ""),
-            "pack_size": item.get("PACK_SIZE", ""),
-            "is_promo": item.get("IS_ON_PROMOTION", False),
-            "units_7d": item.get("UNITS_7_ROLLING"),
-            "sales_7d": item.get("SALES_7_ROLLING"),
+def run_weedmaps_actor(urls):
+    """Run the Weedmaps scraper for multiple dispensary URLs."""
+    print(f"  Running Weedmaps actor for {len(urls)} dispensaries...")
+
+    resp = requests.post(
+        f"{APIFY_API}/acts/{WEEDMAPS_ACTOR}/runs?token={APIFY_TOKEN}&waitForFinish=300",
+        json={"startUrls": [{"url": u} for u in urls]},
+        timeout=360,
+    )
+
+    if resp.status_code not in (200, 201):
+        print(f"  Weedmaps actor failed: {resp.status_code} — {resp.text[:300]}")
+        return []
+
+    run = resp.json().get("data", {})
+    run_id = run.get("id")
+    status = run.get("status")
+    dataset_id = run.get("defaultDatasetId")
+
+    if status not in ("SUCCEEDED", "FAILED"):
+        print(f"  Waiting for Weedmaps run {run_id}...")
+        for _ in range(60):
+            time.sleep(10)
+            r = requests.get(f"{APIFY_API}/actor-runs/{run_id}?token={APIFY_TOKEN}", timeout=30)
+            status = r.json().get("data", {}).get("status")
+            if status in ("SUCCEEDED", "FAILED", "ABORTED", "TIMED-OUT"):
+                break
+            print(f"    Status: {status}")
+
+    if status != "SUCCEEDED":
+        print(f"  Weedmaps run ended with: {status}")
+        return []
+
+    items = []
+    offset = 0
+    while True:
+        r = requests.get(
+            f"{APIFY_API}/datasets/{dataset_id}/items?token={APIFY_TOKEN}&offset={offset}&limit=1000",
+            timeout=60,
+        )
+        batch = r.json()
+        if not batch:
+            break
+        items.extend(batch)
+        if len(batch) < 1000:
+            break
+        offset += 1000
+
+    print(f"  Weedmaps: {len(items)} products scraped")
+    return items
+
+
+def normalize_dutchie(items, slug_to_name):
+    """Normalize Dutchie results to common format."""
+    products = []
+    for item in items:
+        # Map slug back to our friendly name
+        url = item.get("dispensaryUrl", item.get("url", ""))
+        slug = url.rstrip("/").split("/")[-1] if url else ""
+        disp_name = slug_to_name.get(slug, item.get("dispensaryName", slug))
+
+        price = item.get("price") or item.get("prices", [{}])[0].get("price") if isinstance(item.get("prices"), list) else item.get("price")
+        if not price:
+            # Try other price fields
+            for key in ["recPrice", "medPrice", "specialPrice"]:
+                if item.get(key):
+                    price = item[key]
+                    break
+
+        products.append({
+            "name": item.get("name", item.get("productName", "")),
+            "brand": item.get("brand", item.get("brandName", "Unknown")),
+            "category": item.get("category", item.get("type", "Other")),
+            "price": price,
+            "weight": item.get("weight", item.get("size", "")),
+            "thc": item.get("thc", item.get("thcContent", "")),
+            "cbd": item.get("cbd", item.get("cbdContent", "")),
+            "dispensary": disp_name,
+            "cannabis_type": item.get("strainType", item.get("cannabisType", "")),
         })
+    return products
 
-    # Build cross-dispensary product comparison
+
+def normalize_weedmaps(items, url_to_name):
+    """Normalize Weedmaps results to common format."""
+    products = []
+    for item in items:
+        url = item.get("dispensaryUrl", item.get("url", ""))
+        disp_name = url_to_name.get(url, item.get("dispensaryName", "Unknown"))
+        # Try to match by partial URL
+        if disp_name == "Unknown":
+            for u, n in url_to_name.items():
+                if u in url or url in u:
+                    disp_name = n
+                    break
+
+        products.append({
+            "name": item.get("name", item.get("productName", "")),
+            "brand": item.get("brand", item.get("brandName", "Unknown")),
+            "category": item.get("category", item.get("type", "Other")),
+            "price": item.get("price", item.get("Price")),
+            "weight": item.get("weight", item.get("size", "")),
+            "thc": item.get("thc", ""),
+            "cbd": item.get("cbd", ""),
+            "dispensary": disp_name,
+            "cannabis_type": item.get("strainType", ""),
+        })
+    return products
+
+
+def build_dashboard(all_products):
+    """Build the dashboard JSON."""
+    # Product comparison map
     product_map = {}
-    for disp, products in by_dispensary.items():
-        for p in products:
-            name = (p.get("name") or "").strip()
-            brand = (p.get("brand") or "Unknown").strip()
-            cat = (p.get("category") or "Other").strip()
-            price = p.get("price")
-            if not name or not price or price <= 0:
-                continue
+    for p in all_products:
+        name = (p.get("name") or "").strip()
+        price = p.get("price")
+        disp = p.get("dispensary", "Unknown")
+        if not name or not price:
+            continue
+        try:
+            price = float(price)
+        except (ValueError, TypeError):
+            continue
+        if price <= 0:
+            continue
 
-            # Normalize key for matching across dispensaries
-            key = f"{name}".lower()
-            if key not in product_map:
-                product_map[key] = {
-                    "name": name,
-                    "brand": brand,
-                    "category": cat,
-                    "weight": p.get("pack_size") or "",
-                    "dispensaries": {},
-                }
-            product_map[key]["dispensaries"][disp] = round(float(price), 2)
+        key = name.lower()
+        if key not in product_map:
+            product_map[key] = {
+                "name": name,
+                "brand": p.get("brand", "Unknown"),
+                "category": p.get("category", "Other"),
+                "weight": p.get("weight", ""),
+                "dispensaries": {},
+            }
+        product_map[key]["dispensaries"][disp] = round(price, 2)
 
-    # Separate comparable vs all
     comparable = sorted(
         [v for v in product_map.values() if len(v["dispensaries"]) >= 2],
         key=lambda x: (x["category"], x["name"])
     )
-    all_products = sorted(product_map.values(), key=lambda x: (x["category"], x["name"]))
-    output = comparable if len(comparable) >= 10 else all_products
+    all_prods = sorted(product_map.values(), key=lambda x: (x["category"], x["name"]))
 
-    # Extract deals (items on promotion)
-    deals = []
-    for item in all_items:
-        if item.get("IS_ON_PROMOTION") and item.get("PROMO_NAME"):
-            deals.append({
-                "dispensary": item.get("DISPENSARY_NAME", ""),
-                "title": item.get("PROMO_NAME", ""),
-                "product": item.get("NAME", ""),
-                "original_price": item.get("ORIGINAL_PRICE"),
-                "discounted_price": item.get("DISCOUNTED_PRICE"),
-                "type": "percent",
-                "category": item.get("CATEGORY", "All"),
-                "expires": None,
-            })
-
-    # Deduplicate deals
-    seen_deals = set()
-    unique_deals = []
-    for d in deals:
-        key = f"{d['dispensary']}:{d['title']}"
-        if key not in seen_deals:
-            seen_deals.add(key)
-            unique_deals.append(d)
+    # Count by dispensary
+    by_disp = {}
+    for p in all_products:
+        d = p.get("dispensary", "Unknown")
+        if d not in by_disp:
+            by_disp[d] = 0
+        by_disp[d] += 1
 
     return {
         "scraped_at": datetime.now().isoformat(),
-        "source": "hoodie_analytics",
-        "products": output,
-        "deals": unique_deals[:50],
+        "source": "apify_live",
+        "products": comparable if len(comparable) >= 10 else all_prods,
+        "deals": [],
         "stats": {
-            "total_skus": len(all_items),
-            "dispensaries": len(by_dispensary),
+            "total_products": len(all_products),
+            "dispensaries": len(by_disp),
             "comparable": len(comparable),
-            "all_products": len(all_products),
-            "deals": len(unique_deals),
-            "dispensary_counts": {k: len(v) for k, v in sorted(by_dispensary.items(), key=lambda x: -len(x[1]))},
+            "all_products": len(all_prods),
+            "deals": 0,
+            "dispensary_counts": dict(sorted(by_disp.items(), key=lambda x: -x[1])),
         },
     }
 
 
 def main():
-    if not REFRESH_TOKEN:
-        print("ERROR: HOODIE_REFRESH_TOKEN not set")
+    if not APIFY_TOKEN:
+        print("ERROR: APIFY_TOKEN not set")
         sys.exit(1)
 
     print(f"\n{'='*60}")
-    print(f"  AFFINITY SCRAPER v9 (Hoodie Analytics API)")
+    print(f"  AFFINITY SCRAPER v11 (Apify — Live Menus)")
     print(f"  {datetime.now().strftime('%Y-%m-%d %H:%M')}")
-    print(f"  {len(TARGET_CITIES)} cities to scrape")
+    print(f"  {len(DISPENSARIES)} dispensaries")
     print(f"{'='*60}\n")
 
-    # Step 1: Authenticate
-    token = get_auth_token()
-    if not token:
-        print("  FATAL: Could not authenticate")
-        sys.exit(1)
+    # Split by type
+    dutchie_disps = [d for d in DISPENSARIES if d["type"] == "dutchie"]
+    weedmaps_disps = [d for d in DISPENSARIES if d["type"] == "weedmaps"]
 
-    # Step 2: Fetch data for each target city
-    all_items = []
-    for city in TARGET_CITIES:
-        print(f"\n  -> {city}")
-        items = fetch_all_city_skus(token, city)
-        all_items.extend(items)
-        print(f"    Total: {len(items)} SKUs")
+    slug_to_name = {d["slug"]: d["name"] for d in dutchie_disps}
+    url_to_name = {d["url"]: d["name"] for d in weedmaps_disps}
+
+    all_products = []
+
+    # Run Dutchie
+    if dutchie_disps:
+        dutchie_slugs = [d["slug"] for d in dutchie_disps]
+        raw = run_dutchie_actor(dutchie_slugs)
+        products = normalize_dutchie(raw, slug_to_name)
+        all_products.extend(products)
+        print(f"  Dutchie normalized: {len(products)}")
+
+    # Run Weedmaps
+    if weedmaps_disps:
+        weedmaps_urls = [d["url"] for d in weedmaps_disps]
+        raw = run_weedmaps_actor(weedmaps_urls)
+        products = normalize_weedmaps(raw, url_to_name)
+        all_products.extend(products)
+        print(f"  Weedmaps normalized: {len(products)}")
+
+    # Build dashboard
+    dashboard = build_dashboard(all_products)
 
     print(f"\n{'='*60}")
-    print(f"  Total SKUs collected: {len(all_items)}")
-
-    # Step 3: Build dashboard
-    dashboard = build_dashboard(all_items)
-
-    print(f"  Dispensaries found: {dashboard['stats']['dispensaries']}")
-    print(f"  Comparable products: {dashboard['stats']['comparable']}")
-    print(f"  Deals: {dashboard['stats']['deals']}")
-    print(f"\n  Dispensary breakdown:")
+    print(f"  Total products: {dashboard['stats']['total_products']}")
+    print(f"  Dispensaries: {dashboard['stats']['dispensaries']}")
+    print(f"  Comparable: {dashboard['stats']['comparable']}")
+    print(f"\n  Breakdown:")
     for disp, count in list(dashboard['stats']['dispensary_counts'].items())[:20]:
         marker = " <-- YOU" if "Affinity" in disp else ""
-        print(f"    {disp}: {count} SKUs{marker}")
+        print(f"    {disp}: {count}{marker}")
     print(f"{'='*60}\n")
 
-    # Step 4: Save
+    # Save
     os.makedirs("data", exist_ok=True)
-    ts = datetime.now().strftime("%Y%m%d_%H%M%S")
-
-    with open(f"data/raw_{ts}.json", "w") as f:
-        json.dump({"items": all_items[:100], "total": len(all_items)}, f, indent=2, default=str)
-
     out = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "dashboard_data.json")
     with open(out, "w") as f:
         json.dump(dashboard, f, indent=2, default=str)
