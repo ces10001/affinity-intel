@@ -160,7 +160,7 @@ def find_valid_date(token):
             r = requests.post(
                 f"{HOODIE_API}/openSearch.getDispensarySKUs",
                 json={
-                    "variables": {"date": d, "sort": [], "search": "", "size": 1, "from": 0},
+                    "variables": {"date": d, "sort": [{"field": "UNITS_7_ROLLING", "order": "desc"}], "search": "", "size": 1, "from": 0},
                     "filterset": {"filterBy": {"states": ["Connecticut"], "cities": ["New Haven"],
                                                "dispensaries": [], "brands": [], "categories": []}},
                 },
@@ -391,13 +391,25 @@ def build_dashboard(all_items):
     )
     all_prods = sorted(product_map.values(), key=lambda x: (x["category"], x["name"]))
 
-    # Dispensary metadata
+    # Dispensary metadata — include daily sales
     dispensaries_meta = {}
     for dn, info in by_disp.items():
+        # Get dispensary-level daily sales from any item
+        d_daily = 0
+        d_addr = ""
+        for item in info["items"]:
+            ds = item.get("D_AVG_DAILY_SALES")
+            if ds and ds > d_daily:
+                d_daily = round(ds, 2)
+            addr = item.get("D_FULL_ADDRESS", "")
+            if addr and not d_addr:
+                d_addr = addr
         dispensaries_meta[dn] = {
             "city": info["city"],
             "product_count": len(info["items"]),
             "is_affinity": "affinity" in dn.lower(),
+            "daily_sales": d_daily,
+            "address": d_addr,
         }
 
     # Active deals/promotions
@@ -421,6 +433,81 @@ def build_dashboard(all_items):
                 })
     deals.sort(key=lambda x: -x["pct_off"])
 
+    # ── SALES VELOCITY: Top 300 products by 7-day sales ──
+    velocity = []
+    for item in all_items:
+        s7 = item.get("SALES_7_ROLLING") or 0
+        if s7 > 0:
+            velocity.append({
+                "name": (item.get("NAME") or "").strip(),
+                "brand": (item.get("BRAND") or "Unknown").strip(),
+                "category": item.get("CATEGORY", "Other"),
+                "dispensary": item.get("DISPENSARY_NAME", ""),
+                "sales_7d": round(s7, 2),
+                "sales_28d": round(item.get("SALES_28_ROLLING") or 0, 2),
+                "sales_3m": round(item.get("SALES_3MTH_ROLLING") or 0, 2),
+                "units_7d": round(item.get("UNITS_7_ROLLING") or 0, 1),
+                "units_28d": round(item.get("UNITS_28_ROLLING") or 0, 1),
+                "avg_daily_units": round(item.get("AVG_DAILY_UNITS_7DAYS") or 0, 1),
+                "price": round(item.get("ACTUAL_PRICE") or 0, 2),
+            })
+    velocity.sort(key=lambda x: -x["sales_7d"])
+
+    # ── STOCK ALERTS: Low stock + stockout risk ──
+    stock_alerts = []
+    for item in all_items:
+        stock = item.get("STOCK_QTY")
+        days_out = item.get("DAYS_UNTIL_STOCK_OUT")
+        oos_28 = item.get("TOTAL_OOS_OVER_LAST_28_DAYS") or 0
+        days_since = item.get("DAYS_SINCE_OOS") or 0
+        if stock is not None or days_out is not None or oos_28 > 0:
+            alert_level = "ok"
+            if stock is not None and stock <= 5:
+                alert_level = "critical"
+            elif days_out is not None and days_out <= 3:
+                alert_level = "critical"
+            elif stock is not None and stock <= 15:
+                alert_level = "warning"
+            elif days_out is not None and days_out <= 7:
+                alert_level = "warning"
+            elif oos_28 > 5:
+                alert_level = "warning"
+
+            if alert_level != "ok":
+                stock_alerts.append({
+                    "name": (item.get("NAME") or "").strip(),
+                    "brand": (item.get("BRAND") or "Unknown").strip(),
+                    "category": item.get("CATEGORY", "Other"),
+                    "dispensary": item.get("DISPENSARY_NAME", ""),
+                    "stock_qty": stock,
+                    "days_until_out": days_out,
+                    "oos_last_28": oos_28,
+                    "days_since_oos": days_since,
+                    "alert": alert_level,
+                })
+    stock_alerts.sort(key=lambda x: (0 if x["alert"] == "critical" else 1, x.get("stock_qty") or 999))
+
+    # ── CONSUMER INSIGHTS: Demographics per dispensary ──
+    demo_by_disp = {}
+    for dn, info in by_disp.items():
+        segments = {}
+        ages = {}
+        affluency = {}
+        for item in info["items"]:
+            for seg in (item.get("HOODIE_SEGMENTS") or []):
+                segments[seg] = segments.get(seg, 0) + 1
+            for age in (item.get("AGE_SKEW") or []):
+                ages[age] = ages.get(age, 0) + 1
+            for afl in (item.get("AFFLUENCY") or []):
+                affluency[afl] = affluency.get(afl, 0) + 1
+        if segments or ages:
+            demo_by_disp[dn] = {
+                "segments": dict(sorted(segments.items(), key=lambda x: -x[1])[:8]),
+                "ages": dict(sorted(ages.items(), key=lambda x: -x[1])),
+                "affluency": dict(sorted(affluency.items(), key=lambda x: -x[1])),
+                "urbanicity": info["items"][0].get("URBANICITY", "") if info["items"] else "",
+            }
+
     # Use comparable products if enough exist, otherwise show all
     products_out = comparable if len(comparable) >= 10 else all_prods
 
@@ -434,6 +521,9 @@ def build_dashboard(all_items):
         "source": "hoodie_analytics",
         "products": products_out,
         "deals": deals[:300],
+        "velocity": velocity[:300],
+        "stock_alerts": stock_alerts[:300],
+        "demographics": demo_by_disp,
         "dispensaries": dispensaries_meta,
         "stats": {
             "total_active": len(all_items),
@@ -444,151 +534,14 @@ def build_dashboard(all_items):
             "match_by_sku": sku_matched,
             "match_by_name": name_matched,
             "match_by_raw": raw_matched,
+            "stock_alerts_count": len(stock_alerts),
+            "velocity_tracked": len(velocity),
             "dispensary_counts": {
                 k: len(v["items"])
                 for k, v in sorted(by_disp.items(), key=lambda x: -len(x[1]["items"]))
             },
         },
     }
-
-
-# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-# SCRAPINGBEE — Dutchie direct scraping (optional secondary source)
-# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-SCRAPINGBEE_API = "https://app.scrapingbee.com/api/v1"
-SCRAPINGBEE_KEY = os.environ.get("SCRAPINGBEE_API_KEY", "")
-
-# CT dispensaries on Dutchie — slug : display name
-DUTCHIE_DISPENSARIES = {
-    "affinity-health-and-wellness-rec": "Affinity NH (Dutchie Rec)",
-    "affinity-health-and-wellness-med": "Affinity NH (Dutchie Med)",
-    "rise-dispensaries-orange-ct-rec": "RISE Orange (Dutchie)",
-    "rise-dispensaries-branford-ct-rec": "RISE Branford (Dutchie)",
-    "zen-leaf-waterbury": "Zen Leaf Waterbury (Dutchie)",
-    "zen-leaf-meriden": "Zen Leaf Meriden (Dutchie)",
-    "zen-leaf-newington": "Zen Leaf Newington (Dutchie)",
-    "zen-leaf-naugatuck": "Zen Leaf Naugatuck (Dutchie)",
-    "fine-fettle-newington-rec": "Fine Fettle Newington (Dutchie)",
-    "the-hc-bridgeport-rec": "Higher Collective BPT (Dutchie)",
-}
-
-DUTCHIE_CATEGORIES = ["flower", "pre-rolls", "vaporizers", "edibles"]
-
-
-def parse_dutchie_html(html, dispensary_name, category):
-    """Parse Dutchie page HTML and extract products."""
-    products = []
-    
-    # Split by "Add" button patterns to find product boundaries
-    # Each product card ends with "Add ... to cart"
-    blocks = re.split(r'Add\s+[\d/.]+\s*(?:oz|g)\s+to\s+cart', html)
-    
-    for block in blocks:
-        # Find product names — they contain SKU numbers and are near prices
-        prices = re.findall(r'\$(\d+\.?\d{0,2})', block)
-        if not prices:
-            continue
-        
-        # Get the last substantial text lines before the price
-        lines = [l.strip() for l in block.split('\n') if l.strip() and len(l.strip()) > 2]
-        if len(lines) < 3:
-            continue
-        
-        # Product name: look for lines with SKU-like numbers
-        name = ""
-        brand = ""
-        cannabis_type = ""
-        thc = ""
-        
-        for line in lines:
-            # Name: contains parenthetical SKU/weight like "(3.5g)" or 5-digit number
-            if re.search(r'\b\d{4,6}\b', line) and not name:
-                name = line
-            # Brand: known CT cannabis brands
-            if line in ["Affinity Grow", "Advanced Grow Labs", "Theraplant", "CTPharma",
-                       "Curaleaf", "BRIX Cannabis", "Comffy", "SoundView", "Earl Baker",
-                       "Let's Burn", "Rodeo Cannabis Co", "Lucky Break", "The Goods THC Co.",
-                       "Borealis Cannabis"]:
-                brand = line
-            # Type
-            if line in ["Indica", "Sativa", "Hybrid", "Sativa-Hybrid"]:
-                cannabis_type = line
-            # THC
-            thc_match = re.match(r'THC:\s*([\d.]+\s*(?:%|mg))', line)
-            if thc_match:
-                thc = thc_match.group(1)
-        
-        if not name:
-            # Fallback: first long line is probably the name
-            for line in lines:
-                if len(line) > 15 and '$' not in line and 'THC' not in line:
-                    name = line
-                    break
-        
-        if name and prices:
-            price = float(prices[0])
-            if price > 0:
-                products.append({
-                    "DISPENSARY_NAME": dispensary_name,
-                    "NAME": name,
-                    "BRAND": brand or "Unknown",
-                    "CATEGORY": category.replace("-", " ").title().replace("Pre Rolls", "Pre-Rolls"),
-                    "CANNABIS_TYPE": cannabis_type,
-                    "ACTUAL_PRICE": price,
-                    "ORIGINAL_PRICE": float(prices[1]) if len(prices) > 1 else price,
-                    "IS_ACTIVE": True,
-                    "MEDICAL": "med" in dispensary_name.lower(),
-                    "CITY": "",
-                    "IS_ON_PROMOTION": len(prices) > 1 and float(prices[0]) < float(prices[1]),
-                    "DISCOUNTED_PRICE": price if len(prices) > 1 else None,
-                    "SOURCE": "dutchie_scrapingbee",
-                })
-    
-    return products
-
-
-def fetch_dutchie_via_scrapingbee():
-    """Fetch CT dispensary menus from Dutchie using ScrapingBee."""
-    if not SCRAPINGBEE_KEY:
-        print("  ScrapingBee: skipped (no SCRAPINGBEE_API_KEY set)")
-        return []
-    
-    print(f"  ScrapingBee: scraping {len(DUTCHIE_DISPENSARIES)} Dutchie dispensaries...")
-    all_products = []
-    credits_used = 0
-    
-    for slug, disp_name in DUTCHIE_DISPENSARIES.items():
-        disp_products = []
-        for cat in DUTCHIE_CATEGORIES:
-            url = f"https://dutchie.com/dispensary/{slug}/products/{cat}"
-            try:
-                r = requests.get(SCRAPINGBEE_API, params={
-                    "api_key": SCRAPINGBEE_KEY,
-                    "url": url,
-                    "render_js": "true",
-                    "premium_proxy": "true",
-                    "wait": "3000",
-                }, timeout=90)
-                
-                credits_used += 25  # premium + JS = 25 credits
-                
-                if r.status_code == 200:
-                    products = parse_dutchie_html(r.text, disp_name, cat)
-                    disp_products.extend(products)
-                else:
-                    print(f"    {disp_name}/{cat}: HTTP {r.status_code}")
-                    
-            except requests.RequestException as e:
-                print(f"    {disp_name}/{cat}: error — {e}")
-            
-            time.sleep(1)  # Rate limit
-        
-        if disp_products:
-            all_products.extend(disp_products)
-            print(f"    {disp_name}: {len(disp_products)} products")
-    
-    print(f"  ScrapingBee: {len(all_products)} total products (~{credits_used} credits used)")
-    return all_products
 
 
 # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -618,19 +571,10 @@ def main():
             cities_hit += 1
             print(f"  [{i+1:2d}/{len(CT_CITIES)}] {city}: {len(items):,} active")
 
-    # Deduplicate Hoodie data
+    # Deduplicate
     before = len(all_items)
     all_items = dedup_items(all_items)
     dupes = before - len(all_items)
-
-    # ScrapingBee: Dutchie direct scraping (optional)
-    print()
-    dutchie_items = fetch_dutchie_via_scrapingbee()
-    if dutchie_items:
-        all_items.extend(dutchie_items)
-        all_items = dedup_items(all_items)
-        print(f"  Merged {len(dutchie_items)} Dutchie products with Hoodie data")
-    print()
 
     # Build output
     dashboard = build_dashboard(all_items)
