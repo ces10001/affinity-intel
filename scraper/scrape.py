@@ -229,6 +229,11 @@ def fetch_city(token, city, query_date):
             break
 
         batch = [i for i in items if i.get("IS_ACTIVE") is True]
+        # Tag each item's dispensary name with Med/Rec menu type
+        for item in batch:
+            med = item.get("MEDICAL", False)
+            dn = item.get("DISPENSARY_NAME", "Unknown")
+            item["DISPENSARY_NAME"] = f"{dn} ({'Med' if med else 'Rec'})"
         active.extend(batch)
 
         if (pg + 1) * PAGE_SIZE >= total:
@@ -439,6 +444,145 @@ def build_dashboard(all_items):
 
 
 # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+# SCRAPINGBEE — Dutchie direct scraping (optional secondary source)
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+SCRAPINGBEE_API = "https://app.scrapingbee.com/api/v1"
+SCRAPINGBEE_KEY = os.environ.get("SCRAPINGBEE_API_KEY", "")
+
+# CT dispensaries on Dutchie — slug : display name
+DUTCHIE_DISPENSARIES = {
+    "affinity-health-and-wellness-rec": "Affinity NH (Dutchie Rec)",
+    "affinity-health-and-wellness-med": "Affinity NH (Dutchie Med)",
+    "rise-dispensaries-orange-ct-rec": "RISE Orange (Dutchie)",
+    "rise-dispensaries-branford-ct-rec": "RISE Branford (Dutchie)",
+    "zen-leaf-waterbury": "Zen Leaf Waterbury (Dutchie)",
+    "zen-leaf-meriden": "Zen Leaf Meriden (Dutchie)",
+    "zen-leaf-newington": "Zen Leaf Newington (Dutchie)",
+    "zen-leaf-naugatuck": "Zen Leaf Naugatuck (Dutchie)",
+    "fine-fettle-newington-rec": "Fine Fettle Newington (Dutchie)",
+    "the-hc-bridgeport-rec": "Higher Collective BPT (Dutchie)",
+}
+
+DUTCHIE_CATEGORIES = ["flower", "pre-rolls", "vaporizers", "edibles"]
+
+
+def parse_dutchie_html(html, dispensary_name, category):
+    """Parse Dutchie page HTML and extract products."""
+    products = []
+    
+    # Split by "Add" button patterns to find product boundaries
+    # Each product card ends with "Add ... to cart"
+    blocks = re.split(r'Add\s+[\d/.]+\s*(?:oz|g)\s+to\s+cart', html)
+    
+    for block in blocks:
+        # Find product names — they contain SKU numbers and are near prices
+        prices = re.findall(r'\$(\d+\.?\d{0,2})', block)
+        if not prices:
+            continue
+        
+        # Get the last substantial text lines before the price
+        lines = [l.strip() for l in block.split('\n') if l.strip() and len(l.strip()) > 2]
+        if len(lines) < 3:
+            continue
+        
+        # Product name: look for lines with SKU-like numbers
+        name = ""
+        brand = ""
+        cannabis_type = ""
+        thc = ""
+        
+        for line in lines:
+            # Name: contains parenthetical SKU/weight like "(3.5g)" or 5-digit number
+            if re.search(r'\b\d{4,6}\b', line) and not name:
+                name = line
+            # Brand: known CT cannabis brands
+            if line in ["Affinity Grow", "Advanced Grow Labs", "Theraplant", "CTPharma",
+                       "Curaleaf", "BRIX Cannabis", "Comffy", "SoundView", "Earl Baker",
+                       "Let's Burn", "Rodeo Cannabis Co", "Lucky Break", "The Goods THC Co.",
+                       "Borealis Cannabis"]:
+                brand = line
+            # Type
+            if line in ["Indica", "Sativa", "Hybrid", "Sativa-Hybrid"]:
+                cannabis_type = line
+            # THC
+            thc_match = re.match(r'THC:\s*([\d.]+\s*(?:%|mg))', line)
+            if thc_match:
+                thc = thc_match.group(1)
+        
+        if not name:
+            # Fallback: first long line is probably the name
+            for line in lines:
+                if len(line) > 15 and '$' not in line and 'THC' not in line:
+                    name = line
+                    break
+        
+        if name and prices:
+            price = float(prices[0])
+            if price > 0:
+                products.append({
+                    "DISPENSARY_NAME": dispensary_name,
+                    "NAME": name,
+                    "BRAND": brand or "Unknown",
+                    "CATEGORY": category.replace("-", " ").title().replace("Pre Rolls", "Pre-Rolls"),
+                    "CANNABIS_TYPE": cannabis_type,
+                    "ACTUAL_PRICE": price,
+                    "ORIGINAL_PRICE": float(prices[1]) if len(prices) > 1 else price,
+                    "IS_ACTIVE": True,
+                    "MEDICAL": "med" in dispensary_name.lower(),
+                    "CITY": "",
+                    "IS_ON_PROMOTION": len(prices) > 1 and float(prices[0]) < float(prices[1]),
+                    "DISCOUNTED_PRICE": price if len(prices) > 1 else None,
+                    "SOURCE": "dutchie_scrapingbee",
+                })
+    
+    return products
+
+
+def fetch_dutchie_via_scrapingbee():
+    """Fetch CT dispensary menus from Dutchie using ScrapingBee."""
+    if not SCRAPINGBEE_KEY:
+        print("  ScrapingBee: skipped (no SCRAPINGBEE_API_KEY set)")
+        return []
+    
+    print(f"  ScrapingBee: scraping {len(DUTCHIE_DISPENSARIES)} Dutchie dispensaries...")
+    all_products = []
+    credits_used = 0
+    
+    for slug, disp_name in DUTCHIE_DISPENSARIES.items():
+        disp_products = []
+        for cat in DUTCHIE_CATEGORIES:
+            url = f"https://dutchie.com/dispensary/{slug}/products/{cat}"
+            try:
+                r = requests.get(SCRAPINGBEE_API, params={
+                    "api_key": SCRAPINGBEE_KEY,
+                    "url": url,
+                    "render_js": "true",
+                    "premium_proxy": "true",
+                    "wait": "3000",
+                }, timeout=90)
+                
+                credits_used += 25  # premium + JS = 25 credits
+                
+                if r.status_code == 200:
+                    products = parse_dutchie_html(r.text, disp_name, cat)
+                    disp_products.extend(products)
+                else:
+                    print(f"    {disp_name}/{cat}: HTTP {r.status_code}")
+                    
+            except requests.RequestException as e:
+                print(f"    {disp_name}/{cat}: error — {e}")
+            
+            time.sleep(1)  # Rate limit
+        
+        if disp_products:
+            all_products.extend(disp_products)
+            print(f"    {disp_name}: {len(disp_products)} products")
+    
+    print(f"  ScrapingBee: {len(all_products)} total products (~{credits_used} credits used)")
+    return all_products
+
+
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 # MAIN
 # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 def main():
@@ -465,10 +609,19 @@ def main():
             cities_hit += 1
             print(f"  [{i+1:2d}/{len(CT_CITIES)}] {city}: {len(items):,} active")
 
-    # Deduplicate
+    # Deduplicate Hoodie data
     before = len(all_items)
     all_items = dedup_items(all_items)
     dupes = before - len(all_items)
+
+    # ScrapingBee: Dutchie direct scraping (optional)
+    print()
+    dutchie_items = fetch_dutchie_via_scrapingbee()
+    if dutchie_items:
+        all_items.extend(dutchie_items)
+        all_items = dedup_items(all_items)
+        print(f"  Merged {len(dutchie_items)} Dutchie products with Hoodie data")
+    print()
 
     # Build output
     dashboard = build_dashboard(all_items)
