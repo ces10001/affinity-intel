@@ -433,12 +433,12 @@ def build_dashboard(all_items):
                 })
     deals.sort(key=lambda x: -x["pct_off"])
 
-    # ── SALES VELOCITY: Top 300 products by 7-day sales ──
-    velocity = []
+    # ── SALES VELOCITY: Top 50 per category by 7-day sales ──
+    vel_all = []
     for item in all_items:
         s7 = item.get("SALES_7_ROLLING") or 0
         if s7 > 0:
-            velocity.append({
+            vel_all.append({
                 "name": (item.get("NAME") or "").strip(),
                 "brand": (item.get("BRAND") or "Unknown").strip(),
                 "category": item.get("CATEGORY", "Other"),
@@ -451,6 +451,17 @@ def build_dashboard(all_items):
                 "avg_daily_units": round(item.get("AVG_DAILY_UNITS_7DAYS") or 0, 1),
                 "price": round(item.get("ACTUAL_PRICE") or 0, 2),
             })
+    # Top 50 per category to ensure every category is represented
+    vel_by_cat = {}
+    for v in sorted(vel_all, key=lambda x: -x["sales_7d"]):
+        cat = v["category"]
+        if cat not in vel_by_cat:
+            vel_by_cat[cat] = []
+        if len(vel_by_cat[cat]) < 50:
+            vel_by_cat[cat].append(v)
+    velocity = []
+    for cat_items in vel_by_cat.values():
+        velocity.extend(cat_items)
     velocity.sort(key=lambda x: -x["sales_7d"])
 
     # ── STOCK ALERTS: Low stock + stockout risk ──
@@ -486,6 +497,10 @@ def build_dashboard(all_items):
                     "alert": alert_level,
                 })
     stock_alerts.sort(key=lambda x: (0 if x["alert"] == "critical" else 1, x.get("stock_qty") or 999))
+    # Ensure both critical AND warning alerts are represented
+    critical_alerts = [a for a in stock_alerts if a["alert"] == "critical"][:200]
+    warning_alerts = [a for a in stock_alerts if a["alert"] == "warning"][:200]
+    stock_alerts = critical_alerts + warning_alerts
 
     # ── CONSUMER INSIGHTS: Demographics per dispensary ──
     demo_by_disp = {}
@@ -521,8 +536,8 @@ def build_dashboard(all_items):
         "source": "hoodie_analytics",
         "products": products_out,
         "deals": deals[:300],
-        "velocity": velocity[:300],
-        "stock_alerts": stock_alerts[:300],
+        "velocity": velocity,
+        "stock_alerts": stock_alerts,
         "demographics": demo_by_disp,
         "dispensaries": dispensaries_meta,
         "stats": {
