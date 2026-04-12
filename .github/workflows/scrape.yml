@@ -1,4 +1,4 @@
-name: Scrape Competitors
+name: ATHENA Scrape
 
 on:
   schedule:
@@ -10,31 +10,23 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: write
-
     steps:
-      - name: Checkout repo
-        uses: actions/checkout@v4
-
-      - name: Set up Python
-        uses: actions/setup-python@v5
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-
-      - name: Install dependencies
-        run: pip install requests
-
-      - name: Run scraper
+      - run: pip install requests
+      - name: Run ATHENA scraper
         working-directory: ./scraper
         env:
           HOODIE_REFRESH_TOKEN: ${{ secrets.HOODIE_REFRESH_TOKEN }}
         run: python scrape.py
-        timeout-minutes: 20
-
-      - name: Commit updated data
+        timeout-minutes: 25
+      - name: Commit data
         run: |
-          git config user.name "Affinity Intel Bot"
+          git config user.name "ATHENA Bot"
           git config user.email "bot@affinity.com"
           git add -A
-          git diff --cached --quiet || git commit -m "Auto-update $(date '+%Y-%m-%d %H:%M')"
+          git diff --cached --quiet || git commit -m "ATHENA update $(date '+%Y-%m-%d %H:%M')"
           git pull --rebase || true
           git push
