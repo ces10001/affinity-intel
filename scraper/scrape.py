@@ -6,7 +6,7 @@ Bulletproof: queries every CT city, paginates fully, filters active-only.
 """
 
 import json, os, sys, time, requests
-from datetime import datetime, date
+from datetime import datetime, date, timedelta
 
 AUTH0_DOMAIN    = "dev-cfqdc946.us.auth0.com"
 AUTH0_CLIENT_ID = "3lL2GMZKQYHw0en00bS4okH5wf02nRDu"
@@ -102,17 +102,23 @@ def authenticate():
     return token
 
 
+def get_query_date():
+    """Get the best date for Hoodie queries. Try today, fall back to yesterday."""
+    return (date.today() - timedelta(days=1)).isoformat()
+
+
 def fetch_city(token, city, debug=False):
     """Fetch ALL products from a city, paginate fully, filter active client-side."""
     headers = {"Content-Type": "application/json", "Authorization": f"Bearer {token}"}
     active = []
     total_seen = 0
+    query_date = get_query_date()
 
     for page in range(MAX_PAGES):
         try:
             resp = requests.post(f"{HOODIE_API}/openSearch.getDispensarySKUs", json={
                 "variables": {
-                    "date": date.today().isoformat(),
+                    "date": query_date,
                     "sort": [{"field": "UNITS_7_ROLLING", "order": "desc"}],
                     "search": "", "size": PAGE_SIZE, "from": page * PAGE_SIZE,
                 },
@@ -243,6 +249,7 @@ def main():
     print(f"  ATHENA — Affinity Competitive Intel")
     print(f"  {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
     print(f"  Scanning {len(CT_CITIES)} CT towns for active products")
+    print(f"  Query date: {get_query_date()}")
     print(f"{'='*64}\n")
 
     token = authenticate()
