@@ -31,6 +31,7 @@
 .st-v{font-family:var(--m);font-size:20px;font-weight:600;color:var(--cy)}.st-v.gn{color:var(--gn)}.st-v.am{color:var(--am)}
 .pnl{background:var(--sf);border:1px solid var(--bd);border-radius:10px;padding:14px 16px;margin-bottom:12px}
 .pnl-t{font-family:var(--m);font-size:10px;text-transform:uppercase;letter-spacing:1.2px;color:var(--tx2);margin-bottom:10px}
+.pnl-d{font-size:11px;color:var(--tx3);margin-bottom:10px;line-height:1.4}
 .map-w{height:320px;border-radius:8px;overflow:hidden;border:1px solid var(--bd)}
 .leaflet-container{background:var(--bg2)!important}
 .leaflet-tile{filter:brightness(.75) saturate(.35) hue-rotate(160deg) contrast(1.15)!important}
@@ -118,6 +119,11 @@ function App(){
       if(d.stats&&d.stats.dispensary_counts){var nc={};Object.entries(d.stats.dispensary_counts).forEach(function(e){var mk=mergeD(e[0]);nc[mk]=(nc[mk]||0)+e[1]});d.stats.dispensary_counts=nc}
       // Count unique locations (Med+Rec = 1 dispensary)
       if(d.dispensaries){var bases=new Set();Object.keys(d.dispensaries).forEach(function(k){bases.add(getBase(k))});d.stats.unique_locations=bases.size}
+      // Filter out accessories globally
+      if(d.products)d.products=d.products.filter(function(p){return(p.category||"").toLowerCase()!=="accessories"});
+      if(d.deals)d.deals=d.deals.filter(function(x){return(x.category||"").toLowerCase()!=="accessories"});
+      if(d.velocity)d.velocity=d.velocity.filter(function(x){return(x.category||"").toLowerCase()!=="accessories"});
+      if(d.stock_alerts)d.stock_alerts=d.stock_alerts.filter(function(x){return(x.category||"").toLowerCase()!=="accessories"});
       setData(d);var all=getDisps(d.products||[]);setSel(new Set(all.filter(isAff).concat(all.filter(function(x){return!isAff(x)}).slice(0,6))));
     }).catch(function(e){setErr(e.message)});
   },[]);
@@ -147,7 +153,7 @@ function Hdr({d}){
 function IntelTab({data,q,setQ,sel,setSel,cat,setCat,comp,setComp,radius,setRadius}){
   const newProds=data.new_products||[];
   const[showNew,setShowNew]=useState(false);
-  return<><div className="stats">{[["Active SKUs",data.stats?.total_active||0,""],["Dispensaries",data.stats?.unique_locations||data.stats?.dispensary_count||0,""],["Comparable",data.stats?.comparable||0,""],["Deals",data.stats?.deals||0,"am"],["SKU matched",data.stats?.match_by_sku||0,"gn"]].map(([l,v,c])=><div key={l} className="st"><div className="st-l">{l}</div><div className={"st-v "+(c||"")}>{(v||0).toLocaleString()}</div></div>)}</div>
+  return<><div className="stats">{[["Active SKUs",data.stats?.total_active||0,"","Total products tracked across all CT dispensaries"],["Dispensaries",data.stats?.unique_locations||data.stats?.dispensary_count||0,"","Unique dispensary locations being monitored"],["Comparable",data.stats?.comparable||0,"","Products found at 2+ dispensaries for price comparison"],["Deals",data.stats?.deals||0,"am","Active promotions and discounts across all dispensaries"],["SKU matched",data.stats?.match_by_sku||0,"gn","Products matched across stores by exact SKU ID"]].map(([l,v,c,desc])=><div key={l} className="st"><div className="st-l">{l}</div><div className={"st-v "+(c||"")}>{(v||0).toLocaleString()}</div><div style={{fontSize:9,color:'var(--tx3)',marginTop:3,lineHeight:1.3}}>{desc}</div></div>)}</div>
     {newProds.length>0&&<div style={{background:'rgba(0,230,118,.06)',border:'1px solid rgba(0,230,118,.2)',borderRadius:8,padding:'10px 14px',marginBottom:12,display:'flex',justifyContent:'space-between',alignItems:'center',cursor:'pointer'}} onClick={()=>setShowNew(!showNew)}>
       <div><span style={{color:'var(--gn)',fontWeight:600,fontSize:13}}>{newProds.length} new products</span><span style={{color:'var(--tx2)',fontSize:12,marginLeft:8}}>appeared since yesterday</span></div>
       <span style={{color:'var(--tx3)',fontSize:10}}>{showNew?"Hide":"Show"}</span>
@@ -156,7 +162,7 @@ function IntelTab({data,q,setQ,sel,setSel,cat,setCat,comp,setComp,radius,setRadi
       <tbody>{newProds.slice(0,50).map((p,i)=><tr key={i}><td className="pn">{p.name}</td><td className="dm">{p.brand}</td><td className="dm">{p.category}</td><td className="dm">{(p.dispensaries||[]).map(cleanD).join(", ")}</td></tr>)}</tbody></table></div></div>}
     <div className="glow"/>
     <div className="g2"><MapPanel data={data} sel={sel} radius={radius} setRadius={setRadius}/><DispPanel data={data} sel={sel} setSel={setSel}/></div>
-    <div className="pnl"><div className="pnl-t">Search products</div><div className="srch"><span className="srch-ic">{String.fromCharCode(8981)}</span><input type="search" placeholder="Product name, brand, or strain..." value={q} onChange={e=>setQ(e.target.value)}/></div></div>
+    <div className="pnl"><div className="pnl-t">Search products</div><div className="pnl-d">Find any product by name, brand, or strain across all dispensaries.</div><div className="srch"><span className="srch-ic">{String.fromCharCode(8981)}</span><input type="search" placeholder="Product name, brand, or strain..." value={q} onChange={e=>setQ(e.target.value)}/></div></div>
     <CatTabs data={data} cat={cat} setCat={setCat}/>
     <Tbl data={data} q={q} sel={sel} cat={cat} comp={comp} setComp={setComp}/></>;
 }
@@ -171,7 +177,7 @@ function MapPanel({data,sel,radius,setRadius}){
       const icon=L.divIcon({className:'',html:'<div style="width:'+sz+'px;height:'+sz+'px;border-radius:50%;background:'+col+';box-shadow:0 0 '+(isA?14:isS?6:0)+'px '+col+';opacity:'+(isS?1:.35)+';border:'+(isA?2:1)+'px solid rgba(255,255,255,'+(isA?.3:.08)+')"></div>',iconSize:[sz,sz],iconAnchor:[sz/2,sz/2]});
       const mk=L.marker([lat,lon],{icon}).addTo(m);mk.on('click',()=>{setCenter([lat,lon]);setCLabel(cleanD(name))});mk.bindPopup('<b style="color:#00f0ff">'+name+'</b><br><span style="color:#5a8a95">'+info.city+' - '+(counts[name]||0)+' products</span>');mkRef.current.push(mk)})
   },[data,sel]);
-  return<div className="pnl"><div className="pnl-t">Connecticut dispensary map</div><div className="map-w" ref={ref}></div>
+  return<div className="pnl"><div className="pnl-t">Connecticut dispensary map</div><div className="pnl-d">Click any point or dispensary to draw a radius circle around it.</div><div className="map-w" ref={ref}></div>
     <div className="radius-ctrl"><label>{center?"Radius from "+cLabel+":":cLabel}</label><input type="range" min="1" max="60" value={radius} onChange={e=>setRadius(+e.target.value)}/><div className="rv">{radius} mi</div>
       {center&&<button className="btn" style={{fontSize:8,padding:'3px 8px'}} onClick={()=>{setCenter(null);if(circRef.current&&mRef.current){mRef.current.removeLayer(circRef.current);circRef.current=null}setCLabel("Click map or dispensary to set center")}}>Clear</button>}
     </div></div>;
@@ -192,6 +198,7 @@ function DispPanel({data,sel,setSel}){
         <button className="btn" onClick={()=>setSel(new Set([...allD.filter(isAff),...allD.filter(x=>!isAff(x)).slice(0,6)]))}>Reset</button>
       </div>
     </div>
+    <div className="pnl-d">Select dispensaries to compare side-by-side in the price table below.</div>
     <div className="dsel">
       {allD.map(d=>{
         const on=sel.has(d);const you=isAff(d);
@@ -224,6 +231,7 @@ function AlertsTab({data}){
   const analysis=useMemo(()=>disps.filter(d=>!isAff(d)).map(cd=>{let c=0,s=0,h=0,t=0,details=[];prods.forEach(p=>{const yp=getYP(p,affC);const cp=p.dispensaries?.[cd];if(!yp||!cp)return;t++;const diff=Math.round((cp-yp)/yp*100);if(cp<yp){c++;details.push({name:p.name,brand:p.brand,yours:yp,theirs:cp,diff})}else if(cp>yp){h++;details.push({name:p.name,brand:p.brand,yours:yp,theirs:cp,diff})}else s++});return t>0?{name:cd,cheaper:c,same:s,higher:h,total:t,pct:Math.round(c/t*100),details:details.sort((a,b)=>a.diff-b.diff)}:null}).filter(Boolean).sort((a,b)=>b.pct-a.pct),[prods,affC,disps]);
   const doExport=()=>{const rows=[["Competitor","Product","Brand","Your Price","Their Price","Difference","% Diff","Who's Cheaper"]];analysis.forEach(a=>{a.details.forEach(d=>{rows.push([cleanD(a.name),d.name,d.brand,"$"+d.yours.toFixed(2),"$"+d.theirs.toFixed(2),"$"+(d.theirs-d.yours).toFixed(2),d.diff+"%",d.diff<0?"THEM":"YOU"])})});const ws=XLSX.utils.aoa_to_sheet(rows);const wb=XLSX.utils.book_new();XLSX.utils.book_append_sheet(wb,ws,"Pricing Report");ws["!cols"]=[{wch:30},{wch:40},{wch:20},{wch:12},{wch:12},{wch:12},{wch:10},{wch:14}];XLSX.writeFile(wb,"athena_pricing_report.xlsx")};
   return<div className="pnl"><div className="row" style={{justifyContent:'space-between',marginBottom:10}}><span className="pnl-t" style={{margin:0}}>Competitive pricing threat</span><button className="btn pri" onClick={doExport}>Export Pricing Report</button></div>
+    <div className="pnl-d">Shows how often each competitor undercuts your prices. Higher threat % means they beat you on more products.</div>
     <div className="tw"><div className="ts"><table><thead><tr><th>Dispensary</th><th>Compared</th><th>They're cheaper</th><th>Same</th><th>You're cheaper</th><th>Threat</th></tr></thead>
       <tbody>{analysis.map((a,i)=><tr key={i}><td className="pn">{cleanD(a.name)}</td><td className="dm">{a.total}</td><td style={{color:'var(--rd)',fontFamily:'var(--m)',fontWeight:600}}>{a.cheaper}</td><td className="dm">{a.same}</td><td style={{color:'var(--gn)',fontFamily:'var(--m)',fontWeight:600}}>{a.higher}</td><td><span className={"badge "+(a.pct>=50?"rd":a.pct>=25?"am":"gn")}>{a.pct}%</span></td></tr>)}</tbody></table></div></div></div>;
 }
@@ -238,6 +246,7 @@ function GapsTab({data}){
     prods.forEach(p=>{
       const pname=(p.name||"").toLowerCase();
       if(affProducts.has(pname))return;
+      if((p.category||"").toLowerCase()==="accessories")return;
       Object.keys(p.dispensaries||{}).forEach(d=>{
         if(isAff(d))return;
         if(!byComp[d])byComp[d]=[];
@@ -249,7 +258,7 @@ function GapsTab({data}){
   const shown=gapDisp?gaps.filter(g=>g.name===gapDisp):gaps.slice(0,5);
   const totalGaps=gaps.reduce((s,g)=>s+g.count,0);
   return<div className="pnl"><div className="pnl-t">Products competitors carry that you don't ({totalGaps.toLocaleString()} total gaps)</div>
-    <p style={{fontSize:12,color:'var(--tx2)',marginBottom:12}}>These products are sold by competitors but are NOT on any Affinity menu. Consider stocking high-sellers.</p>
+    <div className="pnl-d">Products sold by competitors that are not on any Affinity menu. Consider stocking high-sellers.</div>
     <div style={{marginBottom:12}}><select style={{width:'100%',background:'var(--bg2)',border:'1px solid var(--bd)',color:'var(--tx)',fontFamily:'var(--f)',fontSize:13,padding:'9px 14px',borderRadius:7,outline:'none'}} value={gapDisp} onChange={e=>setGapDisp(e.target.value)}>
       <option value="">Show top 5 competitors by gap count</option>
       {gaps.map(g=><option key={g.name} value={g.name}>{cleanD(g.name)} ({g.count} products you don't carry)</option>)}
@@ -269,6 +278,7 @@ function VelocityTab({data}){
   const cats=useMemo(()=>{const s=new Set();vel.forEach(v=>s.add(v.category));return["All",...[...s].sort()]},[vel]);
   const maxSale=filtered.length?Math.max(...filtered.map(v=>v.sales_7d)):1;
   return<div className="pnl"><div className="row" style={{justifyContent:'space-between',marginBottom:12}}><span className="pnl-t" style={{margin:0}}>Top 50 products by 7-day sales</span></div>
+    <div className="pnl-d">Highest revenue products in the last 7 days across all dispensaries. See what's moving fastest.</div>
     <div className="cats">{cats.map(c=><div key={c} className={"ct "+(vCat===c?"on":"")} onClick={()=>setVCat(c)}>{c}</div>)}</div>
     {!filtered.length?<div className="empty"><h3>No velocity data</h3><p style={{fontSize:11}}>Run the updated scraper to populate sales data.</p></div>:
     <div className="tw"><div className="ts"><table><thead><tr><th style={{minWidth:140}}>Product</th><th>Brand</th><th>Dispensary</th><th>Price</th><th>7d Revenue</th><th>Units</th><th style={{minWidth:120}}>Volume</th></tr></thead>
@@ -294,6 +304,7 @@ function MarketTab({data}){
   const maxD=list.length?Math.max(...list.map(d=>d.daily)):1;
   return<div className="pnl"><div className="row" style={{justifyContent:'space-between',marginBottom:12}}><span className="pnl-t" style={{margin:0}}>Dispensary daily revenue ranking</span>
     <div className="row"><button className={"btn "+(sort==="sales"?"pri":"")} onClick={()=>setSort("sales")}>By revenue</button><button className={"btn "+(sort==="products"?"pri":"")} onClick={()=>setSort("products")}>By products</button></div></div>
+    <div className="pnl-d">Estimated daily revenue per dispensary. Med and Rec menus combined into single locations.</div>
     {!list.length?<div className="empty"><h3>No market data</h3><p style={{fontSize:11}}>Run the updated scraper.</p></div>:
     <div className="tw"><div className="ts"><table><thead><tr><th style={{minWidth:180}}>Dispensary</th><th>City</th><th>Products</th><th>Est. daily revenue</th><th style={{minWidth:150}}>Position</th></tr></thead>
       <tbody>{list.map((d,i)=>{const pct=Math.round(d.daily/maxD*100);return<tr key={i}><td className="pn" style={{color:d.isYou?'var(--cy)':'var(--tx)'}}>{d.isYou?String.fromCharCode(9733)+" ":""}{d.name}</td><td className="dm">{d.city}</td><td className="pr">{d.products.toLocaleString()}</td>
@@ -306,6 +317,7 @@ function StockTab({data}){
   const yourA=filtered.filter(a=>isAff(a.dispensary)).length;const compA=filtered.length-yourA;
   return<div className="pnl"><div className="row" style={{justifyContent:'space-between',marginBottom:12}}><span className="pnl-t" style={{margin:0}}>Stock alerts ({filtered.length})</span>
     <div className="row"><button className={"btn "+(filter==="all"?"pri":"")} onClick={()=>setFilter("all")}>All</button><button className={"btn "+(filter==="critical"?"pri":"")} onClick={()=>setFilter("critical")}>Critical</button><button className={"btn "+(filter==="warning"?"pri":"")} onClick={()=>setFilter("warning")}>Warning</button></div></div>
+    <div className="pnl-d">Products running low or predicted to sell out soon. Competitor stockouts are your opportunity to capture their customers.</div>
     <div className="stats" style={{marginBottom:12}}><div className="st"><div className="st-l">Your alerts</div><div className="st-v" style={{color:'var(--rd)'}}>{yourA}</div></div><div className="st"><div className="st-l">Competitor alerts</div><div className="st-v am">{compA}</div></div><div className="st"><div className="st-l">Competitor stockouts (opportunity)</div><div className="st-v gn">{alerts.filter(a=>!isAff(a.dispensary)&&a.alert==="critical").length}</div></div></div>
     {!filtered.length?<div className="empty"><h3>No stock alerts</h3></div>:
     <div className="tw"><div className="ts"><table><thead><tr><th style={{minWidth:160}}>Product</th><th>Brand</th><th>Dispensary</th><th>Stock</th><th>Days to OOS</th><th>OOS last 28d</th><th>Alert</th></tr></thead>
@@ -316,7 +328,7 @@ function StockTab({data}){
 }
 
 function DealsTab({data}){
-  const[dq,setDq]=useState("");const[openD,setOpenD]=useState(new Set());const deals=data.deals||[];
+  const[dq,setDq]=useState("");const[openD,setOpenD]=useState(new Set());const deals=(data.deals||[]).filter(d=>(d.category||"").toLowerCase()!=="accessories");
   const filtered=useMemo(()=>{if(!dq.trim())return deals;const s=dq.toLowerCase();return deals.filter(x=>(x.product||"").toLowerCase().includes(s)||(x.dispensary||"").toLowerCase().includes(s)||(x.brand||"").toLowerCase().includes(s))},[deals,dq]);
   const grouped=useMemo(()=>{
     const byChain={};
@@ -325,6 +337,7 @@ function DealsTab({data}){
   },[filtered]);
   return<div className="pnl"><div className="row" style={{justifyContent:'space-between',marginBottom:10}}><span className="pnl-t" style={{margin:0}}>Active deals ({filtered.length.toLocaleString()})</span><div className="row"><button className="btn" onClick={()=>setOpenD(new Set(filtered.map(d=>d.dispensary)))}>Expand all</button><button className="btn" onClick={()=>setOpenD(new Set())}>Collapse</button></div></div>
     <div className="srch" style={{marginBottom:12}}><span className="srch-ic">{String.fromCharCode(8981)}</span><input type="search" placeholder="Search deals..." value={dq} onChange={e=>setDq(e.target.value)}/></div>
+    <div className="pnl-d">Current promotions and discounts grouped by dispensary chain. Expand any location to see their active deals.</div>
     {grouped.map(g=><div key={g.chain} style={{marginBottom:16}}>
       <div className="dsel-grp">{g.chain} ({g.locations.reduce((s,l)=>s+l[1].length,0)} deals)</div>
       {g.locations.map(([disp,dls])=>{const isO=openD.has(disp);const best=Math.max(...dls.map(d=>d.pct_off));
@@ -341,11 +354,33 @@ function DealsTab({data}){
 }
 
 function DispsTab({data}){
-  const[sort,setSort]=useState("count");const counts=data.stats?.dispensary_counts||{};const disps=data.dispensaries||{};
-  const list=useMemo(()=>Object.entries(counts).map(([name,count])=>({name,count,city:disps[name]?.city||"",daily:disps[name]?.daily_sales||0,isYou:isAff(name)})).sort((a,b)=>sort==="count"?b.count-a.count:a.name.localeCompare(b.name)),[counts,disps,sort]);
+  const[sort,setSort]=useState("count");const prods=data.products||[];const disps=data.dispensaries||{};
+  const list=useMemo(()=>{
+    const byBase={};
+    // Count unique products per base dispensary by tracking product names
+    Object.entries(disps).forEach(([name,info])=>{
+      const base=getBase(name);
+      if(!byBase[base])byBase[base]={city:info.city,isYou:isAff(name),menus:[],productNames:new Set()};
+      const menuType=(name.match(/\(([^)]+)\)$/)||[])[1];
+      if(menuType&&!byBase[base].menus.includes(menuType))byBase[base].menus.push(menuType);
+    });
+    // Walk products to count unique items per base dispensary
+    prods.forEach(p=>{
+      Object.keys(p.dispensaries||{}).forEach(d=>{
+        const base=getBase(d);
+        if(byBase[base]){byBase[base].productNames.add((p.name||"").toLowerCase())}
+      });
+    });
+    return Object.entries(byBase).map(function(e){
+      var base=e[0],info=e[1];
+      var label=info.menus.length>1?base+" ("+info.menus.join("/")+")":info.menus.length===1?base+" ("+info.menus[0]+")":base;
+      return{name:label,count:info.productNames.size,city:info.city,isYou:info.isYou};
+    }).sort((a,b)=>sort==="count"?b.count-a.count:a.name.localeCompare(b.name));
+  },[prods,disps,sort]);
   return<div className="pnl"><div className="row" style={{justifyContent:'space-between',marginBottom:12}}><span className="pnl-t" style={{margin:0}}>All dispensaries ({list.length})</span>
     <div className="row"><button className={"btn "+(sort==="count"?"pri":"")} onClick={()=>setSort("count")}>By products</button><button className={"btn "+(sort==="name"?"pri":"")} onClick={()=>setSort("name")}>By name</button></div></div>
-    <div className="dlist">{list.map(d=><div key={d.name} className={"dcard "+(d.isYou?"you":"")}><div><div className="dcard-n" title={d.name}>{d.isYou?String.fromCharCode(9733)+" ":""}{cleanD(d.name)}</div><div className="dcard-c">{d.city}{d.daily>0?" | "+fmt$(d.daily)+"/day":""}</div></div><div className="dcard-v">{d.count.toLocaleString()}</div></div>)}</div></div>;
+    <div className="pnl-d">Total unique products per dispensary. Med and Rec menus combined with overlapping products counted once.</div>
+    <div className="dlist">{list.map(d=><div key={d.name} className={"dcard "+(d.isYou?"you":"")}><div><div className="dcard-n" title={d.name}>{d.isYou?String.fromCharCode(9733)+" ":""}{d.name}</div><div className="dcard-c">{d.city}</div></div><div className="dcard-v">{d.count.toLocaleString()}</div></div>)}</div></div>;
 }
 
 ReactDOM.render(<App/>,document.getElementById("root"));
