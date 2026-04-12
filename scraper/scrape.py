@@ -598,11 +598,81 @@ def main():
         print(f"    {dn}: {count:,}{flag}")
     print(f"{'='*64}\n")
 
-    # Save
+    # Save main dashboard
     os.makedirs(DATA_DIR, exist_ok=True)
     with open(OUTPUT_FILE, "w") as f:
         json.dump(dashboard, f, separators=(",", ":"), default=str)
     print(f"  ✓ Saved {OUTPUT_FILE}")
+
+    # Save daily history snapshot for price tracking
+    history_dir = os.path.join(DATA_DIR, "history")
+    os.makedirs(history_dir, exist_ok=True)
+    today_file = os.path.join(history_dir, f"{date.today().isoformat()}.json")
+
+    # Build lightweight history record (just prices + dispensary)
+    history_record = {
+        "date": date.today().isoformat(),
+        "prices": {},  # {product_key: {dispensary: price}}
+        "new_products": [],  # products not seen yesterday
+    }
+
+    # Current product prices
+    for p in dashboard.get("products", []):
+        key = (p.get("name") or "").lower().strip()
+        if key:
+            history_record["prices"][key] = p.get("dispensaries", {})
+
+    # Compare with yesterday to find new products
+    yesterday = (date.today() - timedelta(days=1)).isoformat()
+    yesterday_file = os.path.join(history_dir, f"{yesterday}.json")
+    if os.path.exists(yesterday_file):
+        try:
+            with open(yesterday_file) as f:
+                prev = json.load(f)
+            prev_keys = set(prev.get("prices", {}).keys())
+            curr_keys = set(history_record["prices"].keys())
+            new_keys = curr_keys - prev_keys
+            dropped_keys = prev_keys - curr_keys
+
+            # Build new product alerts
+            new_alerts = []
+            for p in dashboard.get("products", []):
+                pkey = (p.get("name") or "").lower().strip()
+                if pkey in new_keys:
+                    new_alerts.append({
+                        "name": p.get("name", ""),
+                        "brand": p.get("brand", ""),
+                        "category": p.get("category", ""),
+                        "dispensaries": list(p.get("dispensaries", {}).keys()),
+                    })
+
+            dashboard["new_products"] = new_alerts[:200]
+            dashboard["dropped_products"] = len(dropped_keys)
+            print(f"  ✓ {len(new_alerts)} new products since yesterday, {len(dropped_keys)} dropped")
+
+            # Re-save with new product alerts
+            with open(OUTPUT_FILE, "w") as f:
+                json.dump(dashboard, f, separators=(",", ":"), default=str)
+        except Exception as e:
+            print(f"  History comparison failed: {e}")
+    else:
+        print(f"  No previous data for comparison (first run or new day)")
+
+    # Save today's snapshot
+    with open(today_file, "w") as f:
+        json.dump(history_record, f, separators=(",", ":"), default=str)
+    print(f"  ✓ Saved history snapshot: {today_file}")
+
+    # Clean up old history (keep last 90 days)
+    for hf in sorted(os.listdir(history_dir)):
+        if hf.endswith(".json"):
+            fdate = hf.replace(".json", "")
+            try:
+                if (date.today() - date.fromisoformat(fdate)).days > 90:
+                    os.remove(os.path.join(history_dir, hf))
+            except ValueError:
+                pass
+
     print(f"  DONE\n")
 
 
