@@ -88,12 +88,12 @@ function App(){
   },[]);
   if(err)return<div className="app"><Hdr/><div className="empty"><h3>Could not load data</h3><p style={{fontSize:12}}>{err}</p></div></div>;
   if(!data)return<div className="app"><div className="ld"><div className="sp"/><span style={{color:'var(--tx2)',fontSize:12,fontFamily:'var(--m)'}}>ATHENA initializing...</span></div></div>;
-  const tabs=[["intel","Intel"],["alerts","Pricing Alerts"],["velocity","Sales Velocity"],["market","Market Position"],["stock","Stock Alerts"],["insights","Consumer Insights"],["deals","Deals"],["disps","Dispensaries"]];
+  const tabs=[["intel","Intel"],["alerts","Pricing Alerts"],["velocity","Sales Velocity"],["market","Market Position"],["stock","Stock Alerts"],["deals","Deals"],["disps","Dispensary Total Products"]];
   return<div className="app"><Hdr d={data}/>
     <div className="tabs">{tabs.map(([k,l])=><div key={k} className={"tab "+(tab===k?"on":"")} onClick={()=>setTab(k)}>{l}</div>)}</div>
     {tab==="intel"&&<IntelTab data={data} q={q} setQ={setQ} sel={sel} setSel={setSel} cat={cat} setCat={setCat} comp={comp} setComp={setComp} radius={radius} setRadius={setRadius}/>}
     {tab==="alerts"&&<AlertsTab data={data}/>}{tab==="velocity"&&<VelocityTab data={data}/>}{tab==="market"&&<MarketTab data={data}/>}
-    {tab==="stock"&&<StockTab data={data}/>}{tab==="insights"&&<InsightsTab data={data}/>}{tab==="deals"&&<DealsTab data={data}/>}{tab==="disps"&&<DispsTab data={data}/>}
+    {tab==="stock"&&<StockTab data={data}/>}{tab==="deals"&&<DealsTab data={data}/>}{tab==="disps"&&<DispsTab data={data}/>}
   </div>;
 }
 function Hdr({d}){const t=d?.scraped_at?new Date(d.scraped_at).toLocaleString("en-US",{month:"short",day:"numeric",year:"numeric",hour:"numeric",minute:"2-digit"}):"";return<div className="hdr"><div className="logo"><img src={window.HELMET_IMG} alt=""/><div className="lt"><h1>ATHENA</h1><span>COMPETITIVE INTELLIGENCE</span></div></div><div className="meta">{d&&<>{t&&<div>Updated: {t}</div>}<div>{d.stats?.dispensary_count||0} dispensaries | {(d.stats?.total_active||0).toLocaleString()} products</div></>}</div></div>}
@@ -122,10 +122,10 @@ function DispPanel({data,sel,setSel}){
   const tog=useCallback(d=>{setSel(p=>{const n=new Set(p);n.has(d)?n.delete(d):n.add(d);return n})},[]);
   return<div className="pnl"><div className="row" style={{justifyContent:'space-between',marginBottom:10}}><span className="pnl-t" style={{margin:0}}>Compare dispensaries</span><div className="row"><button className="btn" onClick={()=>setSel(new Set(allD))}>All</button><button className="btn" onClick={()=>setSel(new Set(allD.filter(isAff)))}>Mine</button><button className="btn" onClick={()=>setSel(new Set([...allD.filter(isAff),...allD.filter(x=>!isAff(x)).slice(0,6)]))}>Reset</button></div></div>
     <div style={{maxHeight:300,overflowY:'auto',display:'flex',flexDirection:'column',gap:3}}>{grouped.map(([base,info])=>{const isO=openG.has(base);const sc=info.v.filter(v=>sel.has(v)).length;
-      return<div key={base} style={{background:'var(--bg2)',border:'1px solid '+(info.y?'rgba(0,240,255,.2)':'var(--bd)'),borderRadius:7,overflow:'hidden'}}>
+      return<div key={base} style={{background:'#0d1822',border:'1px solid '+(info.y?'rgba(0,240,255,.3)':'rgba(0,215,235,.15)'),borderRadius:7,overflow:'hidden'}}>
         <div onClick={()=>setOpenG(p=>{const n=new Set(p);n.has(base)?n.delete(base):n.add(base);return n})} style={{display:'flex',alignItems:'center',justifyContent:'space-between',padding:'8px 12px',cursor:'pointer',background:isO?'rgba(0,212,230,.03)':'transparent'}}>
-          <div style={{display:'flex',alignItems:'center',gap:8}}><span style={{color:'var(--tx3)',fontSize:10,transform:isO?'rotate(90deg)':'rotate(0)',display:'inline-block',transition:'transform .2s'}}>{"\u25B6"}</span><span style={{fontSize:13,fontWeight:600,color:info.y?'var(--cy2)':'var(--tx)'}}>{info.y?"\u2605 ":""}{base}</span></div>
-          <div style={{display:'flex',alignItems:'center',gap:10}}>{sc>0&&<span className="badge cy">{sc}</span>}<span style={{fontFamily:'var(--m)',fontSize:10,color:'var(--tx2)'}}>{info.v.length} menu{info.v.length>1?"s":""} | {info.t.toLocaleString()}</span></div></div>
+          <div style={{display:'flex',alignItems:'center',gap:8}}><span style={{color:'#3a7080',fontSize:11,transform:isO?'rotate(90deg)':'rotate(0)',display:'inline-block',transition:'transform .2s'}}>{"\u25B6"}</span><span style={{fontSize:14,fontWeight:600,color:info.y?'var(--cy2)':'#d0eef3'}}>{info.y?"\u2605 ":""}{base}</span></div>
+          <div style={{display:'flex',alignItems:'center',gap:10}}>{sc>0&&<span className="badge cy">{sc}</span>}<span style={{fontFamily:'var(--m)',fontSize:11,color:'#5a9aaa'}}>{info.v.length} menu{info.v.length>1?"s":""} | {info.t.toLocaleString()}</span></div></div>
         {isO&&<div style={{borderTop:'1px solid var(--bd)',padding:'6px 12px 8px',display:'flex',flexDirection:'column',gap:4}}>{info.v.map(v=>{const on=sel.has(v);const lb=(v.match(/\(([^)]+)\)$/)||[])[1]||"Menu";return<div key={v} onClick={()=>tog(v)} style={{display:'flex',alignItems:'center',justifyContent:'space-between',padding:'5px 8px',borderRadius:5,cursor:'pointer',background:on?'rgba(0,212,230,.06)':'transparent',border:'1px solid '+(on?'rgba(0,212,230,.2)':'transparent')}}><div style={{display:'flex',alignItems:'center',gap:8}}><div style={{width:8,height:8,borderRadius:'50%',background:on?'var(--cy)':'var(--tx3)',boxShadow:on?'0 0 5px var(--cy)':'none'}}/><span style={{fontSize:13,fontWeight:500,color:on?'var(--cy)':'var(--tx2)'}}>{lb}</span></div><span style={{fontFamily:'var(--m)',fontSize:11,color:'var(--tx2)'}}>{(counts[v]||0).toLocaleString()}</span></div>})}</div>}</div>})}</div></div>;
 }
 function CatTabs({data,cat,setCat}){const cats=useMemo(()=>{const s=new Set();(data.products||[]).forEach(p=>s.add(p.category||"Other"));return["All",...[...s].sort()]},[data]);return<div className="cats">{cats.map(c=><div key={c} className={"ct "+(cat===c?"on":"")} onClick={()=>setCat(c)}>{c}</div>)}</div>}
@@ -193,25 +193,6 @@ function StockTab({data}){
         <td className="pr">{a.oos_last_28||""}</td><td><span className={"badge "+(a.alert==="critical"?"rd":"am")}>{a.alert}</span></td></tr>)}</tbody></table></div></div>}</div>;
 }
 
-/* ━━━ CONSUMER INSIGHTS ━━━ */
-function InsightsTab({data}){
-  const demo=data.demographics||{};const entries=Object.entries(demo);const[selDisp,setSelDisp]=useState(entries.filter(([k])=>isAff(k)).map(([k])=>k).slice(0,2));
-  const allDisps=entries.map(([k])=>k).sort((a,b)=>{if(isAff(a)&&!isAff(b))return-1;if(!isAff(a)&&isAff(b))return 1;return a.localeCompare(b)});
-  const shown=selDisp.length?entries.filter(([k])=>selDisp.includes(k)):entries.filter(([k])=>isAff(k));
-  return<div className="pnl"><div className="pnl-t">Consumer demographics by dispensary</div>
-    <div style={{marginBottom:12}}><div className="srch"><span className="srch-ic">{"\u2315"}</span><select style={{width:'100%',background:'var(--bg2)',border:'1px solid var(--bd)',color:'var(--tx)',fontFamily:'var(--f)',fontSize:13,padding:'9px 14px',borderRadius:7,outline:'none'}} onChange={e=>{const v=e.target.value;if(v==="all")setSelDisp(allDisps.slice(0,4));else setSelDisp(prev=>prev.includes(v)?prev.filter(x=>x!==v):[...prev,v].slice(0,4))}}><option value="">Add dispensary to compare...</option><option value="all">Show top 4</option>{allDisps.map(d=><option key={d} value={d}>{cleanD(d)}</option>)}</select></div></div>
-    {!shown.length?<div className="empty"><h3>No demographic data</h3><p style={{fontSize:11}}>Run the scraper to populate consumer insights.</p></div>:
-    <div style={{display:'grid',gridTemplateColumns:'repeat(auto-fit,minmax(300px,1fr))',gap:12}}>{shown.map(([dn,info])=><div key={dn} style={{background:'var(--bg2)',border:'1px solid '+(isAff(dn)?'rgba(0,240,255,.2)':'var(--bd)'),borderRadius:8,padding:14}}>
-      <div style={{fontSize:14,fontWeight:600,color:isAff(dn)?'var(--cy2)':'var(--tx)',marginBottom:10}}>{isAff(dn)?"\u2605 ":""}{cleanD(dn)}</div>
-      <div style={{marginBottom:10}}><div style={{fontSize:10,color:'var(--tx2)',marginBottom:4,fontFamily:'var(--m)',textTransform:'uppercase',letterSpacing:1}}>Top segments</div>
-        {Object.entries(info.segments||{}).slice(0,5).map(([seg,count])=><div key={seg} style={{display:'flex',justifyContent:'space-between',padding:'3px 0',fontSize:12}}><span>{seg}</span><span style={{fontFamily:'var(--m)',color:'var(--cy)',fontSize:11}}>{count}</span></div>)}</div>
-      <div style={{marginBottom:10}}><div style={{fontSize:10,color:'var(--tx2)',marginBottom:4,fontFamily:'var(--m)',textTransform:'uppercase',letterSpacing:1}}>Age skew</div>
-        <div style={{display:'flex',gap:4,flexWrap:'wrap'}}>{Object.entries(info.ages||{}).map(([age,count])=><span key={age} className="badge cy">{age}: {count}</span>)}</div></div>
-      <div><div style={{fontSize:10,color:'var(--tx2)',marginBottom:4,fontFamily:'var(--m)',textTransform:'uppercase',letterSpacing:1}}>Affluency</div>
-        <div style={{display:'flex',gap:4,flexWrap:'wrap'}}>{Object.entries(info.affluency||{}).map(([a,count])=><span key={a} className="badge am">{a}: {count}</span>)}</div></div>
-    </div>)}</div>}</div>;
-}
-
 /* ━━━ DEALS ━━━ */
 function DealsTab({data}){
   const[dq,setDq]=useState("");const[openD,setOpenD]=useState(new Set());const deals=data.deals||[];
@@ -221,11 +202,11 @@ function DealsTab({data}){
     <div className="srch" style={{marginBottom:12}}><span className="srch-ic">{"\u2315"}</span><input type="search" placeholder="Search deals..." value={dq} onChange={e=>setDq(e.target.value)}/></div>
     <div style={{display:'flex',flexDirection:'column',gap:4}}>{grouped.map(([disp,dls])=>{const isO=openD.has(disp);const best=Math.max(...dls.map(d=>d.pct_off));
       return<div key={disp} style={{background:'var(--bg2)',border:'1px solid var(--bd)',borderRadius:8,overflow:'hidden'}}><div onClick={()=>setOpenD(p=>{const n=new Set(p);n.has(disp)?n.delete(disp):n.add(disp);return n})} style={{display:'flex',alignItems:'center',justifyContent:'space-between',padding:'9px 14px',cursor:'pointer',background:isO?'rgba(0,212,230,.03)':'transparent'}}>
-        <div style={{display:'flex',alignItems:'center',gap:8}}><span style={{color:'var(--tx3)',fontSize:10,transform:isO?'rotate(90deg)':'rotate(0)',display:'inline-block',transition:'transform .2s'}}>{"\u25B6"}</span><span style={{fontSize:13,fontWeight:600,color:isAff(disp)?'var(--cy2)':'var(--tx)'}}>{cleanD(disp)}</span></div>
-        <div style={{display:'flex',alignItems:'center',gap:10}}><span className="badge gn">up to {best}% off</span><span style={{fontFamily:'var(--m)',fontSize:10,color:'var(--tx2)'}}>{dls.length}</span></div></div>
+        <div style={{display:'flex',alignItems:'center',gap:8}}><span style={{color:'#3a7080',fontSize:11,transform:isO?'rotate(90deg)':'rotate(0)',display:'inline-block',transition:'transform .2s'}}>{"\u25B6"}</span><span style={{fontSize:13,fontWeight:600,color:isAff(disp)?'var(--cy2)':'var(--tx)'}}>{cleanD(disp)}</span></div>
+        <div style={{display:'flex',alignItems:'center',gap:10}}><span className="badge gn">up to {best}% off</span><span style={{fontFamily:'var(--m)',fontSize:11,color:'#5a9aaa'}}>{dls.length}</span></div></div>
         {isO&&<div style={{borderTop:'1px solid var(--bd)',padding:'6px 14px 8px',display:'flex',flexDirection:'column',gap:4}}>{dls.map((d,i)=><div key={i} style={{display:'flex',justifyContent:'space-between',alignItems:'center',padding:'4px 0',borderBottom:i<dls.length-1?'1px solid rgba(0,215,235,.04)':'none'}}>
           <div style={{flex:1,minWidth:0}}><div style={{fontSize:11,fontWeight:500,color:'var(--tx)',overflow:'hidden',textOverflow:'ellipsis',whiteSpace:'nowrap'}}>{d.product}</div><div style={{fontSize:9,color:'var(--tx2)'}}>{d.brand} | {d.category}</div></div>
-          <div style={{textAlign:'right',flexShrink:0,marginLeft:10}}><span style={{fontFamily:'var(--m)',fontSize:13,fontWeight:700,color:'var(--gn)'}}>{d.pct_off}%</span><span style={{fontFamily:'var(--m)',fontSize:10,color:'var(--tx2)',marginLeft:6}}>${d.discounted}</span><span style={{fontFamily:'var(--m)',fontSize:9,color:'var(--tx3)',marginLeft:3,textDecoration:'line-through'}}>${d.original}</span></div></div>)}</div>}</div>})}</div></div>;
+          <div style={{textAlign:'right',flexShrink:0,marginLeft:10}}><span style={{fontFamily:'var(--m)',fontSize:13,fontWeight:700,color:'var(--gn)'}}>{d.pct_off}%</span><span style={{fontFamily:'var(--m)',fontSize:11,color:'#5a9aaa',marginLeft:6}}>${d.discounted}</span><span style={{fontFamily:'var(--m)',fontSize:9,color:'var(--tx3)',marginLeft:3,textDecoration:'line-through'}}>${d.original}</span></div></div>)}</div>}</div>})}</div></div>;
 }
 
 /* ━━━ DISPENSARIES ━━━ */
