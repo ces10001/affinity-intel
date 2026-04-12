@@ -65,11 +65,27 @@ def authenticate():
     token = data.get("id_token")
     if not token:
         print("  No id_token returned"); sys.exit(1)
-    print("  Auth OK")
+    print(f"  Auth OK (token length: {len(token)})")
+
+    # Step 2: Authorize with Hoodie app (establishes session)
+    print("  Authorizing with Hoodie app...")
+    try:
+        auth_resp = requests.get(
+            f"{HOODIE_API}/account.authorize",
+            headers={"Authorization": f"Bearer {token}"},
+            timeout=30,
+        )
+        if auth_resp.status_code == 200:
+            print("  Hoodie session OK")
+        else:
+            print(f"  Hoodie session warning: {auth_resp.status_code} (continuing anyway)")
+    except Exception as e:
+        print(f"  Hoodie session error: {e} (continuing anyway)")
+
     return token
 
 
-def fetch_city(token, city):
+def fetch_city(token, city, debug=False):
     """Fetch ALL products from a city, paginate fully, filter active client-side."""
     headers = {"Content-Type": "application/json", "Authorization": f"Bearer {token}"}
     active = []
@@ -93,12 +109,21 @@ def fetch_city(token, city):
         except Exception as e:
             print(f"      Error pg {page+1}: {e}"); break
 
+        if debug and page == 0:
+            print(f"      DEBUG {city}: HTTP {resp.status_code}")
+            print(f"      DEBUG response: {resp.text[:500]}")
+
         if resp.status_code != 200:
+            if page == 0:
+                print(f"      {city}: HTTP {resp.status_code} — {resp.text[:200]}")
             break
 
         try:
-            result = resp.json().get("result", {}).get("data", {})
-        except Exception:
+            body = resp.json()
+            result = body.get("result", {}).get("data", {})
+        except Exception as e:
+            if page == 0:
+                print(f"      {city}: JSON parse error: {e}")
             break
 
         items = result.get("page", [])
@@ -208,7 +233,8 @@ def main():
     cities_with_data = 0
 
     for i, city in enumerate(CT_CITIES):
-        active, total_seen = fetch_city(token, city)
+        debug = (i == 0)  # Debug output for first city
+        active, total_seen = fetch_city(token, city, debug=debug)
         if active:
             all_items.extend(active)
             cities_with_data += 1
