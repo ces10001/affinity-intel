@@ -20,7 +20,6 @@ jobs:
         working-directory: ./scraper
         env:
           HOODIE_REFRESH_TOKEN: ${{ secrets.HOODIE_REFRESH_TOKEN }}
-          SCRAPINGBEE_API_KEY: ${{ secrets.SCRAPINGBEE_API_KEY }}
         run: python scrape.py
         timeout-minutes: 25
       - name: Commit data
