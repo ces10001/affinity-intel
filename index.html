@@ -152,54 +152,7 @@ function Hdr({d}){
 }
 
 function IntelTab({data,q,setQ,sel,setSel,cat,setCat,comp,setComp,radius,setRadius}){
-  const newProds=data.new_products||[];
-  const[showNew,setShowNew]=useState(false);
-  return<><div className="stats">{[["Active SKUs",data.stats?.total_active||0,"","Total products tracked across all CT dispensaries"],["Dispensaries",data.stats?.unique_locations||data.stats?.dispensary_count||0,"","Unique dispensary locations being monitored"],["Comparable",data.stats?.comparable||0,"","Products found at 2+ dispensaries for price comparison"],["Deals",data.stats?.deals||0,"am","Active promotions and discounts across all dispensaries"],["NDC Matched",data.stats?.match_by_sku||0,"gn","Same products identified across stores by NDC for accurate price comparison"]].map(([l,v,c,desc])=><div key={l} className="st"><div className="st-l">{l}</div><div className={"st-v "+(c||"")}>{(v||0).toLocaleString()}</div><div style={{fontSize:11,color:'var(--tx2)',marginTop:4,lineHeight:1.3}}>{desc}</div></div>)}</div>
-    {newProds.length>0&&<div style={{background:'rgba(0,230,118,.06)',border:'1px solid rgba(0,230,118,.2)',borderRadius:8,padding:'10px 14px',marginBottom:12,display:'flex',justifyContent:'space-between',alignItems:'center',cursor:'pointer'}} onClick={()=>setShowNew(!showNew)}>
-      <div><span style={{color:'var(--gn)',fontWeight:600,fontSize:13}}>{newProds.length} new products</span><span style={{color:'var(--tx2)',fontSize:12,marginLeft:8}}>appeared since yesterday</span></div>
-      <span style={{color:'var(--tx3)',fontSize:10}}>{showNew?"Hide":"Show"}</span>
-    </div>}
-    {showNew&&newProds.length>0&&<div className="tw" style={{marginBottom:12}}><div className="ts" style={{maxHeight:200}}><table><thead><tr><th>New product</th><th>Brand</th><th>Category</th><th>Dispensaries</th></tr></thead>
-      <tbody>{newProds.slice(0,50).map((p,i)=><tr key={i}><td className="pn">{p.name}</td><td className="dm">{p.brand}</td><td className="dm">{p.category}</td><td className="dm">{(p.dispensaries||[]).map(cleanD).join(", ")}</td></tr>)}</tbody></table></div></div>}
-    <div className="pnl" style={{marginBottom:12}}>
-      <div className="pnl-t">Your price position</div>
-      <div className="pnl-d">How your prices compare across all comparable products.</div>
-      {(()=>{
-        const prods=data.products||[];const disps=getDisps(prods);const affC=disps.filter(isAff);
-        let cheaper=0,same=0,pricier=0;const byCat={};
-        prods.forEach(p=>{
-          const yp=getYP(p,affC);if(!yp)return;
-          Object.entries(p.dispensaries||{}).forEach(([d,cp])=>{
-            if(isAff(d)||!cp)return;
-            const cat=p.category||"Other";if(!byCat[cat])byCat[cat]={c:0,s:0,p:0};
-            if(cp>yp){cheaper++;byCat[cat].c++}else if(cp<yp){pricier++;byCat[cat].p++}else{same++;byCat[cat].s++}
-          });
-        });
-        const total=cheaper+same+pricier;if(!total)return<div className="empty"><h3>No comparable data</h3></div>;
-        const cpct=Math.round(cheaper/total*100),spct=Math.round(same/total*100),ppct=Math.round(pricier/total*100);
-        return<div>
-          <div style={{display:'flex',gap:16,marginBottom:12,flexWrap:'wrap'}}>
-            <div style={{flex:1,minWidth:100,textAlign:'center',padding:10,background:'rgba(0,230,118,.06)',borderRadius:8,border:'1px solid rgba(0,230,118,.15)'}}>
-              <div style={{fontFamily:'var(--m)',fontSize:28,fontWeight:700,color:'var(--gn)'}}>{cpct}%</div>
-              <div style={{fontSize:11,color:'var(--tx2)'}}>You're cheaper</div>
-              <div style={{fontSize:10,color:'var(--tx3)',marginTop:2}}>{cheaper.toLocaleString()} comparisons</div>
-            </div>
-            <div style={{flex:1,minWidth:100,textAlign:'center',padding:10,background:'rgba(0,212,230,.06)',borderRadius:8,border:'1px solid rgba(0,212,230,.15)'}}>
-              <div style={{fontFamily:'var(--m)',fontSize:28,fontWeight:700,color:'var(--cy)'}}>{spct}%</div>
-              <div style={{fontSize:11,color:'var(--tx2)'}}>Same price</div>
-              <div style={{fontSize:10,color:'var(--tx3)',marginTop:2}}>{same.toLocaleString()} comparisons</div>
-            </div>
-            <div style={{flex:1,minWidth:100,textAlign:'center',padding:10,background:'rgba(255,61,87,.06)',borderRadius:8,border:'1px solid rgba(255,61,87,.15)'}}>
-              <div style={{fontFamily:'var(--m)',fontSize:28,fontWeight:700,color:'var(--rd)'}}>{ppct}%</div>
-              <div style={{fontSize:11,color:'var(--tx2)'}}>They're cheaper</div>
-              <div style={{fontSize:10,color:'var(--tx3)',marginTop:2}}>{pricier.toLocaleString()} comparisons</div>
-            </div>
-          </div>
-          <div style={{fontSize:11,color:'var(--tx2)',marginBottom:6}}>By category:</div>
-          <div style={{display:'flex',gap:6,flexWrap:'wrap'}}>{Object.entries(byCat).sort((a,b)=>(b[1].c+b[1].s+b[1].p)-(a[1].c+a[1].s+a[1].p)).map(([cat,v])=>{const t=v.c+v.s+v.p;const wp=Math.round(v.c/t*100);return<div key={cat} style={{fontSize:11,padding:'4px 10px',background:'var(--bg2)',borderRadius:5,border:'1px solid var(--bd)'}}><span style={{color:'var(--tx)'}}>{cat}</span> <span style={{fontFamily:'var(--m)',color:wp>=50?'var(--gn)':'var(--rd)',marginLeft:4}}>{wp}% winning</span></div>})}</div>
-        </div>
-      })()}
-    </div>
+  return<><div className="stats">{[["Active SKUs",data.stats?.total_active||0,"","Total products tracked across all CT dispensaries"],["Dispensaries",data.stats?.unique_locations||data.stats?.dispensary_count||0,"","Unique dispensary locations being monitored"],["Comparable",data.stats?.comparable||0,"","Products found at 2+ dispensaries for price comparison"],["Deals",data.stats?.deals||0,"am","Active promotions and discounts across all dispensaries"]].map(([l,v,c,desc])=><div key={l} className="st"><div className="st-l">{l}</div><div className={"st-v "+(c||"")}>{(v||0).toLocaleString()}</div><div style={{fontSize:11,color:'var(--tx2)',marginTop:4,lineHeight:1.3}}>{desc}</div></div>)}</div>
     <div className="glow"/>
     <div className="g2"><MapPanel data={data} sel={sel} setSel={setSel} radius={radius} setRadius={setRadius}/><DispPanel data={data} sel={sel} setSel={setSel}/></div>
     <div className="pnl"><div className="pnl-t">Search products</div><div className="pnl-d">Find any product by name, brand, or strain across all dispensaries.</div><div className="srch"><span className="srch-ic">{String.fromCharCode(8981)}</span><input type="search" placeholder="Product name, brand, or strain..." value={q} onChange={e=>setQ(e.target.value)}/></div></div>
@@ -286,12 +239,33 @@ function Tbl({data,q,sel,cat,comp,setComp}){
 
 function AlertsTab({data}){
   const prods=data.products||[];const disps=getDisps(prods);const affC=disps.filter(isAff);
+  const mapRef=useRef(null);const mapInst=useRef(null);const mkrsRef=useRef([]);const circARef=useRef(null);
+  const[aCenter,setACenter]=useState(null);const[aRadius,setARadius]=useState(15);const[aLabel,setALabel]=useState("Click map to filter by area");
+  const[inArea,setInArea]=useState(null);
+
+  useEffect(()=>{if(!mapRef.current||mapInst.current)return;const m=L.map(mapRef.current,{zoomControl:true,attributionControl:false}).setView([41.35,-72.9],9);L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png',{maxZoom:18}).addTo(m);m.on('click',e=>{setACenter([e.latlng.lat,e.latlng.lng]);setALabel(e.latlng.lat.toFixed(3)+", "+e.latlng.lng.toFixed(3))});mapInst.current=m},[]);
+
+  useEffect(()=>{const m=mapInst.current;if(!m||!aCenter)return;if(circARef.current)m.removeLayer(circARef.current);var rM=aRadius*1609.34;circARef.current=L.circle(aCenter,{radius:rM,color:'#00f0ff',weight:1.5,opacity:.5,fillColor:'#00f0ff',fillOpacity:.06,dashArray:'6 4'}).addTo(m);
+    var inside=new Set();var cll=L.latLng(aCenter[0],aCenter[1]);var dsp=data.dispensaries||{};Object.entries(dsp).forEach(function(e){var dn=e[0],info=e[1];var c=COORDS[info.city];if(!c)return;var h=hashStr(dn);var lat=c[0]+((h%100)-50)*.00008;var lon=c[1]+(((h>>8)%100)-50)*.00008;if(cll.distanceTo(L.latLng(lat,lon))<=rM)inside.add(dn)});
+    setInArea(inside.size>0?inside:null)},[aRadius,aCenter]);
+
+  useEffect(()=>{var m=mapInst.current;if(!m||!data)return;mkrsRef.current.forEach(mk=>m.removeLayer(mk));mkrsRef.current=[];var dsp=data.dispensaries||{};var counts=data.stats?.dispensary_counts||{};
+    Object.entries(dsp).forEach(([name,info])=>{var c=COORDS[info.city];if(!c)return;var h=hashStr(name);var lat=c[0]+((h%100)-50)*.00008;var lon=c[1]+(((h>>8)%100)-50)*.00008;var isA=isAff(name);var sz=isA?12:6;var col=isA?"#00f0ff":"#ff8c00";
+      var icon=L.divIcon({className:'',html:'<div style="width:'+sz+'px;height:'+sz+'px;border-radius:50%;background:'+col+';box-shadow:0 0 '+(isA?12:4)+'px '+col+';border:1px solid rgba(255,255,255,'+(isA?.3:.08)+')"></div>',iconSize:[sz,sz],iconAnchor:[sz/2,sz/2]});
+      var mk=L.marker([lat,lon],{icon}).addTo(m);mk.on('click',()=>{setACenter([lat,lon]);setALabel(cleanD(name))});mkrsRef.current.push(mk)})},[data]);
   const analysis=useMemo(()=>disps.filter(d=>!isAff(d)).map(cd=>{let c=0,s=0,h=0,t=0,details=[];prods.forEach(p=>{const yp=getYP(p,affC);const cp=p.dispensaries?.[cd];if(!yp||!cp)return;t++;const diff=Math.round((cp-yp)/yp*100);if(cp<yp){c++;details.push({name:p.name,brand:p.brand,yours:yp,theirs:cp,diff})}else if(cp>yp){h++;details.push({name:p.name,brand:p.brand,yours:yp,theirs:cp,diff})}else s++});return t>0?{name:cd,cheaper:c,same:s,higher:h,total:t,pct:Math.round(c/t*100),details:details.sort((a,b)=>a.diff-b.diff)}:null}).filter(Boolean).sort((a,b)=>b.pct-a.pct),[prods,affC,disps]);
   const doExport=()=>{const rows=[["Competitor","Product","Brand","Your Price","Their Price","Difference","% Diff","Who's Cheaper"]];analysis.forEach(a=>{a.details.forEach(d=>{rows.push([cleanD(a.name),d.name,d.brand,"$"+d.yours.toFixed(2),"$"+d.theirs.toFixed(2),"$"+(d.theirs-d.yours).toFixed(2),d.diff+"%",d.diff<0?"THEM":"YOU"])})});const ws=XLSX.utils.aoa_to_sheet(rows);const wb=XLSX.utils.book_new();XLSX.utils.book_append_sheet(wb,ws,"Pricing Report");ws["!cols"]=[{wch:30},{wch:40},{wch:20},{wch:12},{wch:12},{wch:12},{wch:10},{wch:14}];XLSX.writeFile(wb,"athena_pricing_report.xlsx")};
-  return<div className="pnl"><div className="row" style={{justifyContent:'space-between',marginBottom:10}}><span className="pnl-t" style={{margin:0}}>Competitive pricing threat</span><button className="btn pri" onClick={doExport}>Export Pricing Report</button></div>
+  const filteredAnalysis=inArea?analysis.filter(a=>inArea.has(a.name)):analysis;
+
+  return<><div className="pnl"><div className="pnl-t">Filter by area</div><div className="pnl-d">Click the map to draw a radius and filter competitors by location.</div>
+    <div className="map-w" ref={mapRef}></div>
+    <div className="radius-ctrl"><label>{aCenter?"Radius from "+aLabel+":":aLabel}</label><input type="range" min="1" max="60" value={aRadius} onChange={e=>setARadius(+e.target.value)}/><div className="rv">{aRadius} mi</div>
+      {aCenter&&<button className="btn" style={{fontSize:8,padding:'3px 8px'}} onClick={()=>{setACenter(null);setInArea(null);if(circARef.current&&mapInst.current){mapInst.current.removeLayer(circARef.current);circARef.current=null}setALabel("Click map to filter by area")}}>Clear</button>}
+    </div></div>
+  <div className="pnl"><div className="row" style={{justifyContent:'space-between',marginBottom:10}}><span className="pnl-t" style={{margin:0}}>Competitive pricing threat{inArea?" ("+filteredAnalysis.length+" in area)":""}</span><button className="btn pri" onClick={doExport}>Export Pricing Report</button></div>
     <div className="pnl-d">Shows how often each competitor undercuts your prices. Higher threat % means they beat you on more products.</div>
     <div className="tw"><div className="ts"><table><thead><tr><th>Dispensary</th><th>Compared</th><th>They're cheaper</th><th>Same</th><th>You're cheaper</th><th>Threat</th></tr></thead>
-      <tbody>{analysis.map((a,i)=><tr key={i}><td className="pn">{cleanD(a.name)}</td><td className="dm">{a.total}</td><td style={{color:'var(--rd)',fontFamily:'var(--m)',fontWeight:600}}>{a.cheaper}</td><td className="dm">{a.same}</td><td style={{color:'var(--gn)',fontFamily:'var(--m)',fontWeight:600}}>{a.higher}</td><td><span className={"badge "+(a.pct>=50?"rd":a.pct>=25?"am":"gn")}>{a.pct}%</span></td></tr>)}</tbody></table></div></div></div>;
+      <tbody>{filteredAnalysis.map((a,i)=><tr key={i}><td className="pn">{cleanD(a.name)}</td><td className="dm">{a.total}</td><td style={{color:'var(--rd)',fontFamily:'var(--m)',fontWeight:600}}>{a.cheaper}</td><td className="dm">{a.same}</td><td style={{color:'var(--gn)',fontFamily:'var(--m)',fontWeight:600}}>{a.higher}</td><td><span className={"badge "+(a.pct>=50?"rd":a.pct>=25?"am":"gn")}>{a.pct}%</span></td></tr>)}</tbody></table></div></div></div></>;
 }
 
 function normName(n){
