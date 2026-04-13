@@ -297,44 +297,51 @@ def extract_sku(name):
 
 def normalize_name(name):
     """
-    Normalize a product name for fuzzy matching when no SKU is found.
-    Strips weights, percentages, batch codes, and packaging info.
+    Normalize a product name for matching across dispensaries.
+    Strips weights, percentages, batch codes, NDCs, and packaging info.
+    Sorts words alphabetically so word order doesn't matter.
     """
     if not name:
         return ""
     n = name.lower().strip()
     # Remove parenthetical info: (3.5g), (H), (I), (S), (20pk), (AU), etc.
     n = re.sub(r'\([^)]*\)', '', n)
-    # Remove THC/TC percentages: T22.88%, TC 30.24%
-    n = re.sub(r'\b[tT][cC]?\s*\d+\.?\d*%?', '', n)
-    # Remove weight specs: 3.5g, 0.5g, 1g, 14g, 28g, 7g
-    n = re.sub(r'\b\d+\.?\d*\s*g\b', '', n)
+    # Remove THC/TC/CBD percentages: T22.88%, TC 30.24%, 25.17 %
+    n = re.sub(r'\b[tT][cChHdD]*\s*\d+\.?\d*\s*%?', '', n)
+    n = re.sub(r'\d+\.?\d*\s*%', '', n)
+    # Remove weight specs: 3.5g, 0.5g, 1g, 14g, 28g, 100mg, 1oz, 1ml
+    n = re.sub(r'\b\d+\.?\d*\s*(?:g|mg|ml|oz)\b', '', n)
     # Remove pack specs: 1pk, 5pk, 20pk
-    n = re.sub(r'\b\d+pk\b', '', n)
-    # Remove standalone numbers (SKUs, batch numbers)
-    n = re.sub(r'\b\d{3,6}\b', '', n)
-    # Remove extra whitespace and trailing dashes
-    n = re.sub(r'[\s\-_]+', ' ', n).strip(' -|')
-    return n
+    n = re.sub(r'\b\d+\s*pk\b', '', n)
+    # Remove ALL standalone numbers (NDCs, SKUs, batch numbers)
+    n = re.sub(r'\b\d+\.?\d*\b', '', n)
+    # Remove common filler words that vary between listings
+    n = re.sub(r'\b(whole|flower|premium|reserve|mini|minis)\b', '', n)
+    # Remove extra whitespace, dashes, pipes
+    n = re.sub(r'[\s\-_|/]+', ' ', n).strip(' -|')
+    # Sort words alphabetically so word order doesn't matter
+    words = sorted(set(n.split()))
+    return ' '.join(words)
 
 
 def make_product_key(item):
     """
     Create a comparison key for a product.
-    Priority: SKU (most reliable) → normalized name + category
+    Uses normalized name + category as the primary key.
+    This groups the same strain/product regardless of NDC or batch number.
     """
     name = item.get("NAME", "")
     category = item.get("CATEGORY", "Other")
     
-    sku = extract_sku(name)
-    if sku:
-        # SKU is the gold standard — same SKU = same product
-        return f"sku:{sku}"
-    
-    # Fallback: normalized name + category
+    # Primary: normalized name (groups same product across different NDCs/batches)
     norm = normalize_name(name)
     if norm:
         return f"name:{norm}|{category.lower()}"
+    
+    # Fallback: SKU if name normalization produces nothing useful
+    sku = extract_sku(name)
+    if sku:
+        return f"sku:{sku}"
     
     # Last resort: raw name
     return f"raw:{name.lower()}"
