@@ -297,15 +297,17 @@ function AlertsTab({data}){
 function normName(n){
   var s=(n||"").toLowerCase();
   s=s.replace(/\([^)]*\)/g,"");
-  s=s.replace(/\b[tchdTCHD]*\s*\d+\.?\d*\s*%?/g,"");
-  s=s.replace(/\d+\.?\d*\s*%/g,"");
   s=s.replace(/\b\d+\.?\d*\s*(?:g|mg|ml|oz)\b/gi,"");
   s=s.replace(/\b\d+\s*pk\b/gi,"");
+  s=s.replace(/\b[tchdTCHD]+\s*\d+\.?\d*\s*%?/g,"");
+  s=s.replace(/\d+\.?\d*\s*%/g,"");
   s=s.replace(/\b\d+\.?\d*\b/g,"");
-  s=s.replace(/\b(whole|flower|premium|reserve|mini|minis)\b/gi,"");
+  s=s.replace(/\b(whole|flower|premium|reserve|mini|minis|pre|pack|prepack|cartridge|cart|vape|roll|rolls|concentrate|gummy|gummies|edible|tincture|topical|capsule|capsules|tablet|tablets|med|rec|adult|use)\b/gi,"");
+  s=s.replace(/\b[a-z]\b/g,"");
+  s=s.replace(/\b(ctpharma|theraplant|curaleaf|advanced grow labs|agl)\b/gi,"");
   s=s.replace(/[-_|/]+/g," ");
   s=s.replace(/\s+/g," ").trim();
-  var words=s.split(" ").filter(function(w){return w.length>0});
+  var words=s.split(" ").filter(function(w){return w.length>1});
   words.sort();
   return words.join(" ");
 }
