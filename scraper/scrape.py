@@ -304,23 +304,24 @@ def normalize_name(name):
     if not name:
         return ""
     n = name.lower().strip()
-    # Remove parenthetical info: (3.5g), (H), (I), (S), (20pk), (AU), etc.
+    # Remove parenthetical info
     n = re.sub(r'\([^)]*\)', '', n)
-    # Remove THC/TC/CBD percentages: T22.88%, TC 30.24%, 25.17 %
-    n = re.sub(r'\b[tT][cChHdD]*\s*\d+\.?\d*\s*%?', '', n)
-    n = re.sub(r'\d+\.?\d*\s*%', '', n)
-    # Remove weight specs: 3.5g, 0.5g, 1g, 14g, 28g, 100mg, 1oz, 1ml
+    # Remove weights FIRST (before THC to prevent orphaned 'g')
     n = re.sub(r'\b\d+\.?\d*\s*(?:g|mg|ml|oz)\b', '', n)
-    # Remove pack specs: 1pk, 5pk, 20pk
     n = re.sub(r'\b\d+\s*pk\b', '', n)
-    # Remove ALL standalone numbers (NDCs, SKUs, batch numbers)
+    # Remove THC/TC/CBD (require at least one prefix letter)
+    n = re.sub(r'\b[tcTChHdD]+\s*\d+\.?\d*\s*%?', '', n)
+    n = re.sub(r'\d+\.?\d*\s*%', '', n)
+    # Remove ALL remaining standalone numbers
     n = re.sub(r'\b\d+\.?\d*\b', '', n)
-    # Remove common filler words that vary between listings
-    n = re.sub(r'\b(whole|flower|premium|reserve|mini|minis)\b', '', n)
-    # Remove extra whitespace, dashes, pipes
+    # Strip common product type and packaging words
+    n = re.sub(r'\b(whole|flower|premium|reserve|mini|minis|pre|pack|prepack|cartridge|cart|vape|roll|rolls|concentrate|gummy|gummies|edible|tincture|topical|capsule|capsules|tablet|tablets|med|rec|adult|use)\b', '', n)
+    # Strip standalone single letters
+    n = re.sub(r'\b[a-z]\b', '', n)
+    # Strip known brand names that appear inconsistently
+    n = re.sub(r'\b(ctpharma|theraplant|curaleaf|advanced grow labs|agl)\b', '', n)
     n = re.sub(r'[\s\-_|/]+', ' ', n).strip(' -|')
-    # Sort words alphabetically so word order doesn't matter
-    words = sorted(set(n.split()))
+    words = sorted(set(w for w in n.split() if len(w) > 1))
     return ' '.join(words)
 
 
